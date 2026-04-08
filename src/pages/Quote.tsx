@@ -12,11 +12,61 @@ const machineOptions = ["CNC Fiber Laser", "Tube / Profile Laser", "Press Brake"
 export default function Quote() {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    email: "",
+    phone: "",
+    machine: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleMachineChange = (value: string) => {
+    setFormData({ ...formData, machine: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast({ title: "Quote request submitted!", description: "Our engineers will respond within 1 business day." });
+    setIsLoading(true);
+
+    try {
+      const res = await fetch("https://api.kaimec.com/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.fullName,
+          company: formData.companyName,
+          email: formData.email,
+          phone: formData.phone,
+          machine: formData.machine,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        toast({
+          title: "Quote request submitted!",
+          description: "Our engineers will respond within 1 business day.",
+        });
+      } else {
+        throw new Error("Server error");
+      }
+    } catch (err) {
+      toast({
+        title: "Something went wrong.",
+        description: "Please try again or email us at sales@kaimec.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -34,19 +84,51 @@ export default function Quote() {
                 <div className="rounded-lg border border-primary/30 bg-primary/5 p-10 text-center">
                   <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
-                  <p className="text-muted-foreground">We've received your request and will be in touch shortly.</p>
+                  <p className="text-muted-foreground">
+                    We've received your request and will be in touch shortly regarding the{" "}
+                    {formData.machine || "machine"} you inquired about.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Input placeholder="Full Name" required className="bg-card border-border" />
-                    <Input placeholder="Company Name" required className="bg-card border-border" />
+                    <Input
+                      name="fullName"
+                      placeholder="Full Name"
+                      required
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      className="bg-card border-border"
+                    />
+                    <Input
+                      name="companyName"
+                      placeholder="Company Name"
+                      required
+                      value={formData.companyName}
+                      onChange={handleChange}
+                      className="bg-card border-border"
+                    />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Input type="email" placeholder="Email" required className="bg-card border-border" />
-                    <Input type="tel" placeholder="Phone" className="bg-card border-border" />
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="bg-card border-border"
+                    />
+                    <Input
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-card border-border"
+                    />
                   </div>
-                  <Select>
+                  <Select onValueChange={handleMachineChange}>
                     <SelectTrigger className="bg-card border-border">
                       <SelectValue placeholder="Machine of Interest" />
                     </SelectTrigger>
@@ -56,9 +138,21 @@ export default function Quote() {
                       ))}
                     </SelectContent>
                   </Select>
-                  <Textarea placeholder="Message / Specifications" rows={5} className="bg-card border-border" />
-                  <Button type="submit" size="lg" className="font-bold px-10 w-full sm:w-auto">
-                    Submit Request
+                  <Textarea
+                    name="message"
+                    placeholder="Message / Specifications"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-card border-border"
+                  />
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isLoading}
+                    className="font-bold px-10 w-full sm:w-auto"
+                  >
+                    {isLoading ? "Sending..." : "Submit Request"}
                   </Button>
                 </form>
               )}
