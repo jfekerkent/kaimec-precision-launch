@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,30 +7,29 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 
+const EMAILJS_SERVICE_ID   = "service_oiwu4ak";
+const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
+const EMAILJS_REPLY_TEMPLATE = "template_8ghnppm";
+const EMAILJS_PUBLIC_KEY   = "auMQyoP8IUFm3ImJd";
+
 const machineOptions = [
   "CNC Fiber Laser",
-  "Tube / Profile Laser", 
+  "Tube / Profile Laser",
   "Press Brake",
   "Panel Bender",
   "Other"
 ];
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
 export default function Quote() {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [machine, setMachine] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     companyName: "",
     email: "",
     phone: "",
+    machine: "",
     message: "",
   });
 
@@ -45,21 +45,35 @@ export default function Quote() {
     setError("");
 
     try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "quote-request",
-          ...formData,
-          machine,
-        }),
-      });
+      // Send team notification to sales@kaimec.com
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEAM_TEMPLATE,
+        {
+          fullName:    formData.fullName,
+          companyName: formData.companyName,
+          email:       formData.email,
+          phone:       formData.phone,
+          machine:     formData.machine,
+          message:     formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        throw new Error("Submission failed");
-      }
+      // Send auto-reply to customer
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_REPLY_TEMPLATE,
+        {
+          fullName: formData.fullName,
+          email:    formData.email,
+          machine:  formData.machine,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+
     } catch (err) {
       setError(
         "Something went wrong. Please email us directly at sales@kaimec.com"
@@ -71,16 +85,6 @@ export default function Quote() {
 
   return (
     <Layout>
-      {/* Hidden form for Netlify to detect at build time */}
-      <form name="quote-request" data-netlify="true" hidden>
-        <input type="text" name="fullName" />
-        <input type="text" name="companyName" />
-        <input type="email" name="email" />
-        <input type="tel" name="phone" />
-        <input type="text" name="machine" />
-        <textarea name="message" />
-      </form>
-
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="grid gap-16 lg:grid-cols-5">
@@ -101,23 +105,12 @@ export default function Quote() {
                   </h3>
                   <p className="text-muted-foreground">
                     We've received your request and will be in touch shortly
-                    regarding the {machine || "machine"} you inquired about.
+                    regarding the {formData.machine || "machine"} you inquired
+                    about. Check your email for a confirmation.
                   </p>
                 </div>
               ) : (
-                <form
-                  name="quote-request"
-                  method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit}
-                  className="space-y-5"
-                >
-                  <input type="hidden" name="form-name" value="quote-request" />
-                  <p hidden>
-                    <input name="bot-field" />
-                  </p>
-
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Input
                       name="fullName"
@@ -155,7 +148,11 @@ export default function Quote() {
                       className="bg-card border-border"
                     />
                   </div>
-                  <Select onValueChange={setMachine}>
+                  <Select
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, machine: value })
+                    }
+                  >
                     <SelectTrigger className="bg-card border-border">
                       <SelectValue placeholder="Machine of Interest" />
                     </SelectTrigger>
