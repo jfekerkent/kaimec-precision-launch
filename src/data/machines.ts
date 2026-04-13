@@ -13,6 +13,7 @@ export const categories = [
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   { name: "Panel Benders", slug: "panel-benders", description: "Automated panel bending systems for high-volume sheet metal production." },
+  { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
 export const machines: Machine[] = [
@@ -105,6 +106,33 @@ export const machines: Machine[] = [
     description: "High-speed panel bending center with automatic tool setup, 3200mm length.",
     specs: { "Working Length": "3,200 mm", "Max Thickness": "2.5 mm (steel)", "Bending Height": "250 mm", "Cycle Time": "< 6 sec/bend" },
     image: "panel-bender",
+  },
+  {
+    id: "gd-1500",
+    model: "KM-GD 1500",
+    category: "Gun Drills",
+    categorySlug: "gun-drills",
+    description: "Single-spindle gun drill for deep hole drilling up to 1500mm depth with high-pressure coolant system.",
+    specs: { "Max Drilling Depth": "1,500 mm", "Drill Diameter Range": "3–32 mm", "Spindle Speed": "500–6,000 RPM", "Coolant Pressure": "70 bar" },
+    image: "gun-drill",
+  },
+  {
+    id: "gd-2500",
+    model: "KM-GD 2500",
+    category: "Gun Drills",
+    categorySlug: "gun-drills",
+    description: "Heavy-duty gun drill for deep hole boring up to 2500mm, ideal for mold, die, and aerospace components.",
+    specs: { "Max Drilling Depth": "2,500 mm", "Drill Diameter Range": "5–40 mm", "Spindle Speed": "300–4,500 RPM", "Coolant Pressure": "100 bar" },
+    image: "gun-drill",
+  },
+  {
+    id: "gd-multi",
+    model: "KM-GD Multi",
+    category: "Gun Drills",
+    categorySlug: "gun-drills",
+    description: "Multi-spindle gun drilling machine for high-volume production with up to 4 simultaneous drilling operations.",
+    specs: { "Max Drilling Depth": "2,000 mm", "Spindle Count": "4", "Drill Diameter Range": "4–25 mm", "Coolant Pressure": "120 bar" },
+    image: "gun-drill",
   },
 ];
 

@@ -6,12 +6,14 @@ import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
 import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
+import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 
 const imageMap: Record<string, string> = {
   "fiber-laser": fiberLaserImg,
   "tube-laser": tubeLaserImg,
   "press-brake": pressBrakeImg,
   "panel-bender": panelBenderImg,
+  "gun-drill": gunDrillImg,
 };
 
 export default function MachineCategory() {
