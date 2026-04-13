@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Tube & Profile Lasers", to: "/machines/tube-profile-lasers" },
   { label: "Press Brakes", to: "/machines/press-brakes" },
   { label: "Panel Benders", to: "/machines/panel-benders" },
+  { label: "Gun Drills", to: "/machines/gun-drills" },
 ];
 
 const moreLinks = [

@@ -17,6 +17,7 @@ const machineOptions = [
   "Tube / Profile Laser",
   "Press Brake",
   "Panel Bender",
+  "Gun Drill",
   "Other",
 ];
 
