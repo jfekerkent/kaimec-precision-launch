@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-      - export DEPLOYPATH=/home/kentkaimec/public_html/
-          - cd /home/kentkaimec/repositories/kaimec-precision-launch && npm install && npm run build
-              - /bin/cp -R /home/kentkaimec/repositories/kaimec-precision-launch/dist/. $DEPLOYPATH
+    - export DEPLOYPATH=/home/kentkaimec/public_html/
+    - cd /home/kentkaimec/repositories/kaimec-precision-launch && npm install && npm run build
+    - /bin/cp -R /home/kentkaimec/repositories/kaimec-precision-launch/dist/. $DEPLOYPATH
