@@ -6,12 +6,14 @@ import heroImage from "@/assets/hero-cnc.jpg";
 import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
+import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
 const featuredMachines = [
   { tag: "Laser Cutting", name: "CNC Fiber Laser", desc: "High-speed precision cutting for sheet metal up to 40mm thick. IPG fiber source with automatic pallet changer.", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
   { tag: "Metal Forming", name: "CNC Press Brake", desc: "Hydraulic and electric press brakes from 110T to 400T, featuring DA-series CNC controllers.", image: pressBrakeImg, link: "/machines/press-brakes" },
   { tag: "Automation", name: "Panel Bender", desc: "Automated panel bending systems with cycle times under 8 seconds per bend for high-volume production.", image: panelBenderImg, link: "/machines/panel-benders" },
+  { tag: "Deep Hole Drilling", name: "Gun Drill", desc: "Precision deep hole drilling machines for mold, die, and aerospace components with high-pressure coolant systems.", image: gunDrillImg, link: "/machines/gun-drills" },
 ];
 
 const stats = [
@@ -46,7 +48,7 @@ export default function Index() {
               KAIMEC offers precision CNC fiber lasers, press brakes, and panel benders not available through standard distributors. Serving manufacturers across the US.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/machines/cnc-fiber-lasers">
+              <Link to="/machines">
                 <Button size="lg" className="font-bold text-base px-8">
                   Explore Machines <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
