@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - cp -r /home/kentkaimec/repositories/kaimec-precision-launch/dist/. /home/kentkaimec/public_html/
+    - git --git-dir=/home/kentkaimec/repositories/kaimec-precision-launch/.git archive HEAD:dist | tar -x -C /home/kentkaimec/public_html/
