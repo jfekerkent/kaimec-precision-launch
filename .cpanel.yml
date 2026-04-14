@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kentkaimec/public_html/
-    - /bin/cp -R /home/kentkaimec/repositories/kaimec-precision-launch/dist/. $DEPLOYPATH
+    - cd /home/kentkaimec/repositories/kaimec-precision-launch && git archive HEAD dist/ | tar -x -C $DEPLOYPATH --strip-components=1
