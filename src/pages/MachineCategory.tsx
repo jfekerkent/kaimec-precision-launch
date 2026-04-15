@@ -7,6 +7,8 @@ import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
+import kflo1530Img from "@/assets/machine-kflo-1530.png";
+import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
 
 const imageMap: Record<string, string> = {
   "fiber-laser": fiberLaserImg,
@@ -14,6 +16,8 @@ const imageMap: Record<string, string> = {
   "press-brake": pressBrakeImg,
   "panel-bender": panelBenderImg,
   "gun-drill": gunDrillImg,
+  "kflo-1530": kflo1530Img,
+  "kflo-p-1530": kfloP1530Img,
 };
 
 export default function MachineCategory() {
@@ -55,7 +59,7 @@ export default function MachineCategory() {
                     loading="lazy"
                     width={800}
                     height={600}
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full object-cover ${m.image === "kflo-1530" || m.image === "kflo-p-1530" ? "bg-white object-contain p-2" : ""}`}
                   />
                 </div>
                 <div className="p-6">

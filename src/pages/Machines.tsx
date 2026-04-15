@@ -8,6 +8,8 @@ import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
+import kflo1530Img from "@/assets/machine-kflo-1530.png";
+import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
 
 const categoryImages: Record<string, string> = {
   "cnc-fiber-lasers": fiberLaserImg,
@@ -15,6 +17,11 @@ const categoryImages: Record<string, string> = {
   "press-brakes": pressBrakeImg,
   "panel-benders": panelBenderImg,
   "gun-drills": gunDrillImg,
+};
+
+const machineImages: Record<string, string> = {
+  "kflo-1530": kflo1530Img,
+  "kflo-p-1530": kfloP1530Img,
 };
 
 export default function Machines() {
@@ -46,7 +53,7 @@ export default function Machines() {
                 {machines.map((m) => (
                   <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                     <div className="aspect-[4/3] overflow-hidden">
-                      <img src={categoryImages[m.categorySlug]} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
+                      <img src={machineImages[m.image] || categoryImages[m.categorySlug]} alt={m.model} loading="lazy" width={800} height={600} className={`h-full w-full ${machineImages[m.image] ? "object-contain bg-white p-2" : "object-cover"}`} />
                     </div>
                     <div className="p-5">
                       <h3 className="text-lg font-bold text-foreground mb-1">{m.model}</h3>
