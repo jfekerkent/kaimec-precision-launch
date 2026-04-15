@@ -24,7 +24,7 @@ export const machines: Machine[] = [
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Fiber Laser Cutting Machine",
     specs: { "Laser Power": "3,000W", "Bed Size": "3000 × 1500 mm", "Max Speed": "100 m/min", "Positioning Accuracy": "±0.03 mm" },
-    image: "fiber-laser",
+    image: "kflo-1530",
   },
   {
     id: "kflo-p-1530",
@@ -33,7 +33,7 @@ export const machines: Machine[] = [
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Fiber Laser Cutting Machine",
     specs: { "Laser Power": "6,000W", "Bed Size": "3000 × 1500 mm", "Max Speed": "120 m/min", "Positioning Accuracy": "±0.03 mm" },
-    image: "fiber-laser",
+    image: "kflo-p-1530",
   },
   {
     id: "kflc-1530",

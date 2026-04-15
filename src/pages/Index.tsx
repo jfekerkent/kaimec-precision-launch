@@ -8,11 +8,12 @@ import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
+import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
 
 const featuredMachines = [
-  { tag: "Laser Cutting", name: "KFLO-P 1530", desc: "Open Type Fiber Laser Cutting Machine", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
-  { tag: "Laser Cutting", name: "KFLC-1530", desc: "Closed Type Fiber Laser Cutting Machine", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
-  { tag: "Pipe & Profile", name: "KFLC-P 1530", desc: "Covered Type Pipe & Profile Fiber Laser", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
+  { tag: "Laser Cutting", name: "KFLO-P 1530", desc: "Open Type Fiber Laser Cutting Machine", image: kfloP1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Laser Cutting", name: "KFLC-1530", desc: "Closed Type Fiber Laser Cutting Machine", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers", isProductShot: false },
+  { tag: "Pipe & Profile", name: "KFLC-P 1530", desc: "Covered Type Pipe & Profile Fiber Laser", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers", isProductShot: false },
 ];
 
 const stats = [
@@ -87,7 +88,7 @@ export default function Index() {
             {featuredMachines.map((m) => (
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className={`h-full w-full group-hover:scale-105 transition-transform duration-500 ${m.isProductShot ? "object-contain bg-white p-2" : "object-cover"}`} />
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
