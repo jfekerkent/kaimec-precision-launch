@@ -7,7 +7,10 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Quote from "./pages/Quote";
 import Machines from "./pages/Machines";
-import MachineCategory from "./pages/MachineCategory";
+import FiberLasers from "./pages/FiberLasers";
+import TubeProfileLasers from "./pages/TubeProfileLasers";
+import PressBrakes from "./pages/PressBrakes";
+import GunDrills from "./pages/GunDrills";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +26,10 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/machines" element={<Machines />} />
-          <Route path="/machines/:slug" element={<MachineCategory />} />
+          <Route path="/machines/cnc-fiber-lasers" element={<FiberLasers />} />
+          <Route path="/machines/tube-profile-lasers" element={<TubeProfileLasers />} />
+          <Route path="/machines/press-brakes" element={<PressBrakes />} />
+          <Route path="/machines/gun-drills" element={<GunDrills />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

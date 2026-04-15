@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 
@@ -13,29 +16,59 @@ const EMAILJS_REPLY_TEMPLATE = "template_8ghnppm";
 const EMAILJS_PUBLIC_KEY    = "auMQyoP8IUFm3ImJd";
 
 const machineOptions = [
-  "CNC Fiber Laser",
-  "Tube / Profile Laser",
-  "Press Brake",
-  "Panel Bender",
-  "Gun Drill",
-  "Other",
+  "KFLO-1530",
+  "KFLO-P 1530",
+  "KFLC-1530",
+  "KFLC-P 1530",
+  "KFLP-6020",
+  "KFLP-6035",
+  "KMKT-1560",
+  "KMKT-32135",
+  "KMKJ-32220",
+  "Gun Drilling Machine",
+  "Deep Hole Drilling Machine",
+  "Not Sure Yet",
+];
+
+const usStates = [
+  "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia",
+  "Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland",
+  "Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey",
+  "New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina",
+  "South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming",
+];
+
+const timelineOptions = [
+  "ASAP",
+  "Within 30 Days",
+  "Within 3–6 Months",
+  "Budgeting / Information Request",
 ];
 
 export default function Quote() {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [wantCall, setWantCall] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
-    companyName: "",
     email: "",
-    phone: "",
     machine: "",
+    phone: "",
+    state: "",
+    zip: "",
+    timeline: "",
     message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === "zip") {
+      const digits = value.replace(/\D/g, "").slice(0, 5);
+      setFormData({ ...formData, zip: digits });
+      return;
+    }
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,12 +80,15 @@ export default function Quote() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEAM_TEMPLATE,
         {
-          fullName:    formData.fullName,
-          companyName: formData.companyName,
-          email:       formData.email,
-          phone:       formData.phone,
-          machine:     formData.machine,
-          message:     formData.message,
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: wantCall ? formData.phone : "N/A",
+          machine: formData.machine,
+          state: formData.state || "N/A",
+          zip: formData.zip || "N/A",
+          timeline: formData.timeline || "N/A",
+          message: formData.message || "N/A",
+          wantCall: wantCall ? "Yes" : "No",
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -61,8 +97,8 @@ export default function Quote() {
         EMAILJS_REPLY_TEMPLATE,
         {
           fullName: formData.fullName,
-          email:    formData.email,
-          machine:  formData.machine,
+          email: formData.email,
+          machine: formData.machine,
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -92,32 +128,94 @@ export default function Quote() {
                   <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
                   <p className="text-muted-foreground">
-                    We have received your request and will be in touch shortly regarding the {formData.machine || "machine"} you inquired about. Check your email for a confirmation.
+                    Thank you — a member of our team will be in touch shortly.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <Input name="fullName" placeholder="Full Name" required value={formData.fullName} onChange={handleChange} className="bg-card border-border" />
-                    <Input name="companyName" placeholder="Company Name" required value={formData.companyName} onChange={handleChange} className="bg-card border-border" />
+                  {/* Full Name * */}
+                  <div>
+                    <Label htmlFor="fullName" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Full Name <span className="text-red-500">*</span>
+                    </Label>
+                    <Input id="fullName" name="fullName" placeholder="Full Name" required value={formData.fullName} onChange={handleChange} className="bg-card border-border" />
                   </div>
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <Input name="email" type="email" placeholder="Email" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
-                    <Input name="phone" type="tel" placeholder="Phone" value={formData.phone} onChange={handleChange} className="bg-card border-border" />
+
+                  {/* Email * */}
+                  <div>
+                    <Label htmlFor="email" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Email Address <span className="text-red-500">*</span>
+                    </Label>
+                    <Input id="email" name="email" type="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
                   </div>
-                  <Select onValueChange={(value) => setFormData({ ...formData, machine: value })}>
-                    <SelectTrigger className="bg-card border-border">
-                      <SelectValue placeholder="Machine of Interest" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {machineOptions.map((o) => (
-                        <SelectItem key={o} value={o}>{o}</SelectItem>
+
+                  {/* Machine * */}
+                  <div>
+                    <Label className="text-sm font-medium text-foreground mb-1.5 block">
+                      Machine of Interest <span className="text-red-500">*</span>
+                    </Label>
+                    <Select required onValueChange={(value) => setFormData({ ...formData, machine: value })}>
+                      <SelectTrigger className="bg-card border-border">
+                        <SelectValue placeholder="Select a Machine" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {machineOptions.map((o) => (
+                          <SelectItem key={o} value={o}>{o}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Have someone call me */}
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="wantCall" checked={wantCall} onCheckedChange={(checked) => setWantCall(checked === true)} />
+                      <Label htmlFor="wantCall" className="text-sm text-foreground cursor-pointer">Have someone call me</Label>
+                    </div>
+                    {wantCall && (
+                      <Input name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="bg-card border-border" />
+                    )}
+                  </div>
+
+                  {/* State & ZIP */}
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <Label className="text-sm font-medium text-foreground mb-1.5 block">State</Label>
+                      <Select onValueChange={(value) => setFormData({ ...formData, state: value })}>
+                        <SelectTrigger className="bg-card border-border">
+                          <SelectValue placeholder="Select State" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {usStates.map((s) => (
+                            <SelectItem key={s} value={s}>{s}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="zip" className="text-sm font-medium text-foreground mb-1.5 block">ZIP Code</Label>
+                      <Input id="zip" name="zip" placeholder="ZIP Code" value={formData.zip} onChange={handleChange} className="bg-card border-border" inputMode="numeric" maxLength={5} />
+                    </div>
+                  </div>
+
+                  {/* Timeline */}
+                  <div>
+                    <Label className="text-sm font-medium text-foreground mb-3 block">Timeline</Label>
+                    <RadioGroup onValueChange={(value) => setFormData({ ...formData, timeline: value })} className="space-y-2">
+                      {timelineOptions.map((t) => (
+                        <div key={t} className="flex items-center space-x-2">
+                          <RadioGroupItem value={t} id={`timeline-${t}`} />
+                          <Label htmlFor={`timeline-${t}`} className="text-sm text-muted-foreground cursor-pointer">{t}</Label>
+                        </div>
                       ))}
-                    </SelectContent>
-                  </Select>
-                  <Textarea name="message" placeholder="Message / Specifications" rows={5} value={formData.message} onChange={handleChange} className="bg-card border-border" />
+                    </RadioGroup>
+                  </div>
+
+                  {/* Message */}
+                  <Textarea name="message" placeholder="Additional details or specifications" rows={4} value={formData.message} onChange={handleChange} className="bg-card border-border" />
+
                   {error && <p className="text-red-500 text-sm">{error}</p>}
-                  <Button type="submit" size="lg" disabled={isLoading} className="font-bold px-10 w-full sm:w-auto">
+                  <Button type="submit" size="lg" disabled={isLoading || !formData.fullName || !formData.email || !formData.machine} className="font-bold px-10 w-full sm:w-auto">
                     {isLoading ? "Sending..." : "Submit Request"}
                   </Button>
                 </form>
