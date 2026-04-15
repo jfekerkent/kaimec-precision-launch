@@ -12,7 +12,7 @@ export const categories = [
   { name: "Fiber Laser Cutting Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
-  { name: "Panel Benders", slug: "panel-benders", description: "Automated panel bending systems for high-volume sheet metal production." },
+  
   { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
@@ -97,24 +97,6 @@ export const machines: Machine[] = [
     description: "Press Brake",
     specs: { "Tonnage": "220 tons", "Bending Length": "3,200 mm", "Stroke": "300 mm", "Controller": "DA-69T" },
     image: "press-brake",
-  },
-  {
-    id: "pnb-2520",
-    model: "KM-PNB 2520",
-    category: "Panel Benders",
-    categorySlug: "panel-benders",
-    description: "Automated panel bender for complex bends, 2500mm working length.",
-    specs: { "Working Length": "2,500 mm", "Max Thickness": "2.0 mm (steel)", "Bending Height": "200 mm", "Cycle Time": "< 8 sec/bend" },
-    image: "panel-bender",
-  },
-  {
-    id: "pnb-3220",
-    model: "KM-PNB 3220",
-    category: "Panel Benders",
-    categorySlug: "panel-benders",
-    description: "High-speed panel bending center with automatic tool setup, 3200mm length.",
-    specs: { "Working Length": "3,200 mm", "Max Thickness": "2.5 mm (steel)", "Bending Height": "250 mm", "Cycle Time": "< 6 sec/bend" },
-    image: "panel-bender",
   },
   {
     id: "gun-drilling-machine",
