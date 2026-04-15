@@ -10,10 +10,9 @@ import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
 const featuredMachines = [
-  { tag: "Laser Cutting", name: "CNC Fiber Laser", desc: "High-speed precision cutting for sheet metal up to 40mm thick. IPG fiber source with automatic pallet changer.", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
-  { tag: "Metal Forming", name: "CNC Press Brake", desc: "Hydraulic and electric press brakes from 110T to 400T, featuring DA-series CNC controllers.", image: pressBrakeImg, link: "/machines/press-brakes" },
-  { tag: "Automation", name: "Panel Bender", desc: "Automated panel bending systems with cycle times under 8 seconds per bend for high-volume production.", image: panelBenderImg, link: "/machines/panel-benders" },
-  { tag: "Deep Hole Drilling", name: "Gun Drill", desc: "Precision deep hole drilling machines for mold, die, and aerospace components with high-pressure coolant systems.", image: gunDrillImg, link: "/machines/gun-drills" },
+  { tag: "Laser Cutting", name: "KFLO-P 1530", desc: "Open Type Fiber Laser Cutting Machine", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
+  { tag: "Laser Cutting", name: "KFLC-1530", desc: "Closed Type Fiber Laser Cutting Machine", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
+  { tag: "Pipe & Profile", name: "KFLC-P 1530", desc: "Covered Type Pipe & Profile Fiber Laser", image: fiberLaserImg, link: "/machines/cnc-fiber-lasers" },
 ];
 
 const stats = [
