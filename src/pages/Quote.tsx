@@ -143,6 +143,14 @@ export default function Quote() {
                     <Input id="fullName" name="fullName" placeholder="Full Name" required value={formData.fullName} onChange={handleChange} className="bg-card border-border" />
                   </div>
 
+                  {/* Company Name */}
+                  <div>
+                    <Label htmlFor="companyName" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Company Name
+                    </Label>
+                    <Input id="companyName" name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="bg-card border-border" />
+                  </div>
+
                   {/* Email * */}
                   <div>
                     <Label htmlFor="email" className="text-sm font-medium text-foreground mb-1.5 block">
