@@ -13,6 +13,7 @@ export const categories = [
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   
+  { name: "Panel Benders", slug: "panel-benders", description: "CNC panel bending machines for high-speed, automated sheet metal forming." },
   { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
@@ -97,6 +98,24 @@ export const machines: Machine[] = [
     description: "Press Brake",
     specs: { "Tonnage": "220 tons", "Bending Length": "3,200 mm", "Stroke": "300 mm", "Controller": "DA-69T" },
     image: "press-brake",
+  },
+  {
+    id: "panel-kmkj-32220",
+    model: "KMKJ-32220",
+    category: "Panel Benders",
+    categorySlug: "panel-benders",
+    description: "Panel Bender",
+    specs: { "Bending Length": "2,200 mm", "Max Sheet Width": "3,200 mm", "Material Thickness": "3 mm mild / 2 mm SS", "Control": "CNC Proprietary" },
+    image: "panel-bender",
+  },
+  {
+    id: "panel-kmkt-1560",
+    model: "KMKT-1560",
+    category: "Panel Benders",
+    categorySlug: "panel-benders",
+    description: "Panel Bender",
+    specs: { "Bending Length": "1,560 mm", "Max Sheet Width": "2,500 mm", "Material Thickness": "2.5 mm mild steel", "Control": "CNC Proprietary" },
+    image: "panel-bender",
   },
   {
     id: "gun-drilling-machine",

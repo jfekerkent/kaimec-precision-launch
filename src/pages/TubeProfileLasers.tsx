@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import MachineGallery from "@/components/MachineGallery";
 import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 
 const machines = [
-  { id: "kflp-6020", model: "KFLP-6020", description: "Tube & Profile Laser" },
-  { id: "kflp-6035", model: "KFLP-6035", description: "Tube & Profile Laser" },
+  { id: "kflp-6020", model: "KFLP-6020", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflp-6035", model: "KFLP-6035", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 export default function TubeProfileLasers() {
@@ -24,9 +25,7 @@ export default function TubeProfileLasers() {
           <div className="grid gap-8 md:grid-cols-2 max-w-3xl mx-auto">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={tubeLaserImg} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
-                </div>
+                <MachineGallery images={m.images} model={m.model} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>

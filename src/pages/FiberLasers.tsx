@@ -2,15 +2,16 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import Layout from "@/components/Layout";
+import MachineGallery from "@/components/MachineGallery";
 import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
 import kflo1530Img from "@/assets/machine-kflo-1530.png";
 import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
 
 const machines = [
-  { id: "kflo-1530", model: "KFLO-1530", description: "Open Type Fiber Laser Cutting Machine", image: kflo1530Img, isProduct: true },
-  { id: "kflo-p-1530", model: "KFLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", image: kfloP1530Img, isProduct: true },
-  { id: "kflc-1530", model: "KFLC-1530", description: "Closed Type Fiber Laser Cutting Machine", image: fiberLaserImg, isProduct: false },
-  { id: "kflc-p-1530", model: "KFLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", image: fiberLaserImg, isProduct: false },
+  { id: "kflo-1530", model: "KFLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflo-p-1530", model: "KFLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kfloP1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflc-1530", model: "KFLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [fiberLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflc-p-1530", model: "KFLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [fiberLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 const specRows = [
@@ -48,7 +49,6 @@ const cuttingThickness = [
 export default function FiberLasers() {
   return (
     <Layout>
-      {/* Header */}
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">Machine Catalog</p>
@@ -57,22 +57,12 @@ export default function FiberLasers() {
         </div>
       </section>
 
-      {/* Machine Grid */}
       <section className="py-20">
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={m.image}
-                    alt={m.model}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className={`h-full w-full ${m.isProduct ? "object-contain bg-white p-2" : "object-cover"}`}
-                  />
-                </div>
+                <MachineGallery images={m.images} model={m.model} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
@@ -86,7 +76,6 @@ export default function FiberLasers() {
         </div>
       </section>
 
-      {/* Product Highlights */}
       <section className="py-16 bg-secondary">
         <div className="container max-w-5xl">
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Product Highlights</h2>
@@ -113,7 +102,6 @@ export default function FiberLasers() {
         </div>
       </section>
 
-      {/* Specification Comparison Table */}
       <section className="py-20">
         <div className="container">
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Specification Comparison</h2>
@@ -143,7 +131,6 @@ export default function FiberLasers() {
         </div>
       </section>
 
-      {/* Cutting Thickness Chart */}
       <section className="py-16 bg-secondary">
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-black text-foreground mb-4 text-center">Cutting Thickness — KFLO Open Type</h2>
@@ -173,7 +160,6 @@ export default function FiberLasers() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-16">
         <div className="container text-center">
           <Link to="/quote">

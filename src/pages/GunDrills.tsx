@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import MachineGallery from "@/components/MachineGallery";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 
 const machines = [
-  { id: "gun-drilling-machine", model: "Gun Drilling Machine", description: "Gun Drilling Machine" },
-  { id: "deep-hole-drilling-machine", model: "Deep Hole Drilling Machine", description: "Deep Hole Drilling Machine" },
+  { id: "gun-drilling-machine", model: "Gun Drilling Machine", description: "Gun Drilling Machine", images: [gunDrillImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "deep-hole-drilling-machine", model: "Deep Hole Drilling Machine", description: "Deep Hole Drilling Machine", images: [gunDrillImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 export default function GunDrills() {
@@ -24,9 +25,7 @@ export default function GunDrills() {
           <div className="grid gap-8 md:grid-cols-2 max-w-3xl mx-auto">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={gunDrillImg} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
-                </div>
+                <MachineGallery images={m.images} model={m.model} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import MachineGallery from "@/components/MachineGallery";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 
 const machines = [
-  { id: "kmkt-1560", model: "KMKT-1560", description: "Press Brake" },
-  { id: "kmkt-32135", model: "KMKT-32135", description: "Press Brake" },
-  { id: "kmkj-32220", model: "KMKJ-32220", description: "Press Brake" },
+  { id: "kmkt-1560", model: "KMKT-1560", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kmkt-32135", model: "KMKT-32135", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kmkj-32220", model: "KMKJ-32220", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 export default function PressBrakes() {
@@ -25,9 +26,7 @@ export default function PressBrakes() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={pressBrakeImg} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-cover" />
-                </div>
+                <MachineGallery images={m.images} model={m.model} />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
