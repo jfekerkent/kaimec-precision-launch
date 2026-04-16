@@ -52,6 +52,7 @@ export default function Quote() {
   const [wantCall, setWantCall] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
+    companyName: "",
     email: "",
     machine: "",
     phone: "",
@@ -81,14 +82,14 @@ export default function Quote() {
         EMAILJS_TEAM_TEMPLATE,
         {
           fullName: formData.fullName,
+          companyName: formData.companyName || "N/A",
           email: formData.email,
           phone: wantCall ? formData.phone : "N/A",
           machine: formData.machine,
           state: formData.state || "N/A",
-          zip: formData.zip || "N/A",
+          zipCode: formData.zip || "N/A",
           timeline: formData.timeline || "N/A",
           message: formData.message || "N/A",
-          wantCall: wantCall ? "Yes" : "No",
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -99,6 +100,7 @@ export default function Quote() {
           fullName: formData.fullName,
           email: formData.email,
           machine: formData.machine,
+          state: formData.state || "N/A",
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -139,6 +141,14 @@ export default function Quote() {
                       Full Name <span className="text-red-500">*</span>
                     </Label>
                     <Input id="fullName" name="fullName" placeholder="Full Name" required value={formData.fullName} onChange={handleChange} className="bg-card border-border" />
+                  </div>
+
+                  {/* Company Name */}
+                  <div>
+                    <Label htmlFor="companyName" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Company Name
+                    </Label>
+                    <Input id="companyName" name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="bg-card border-border" />
                   </div>
 
                   {/* Email * */}
