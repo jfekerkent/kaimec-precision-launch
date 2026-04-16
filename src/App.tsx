@@ -30,6 +30,7 @@ const App = () => (
           <Route path="/machines/cnc-fiber-lasers" element={<FiberLasers />} />
           <Route path="/machines/tube-profile-lasers" element={<TubeProfileLasers />} />
           <Route path="/machines/press-brakes" element={<PressBrakes />} />
+          <Route path="/machines/panel-benders" element={<PanelBenders />} />
           <Route path="/machines/gun-drills" element={<GunDrills />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
