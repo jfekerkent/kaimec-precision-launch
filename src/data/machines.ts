@@ -13,6 +13,7 @@ export const categories = [
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   
+  { name: "Panel Benders", slug: "panel-benders", description: "CNC panel bending machines for high-speed, automated sheet metal forming." },
   { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 

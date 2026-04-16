@@ -10,6 +10,7 @@ import Machines from "./pages/Machines";
 import FiberLasers from "./pages/FiberLasers";
 import TubeProfileLasers from "./pages/TubeProfileLasers";
 import PressBrakes from "./pages/PressBrakes";
+import PanelBenders from "./pages/PanelBenders";
 import GunDrills from "./pages/GunDrills";
 import NotFound from "./pages/NotFound";
 
