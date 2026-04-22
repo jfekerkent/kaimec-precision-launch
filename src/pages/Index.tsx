@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroImage from "@/assets/hero-kflc-hero.png";
+import heroImg from "@/assets/hero-main.png";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
@@ -35,7 +35,7 @@ export default function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="CNC fiber laser cutting metal" width={1920} height={1080} className="absolute left-0 top-0 z-0 h-full w-full object-cover object-[center_right]" />
+          <img src={heroImg} alt="CNC fiber laser cutting metal" width={1920} height={1080} className="absolute left-0 top-0 z-0 h-full w-full object-cover object-[center_right]" />
           <div className="absolute inset-0 bg-background/80" />
         </div>
         <div className="container relative py-28 md:py-40">
