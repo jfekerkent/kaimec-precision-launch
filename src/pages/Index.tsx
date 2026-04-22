@@ -35,8 +35,18 @@ export default function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="CNC fiber laser cutting metal" width={1920} height={1080} className="absolute left-0 top-0 z-0 h-full w-full object-cover object-[center_right]" />
-          <div className="absolute inset-0 bg-background/80" />
+          <img
+            src={heroImg}
+            alt="CNC fiber laser cutting metal"
+            width={1920}
+            height={1080}
+            className="absolute left-0 top-0 z-0 h-full w-full object-cover object-[center_right]"
+            style={{ opacity: 1, filter: "none" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)" }}
+          />
         </div>
         <div className="container relative py-28 md:py-40">
           <div className="max-w-2xl">
