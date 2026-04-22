@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import Layout from "@/components/Layout";
 import MachineGallery from "@/components/MachineGallery";
+import kflo1530Img from "@/assets/machine-kflo-primary.png";
+import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
+import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
-import kflo1530Img from "@/assets/machine-kflo-1530.png";
-import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
 
 const machines = [
-  { id: "kflo-1530", model: "KFLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloP1530Img, "placeholder:3", "placeholder:4"] },
-  { id: "kflo-p-1530", model: "KFLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kfloP1530Img, kflo1530Img, "placeholder:3", "placeholder:4"] },
+  { id: "kflo-1530", model: "KFLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
+  { id: "kflo-p-1530", model: "KFLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
   { id: "kflc-1530", model: "KFLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "KFLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
