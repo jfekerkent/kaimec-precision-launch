@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImg from "@/assets/kaimec-logo-dark.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -26,13 +27,12 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded bg-primary font-black text-lg text-primary-foreground">
-            K
-          </div>
-          <span className="text-lg font-bold tracking-wide text-foreground hidden sm:inline">
-            KAIMEC MACHINES
-          </span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logoImg}
+            alt="KAIMEC Machines"
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}

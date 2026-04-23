@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import logoImg from "@/assets/kaimec-logo-dark.png";
 
 export default function Footer() {
   return (
@@ -8,11 +9,12 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded bg-primary font-black text-primary-foreground">
-                K
-              </div>
-              <span className="font-bold tracking-wide text-foreground">KAIMEC MACHINES</span>
+            <div className="mb-4">
+              <img
+                src={logoImg}
+                alt="KAIMEC Machines"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Leading manufacturer of high-precision fiber laser cutting machines, press brakes, and panel benders for modern industrial fabrication.

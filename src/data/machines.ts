@@ -20,7 +20,7 @@ export const categories = [
 export const machines: Machine[] = [
   {
     id: "kflo-1530",
-    model: "KFLO-1530",
+    model: "FLO-1530",
     category: "Fiber Laser Cutting Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Fiber Laser Cutting Machine",
@@ -29,7 +29,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflo-p-1530",
-    model: "KFLO-P 1530",
+    model: "FLO-P 1530",
     category: "Fiber Laser Cutting Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Fiber Laser Cutting Machine",
@@ -38,7 +38,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflc-1530",
-    model: "KFLC-1530",
+    model: "FLC-1530",
     category: "Fiber Laser Cutting Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Closed Type Fiber Laser Cutting Machine",
@@ -47,7 +47,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflc-p-1530",
-    model: "KFLC-P 1530",
+    model: "FLC-P 1530",
     category: "Fiber Laser Cutting Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Closed Type Pipe & Profile Fiber Laser",
@@ -56,7 +56,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflp-6020",
-    model: "KFLP-6020",
+    model: "FLP-6020",
     category: "Tube & Profile Lasers",
     categorySlug: "tube-profile-lasers",
     description: "Tube & Profile Laser",
@@ -65,7 +65,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflp-6035",
-    model: "KFLP-6035",
+    model: "FLP-6035",
     category: "Tube & Profile Lasers",
     categorySlug: "tube-profile-lasers",
     description: "Tube & Profile Laser",
@@ -74,7 +74,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kmkt-1560",
-    model: "KMKT-1560",
+    model: "MKT-1560",
     category: "Press Brakes",
     categorySlug: "press-brakes",
     description: "Press Brake",
@@ -83,7 +83,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kmkt-32135",
-    model: "KMKT-32135",
+    model: "MKT-32135",
     category: "Press Brakes",
     categorySlug: "press-brakes",
     description: "Press Brake",
@@ -92,7 +92,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kmkj-32220",
-    model: "KMKJ-32220",
+    model: "MKJ-32220",
     category: "Press Brakes",
     categorySlug: "press-brakes",
     description: "Press Brake",
@@ -101,7 +101,7 @@ export const machines: Machine[] = [
   },
   {
     id: "panel-kmkj-32220",
-    model: "KMKJ-32220",
+    model: "MKJ-32220",
     category: "Panel Benders",
     categorySlug: "panel-benders",
     description: "Panel Bender",
@@ -110,7 +110,7 @@ export const machines: Machine[] = [
   },
   {
     id: "panel-kmkt-1560",
-    model: "KMKT-1560",
+    model: "MKT-1560",
     category: "Panel Benders",
     categorySlug: "panel-benders",
     description: "Panel Bender",

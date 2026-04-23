@@ -5,8 +5,8 @@ import MachineGallery from "@/components/MachineGallery";
 import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 
 const machines = [
-  { id: "kflp-6020", model: "KFLP-6020", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
-  { id: "kflp-6035", model: "KFLP-6035", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 export default function TubeProfileLasers() {
