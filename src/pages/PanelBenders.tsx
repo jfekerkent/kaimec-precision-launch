@@ -7,13 +7,13 @@ import MachineGallery from "@/components/MachineGallery";
 const machines = [
   {
     id: "kmkj-32220",
-    model: "KMKJ-32220",
+    model: "MKJ-32220",
     description: "Panel Bender",
     images: ["placeholder:1", "placeholder:2", "placeholder:3", "placeholder:4"],
   },
   {
     id: "kmkt-1560",
-    model: "KMKT-1560",
+    model: "MKT-1560",
     description: "Panel Bender",
     images: ["placeholder:1", "placeholder:2", "placeholder:3", "placeholder:4"],
   },
@@ -67,8 +67,8 @@ export default function PanelBenders() {
               <TableHeader>
                 <TableRow className="bg-primary/10">
                   <TableHead className="font-bold text-foreground min-w-[180px]">Specification</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KMKJ-32220</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KMKT-1560</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">MKJ-32220</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">MKT-1560</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

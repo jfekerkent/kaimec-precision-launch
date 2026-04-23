@@ -11,9 +11,9 @@ import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
 const featuredMachines = [
-  { tag: "Laser Cutting", name: "KFLO-P 1530", desc: "Open Type Fiber Laser Cutting Machine", image: kfloPrimaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Laser Cutting", name: "KFLC-1530", desc: "Closed Type Fiber Laser Cutting Machine", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Pipe & Profile", name: "KFLC-P 1530", desc: "Covered Type Pipe & Profile Fiber Laser", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Laser Cutting", name: "FLO-P 1530", desc: "Open Type Fiber Laser Cutting Machine", image: kfloPrimaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Laser Cutting", name: "FLC-1530", desc: "Closed Type Fiber Laser Cutting Machine", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Pipe & Profile", name: "FLC-P 1530", desc: "Covered Type Pipe & Profile Fiber Laser", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
 ];
 
 const stats = [

@@ -9,10 +9,10 @@ import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 
 const machines = [
-  { id: "kflo-1530", model: "KFLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
-  { id: "kflo-p-1530", model: "KFLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
-  { id: "kflc-1530", model: "KFLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
-  { id: "kflc-p-1530", model: "KFLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflo-1530", model: "FLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
+  { id: "kflo-p-1530", model: "FLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
+  { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflc-p-1530", model: "FLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 const specRows = [
@@ -82,19 +82,19 @@ export default function FiberLasers() {
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Product Highlights</h2>
           <div className="space-y-8">
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Open Type — KFLO-1530 & KFLO-P 1530</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530 & FLO-P 1530</h3>
               <p className="text-muted-foreground leading-relaxed">
                 With its compact size and cost-effective operation, this machine series stands out as the ideal choice for businesses operating within tight budgets. Occupying just 15 square meters, it's easily installed and comes in 1kW, 2kW, and 3kW power variants. Ideal for rapid and repetitive tasks, it features standard nesting software, flycut-cutting, auto-focus laser head, and Active Anti-collision Function. Constructed with one-piece aluminium alloy sheet-plate welded bridges for rigidity and precision. CE certified.
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Closed Type — KFLC-1530</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Closed Type — FLC-1530</h3>
               <p className="text-muted-foreground leading-relaxed">
                 The FLC series epitomizes speed, sensitivity, reliability, and cost-effectiveness. Capable of handling laser power of up to 30,000W, it's an excellent choice for cutting thick plates. Features double exchange table design for continuous cutting, wireless remote control, nesting software, nozzle cleaning system, and double camera setup. CE certified.
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Covered Type Pipe & Profile — KFLC-P 1530</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Covered Type Pipe & Profile — FLC-P 1530</h3>
               <p className="text-muted-foreground leading-relaxed">
                 The FLC-P series is a fusion of speed, sensitivity, reliability and cost-effectiveness tailored for both sheet metal and pipe/profile cutting. Accommodates laser power up to 20,000W. Features 6-meter pipe/profile cutting length (extendable to 9m), pipe diameters up to 350mm, double exchange table, wireless remote control, nozzle cleaning system, and double camera setup. CE certified.
               </p>
@@ -111,10 +111,10 @@ export default function FiberLasers() {
               <TableHeader>
                 <TableRow className="bg-primary/10">
                   <TableHead className="font-bold text-foreground min-w-[180px]">Specification</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KFLO-1530</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KFLO-P 1530</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KFLC-1530</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">KFLC-P 1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLO-1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLO-P 1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLC-1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLC-P 1530</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

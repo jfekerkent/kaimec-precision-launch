@@ -5,9 +5,9 @@ import MachineGallery from "@/components/MachineGallery";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 
 const machines = [
-  { id: "kmkt-1560", model: "KMKT-1560", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
-  { id: "kmkt-32135", model: "KMKT-32135", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
-  { id: "kmkj-32220", model: "KMKJ-32220", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kmkt-1560", model: "MKT-1560", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kmkt-32135", model: "MKT-32135", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kmkj-32220", model: "MKJ-32220", description: "Press Brake", images: [pressBrakeImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
 ];
 
 export default function PressBrakes() {
