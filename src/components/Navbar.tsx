@@ -31,7 +31,7 @@ export default function Navbar() {
           <img
             src={logoImg}
             alt="KAIMEC Machines"
-            style={{ height: "52px", width: "auto" }}
+            style={{ height: "70px", width: "auto" }}
           />
         </Link>
 
