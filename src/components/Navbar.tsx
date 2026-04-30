@@ -44,7 +44,7 @@ export default function Navbar() {
               className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
                 location.pathname === link.to
                   ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-[#1A1A1A] hover:text-primary"
               }`}
             >
               {link.label}
@@ -53,7 +53,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#1A1A1A] hover:text-primary transition-colors rounded-md"
             >
               More <ChevronDown className="h-3 w-3" />
             </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
                     key={link.to}
                     to={link.to}
                     onClick={() => setMoreOpen(false)}
-                    className="block px-4 py-2 text-sm text-secondary-foreground hover:bg-muted transition-colors"
+                    className="block px-4 py-2 text-sm text-[#1A1A1A] bg-white hover:bg-[#F4F5F7] hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
