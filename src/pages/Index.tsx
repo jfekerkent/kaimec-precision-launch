@@ -51,7 +51,7 @@ export default function Index() {
         <div className="container relative py-28 md:py-40">
           <div className="max-w-2xl">
             <p className="section-label mb-4 text-white">Precision CNC Equipment. Factory-Direct to Your Floor.</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-white mb-6 text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-balance" style={{ color: "#FFFFFF" }}>
               Cut Faster. Cut Cleaner. Built for Your Production Floor.
             </h1>
             <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl">
