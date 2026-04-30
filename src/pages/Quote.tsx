@@ -60,6 +60,8 @@ export default function Quote() {
     zip: "",
     timeline: "",
     message: "",
+    location: "",
+    industry: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -90,6 +92,8 @@ export default function Quote() {
           zipCode: formData.zip || "N/A",
           timeline: formData.timeline || "N/A",
           message: formData.message || "N/A",
+          location: formData.location || "N/A",
+          industry: formData.industry || "N/A",
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -120,7 +124,7 @@ export default function Quote() {
             <div className="lg:col-span-3">
               <p className="section-label mb-3">Get Started</p>
               <h1 className="text-3xl md:text-4xl font-black text-foreground mb-2">
-                Get a Customized Quote
+                Request for Info
               </h1>
               <p className="text-muted-foreground mb-8">
                 Our engineers will respond within 1 business day.
@@ -157,6 +161,22 @@ export default function Quote() {
                       Email Address <span className="text-red-500">*</span>
                     </Label>
                     <Input id="email" name="email" type="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
+                  </div>
+
+                  {/* Your Location * */}
+                  <div>
+                    <Label htmlFor="location" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Your Location <span className="text-red-500">*</span>
+                    </Label>
+                    <Input id="location" name="location" placeholder="City, State" required value={formData.location} onChange={handleChange} className="bg-card border-border" />
+                  </div>
+
+                  {/* Industry or Application */}
+                  <div>
+                    <Label htmlFor="industry" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Industry or Application
+                    </Label>
+                    <Input id="industry" name="industry" placeholder="e.g. Sheet metal fab, HVAC, structural steel" value={formData.industry} onChange={handleChange} className="bg-card border-border" />
                   </div>
 
                   {/* Machine * */}
