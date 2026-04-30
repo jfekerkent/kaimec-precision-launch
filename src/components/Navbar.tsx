@@ -15,7 +15,7 @@ const navLinks = [
 
 const moreLinks = [
   { label: "About Us", to: "/about" },
-  { label: "Request a Quote", to: "/quote" },
+  { label: "Request for Info", to: "/quote" },
 ];
 
 export default function Navbar() {
@@ -84,7 +84,7 @@ export default function Navbar() {
             (714) 258-8526
           </a>
           <Link to="/quote">
-            <Button className="font-bold">Request Quote</Button>
+            <Button className="font-bold">Request for Info</Button>
           </Link>
           <button
             className="lg:hidden text-foreground"
