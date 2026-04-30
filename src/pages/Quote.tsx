@@ -245,7 +245,7 @@ export default function Quote() {
                   <Textarea name="message" placeholder="Additional details or specifications" rows={4} value={formData.message} onChange={handleChange} className="bg-card border-border" />
 
                   {error && <p className="text-red-500 text-sm">{error}</p>}
-                  <Button type="submit" size="lg" disabled={isLoading || !formData.fullName || !formData.email || !formData.machine} className="font-bold px-10 w-full sm:w-auto">
+                  <Button type="submit" size="lg" disabled={isLoading || !formData.fullName || !formData.email || !formData.machine || !formData.location} className="font-bold px-10 w-full sm:w-auto">
                     {isLoading ? "Sending..." : "Submit Request"}
                   </Button>
                 </form>
