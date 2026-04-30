@@ -29,8 +29,8 @@ export default function Machines() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">Full Catalog</p>
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-4">Our Machines</h1>
-          <p className="text-lg text-muted-foreground">Browse our complete range of precision industrial machinery by category.</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Our Machines</h1>
+          <p className="text-lg text-white/80">Browse our complete range of precision industrial machinery by category.</p>
         </div>
       </section>
 

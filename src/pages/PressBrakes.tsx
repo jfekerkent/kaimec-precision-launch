@@ -16,8 +16,8 @@ export default function PressBrakes() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">Machine Catalog</p>
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-4">Press Brakes</h1>
-          <p className="text-lg text-muted-foreground">CNC hydraulic and electric press brakes for precision metal bending.</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Press Brakes</h1>
+          <p className="text-lg text-white/80">CNC hydraulic and electric press brakes for precision metal bending.</p>
         </div>
       </section>
 

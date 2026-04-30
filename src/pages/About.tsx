@@ -25,8 +25,8 @@ export default function About() {
       <section className="py-20 md:py-28 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">About Us</p>
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-6">About KAIMEC Machines</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-6">About KAIMEC Machines</h1>
+          <p className="text-lg text-white/80 leading-relaxed">
             KAIMEC is a specialized division offering advanced CNC fabrication machinery beyond standard catalogs. Backed by 50+ years of combined industry experience, we connect US manufacturers with precision equipment that delivers real production advantages.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function About() {
       {/* Why Choose Us */}
       <section className="py-20 bg-secondary">
         <div className="container max-w-2xl">
-          <h2 className="text-3xl font-black text-foreground text-center mb-10">Why Choose KAIMEC?</h2>
+          <h2 className="text-3xl font-black text-white text-center mb-10">Why Choose KAIMEC?</h2>
           <ul className="space-y-4">
             {reasons.map((r) => (
               <li key={r} className="flex gap-3 items-start">
