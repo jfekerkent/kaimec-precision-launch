@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="KAIMEC Machines"
-                style={{ height: "48px", width: "auto", filter: "brightness(0) invert(1)" }}
+                style={{ height: "65px", width: "auto", filter: "brightness(0) invert(1)" }}
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
