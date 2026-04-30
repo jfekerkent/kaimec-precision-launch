@@ -46,11 +46,7 @@ export default function MachineGallery({ images, model }: MachineGalleryProps) {
 
   const renderImage = (src: string, className: string) => {
     if (isPlaceholder(src)) {
-      return (
-        <div className={`flex items-center justify-center bg-[#1a1a1a] ${className}`}>
-          <span className="text-primary font-bold text-sm text-center px-4">{model}</span>
-        </div>
-      );
+      return <div className={`bg-[#1A1A1A] ${className}`} />;
     }
     return <img src={src} alt={model} className={`object-cover ${className}`} />;
   };

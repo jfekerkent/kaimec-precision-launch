@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import MachineGallery from "@/components/MachineGallery";
-import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
+import flp6035Front from "@/assets/machine-flp-6035-front.png";
+import flp6035Side from "@/assets/machine-flp-6035-side.png";
+import flp6020Front from "@/assets/machine-flp-6020-front.png";
 
 const machines = [
-  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
-  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [tubeLaserImg, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser", images: [flp6020Front] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [flp6035Front, flp6035Side] },
 ];
 
 export default function TubeProfileLasers() {
