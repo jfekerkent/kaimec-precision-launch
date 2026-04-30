@@ -15,7 +15,7 @@ const navLinks = [
 
 const moreLinks = [
   { label: "About Us", to: "/about" },
-  { label: "Request a Quote", to: "/quote" },
+  { label: "Request for Info", to: "/quote" },
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -84,7 +84,7 @@ export default function Navbar() {
             (714) 258-8526
           </a>
           <Link to="/quote">
-            <Button className="font-bold">Request Quote</Button>
+            <Button className="font-bold">Request for Info</Button>
           </Link>
           <button
             className="lg:hidden text-foreground"

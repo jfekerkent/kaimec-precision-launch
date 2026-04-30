@@ -4,7 +4,7 @@ import logoImg from "@/assets/kaimec-logo-dark.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary">
+    <footer className="border-t border-border bg-secondary text-secondary-foreground">
       <div className="container py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -32,7 +32,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {[{ label: "Home", to: "/" }, { label: "About Us", to: "/about" }, { label: "Request a Quote", to: "/quote" }].map((l) => (
+              {[{ label: "Home", to: "/" }, { label: "About Us", to: "/about" }, { label: "Request for Info", to: "/quote" }].map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">{l.label}</Link>
                 </li>

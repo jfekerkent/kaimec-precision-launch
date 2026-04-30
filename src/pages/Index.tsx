@@ -50,12 +50,12 @@ export default function Index() {
         </div>
         <div className="container relative py-28 md:py-40">
           <div className="max-w-2xl">
-            <p className="section-label mb-4">Precision Fiber Lasers & Fabrication Equipment</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-foreground mb-6 text-balance">
+            <p className="section-label mb-4 text-white">Precision CNC Equipment. Factory-Direct to Your Floor.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-white mb-6 text-balance">
               Cut Faster. Cut Cleaner. Built for Your Production Floor.
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-              KAIMEC sells and supports Mekotek CNC fiber lasers, tube lasers, press brakes, and panel benders — precision-engineered machines, backed by a U.S. team in Tustin, CA.
+            <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl">
+              KAIMEC offers CNC fiber lasers, press brakes, and panel benders not available through standard distributors — backed by US-based engineers and California inventory.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/machines">
@@ -64,7 +64,7 @@ export default function Index() {
                 </Button>
               </Link>
               <Link to="/quote">
-                <Button variant="outline" size="lg" className="font-bold text-base px-8 border-foreground/30 text-foreground hover:bg-foreground/10">
+                <Button variant="outline" size="lg" className="font-bold text-base px-8 border-white/30 bg-transparent text-white hover:bg-white/10">
                   Talk to a Specialist
                 </Button>
               </Link>
