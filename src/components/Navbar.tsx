@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/kaimec-logo-dark.png";
+import logoImg from "@/assets/kaimec-logo-light.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -31,7 +31,7 @@ export default function Navbar() {
           <img
             src={logoImg}
             alt="KAIMEC Machines"
-            className="h-12 w-auto"
+            style={{ height: "40px", width: "auto" }}
           />
         </Link>
 
