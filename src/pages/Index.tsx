@@ -50,11 +50,11 @@ export default function Index() {
         </div>
         <div className="container relative py-28 md:py-40">
           <div className="max-w-2xl">
-            <p className="section-label mb-4 text-white">Precision CNC Equipment. Factory-Direct to Your Floor.</p>
+            <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision CNC Equipment. Factory-Direct to Your Floor.</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-balance" style={{ color: "#FFFFFF" }}>
               Cut Faster. Cut Cleaner. Built for Your Production Floor.
             </h1>
-            <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl">
+            <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
               KAIMEC offers CNC fiber lasers, press brakes, and panel benders not available through standard distributors — backed by US-based engineers and California inventory.
             </p>
             <div className="flex flex-wrap gap-4">
