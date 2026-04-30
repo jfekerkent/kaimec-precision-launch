@@ -4,7 +4,7 @@ import logoImg from "@/assets/kaimec-logo-dark.png";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary">
+    <footer className="border-t border-border bg-secondary text-secondary-foreground">
       <div className="container py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
