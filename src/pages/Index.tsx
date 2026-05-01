@@ -5,6 +5,10 @@ import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero-main.png";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
+import flcP1530Img from "@/assets/flc-p-1530-1.png";
+import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
+import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
+import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
 import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
@@ -13,7 +17,7 @@ import facilityImg from "@/assets/facility.jpg";
 const featuredMachines = [
   { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "Open-frame fiber laser built for high-throughput sheet cutting. Steel, stainless, aluminum, brass — production speed, sub-0.1mm tolerance.", image: kfloPrimaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
   { tag: "Fiber Laser Cutting", name: "FLC-1530", desc: "Enclosed fiber laser for shops that demand cleaner environments and safer high-power cutting. Full enclosure, same precision.", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Cut round tube, square tube, angle iron, and custom profiles in one setup. No secondary ops. No fixturing headaches.", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Cut round tube, square tube, angle iron, and custom profiles in one setup. No secondary ops. No fixturing headaches.", image: flcP1530Img, gallery: [flcP1530Img2, flcP1530Img3, flcP2040Img2], link: "/machines/cnc-fiber-lasers", isProductShot: true },
 ];
 
 const stats = [
@@ -91,9 +95,7 @@ export default function Index() {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center mb-14">
-            <p className="section-label mb-3">Our Equipment</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Machines Built for Metal</h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Steel, stainless, aluminum, brass, copper, titanium. Aerospace, automotive, HVAC, fabrication. If it runs on your floor, we have the machine for it.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Fabrication Machines</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {featuredMachines.map((m) => (
