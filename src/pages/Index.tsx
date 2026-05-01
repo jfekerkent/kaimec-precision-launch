@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero-main.png";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
+import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
@@ -15,7 +16,7 @@ import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
 const featuredMachines = [
-  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "Open-frame fiber laser built for high-throughput sheet cutting. Steel, stainless, aluminum, brass — production speed, sub-0.1mm tolerance.", image: kfloPrimaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "Open-frame fiber laser built for high-throughput sheet cutting. Steel, stainless, aluminum, brass — production speed, sub-0.1mm tolerance.", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
   { tag: "Fiber Laser Cutting", name: "FLC-1530", desc: "Enclosed fiber laser for shops that demand cleaner environments and safer high-power cutting. Full enclosure, same precision.", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
   { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Cut round tube, square tube, angle iron, and custom profiles in one setup. No secondary ops. No fixturing headaches.", image: flcP1530Img, gallery: [flcP1530Img2, flcP1530Img3, flcP2040Img2], link: "/machines/cnc-fiber-lasers", isProductShot: true },
 ];
