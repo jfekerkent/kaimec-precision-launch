@@ -3,14 +3,107 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import MachineGallery from "@/components/MachineGallery";
 import flp6035Front from "@/assets/machine-flp-6035-front.png";
-import flp6035Side from "@/assets/machine-flp-6035-side.png";
 import flp6020Front from "@/assets/machine-flp-6020-front.png";
 import flp6020Side from "@/assets/machine-flp-6020-side.png";
 
 const machines = [
   { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser", images: [flp6020Front, flp6020Side] },
-  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [flp6035Front, flp6035Side] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [flp6035Front] },
 ];
+
+const productDescription: string[] = [
+  "Profiles from 15mm to 350mm in diameter, 6 meter full length cutting",
+  "Special support frame prevents tube sagging and deforming, improves cutting accuracy and prolongs chuck service life",
+  "Suitable for pipe, square profile, and rectangular cuts across agricultural machinery, construction equipment, defence, automotive, and industrial shelf sectors",
+  "Available in 2kW, 3kW and 4kW power options",
+  "Various tube cutting lengths and unloading lengths available",
+  "Optional Automatic Loading",
+  "Cuts H, P, I-U profiles and other special shaped pipes with high repeat accuracy",
+  "Standard 6 meter cutting length, extendable to 9 meters",
+  "Maximum pipe diameter: 350mm",
+  "One-button chuck clamping and auto-centering",
+  "Wireless remote control for blowing, cutting, pause, calibration and simulation",
+  "Standard nesting software with flycut feature — no operator required for part preparation",
+  "CE certified, European production standards",
+  "Laser head with auto focus, Active Anti-collision Function and auto obstacle detection",
+  "Cutting heads with automatic cooling",
+];
+
+const baseSpecs: [string, string][] = [
+  ["Loading Capacity", "850 kg"],
+  ["Z Axis Travel", "400mm"],
+  ["X-Y-Z Axis Guideway", "4 Point Ball Caged"],
+  ["X-Y Axis Drive System", "Rack"],
+  ["Z Axis Drive System", "Ballscrew"],
+  ["X-Y Axis Speed", "80 m/min"],
+  ["Z Axis Speed", "30 m/min"],
+  ["X-Y Position Accuracy", "0.05mm"],
+  ["X-Y Repeatability Accuracy", "0.03mm"],
+  ["Max. Profile Length", "6100mm"],
+];
+
+const tailSpecs: [string, string][] = [
+  ["Laser Source", "Raycus / Han's / JPT"],
+  ["Laser Source Output Power", "1000 / 2000 / 3000W"],
+  ["CNC Control System", "Fscut"],
+  ["Laser Cutting Head", "Raytools / BOCI / WSX"],
+  ["Assist Gases", "Air / Oxygen / Nitrogen"],
+  ["Cooling Type", "Water Cooling"],
+  ["Machine Weight", "6800 kg"],
+  ["Machine Dimensions (WxLxH)", "2000 x 10380 x 2660mm"],
+  ["Graphic Format", "dwg / dxf / stp"],
+  ["Voltage", "380V / 50Hz"],
+  ["Certifications", "CE / ISO"],
+  ["Warranty", "2 Years"],
+];
+
+const specs6020: [string, string][] = [
+  ...baseSpecs,
+  ["Max. Profile Dimensions", "Ø 220mm"],
+  ...tailSpecs,
+];
+
+const specs6035: [string, string][] = [
+  ...baseSpecs,
+  ["Max. Profile Dimensions", "Ø 350mm"],
+  ...tailSpecs,
+];
+
+function SpecTable({ title, rows }: { title: string; rows: [string, string][] }) {
+  return (
+    <div className="mb-8">
+      <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-3">{title}</h4>
+      <div className="border border-border bg-white">
+        <table className="w-full text-sm">
+          <tbody>
+            {rows.map(([k, v], i) => (
+              <tr key={k} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
+                <td className="px-4 py-2 font-medium text-foreground border-b border-border w-1/2">{k}</td>
+                <td className="px-4 py-2 text-muted-foreground border-b border-border">{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function DescriptionList({ items }: { items: string[] }) {
+  return (
+    <div className="mb-8">
+      <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-3">Product Description</h4>
+      <ul className="space-y-2 text-sm text-muted-foreground bg-white border border-border p-5">
+        {items.map((it) => (
+          <li key={it} className="flex gap-2">
+            <span className="text-secondary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-secondary" />
+            <span>{it}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function TubeProfileLasers() {
   return (
@@ -28,7 +121,7 @@ export default function TubeProfileLasers() {
           <div className="grid gap-8 md:grid-cols-2 max-w-3xl mx-auto">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <MachineGallery images={m.images} model={m.model} />
+                <MachineGallery images={m.images} model={m.model} background="light" fit="contain" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
@@ -39,16 +132,22 @@ export default function TubeProfileLasers() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 rounded-lg border border-border bg-card p-10 text-center max-w-3xl mx-auto">
-            <p className="text-muted-foreground text-lg mb-6">
-              Full specifications coming soon — contact us at{" "}
-              <a href="mailto:sales@kaimec.com" className="text-primary hover:underline">sales@kaimec.com</a>{" "}
-              for details.
-            </p>
-            <Link to="/quote">
-              <Button size="lg" className="font-bold px-10">Request a Quote</Button>
-            </Link>
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="container">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <h3 className="text-2xl font-black text-secondary mb-6">FLP-6020</h3>
+              <DescriptionList items={productDescription} />
+              <SpecTable title="Specifications" rows={specs6020} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-black text-secondary mb-6">FLP-6035</h3>
+              <DescriptionList items={productDescription} />
+              <SpecTable title="Specifications" rows={specs6035} />
+            </div>
           </div>
         </div>
       </section>
