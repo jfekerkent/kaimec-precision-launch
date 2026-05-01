@@ -9,6 +9,7 @@ import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import kflo1530Img from "@/assets/machine-kflo-1530.png";
 import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
+import flcP1530Img from "@/assets/flc-p-1530-1.png";
 
 const imageMap: Record<string, string> = {
   "fiber-laser": fiberLaserImg,
@@ -18,6 +19,7 @@ const imageMap: Record<string, string> = {
   "gun-drill": gunDrillImg,
   "kflo-1530": kflo1530Img,
   "kflo-p-1530": kfloP1530Img,
+  "kflc-p-1530": flcP1530Img,
 };
 
 export default function MachineCategory() {
@@ -51,7 +53,10 @@ export default function MachineCategory() {
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {machines.map((m) => (
-              <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
+              <div
+                key={m.id}
+                className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors"
+              >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={imageMap[m.image]}
