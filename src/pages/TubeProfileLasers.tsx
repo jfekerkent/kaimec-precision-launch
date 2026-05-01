@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import MachineGallery from "@/components/MachineGallery";
 import flp6035Front from "@/assets/machine-flp-6035-front.png";
+import flp6035Side from "@/assets/machine-flp-6035-side.png";
 import flp6020Front from "@/assets/machine-flp-6020-front.png";
 import flp6020Side from "@/assets/machine-flp-6020-side.png";
 
 const machines = [
   { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser", images: [flp6020Front, flp6020Side] },
-  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [flp6035Front] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser", images: [flp6035Front, flp6035Side] },
 ];
 
 const productDescription: string[] = [
