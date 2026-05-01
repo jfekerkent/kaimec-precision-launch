@@ -4,9 +4,11 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 interface MachineGalleryProps {
   images: string[];
   model: string;
+  background?: "dark" | "light";
+  fit?: "cover" | "contain";
 }
 
-export default function MachineGallery({ images, model }: MachineGalleryProps) {
+export default function MachineGallery({ images, model, background = "dark", fit = "cover" }: MachineGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [fade, setFade] = useState(false);
@@ -44,18 +46,21 @@ export default function MachineGallery({ images, model }: MachineGalleryProps) {
 
   const isPlaceholder = (src: string) => src.startsWith("placeholder:");
 
+  const bgClass = background === "light" ? "bg-[#f8f8f8]" : "bg-[#1A1A1A]";
+  const objectClass = fit === "contain" ? "object-contain" : "object-cover";
+
   const renderImage = (src: string, className: string) => {
     if (isPlaceholder(src)) {
       return <div className={`bg-[#1A1A1A] ${className}`} />;
     }
-    return <img src={src} alt={model} className={`object-cover ${className}`} />;
+    return <img src={src} alt={model} className={`${objectClass} ${className}`} />;
   };
 
   return (
     <>
       {/* Main image */}
       <div
-        className="aspect-[4/3] overflow-hidden cursor-pointer relative"
+        className={`aspect-[4/3] overflow-hidden cursor-pointer relative ${bgClass}`}
         onClick={() => setLightboxOpen(true)}
       >
         <div className={`h-full w-full transition-opacity duration-150 ${fade ? "opacity-0" : "opacity-100"}`}>
