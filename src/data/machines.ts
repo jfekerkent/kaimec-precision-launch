@@ -99,21 +99,12 @@ export const machines: Machine[] = [
   },
   {
     id: "gun-drilling-machine",
-    model: "Gun Drilling Machine",
+    model: "TSK-2150 × 3000mm",
     category: "Gun Drills",
     categorySlug: "gun-drills",
-    description: "Gun Drilling Machine",
-    specs: { "Max Drilling Depth": "1,500 mm", "Drill Diameter Range": "3–32 mm", "Spindle Speed": "500–6,000 RPM", "Coolant Pressure": "70 bar" },
-    image: "gun-drill",
-  },
-  {
-    id: "deep-hole-drilling-machine",
-    model: "Deep Hole Drilling Machine",
-    category: "Gun Drills",
-    categorySlug: "gun-drills",
-    description: "Deep Hole Drilling Machine",
-    specs: { "Max Drilling Depth": "2,500 mm", "Drill Diameter Range": "5–40 mm", "Spindle Speed": "300–4,500 RPM", "Coolant Pressure": "100 bar" },
-    image: "gun-drill",
+    description: "Deep Hole Drilling & Boring Machine",
+    specs: { "Drilling Diameter": "Ø30 – Ø150 mm", "Boring Diameter": "Ø40 – Ø500 mm", "Max Processing Depth": "3,000 mm", "Spindle Motor": "30 kW", "Machine Weight": "~39 Tons" },
+    image: "tsk-2150",
   },
 ];
 

@@ -10,8 +10,6 @@ import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
 import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
-import pressBrakeImg from "@/assets/machine-press-brake.jpg";
-import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
 const featuredMachines = [

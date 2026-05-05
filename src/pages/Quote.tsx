@@ -24,9 +24,7 @@ const machineOptions = [
   "FLP-6035",
   "MKT-1560",
   "MKT-32135",
-  "MKJ-32220",
-  "Gun Drilling Machine",
-  "Deep Hole Drilling Machine",
+  "TSK-2150 × 3000mm",
   "Not Sure Yet",
 ];
 
