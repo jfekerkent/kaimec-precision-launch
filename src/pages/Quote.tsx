@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,9 +25,7 @@ const machineOptions = [
   "FLP-6035",
   "MKT-1560",
   "MKT-32135",
-  "MKJ-32220",
-  "Gun Drilling Machine",
-  "Deep Hole Drilling Machine",
+  "TSK-2150 × 3000mm",
   "Not Sure Yet",
 ];
 
@@ -46,6 +45,8 @@ const timelineOptions = [
 ];
 
 export default function Quote() {
+  const [searchParams] = useSearchParams();
+  const initialMachine = searchParams.get("machine") || "";
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -54,7 +55,7 @@ export default function Quote() {
     fullName: "",
     companyName: "",
     email: "",
-    machine: "",
+    machine: initialMachine,
     phone: "",
     state: "",
     zip: "",
@@ -63,6 +64,10 @@ export default function Quote() {
     location: "",
     industry: "",
   });
+
+  useEffect(() => {
+    if (initialMachine) setFormData((p) => ({ ...p, machine: initialMachine }));
+  }, [initialMachine]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -184,7 +189,7 @@ export default function Quote() {
                     <Label className="text-sm font-medium text-foreground mb-1.5 block">
                       Machine of Interest <span className="text-red-500">*</span>
                     </Label>
-                    <Select required onValueChange={(value) => setFormData({ ...formData, machine: value })}>
+                    <Select required value={formData.machine} onValueChange={(value) => setFormData({ ...formData, machine: value })}>
                       <SelectTrigger className="bg-card border-border">
                         <SelectValue placeholder="Select a Machine" />
                       </SelectTrigger>

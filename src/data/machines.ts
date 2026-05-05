@@ -12,8 +12,6 @@ export const categories = [
   { name: "Fiber Laser Cutting Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
-  
-  { name: "Panel Benders", slug: "panel-benders", description: "CNC panel bending machines for high-speed, automated sheet metal forming." },
   { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
@@ -100,40 +98,13 @@ export const machines: Machine[] = [
     image: "press-brake",
   },
   {
-    id: "panel-kmkj-32220",
-    model: "MKJ-32220",
-    category: "Panel Benders",
-    categorySlug: "panel-benders",
-    description: "Panel Bender",
-    specs: { "Bending Length": "2,200 mm", "Max Sheet Width": "3,200 mm", "Material Thickness": "3 mm mild / 2 mm SS", "Control": "CNC Proprietary" },
-    image: "panel-bender",
-  },
-  {
-    id: "panel-kmkt-1560",
-    model: "MKT-1560",
-    category: "Panel Benders",
-    categorySlug: "panel-benders",
-    description: "Panel Bender",
-    specs: { "Bending Length": "1,560 mm", "Max Sheet Width": "2,500 mm", "Material Thickness": "2.5 mm mild steel", "Control": "CNC Proprietary" },
-    image: "panel-bender",
-  },
-  {
     id: "gun-drilling-machine",
-    model: "Gun Drilling Machine",
+    model: "TSK-2150 × 3000mm",
     category: "Gun Drills",
     categorySlug: "gun-drills",
-    description: "Gun Drilling Machine",
-    specs: { "Max Drilling Depth": "1,500 mm", "Drill Diameter Range": "3–32 mm", "Spindle Speed": "500–6,000 RPM", "Coolant Pressure": "70 bar" },
-    image: "gun-drill",
-  },
-  {
-    id: "deep-hole-drilling-machine",
-    model: "Deep Hole Drilling Machine",
-    category: "Gun Drills",
-    categorySlug: "gun-drills",
-    description: "Deep Hole Drilling Machine",
-    specs: { "Max Drilling Depth": "2,500 mm", "Drill Diameter Range": "5–40 mm", "Spindle Speed": "300–4,500 RPM", "Coolant Pressure": "100 bar" },
-    image: "gun-drill",
+    description: "Deep Hole Drilling & Boring Machine",
+    specs: { "Drilling Diameter": "Ø30 – Ø150 mm", "Boring Diameter": "Ø40 – Ø500 mm", "Max Processing Depth": "3,000 mm", "Spindle Motor": "30 kW", "Machine Weight": "~39 Tons" },
+    image: "tsk-2150",
   },
 ];
 

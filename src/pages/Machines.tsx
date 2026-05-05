@@ -14,7 +14,6 @@ const categoryImages: Record<string, string> = {
   "cnc-fiber-lasers": fiberLaserImg,
   "tube-profile-lasers": tubeLaserImg,
   "press-brakes": pressBrakeImg,
-  "panel-benders": pressBrakeImg,
   "gun-drills": gunDrillImg,
 };
 

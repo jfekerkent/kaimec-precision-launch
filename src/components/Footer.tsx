@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Leading manufacturer of high-precision fiber laser cutting machines, press brakes, and panel benders for modern industrial fabrication.
+              Leading manufacturer of high-precision fiber laser cutting machines, press brakes, and deep hole drilling systems for modern industrial fabrication.
             </p>
             <div className="flex gap-3 mt-5">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
@@ -48,7 +48,7 @@ export default function Footer() {
                 { label: "CNC Fiber Lasers", to: "/machines/cnc-fiber-lasers" },
                 { label: "Tube & Profile Lasers", to: "/machines/tube-profile-lasers" },
                 { label: "Press Brakes", to: "/machines/press-brakes" },
-                { label: "Panel Benders", to: "/machines/panel-benders" },
+                { label: "Gun Drills", to: "/machines/gun-drills" },
               ].map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">{l.label}</Link>
