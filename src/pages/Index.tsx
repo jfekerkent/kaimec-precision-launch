@@ -11,7 +11,6 @@ import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
 import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
-import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import facilityImg from "@/assets/facility.jpg";
 
@@ -60,7 +59,7 @@ export default function Index() {
               Cut Faster. Cut Cleaner. Built for Your Production Floor.
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
-              KAIMEC offers CNC fiber lasers, press brakes, and panel benders not available through standard distributors — backed by US-based engineers and California inventory.
+              KAIMEC offers CNC fiber lasers, press brakes, and deep hole drilling systems not available through standard distributors — backed by US-based engineers and California inventory.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/machines">
