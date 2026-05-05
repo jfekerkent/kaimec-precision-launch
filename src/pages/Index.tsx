@@ -124,7 +124,7 @@ export default function Index() {
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
-              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">The machines your shop needs. The support your floor demands.</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-4">The machines your shop needs. The support your floor demands.</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">We're a focused precision equipment company — not a catalog brand. We carry Mekotek machines because they're what we'd put in our own shop. Every unit comes backed by our Southern California team, U.S. parts inventory, and direct technical support. No overseas tickets. No runaround.</p>
               <ul className="space-y-4 mb-8">
                 {whyPoints.map((p) => (
