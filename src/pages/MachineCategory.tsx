@@ -5,7 +5,6 @@ import { getMachinesByCategory, getCategoryBySlug } from "@/data/machines";
 import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
 import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
 import pressBrakeImg from "@/assets/machine-press-brake.jpg";
-import panelBenderImg from "@/assets/machine-panel-bender.jpg";
 import gunDrillImg from "@/assets/machine-gun-drill.jpg";
 import kflo1530Img from "@/assets/machine-kflo-1530.png";
 import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
@@ -15,7 +14,6 @@ const imageMap: Record<string, string> = {
   "fiber-laser": fiberLaserImg,
   "tube-laser": tubeLaserImg,
   "press-brake": pressBrakeImg,
-  "panel-bender": panelBenderImg,
   "gun-drill": gunDrillImg,
   "kflo-1530": kflo1530Img,
   "kflo-p-1530": kfloP1530Img,
