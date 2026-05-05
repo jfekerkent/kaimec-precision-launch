@@ -3,23 +3,26 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { categories, getMachinesByCategory } from "@/data/machines";
-import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
-import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
-import pressBrakeImg from "@/assets/machine-press-brake.jpg";
-import gunDrillImg from "@/assets/machine-gun-drill.jpg";
-import kflo1530Img from "@/assets/machine-kflo-1530.png";
-import kfloP1530Img from "@/assets/machine-kflo-p-1530.jpg";
-
-const categoryImages: Record<string, string> = {
-  "cnc-fiber-lasers": fiberLaserImg,
-  "tube-profile-lasers": tubeLaserImg,
-  "press-brakes": pressBrakeImg,
-  "gun-drills": gunDrillImg,
-};
+import kflo1530Img from "@/assets/machine-kflo-primary.png";
+import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
+import kflc1530Img from "@/assets/machine-kflc-1530.png";
+import flcP1530Img from "@/assets/flc-p-1530-1.png";
+import flp6020Front from "@/assets/machine-flp-6020-front.png";
+import flp6035Front from "@/assets/machine-flp-6035-front.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import mkt32135Img from "@/assets/machine-mkt-32135.png";
+import tskMain from "@/assets/tsk-2150-main.png";
 
 const machineImages: Record<string, string> = {
   "kflo-1530": kflo1530Img,
-  "kflo-p-1530": kfloP1530Img,
+  "kflo-p-1530": kfloTertiaryImg,
+  "kflc-1530": kflc1530Img,
+  "kflc-p-1530": flcP1530Img,
+  "kflp-6020": flp6020Front,
+  "kflp-6035": flp6035Front,
+  "kmkt-1560": mkt1560Img,
+  "kmkt-32135": mkt32135Img,
+  "gun-drilling-machine": tskMain,
 };
 
 export default function Machines() {
@@ -50,8 +53,8 @@ export default function Machines() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {machines.map((m) => (
                   <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img src={machineImages[m.image] || categoryImages[m.categorySlug]} alt={m.model} loading="lazy" width={800} height={600} className={`h-full w-full ${machineImages[m.image] ? "object-contain bg-white p-2" : "object-cover"}`} />
+                    <div className="aspect-[4/3] overflow-hidden bg-white">
+                      <img src={machineImages[m.id]} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-2" />
                     </div>
                     <div className="p-5">
                       <h3 className="text-lg font-bold text-foreground mb-1">{m.model}</h3>
