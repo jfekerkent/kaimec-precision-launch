@@ -89,15 +89,6 @@ export const machines: Machine[] = [
     image: "press-brake",
   },
   {
-    id: "kmkj-32220",
-    model: "MKJ-32220",
-    category: "Press Brakes",
-    categorySlug: "press-brakes",
-    description: "Press Brake",
-    specs: { "Tonnage": "220 tons", "Bending Length": "3,200 mm", "Stroke": "300 mm", "Controller": "DA-69T" },
-    image: "press-brake",
-  },
-  {
     id: "gun-drilling-machine",
     model: "TSK-2150 × 3000mm",
     category: "Gun Drills",
