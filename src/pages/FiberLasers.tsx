@@ -67,7 +67,7 @@ export default function FiberLasers() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <MachineGallery images={m.images} model={m.model} />
+                <MachineGallery images={m.images} model={m.model} background="light" fit="contain" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
