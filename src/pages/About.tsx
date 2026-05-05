@@ -1,79 +1,134 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Target, Lightbulb, Headphones, CheckCircle, MapPin, Phone, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
-
-const values = [
-  { icon: Target, title: "Our Mission", desc: "To provide US manufacturers with advanced fabrication machinery that's typically unavailable through standard distribution channels, backed by expert support." },
-  { icon: Lightbulb, title: "Our Expertise", desc: "With 50+ years of combined industry experience, our team understands the demands of modern sheet metal fabrication and CNC machining." },
-  { icon: Headphones, title: "Our Support", desc: "From initial consultation through installation and ongoing maintenance, our US-based service team is with you every step of the way." },
-];
-
-const reasons = [
-  "Specialized machines not found at standard distributors",
-  "Factory-direct pricing — no middleman markup",
-  "In-house engineering and applications support",
-  "US-based installation and service teams",
-  "2-year standard warranty on all machines",
-  "Over 500 machines successfully installed",
-];
+import shopFloorImg from "@/assets/about-shop-floor.jpg";
+import machinesImg from "@/assets/about-machines.jpg";
+import supportImg from "@/assets/about-support.jpg";
+import serveImg from "@/assets/about-serve.jpg";
 
 export default function About() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="py-20 md:py-28 bg-secondary">
-        <div className="container max-w-3xl text-center">
+      {/* SECTION 1 — Page Header */}
+      <section className="relative overflow-hidden bg-background py-24 md:py-32">
+        <div
+          className="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+          aria-hidden="true"
+        >
+          <span className="text-[18vw] font-black tracking-tighter text-foreground/[0.05] leading-none">
+            KAIMEC
+          </span>
+        </div>
+        <div className="container relative">
           <p className="section-label mb-3">About Us</p>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-6">About KAIMEC Machines</h1>
-          <p className="text-lg text-white/80 leading-relaxed">
-            KAIMEC is a specialized division offering advanced CNC fabrication machinery beyond standard catalogs. Backed by 50+ years of combined industry experience, we connect US manufacturers with precision equipment that delivers real production advantages.
-          </p>
+          <h1 className="text-5xl md:text-7xl font-black uppercase text-foreground tracking-tight">
+            About Us
+          </h1>
         </div>
       </section>
 
-      {/* Values */}
+      {/* SECTION 2 — Why Choose KAIMEC */}
+      <section className="relative overflow-hidden">
+        <img
+          src={shopFloorImg}
+          alt="CNC machine shop floor"
+          loading="lazy"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-secondary/85" />
+        <div className="container relative py-24 md:py-32">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight">
+              Why Choose KAIMEC?
+            </h2>
+            <p className="text-lg text-white/80 leading-relaxed">
+              KAIMEC is a focused precision equipment company — not a catalog brand. Based in Tustin, CA, we supply specialized CNC fabrication machines that serious shops can't find through standard distributors. Every machine we carry is backed by our Southern California team, U.S. parts inventory, and direct technical support. No overseas tickets. No runaround.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — Our Machines */}
+      <section className="py-20 md:py-28 bg-card">
+        <div className="container grid gap-12 lg:grid-cols-2 items-center">
+          <div className="overflow-hidden">
+            <img src={machinesImg} alt="Fiber laser cutting steel" loading="lazy" width={1280} height={960} className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <p className="section-label mb-3">Our Machines</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">Our Machines</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              We carry fiber lasers, press brakes, tube and profile lasers, and deep hole drilling machines — purpose-selected for production environments that demand precision and uptime. These are not catalog machines. Each model is vetted by our team and sold with full U.S. support behind it.
+            </p>
+            <Link to="/machines">
+              <Button className="font-bold px-8 uppercase">
+                View All Machines <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — U.S.-Based Support */}
       <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="grid gap-8 md:grid-cols-3">
-            {values.map((v) => (
-              <div key={v.title} className="rounded-lg border border-border bg-card p-8">
-                <v.icon className="h-10 w-10 text-primary mb-5" />
-                <h3 className="text-xl font-bold text-foreground mb-3">{v.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
+        <div className="container grid gap-12 lg:grid-cols-2 items-center">
+          <div className="lg:order-1 order-2">
+            <p className="section-label mb-3">U.S.-Based Support</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">U.S.-Based Support</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Every KAIMEC machine comes backed by our Tustin, CA team. We stock parts domestically, provide in-house engineering support, and show up when your floor needs us. Same-day support, no overseas tickets, no runaround — just direct access to people who know the machine.
+            </p>
+            <Link to="/quote">
+              <Button className="font-bold px-8 uppercase">
+                Contact Our Team <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="overflow-hidden lg:order-2 order-1">
+            <img src={supportImg} alt="Technician operating CNC machine" loading="lazy" width={1280} height={960} className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-secondary">
-        <div className="container max-w-2xl">
-          <h2 className="text-3xl font-black text-white text-center mb-10">Why Choose KAIMEC?</h2>
-          <ul className="space-y-4">
-            {reasons.map((r) => (
-              <li key={r} className="flex gap-3 items-start">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-muted-foreground">{r}</span>
-              </li>
-            ))}
-          </ul>
+      {/* SECTION 5 — Who We Serve */}
+      <section className="py-20 md:py-28 bg-card">
+        <div className="container grid gap-12 lg:grid-cols-2 items-center">
+          <div className="overflow-hidden">
+            <img src={serveImg} alt="Fabricated metal parts on shop floor" loading="lazy" width={1280} height={960} className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <p className="section-label mb-3">Who We Serve</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">Who We Serve</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              From job shops running single shifts to high-volume production facilities, KAIMEC serves manufacturers across the U.S. who need reliable machines and a support team that treats their floor like our own. If precision and uptime matter to your operation, we're the right partner.
+            </p>
+            <Link to="/quote">
+              <Button className="font-bold px-8 uppercase">
+                Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Contact Block */}
-      <section className="py-20">
-        <div className="container max-w-2xl text-center">
-          <h2 className="text-3xl font-black text-foreground mb-8">Get in Touch</h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-8 text-sm text-muted-foreground mb-8">
-            <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> 1231 Edinger Ave, Tustin, CA</div>
-            <a href="tel:7142588526" className="flex items-center gap-2 hover:text-primary transition-colors"><Phone className="h-4 w-4 text-primary" /> (714) 258-8526</a>
-            <a href="mailto:sales@kaimec.com" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail className="h-4 w-4 text-primary" /> sales@kaimec.com</a>
-          </div>
-          <Link to="/quote">
-            <Button className="font-bold px-8">Request a Quote</Button>
-          </Link>
+      {/* SECTION 6 — Our Mission */}
+      <section className="relative overflow-hidden bg-secondary py-24 md:py-32">
+        <div
+          className="pointer-events-none absolute inset-0 flex items-center justify-center select-none"
+          aria-hidden="true"
+        >
+          <span className="text-[20vw] font-black tracking-tighter text-white/[0.04] leading-none">
+            MISSION
+          </span>
+        </div>
+        <div className="container relative max-w-4xl text-center">
+          <p className="section-label mb-4">Our Mission</p>
+          <p className="text-2xl md:text-4xl font-black uppercase text-white leading-tight tracking-tight">
+            KAIMEC exists to put the right machine on your floor — and keep it running. We do that through honest pricing, machines we stand behind, and support that doesn't disappear after the sale.
+          </p>
         </div>
       </section>
     </Layout>
