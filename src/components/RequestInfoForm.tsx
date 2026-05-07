@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { CheckCircle } from "lucide-react";
@@ -31,12 +30,13 @@ export const machineOptions = [
   "Not Sure Yet",
 ];
 
-const timelineOptions = [
-  "ASAP",
-  "Within 30 Days",
-  "Within 3–6 Months",
+const priorityOptions = [
+  "Immediate",
+  "Within 3 Months",
   "Budgeting / Information Request",
 ];
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Props {
   machine?: string;
@@ -53,19 +53,14 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [wantCall, setWantCall] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    companyName: "",
+    name: "",
     email: "",
+    companyName: "",
+    address: "",
     machine: resolveInitial(),
-    phone: "",
-    zip: "",
-    timeline: "",
+    priority: "",
     message: "",
-    location: "",
-    industry: "",
   });
 
   useEffect(() => {
@@ -76,37 +71,26 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (name === "zip") {
-      const digits = value.replace(/\D/g, "").slice(0, 5);
-      setFormData({ ...formData, zip: digits });
-      return;
-    }
     setFormData({ ...formData, [name]: value });
   };
 
   const submitToHubspot = async () => {
-    const location = formData.location.trim();
-    let city = "";
-    let state = "";
-    if (location) {
-      const idx = location.indexOf(",");
-      if (idx === -1) {
-        city = location;
-      } else {
-        city = location.slice(0, idx).trim();
-        state = location.slice(idx + 1).trim();
-      }
+    const fullName = formData.name.trim();
+    let firstName = fullName;
+    let lastName = "";
+    const spaceIdx = fullName.indexOf(" ");
+    if (spaceIdx !== -1) {
+      firstName = fullName.slice(0, spaceIdx).trim();
+      lastName = fullName.slice(spaceIdx + 1).trim();
     }
     const map: Array<[string, string]> = [
-      ["firstname", formData.firstName],
-      ["lastname", formData.lastName],
+      ["firstname", firstName],
+      ["lastname", lastName],
       ["email", formData.email],
       ["company", formData.companyName],
-      ["phone", wantCall ? formData.phone : ""],
-      ["city", city],
-      ["state", state],
-      ["industry_or_application", formData.industry],
+      ["address", formData.address],
       ["machine_of_interest", formData.machine],
+      ["priority_of_interest", formData.priority],
       ["message", formData.message],
     ];
     const fields = map
@@ -143,19 +127,13 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     setIsLoading(true);
     setError("");
 
-    const requestCallBack = wantCall ? "Yes" : "No";
     const emailVars = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      companyName: formData.companyName,
+      name: formData.name,
       email: formData.email,
-      phone: wantCall ? formData.phone : "",
-      location: formData.location,
-      zipCode: formData.zip,
-      industry: formData.industry,
+      companyName: formData.companyName,
+      address: formData.address,
       machine: formData.machine,
-      timeline: formData.timeline,
-      requestCallBack,
+      priority: formData.priority,
       message: formData.message,
     };
 
@@ -165,8 +143,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
         EMAILJS_SERVICE_ID,
         EMAILJS_REPLY_TEMPLATE,
         {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          name: formData.name,
           email: formData.email,
           machine: formData.machine,
         },
@@ -202,36 +179,17 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     );
   }
 
-  const submitDisabled =
-    isLoading ||
-    !formData.firstName ||
-    !formData.email ||
-    !formData.machine ||
-    !formData.location ||
-    !formData.industry;
+  const emailValid = EMAIL_REGEX.test(formData.email.trim());
+  const submitDisabled = isLoading || !formData.name.trim() || !emailValid;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {/* First & Last Name */}
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <Label htmlFor="firstName" className="text-sm font-medium text-foreground mb-1.5 block">
-            First Name <span className="text-red-500">*</span>
-          </Label>
-          <Input id="firstName" name="firstName" placeholder="First Name" required value={formData.firstName} onChange={handleChange} className="bg-card border-border" />
-        </div>
-        <div>
-          <Label htmlFor="lastName" className="text-sm font-medium text-foreground mb-1.5 block">
-            Last Name
-          </Label>
-          <Input id="lastName" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} className="bg-card border-border" />
-        </div>
-      </div>
-
-      {/* Company */}
+      {/* Name */}
       <div>
-        <Label htmlFor="companyName" className="text-sm font-medium text-foreground mb-1.5 block">Company Name</Label>
-        <Input id="companyName" name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="bg-card border-border" />
+        <Label htmlFor="name" className="text-sm font-medium text-foreground mb-1.5 block">
+          Name <span className="text-red-500">*</span>
+        </Label>
+        <Input id="name" name="name" placeholder="Name" required value={formData.name} onChange={handleChange} className="bg-card border-border" />
       </div>
 
       {/* Email */}
@@ -242,28 +200,22 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
         <Input id="email" name="email" type="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
       </div>
 
-      {/* Location */}
+      {/* Company */}
       <div>
-        <Label htmlFor="location" className="text-sm font-medium text-foreground mb-1.5 block">
-          Your Location <span className="text-red-500">*</span>
-        </Label>
-        <Input id="location" name="location" placeholder="City, State" required value={formData.location} onChange={handleChange} className="bg-card border-border" />
+        <Label htmlFor="companyName" className="text-sm font-medium text-foreground mb-1.5 block">Company Name</Label>
+        <Input id="companyName" name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} className="bg-card border-border" />
       </div>
 
-      {/* Industry (now required) */}
+      {/* Address */}
       <div>
-        <Label htmlFor="industry" className="text-sm font-medium text-foreground mb-1.5 block">
-          Industry or Application <span className="text-red-500">*</span>
-        </Label>
-        <Input id="industry" name="industry" placeholder="e.g. Sheet metal fab, HVAC, structural steel" required value={formData.industry} onChange={handleChange} className="bg-card border-border" />
+        <Label htmlFor="address" className="text-sm font-medium text-foreground mb-1.5 block">Address</Label>
+        <Input id="address" name="address" placeholder="City, State or address" value={formData.address} onChange={handleChange} className="bg-card border-border" />
       </div>
 
       {/* Machine */}
       <div>
-        <Label className="text-sm font-medium text-foreground mb-1.5 block">
-          Machine of Interest <span className="text-red-500">*</span>
-        </Label>
-        <Select required value={formData.machine} onValueChange={(value) => setFormData({ ...formData, machine: value })}>
+        <Label className="text-sm font-medium text-foreground mb-1.5 block">Machine of Interest</Label>
+        <Select value={formData.machine} onValueChange={(value) => setFormData({ ...formData, machine: value })}>
           <SelectTrigger className="bg-card border-border">
             <SelectValue placeholder="Select a Machine" />
           </SelectTrigger>
@@ -275,31 +227,14 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
         </Select>
       </div>
 
-      {/* Have someone call me */}
-      <div className="space-y-3">
-        <div className="flex items-center space-x-2">
-          <Checkbox id="wantCall" checked={wantCall} onCheckedChange={(checked) => setWantCall(checked === true)} />
-          <Label htmlFor="wantCall" className="text-sm text-foreground cursor-pointer">Have someone call me</Label>
-        </div>
-        {wantCall && (
-          <Input name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="bg-card border-border" />
-        )}
-      </div>
-
-      {/* ZIP */}
+      {/* Priority of Interest */}
       <div>
-        <Label htmlFor="zip" className="text-sm font-medium text-foreground mb-1.5 block">ZIP Code</Label>
-        <Input id="zip" name="zip" placeholder="ZIP Code" value={formData.zip} onChange={handleChange} className="bg-card border-border" inputMode="numeric" maxLength={5} />
-      </div>
-
-      {/* Timeline */}
-      <div>
-        <Label className="text-sm font-medium text-foreground mb-3 block">Timeline</Label>
-        <RadioGroup onValueChange={(value) => setFormData({ ...formData, timeline: value })} className="space-y-2">
-          {timelineOptions.map((t) => (
-            <div key={t} className="flex items-center space-x-2">
-              <RadioGroupItem value={t} id={`timeline-${t}`} />
-              <Label htmlFor={`timeline-${t}`} className="text-sm text-muted-foreground cursor-pointer">{t}</Label>
+        <Label className="text-sm font-medium text-foreground mb-3 block">Priority of Interest</Label>
+        <RadioGroup value={formData.priority} onValueChange={(value) => setFormData({ ...formData, priority: value })} className="space-y-2">
+          {priorityOptions.map((p) => (
+            <div key={p} className="flex items-center space-x-2">
+              <RadioGroupItem value={p} id={`priority-${p}`} />
+              <Label htmlFor={`priority-${p}`} className="text-sm text-muted-foreground cursor-pointer">{p}</Label>
             </div>
           ))}
         </RadioGroup>

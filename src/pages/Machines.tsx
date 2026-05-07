@@ -67,7 +67,7 @@ export default function Machines() {
                           </div>
                         ))}
                       </div>
-                      <Link to="/quote">
+                      <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                         <Button size="sm" className="w-full font-bold">Request Quote</Button>
                       </Link>
                     </div>
