@@ -26,11 +26,11 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center shrink-0 mr-2">
           <img
             src={logoImg}
             alt="KAIMEC Machines"
-            style={{ height: "70px", width: "auto" }}
+            className="h-9 sm:h-12 md:h-[70px] w-auto object-contain"
           />
         </Link>
 
