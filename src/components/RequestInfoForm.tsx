@@ -120,13 +120,21 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
         pageName: document.title,
       },
     };
-    const res = await fetch(HUBSPOT_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) {
-      throw new Error(`HubSpot submit failed: ${res.status}`);
+    console.log("[HubSpot] starting submission");
+    try {
+      const res = await fetch(HUBSPOT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        console.log("[HubSpot] success", res);
+      } else {
+        const body = await res.text().catch(() => "");
+        console.warn("[HubSpot] non-OK status:", res.status, body);
+      }
+    } catch (error) {
+      console.warn("[HubSpot] failed:", error);
     }
   };
 
@@ -166,9 +174,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       );
     })();
 
-    const hubspotPromise = submitToHubspot().catch((err) => {
-      console.warn("HubSpot submission failed:", err);
-    });
+    const hubspotPromise = submitToHubspot();
 
     try {
       const results = await Promise.allSettled([emailjsPromise, hubspotPromise]);
