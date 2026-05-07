@@ -110,7 +110,8 @@ export default function FiberLasers() {
       <section className="py-20">
         <div className="container">
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Specification Comparison</h2>
-          <div className="rounded-lg border border-border bg-card overflow-hidden">
+          {/* Desktop: comparison table */}
+          <div className="hidden md:block rounded-lg border border-border bg-card overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="bg-primary/10">
@@ -133,6 +134,25 @@ export default function FiberLasers() {
               </TableBody>
             </Table>
           </div>
+          {/* Mobile: stacked per-machine specs */}
+          <div className="md:hidden space-y-6">
+            {["FLO-1530", "FLO-P 1530", "FLC-1530", "FLC-P 1530"].map((model, idx) => (
+              <div key={model} className="rounded-lg border border-border bg-card overflow-hidden">
+                <div className="bg-primary/10 px-4 py-3 font-bold text-foreground">{model}</div>
+                <div>
+                  {specRows.map((row, i) => (
+                    <div
+                      key={row.label}
+                      className={`flex justify-between gap-3 px-4 py-2 text-sm border-b border-border ${i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}`}
+                    >
+                      <span className="font-medium text-foreground">{row.label}</span>
+                      <span className="text-muted-foreground text-right">{row.values[idx]}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -140,7 +160,7 @@ export default function FiberLasers() {
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-black text-foreground mb-4 text-center">Cutting Thickness — KFLO Open Type</h2>
           <p className="text-muted-foreground text-center mb-10">Maximum cutting thickness by material and laser power.</p>
-          <div className="rounded-lg border border-border bg-card overflow-hidden">
+          <div className="rounded-lg border border-border bg-card overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow className="bg-primary/10">
