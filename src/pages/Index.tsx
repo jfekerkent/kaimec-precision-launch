@@ -10,7 +10,7 @@ import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
 import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
-import facilityImg from "@/assets/why-kaimec.png";
+import facilityImg from "@/assets/unnamed_2.jpg";
 
 const featuredMachines = [
   { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "Open-frame fiber laser built for high-throughput sheet cutting. Steel, stainless, aluminum, brass — production speed, sub-0.1mm tolerance.", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },

@@ -76,7 +76,7 @@ export default function MachineCategory() {
                       </div>
                     ))}
                   </div>
-                  <Link to="/quote">
+                  <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
                   </Link>
                 </div>
