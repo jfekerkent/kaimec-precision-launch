@@ -126,7 +126,7 @@ export default function TubeProfileLasers() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
-                  <Link to="/quote">
+                  <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
                   </Link>
                 </div>
