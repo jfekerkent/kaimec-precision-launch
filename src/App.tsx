@@ -12,6 +12,7 @@ import FiberLasers from "./pages/FiberLasers";
 import TubeProfileLasers from "./pages/TubeProfileLasers";
 import PressBrakes from "./pages/PressBrakes";
 import GunDrills from "./pages/GunDrills";
+import FlcP1530 from "./pages/FlcP1530";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,8 @@ const App = () => (
           <Route path="/tube-profile-lasers" element={<TubeProfileLasers />} />
           <Route path="/press-brakes" element={<PressBrakes />} />
           <Route path="/gun-drills" element={<GunDrills />} />
+          <Route path="/machines/cnc-fiber-lasers/flc-p-1530" element={<FlcP1530 />} />
+          <Route path="/flc-p-1530" element={<FlcP1530 />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
