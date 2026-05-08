@@ -18,6 +18,7 @@ const HUBSPOT_ENDPOINT =
   "https://api.hsforms.com/submissions/v3/integration/submit/245894690/d661f94a-3786-425d-a13a-91a74ed980c1";
 
 export const machineOptions = [
+  "Open Type Fiber Laser (FLO Series)",
   "FLO-1530",
   "FLO-P 1530",
   "FLC-1530",
