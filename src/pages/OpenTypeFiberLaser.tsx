@@ -299,10 +299,9 @@ export default function OpenTypeFiberLaser() {
               <thead>
                 <tr className="bg-secondary text-white">
                   <th className="px-5 py-4 text-left font-bold">Material</th>
-                  <th className="px-5 py-4 text-center font-bold">1kW</th>
-                  <th className="px-5 py-4 text-center font-bold">2kW</th>
-                  <th className="px-5 py-4 text-center font-bold">3kW</th>
-                  <th className="px-5 py-4 text-center font-bold">4kW</th>
+                  <th className="px-5 py-4 text-center font-bold">1000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">2000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">3000 W</th>
                 </tr>
               </thead>
               <tbody>
@@ -316,6 +315,25 @@ export default function OpenTypeFiberLaser() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 6b. CERTIFICATIONS & WARRANTY TRUST BAND */}
+      <section className="py-12 bg-card border-y border-border">
+        <div className="container">
+          <div className="grid gap-6 md:grid-cols-3">
+            {trustBand.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="flex items-start gap-4">
+                <div className="w-11 h-11 flex items-center justify-center bg-primary/10 text-primary shrink-0">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="font-bold text-foreground text-sm md:text-base">{title}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
