@@ -15,6 +15,9 @@ import {
   UtensilsCrossed,
   ChevronRight,
   Download,
+  Award,
+  ShieldCheck,
+  Wrench,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -100,9 +103,9 @@ const cuttingChart: { material: string; values: string[] }[] = [
 ];
 
 const trustBand = [
-  { icon: "Award", title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
-  { icon: "ShieldCheck", title: "2-Year Warranty", body: "Standard on all FLO series machines." },
-  { icon: "Wrench", title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
+  { icon: Award, title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
+  { icon: ShieldCheck, title: "2-Year Warranty", body: "Standard on all FLO series machines." },
+  { icon: Wrench, title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
 
 const gallery = [
@@ -154,7 +157,11 @@ export default function OpenTypeFiberLaser() {
                   className="font-bold px-8 border-white/30 bg-transparent text-white hover:bg-white hover:text-secondary"
                   asChild
                 >
-                  <a href="#" aria-label="Download spec sheet (TBD)">
+                  <a
+                    href={brochurePdf}
+                    download="Kaimec-Fiber-Laser-Brochure.pdf"
+                    aria-label="Download Kaimec fiber laser brochure"
+                  >
                     <Download className="h-4 w-4" />
                     Download Spec Sheet
                   </a>
