@@ -23,7 +23,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
-import brochurePdf from "/Kaimec-Fiber-Laser-Brochure.pdf?url";
+
+const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
 const features = [
   {
