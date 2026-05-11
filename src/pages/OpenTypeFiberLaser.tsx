@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
+import brochurePdf from "/Kaimec-Fiber-Laser-Brochure.pdf?url";
 
 const features = [
   {
@@ -63,38 +64,45 @@ const industries = [
   { icon: UtensilsCrossed, label: "Kitchenware Manufacturing" },
 ];
 
-const configurations = ["FLO-1530", "FLO-P 1530"];
+const configurations = ["FLO-1530", "FLO-2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1500 x 3000 mm (5 x 10 ft)"] },
-  { label: "Loading Capacity", values: ["TBD", "TBD"] },
-  { label: "X-Y Axis Travel", values: ["TBD", "TBD"] },
-  { label: "Z Axis Travel", values: ["TBD", "TBD"] },
-  { label: "X-Y-Z Axis Guideway", values: ["TBD", "TBD"] },
-  { label: "X-Y Axis Drive System", values: ["TBD", "TBD"] },
-  { label: "Z Axis Drive System", values: ["TBD", "TBD"] },
-  { label: "X-Y Axis Speed", values: ["TBD", "TBD"] },
-  { label: "Z Axis Speed", values: ["TBD", "TBD"] },
-  { label: "X-Y Position Accuracy", values: ["TBD", "TBD"] },
-  { label: "X-Y Repeatability Accuracy", values: ["TBD", "TBD"] },
-  { label: "Laser Source", values: ["TBD", "TBD"] },
-  { label: "Laser Source Output Power", values: ["1kW / 2kW / 3kW / 4kW", "1kW / 2kW / 3kW / 4kW"] },
-  { label: "CNC Control System", values: ["TBD", "TBD"] },
-  { label: "Laser Cutting Head", values: ["TBD", "TBD"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
+  { label: "Loading Capacity", values: ["800 kg (1750 lbs)", "800 kg (1750 lbs)"] },
+  { label: "X-Y Axis Travel", values: ["1520 x 3030 mm (5 x 10 ft)", "2020 x 4050 mm (6.6 x 13.3 ft)"] },
+  { label: "Z Axis Travel", values: ['100 mm (3.94")', '100 mm (3.94")'] },
+  { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged"] },
+  { label: "X-Y Axis Drive System", values: ["Rack", "Rack"] },
+  { label: "Z Axis Drive System", values: ["Ballscrew", "Ballscrew"] },
+  { label: "X-Y Axis Speed", values: ["80 m/min (3150 ipm)", "80 m/min (3150 ipm)"] },
+  { label: "Z Axis Speed", values: ["30 m/min (1180 ipm)", "30 m/min (1180 ipm)"] },
+  { label: "X-Y Position Accuracy", values: ['0.05 mm (0.002")', '0.05 mm (0.002")'] },
+  { label: "X-Y Repeatability Accuracy", values: ['0.03 mm (0.001")', '0.03 mm (0.001")'] },
+  { label: "Laser Source", values: ["JPT / Han's", "JPT / Han's"] },
+  { label: "Laser Source Output Power", values: ["1000 / 2000 / 3000 W", "1000 / 2000 / 3000 W"] },
+  { label: "CNC Control System", values: ["Fscut / Cypcut", "Fscut / Cypcut"] },
+  { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
-  { label: "Machine Weight", values: ["TBD", "TBD"] },
-  { label: "Machine Dimensions (L x W x H)", values: ["TBD", "TBD"] },
+  { label: "Machine Weight", values: ["2300 kg (5100 lbs)", "2300 kg (5100 lbs)"] },
+  { label: "Machine Dimensions (L x W x H)", values: ["2355 x 4302 x 1980 mm (7.7 x 14.1 x 6.5 ft)", "2355 x 5302 x 1980 mm (7.7 x 17.4 x 6.5 ft)"] },
   { label: "Graphic Format Support", values: ["dwg / dxf / stp", "dwg / dxf / stp"] },
-  { label: "Electrical", values: ["TBD", "TBD"] },
+  { label: "Electrical", values: ["220 or 380 Volt / 3 phase / 60 Hz", "220 or 380 Volt / 3 phase / 60 Hz"] },
+  { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA"] },
+  { label: "Warranty", values: ["2 Years", "2 Years"] },
 ];
 
 const cuttingChart: { material: string; values: string[] }[] = [
-  { material: "Mild Steel", values: ["TBD mm", "TBD mm", "TBD mm", "TBD mm"] },
-  { material: "Stainless Steel", values: ["TBD mm", "TBD mm", "TBD mm", "TBD mm"] },
-  { material: "Aluminum", values: ["TBD mm", "TBD mm", "TBD mm", "TBD mm"] },
-  { material: "Brass", values: ["TBD mm", "TBD mm", "TBD mm", "TBD mm"] },
-  { material: "Copper", values: ["TBD mm", "TBD mm", "TBD mm", "TBD mm"] },
+  { material: "Carbon Steel", values: ['10 mm (3/8")', '14 mm (9/16")', '16 mm (5/8")'] },
+  { material: "Stainless Steel", values: ['3 mm (1/8")', '5 mm (3/16")', '6 mm (1/4")'] },
+  { material: "Aluminum", values: ['2 mm (1/16")', '4 mm (1/8")', '5 mm (3/16")'] },
+  { material: "Brass", values: ['2 mm (1/16")', '4 mm (1/8")', '5 mm (3/16")'] },
+];
+
+const trustBand = [
+  { icon: "Award", title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
+  { icon: "ShieldCheck", title: "2-Year Warranty", body: "Standard on all FLO series machines." },
+  { icon: "Wrench", title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
 
 const gallery = [
