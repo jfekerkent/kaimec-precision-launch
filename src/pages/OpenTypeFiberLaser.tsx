@@ -170,11 +170,11 @@ export default function OpenTypeFiberLaser() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-white/5 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-6">
+              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
                 <img
                   src={flo1530Img}
                   alt="Open Type Fiber Laser FLO Series"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain bg-white"
                 />
               </div>
             </div>
@@ -348,12 +348,12 @@ export default function OpenTypeFiberLaser() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((g) => (
-              <figure key={g.caption} className="bg-white border border-border overflow-hidden group">
-                <div className="aspect-[4/3] flex items-center justify-center p-4 bg-white">
+              <figure key={g.caption} className="bg-white border border-border overflow-hidden group rounded-lg">
+                <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
                   <img
                     src={g.src}
                     alt={g.caption}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 bg-white"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border">
