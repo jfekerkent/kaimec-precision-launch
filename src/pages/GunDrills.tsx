@@ -108,8 +108,8 @@ export default function GunDrills() {
       <section className="py-16">
         <div className="container">
           <div className="max-w-4xl mx-auto rounded-lg border border-border bg-card overflow-hidden">
-            <div className="aspect-[16/9] bg-white overflow-hidden">
-              <img src={tskMain} alt="TSK-2150 × 3000mm" className="w-full h-full object-contain" />
+            <div className="aspect-[16/9] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
+              <img src={tskMain} alt="TSK-2150 × 3000mm" className="w-full h-full object-contain bg-white" />
             </div>
             <div className="p-6">
               <h2 className="text-2xl font-bold text-foreground mb-1">TSK-2150 × 3000mm</h2>

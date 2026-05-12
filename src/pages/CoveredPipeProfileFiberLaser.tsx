@@ -114,8 +114,8 @@ function scrollToQuote(e?: React.MouseEvent) {
 function ConfigCard({ img, title, subtitle, body, model }: { img: string; title: string; subtitle: string; body: string; model: string }) {
   return (
     <div className="bg-white border border-border flex flex-col">
-      <div className="aspect-[4/3] flex items-center justify-center p-6 bg-[#f8f8f8]">
-        <img src={img} alt={title} className="w-full h-full object-contain" />
+      <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
+        <img src={img} alt={title} className="w-full h-full object-contain bg-white" />
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-black text-foreground">{title}</h3>
@@ -174,8 +174,8 @@ export default function CoveredPipeProfileFiberLaser() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-white/5 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-6">
-                <img src={flcP1530Img} alt="FLC-P Covered Type & Pipe Profile Fiber Laser" className="w-full h-full object-contain" />
+              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
+                <img src={flcP1530Img} alt="FLC-P Covered Type & Pipe Profile Fiber Laser" className="w-full h-full object-contain bg-white" />
               </div>
             </div>
           </div>
@@ -404,8 +404,8 @@ export default function CoveredPipeProfileFiberLaser() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((g) => (
               <figure key={g.caption} className="bg-white border border-border overflow-hidden group">
-                <div className="aspect-[4/3] flex items-center justify-center p-4 bg-white">
-                  <img src={g.src} alt={g.caption} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
+                  <img src={g.src} alt={g.caption} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 bg-white" />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border">{g.caption}</figcaption>
               </figure>
