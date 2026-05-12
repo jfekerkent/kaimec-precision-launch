@@ -12,6 +12,12 @@ const navLinks = [
   { label: "Gun Drills", to: "/machines/gun-drills" },
 ];
 
+const laserCuttingLinks = [
+  { label: "Open Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
+  { label: "Closed Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
+  { label: "Covered Type & Pipe Profile Fiber Laser", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
+];
+
 const moreLinks = [
   { label: "About Us", to: "/about" },
   { label: "Request for Info", to: "/quote" },
@@ -20,6 +26,8 @@ const moreLinks = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [laserOpen, setLaserOpen] = useState(false);
+  const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -36,19 +44,55 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-[#1A1A1A] hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, idx) => {
+            const items = [
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                  location.pathname === link.to
+                    ? "text-primary"
+                    : "text-[#1A1A1A] hover:text-primary"
+                }`}
+              >
+                {link.label}
+              </Link>,
+            ];
+            if (link.to === "/machines/tube-profile-lasers") {
+              items.push(
+                <div
+                  key="laser-cutting-dd"
+                  className="relative"
+                  onMouseEnter={() => setLaserOpen(true)}
+                  onMouseLeave={() => setLaserOpen(false)}
+                >
+                  <button
+                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                      location.pathname.startsWith("/machines/laser-cutting/")
+                        ? "text-primary"
+                        : "text-[#1A1A1A] hover:text-primary"
+                    }`}
+                  >
+                    Laser Cutting <ChevronDown className="h-3 w-3" />
+                  </button>
+                  {laserOpen && (
+                    <div className="absolute top-full left-0 mt-1 w-72 rounded-md border border-border bg-card shadow-lg py-1 z-50">
+                      {laserCuttingLinks.map((sub) => (
+                        <Link
+                          key={sub.to}
+                          to={sub.to}
+                          className="block px-4 py-2 text-sm text-[#1A1A1A] bg-white hover:bg-[#F4F5F7] hover:text-primary transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            return items;
+          })}
           <div className="relative">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
@@ -98,7 +142,49 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-background">
           <nav className="container py-4 flex flex-col gap-1">
-            {[...navLinks, ...moreLinks].map((link) => (
+            {navLinks.map((link) => (
+              <div key={link.to}>
+                <Link
+                  to={link.to}
+                  onClick={() => setMobileOpen(false)}
+                  className={`block px-3 py-2 text-sm font-medium rounded-md ${
+                    location.pathname === link.to
+                      ? "text-primary bg-muted"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+                {link.to === "/machines/tube-profile-lasers" && (
+                  <div>
+                    <button
+                      onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
+                      className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+                    >
+                      Laser Cutting
+                      <ChevronDown
+                        className={`h-3 w-3 transition-transform ${mobileLaserOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    {mobileLaserOpen && (
+                      <div className="pl-4">
+                        {laserCuttingLinks.map((sub) => (
+                          <Link
+                            key={sub.to}
+                            to={sub.to}
+                            onClick={() => setMobileOpen(false)}
+                            className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+            {moreLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
