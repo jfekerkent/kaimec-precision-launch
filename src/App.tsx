@@ -15,6 +15,7 @@ import GunDrills from "./pages/GunDrills";
 import FlcP1530 from "./pages/FlcP1530";
 import OpenTypeFiberLaser from "./pages/OpenTypeFiberLaser";
 import CoveredPipeProfileFiberLaser from "./pages/CoveredPipeProfileFiberLaser";
+import ClosedTypeFiberLaser from "./pages/ClosedTypeFiberLaser";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,8 @@ const App = () => (
           <Route path="/flc-p-1530" element={<FlcP1530 />} />
           <Route path="/machines/laser-cutting/open-type-fiber-laser" element={<OpenTypeFiberLaser />} />
           <Route path="/machines/laser-cutting/covered-pipe-profile-fiber-laser" element={<CoveredPipeProfileFiberLaser />} />
+          <Route path="/machines/laser-cutting/closed-type-fiber-laser" element={<ClosedTypeFiberLaser />} />
+          <Route path="/laser-cutting/closed-type-fiber-laser" element={<ClosedTypeFiberLaser />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
