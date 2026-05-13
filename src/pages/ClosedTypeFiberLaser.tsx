@@ -15,8 +15,9 @@ import {
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
-import heroImg from "@/assets/hero-kflc-hero.png";
-import flc1530Img from "@/assets/machine-kflc-1530.png";
+import heroImg from "@/assets/flc-hero.png";
+import sideProfileImg from "@/assets/flc-side-profile.png";
+import tableExtendedImg from "@/assets/flc-table-extended.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -54,9 +55,9 @@ const features = [
 ];
 
 const models = [
-  { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "Compact production cell for general fabrication." },
-  { id: "FLC-2040", area: "2000 × 4000 mm (6.5 × 13 ft)", detail: "Mid-format workhorse for high-volume sheet work." },
-  { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts." },
+  { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "Compact production cell for general fabrication.", image: heroImg },
+  { id: "FLC-2040", area: "2000 × 4000 mm (6.5 × 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
+  { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
 
 const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
@@ -122,10 +123,9 @@ const trustBand = [
 ];
 
 const gallery = [
-  { src: heroImg, caption: "FLC closed cabin" },
-  { src: flc1530Img, caption: "Full machine view" },
-  { src: heroImg, caption: "Dual exchange tables" },
-  { src: flc1530Img, caption: "Cutting head detail" },
+  { src: heroImg, caption: "Fully enclosed Class-1 safe cabin with operator console." },
+  { src: tableExtendedImg, caption: "Dual exchange table — 10-second swap keeps the laser cutting." },
+  { src: sideProfileImg, caption: "Aluminum-alloy welded bridge with auto-focus cutting head." },
 ];
 
 function scrollToQuote(e: React.MouseEvent) {
@@ -265,7 +265,7 @@ export default function ClosedTypeFiberLaser() {
                 className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors flex flex-col"
               >
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                  <img src={flc1530Img} alt={m.id} className="w-full h-full object-contain bg-white" />
+                  <img src={m.image} alt={m.id} className="w-full h-full object-contain bg-white" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-black text-foreground mb-1">{m.id}</h3>
@@ -418,7 +418,7 @@ export default function ClosedTypeFiberLaser() {
             <p className="section-label mb-3 text-primary">Gallery</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">See It in Detail</h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g, i) => (
               <figure key={i} className="bg-white border border-border overflow-hidden group rounded-lg">
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
