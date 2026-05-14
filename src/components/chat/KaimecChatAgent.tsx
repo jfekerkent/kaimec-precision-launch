@@ -3,8 +3,6 @@ import { MessageCircle, X, Send, RotateCcw } from "lucide-react";
 import { useKaimecChat } from "@/hooks/useChat";
 import ConsultCTA from "./ConsultCTA";
 
-const CALENDLY_FALLBACK = "https://calendly.com/kaimec/consult";
-
 export default function KaimecChatAgent() {
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState("");
@@ -73,16 +71,16 @@ export default function KaimecChatAgent() {
                   }`}
                 >
                   {m.content}
-                  {m.toolCalls?.some((t) => t.name === "offer_consultation") && (
-                    <div className="mt-2">
-                      <ConsultCTA
-                        url={
-                          (m.toolCalls.find((t) => t.name === "offer_consultation")?.input
-                            ?.url as string) || CALENDLY_FALLBACK
-                        }
-                      />
-                    </div>
-                  )}
+                  {(() => {
+                    const consult = m.toolCalls?.find((t) => t.name === "offer_consultation");
+                    const url = consult?.output?.url as string | undefined;
+                    if (!consult || !url) return null;
+                    return (
+                      <div className="mt-2">
+                        <ConsultCTA url={url} />
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             ))}
