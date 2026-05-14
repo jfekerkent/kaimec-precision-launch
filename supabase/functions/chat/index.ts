@@ -1,8 +1,6 @@
 import Anthropic from "npm:@anthropic-ai/sdk@0.32.1";
 import { createClient } from "npm:@supabase/supabase-js@2";
-const SYSTEM_PROMPT = await Deno.readTextFile(
-  new URL("./system-prompt.md", import.meta.url),
-);
+import { SYSTEM_PROMPT } from "./system-prompt.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
