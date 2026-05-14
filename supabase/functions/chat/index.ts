@@ -1,7 +1,7 @@
 import Anthropic from "npm:@anthropic-ai/sdk@0.32.1";
 import { createClient } from "npm:@supabase/supabase-js@2";
 // @ts-ignore - Deno raw text import
-import SYSTEM_PROMPT from "../../../src/agent/system-prompt.md" with { type: "text" };
+import SYSTEM_PROMPT from "./system-prompt.md" with { type: "text" };
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
