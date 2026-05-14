@@ -10,7 +10,7 @@ const corsHeaders = {
 
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY")!;
 const ANTHROPIC_MODEL = Deno.env.get("ANTHROPIC_MODEL") ?? "claude-sonnet-4-5";
-const CALENDLY_URL = Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/kaimec/20min";
+const CALENDLY_URL = Deno.env.get("CALENDLY_URL") ?? "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
@@ -103,13 +103,17 @@ Deno.serve(async (req) => {
     }
 
     if (messages.length > TURN_CAP) {
-      const toolCalls = [{
-        name: "offer_consultation" as const,
-        input: { reason: "Conversation cap reached" },
-        output: { url: CALENDLY_URL, message: "Booking link ready" },
-      }];
+      const toolCalls = CALENDLY_URL
+        ? [{
+            name: "offer_consultation" as const,
+            input: { reason: "Conversation cap reached" },
+            output: { url: CALENDLY_URL, message: "Booking link ready" },
+          }]
+        : [];
       return Response.json({
-        reply: "We've covered a lot here. Let me get you 20 minutes with our team to lock in the details.",
+        reply: CALENDLY_URL
+          ? "We've covered a lot here. Let me get you 20 minutes with our team to lock in the details."
+          : "We've covered a lot here. Let me have our team email you directly to lock in the details.",
         toolCalls,
         capped: true,
       }, { headers: corsHeaders });
@@ -148,7 +152,14 @@ Deno.serve(async (req) => {
         let output: Record<string, unknown> = { ok: true };
 
         if (tu.name === "offer_consultation") {
-          output = { url: CALENDLY_URL, message: "Booking link ready" };
+          if (CALENDLY_URL) {
+            output = { url: CALENDLY_URL, message: "Booking link ready" };
+          } else {
+            output = {
+              ok: false,
+              error: "Calendly URL not configured. Do NOT render a booking button. Tell the visitor: 'Let me have our team email you directly.' Then ask for their email.",
+            };
+          }
         } else if (tu.name === "capture_lead") {
           const sb = createClient(SUPABASE_URL, SERVICE_ROLE);
           const { data, error } = await sb.from("chat_leads").insert({

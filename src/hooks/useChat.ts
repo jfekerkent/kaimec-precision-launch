@@ -7,7 +7,8 @@ const SESSION_KEY = "kaimec_chat_session_id";
 const HISTORY_KEY = "kaimec_chat_history";
 
 const EMAILJS_SERVICE_ID = "service_oiwu4ak";
-const EMAILJS_TEMPLATE_ID = "template_dsbjz8n";
+const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
+const EMAILJS_REPLY_TEMPLATE = "template_8ghnppm";
 const EMAILJS_PUBLIC_KEY = "auMQyoP8IUFm3ImJd";
 
 const GREETING: ChatMessage = {
@@ -48,17 +49,37 @@ function loadHistory(): ChatMessage[] {
 }
 
 function fireLeadEmail(input: Record<string, unknown>) {
-  const params = {
-    from_name: String(input.name ?? ""),
-    from_email: String(input.email ?? ""),
-    machine_of_interest: String(input.machine_of_interest ?? ""),
-    application: String(input.application ?? ""),
-    timeline: String(input.timeline ?? ""),
-    notes: String(input.notes ?? ""),
-    source: "AI Chat Agent",
+  const name = String(input.name ?? "");
+  const email = String(input.email ?? "");
+  const machine = String(input.machine_of_interest ?? "") || "(not specified)";
+  const priority = String(input.timeline ?? "") || "(not specified)";
+  const application = String(input.application ?? "");
+  const notes = String(input.notes ?? "");
+
+  const teamParams = {
+    name,
+    email,
+    company: "(captured via AI Chat Agent)",
+    address: "",
+    machine,
+    priority,
+    additional_details:
+      "Application: " + application + "\nNotes: " + notes + "\n\nSource: AI Chat Agent",
   };
+
   emailjs
-    .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params, EMAILJS_PUBLIC_KEY)
+    .send(EMAILJS_SERVICE_ID, EMAILJS_TEAM_TEMPLATE, teamParams, EMAILJS_PUBLIC_KEY)
+    .then(() => {
+      // Fire-and-forget auto-reply to the visitor
+      emailjs
+        .send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_REPLY_TEMPLATE,
+          { name, email, machine },
+          EMAILJS_PUBLIC_KEY,
+        )
+        .catch((err) => console.warn("EmailJS auto-reply failed", err));
+    })
     .catch((err) => console.warn("EmailJS lead notify failed", err));
 }
 
