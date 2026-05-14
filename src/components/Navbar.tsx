@@ -105,6 +105,12 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          <Link
+            to="/consultation"
+            className="ml-2 px-3 py-2 text-sm font-bold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            Talk to an Expert
+          </Link>
         </nav>
 
         {/* Right side */}
@@ -185,6 +191,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              to="/consultation"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 px-3 py-2 text-sm font-bold border-2 border-primary text-primary text-center"
+            >
+              Talk to an Expert
+            </Link>
           </nav>
         </div>
       )}
