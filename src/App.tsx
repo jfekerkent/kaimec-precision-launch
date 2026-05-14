@@ -17,6 +17,7 @@ import OpenTypeFiberLaser from "./pages/OpenTypeFiberLaser";
 import CoveredPipeProfileFiberLaser from "./pages/CoveredPipeProfileFiberLaser";
 import ClosedTypeFiberLaser from "./pages/ClosedTypeFiberLaser";
 import NotFound from "./pages/NotFound";
+import KaimecChatAgent from "./components/chat/KaimecChatAgent";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/laser-cutting/closed-type-fiber-laser" element={<ClosedTypeFiberLaser />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <KaimecChatAgent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
