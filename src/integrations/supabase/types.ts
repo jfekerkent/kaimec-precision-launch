@@ -14,7 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_escalations: {
+        Row: {
+          created_at: string
+          id: string
+          session_id: string
+          summary: string
+          urgency: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          session_id: string
+          summary: string
+          urgency: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          session_id?: string
+          summary?: string
+          urgency?: string
+        }
+        Relationships: []
+      }
+      chat_leads: {
+        Row: {
+          application: string | null
+          created_at: string
+          email: string
+          id: string
+          machine_of_interest: string | null
+          name: string
+          notes: string | null
+          session_id: string
+          timeline: string | null
+        }
+        Insert: {
+          application?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          machine_of_interest?: string | null
+          name: string
+          notes?: string | null
+          session_id: string
+          timeline?: string | null
+        }
+        Update: {
+          application?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          machine_of_interest?: string | null
+          name?: string
+          notes?: string | null
+          session_id?: string
+          timeline?: string | null
+        }
+        Relationships: []
+      }
+      chat_logs: {
+        Row: {
+          history: Json
+          session_id: string
+          turn_count: number
+          updated_at: string
+        }
+        Insert: {
+          history?: Json
+          session_id: string
+          turn_count?: number
+          updated_at?: string
+        }
+        Update: {
+          history?: Json
+          session_id?: string
+          turn_count?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
