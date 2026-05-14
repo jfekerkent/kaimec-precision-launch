@@ -18,6 +18,7 @@ import CoveredPipeProfileFiberLaser from "./pages/CoveredPipeProfileFiberLaser";
 import ClosedTypeFiberLaser from "./pages/ClosedTypeFiberLaser";
 import NotFound from "./pages/NotFound";
 import KaimecChatAgent from "./components/chat/KaimecChatAgent";
+import Consultation from "./pages/Consultation";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/request-info" element={<Quote />} />
+          <Route path="/consultation" element={<Consultation />} />
           <Route path="/machines" element={<Machines />} />
           <Route path="/machines/cnc-fiber-lasers" element={<FiberLasers />} />
           <Route path="/machines/tube-profile-lasers" element={<TubeProfileLasers />} />
