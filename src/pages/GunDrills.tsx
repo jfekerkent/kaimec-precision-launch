@@ -15,6 +15,18 @@ import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
 import tskMain from "@/assets/tsk-2150-main.png";
 import kaimecLogo from "@/assets/kaimec-logo-dark.png";
+import kdhImg from "@/assets/kdh-deep-hole-drilling.jpg";
+import kpgdImg from "@/assets/kpgd-precision-micro-drilling.jpg";
+import kmgdImg from "@/assets/kmgd-multitasking-deep-hole-drilling.jpg";
+
+function ProductImage({ src, alt, bg = "white" }: { src: string; alt: string; bg?: "white" | "light" }) {
+  const bgClass = bg === "light" ? "bg-[#f5f5f5]" : "bg-white";
+  return (
+    <div className={`w-full min-h-[450px] ${bgClass} rounded-xl border border-black/5 flex items-center justify-center p-6`}>
+      <img src={src} alt={alt} className="w-full h-auto max-h-[420px] object-contain" />
+    </div>
+  );
+}
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 
@@ -314,8 +326,7 @@ export default function GunDrills() {
         quoteMachine="KDH-Series"
         quoteLabel="REQUEST KDH QUOTE"
         image={
-          // TODO: Boss to upload KDH series machine image. Target size: minimum 1200×800 px for retina display.
-          <PlaceholderImage label="KDH Series" />
+          <ProductImage src={kdhImg} alt="KDH Series deep-hole drilling machine" bg="white" />
         }
       />
 
@@ -334,8 +345,7 @@ export default function GunDrills() {
         quoteMachine="KPGD-Series"
         quoteLabel="REQUEST KPGD QUOTE"
         image={
-          // TODO: Boss to upload KPGD series machine image (KPGD-4X or KPGD-8X). Target size: minimum 1200×800 px for retina display.
-          <PlaceholderImage label="KPGD Series" />
+          <ProductImage src={kpgdImg} alt="KPGD Series precision micro deep-hole drilling machine" bg="light" />
         }
       />
 
@@ -354,8 +364,7 @@ export default function GunDrills() {
         quoteMachine="KMGD-Series"
         quoteLabel="REQUEST KMGD QUOTE"
         image={
-          // TODO: Boss to upload KMGD series machine image. Target size: minimum 1200×800 px for retina display.
-          <PlaceholderImage label="KMGD Series" />
+          <ProductImage src={kmgdImg} alt="KMGD Series multitasking deep-hole drilling machine" bg="white" />
         }
       />
 
