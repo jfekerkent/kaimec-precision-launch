@@ -42,19 +42,16 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-[#1A1A1A] hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            to="/"
+            className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+              location.pathname === "/"
+                ? "text-primary"
+                : "text-[#1A1A1A] hover:text-primary"
+            }`}
+          >
+            Home
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setLaserOpen(true)}
@@ -83,6 +80,19 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          {navLinks.filter((l) => l.to !== "/").map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                location.pathname === link.to
+                  ? "text-primary"
+                  : "text-[#1A1A1A] hover:text-primary"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
           <div className="relative">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
