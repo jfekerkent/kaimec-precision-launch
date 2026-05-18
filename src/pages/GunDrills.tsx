@@ -13,7 +13,7 @@ import {
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
-import tskMain from "@/assets/tsk-2150-main.png";
+import tskMain from "@/assets/tsk-2150-deep-hole-drilling.jpg";
 import kaimecLogo from "@/assets/kaimec-logo-dark.png";
 import kdhImg from "@/assets/kdh-deep-hole-drilling.jpg";
 import kpgdImg from "@/assets/kpgd-precision-micro-drilling.jpg";
@@ -274,47 +274,10 @@ export default function GunDrills() {
         </div>
       </section>
 
-      {/* SECTION 2 — TSK-2150 — image LEFT, white bg */}
+      {/* KDH — image LEFT, white */}
       <ProductSection
         bg="white"
         imageSide="left"
-        kicker="Flagship Gun Drill — Most Popular"
-        title="TSK-2150"
-        subtitle="Deep Hole Drilling & Boring Machine"
-        description={
-          <p>
-            The TSK-2150 is the standard production gun drill for general manufacturing, mold work, hydraulic blocks, and tool &amp; die. Built for daily runs with consistent precision and a <strong>3,000 mm / 118 in stroke</strong>. The first machine most shops ask us about — for good reason.
-          </p>
-        }
-        specs={tskSpecs}
-        quoteMachine="TSK-2150"
-        quoteLabel="REQUEST QUOTE"
-        image={
-          // TODO: Boss to upload higher-res TSK-2150 image — see assets folder. Target: minimum 1200×800 px for retina display.
-          <div className="w-full p-8 rounded-xl bg-gradient-to-br from-[#fff8ec] to-[#fdf1d4] shadow-[0_20px_50px_-15px_rgba(245,166,35,0.35)]">
-            <img
-              src={tskMain}
-              alt="TSK-2150 Deep Hole Drilling & Boring Machine"
-              className="w-full h-auto max-h-[420px] object-contain mx-auto"
-            />
-          </div>
-        }
-      />
-
-      {/* HELP ME CHOOSE banner #1 */}
-      <HelpMeChooseBanner
-        headline="Not sure which gun drill fits your shop?"
-        subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
-        primaryLabel="HELP ME CHOOSE"
-        primaryHref="/consultation"
-        secondaryLabel="OR CALL 714-258-8526"
-        secondaryHref="tel:7142588526"
-      />
-
-      {/* SECTION 4 — KDH — image RIGHT, light gray */}
-      <ProductSection
-        bg="light"
-        imageSide="right"
         kicker="KDH Series"
         title="General-Purpose Deep-Hole Drilling"
         tagline="For the largest parts, the deepest holes."
@@ -326,14 +289,14 @@ export default function GunDrills() {
         quoteMachine="KDH-Series"
         quoteLabel="REQUEST KDH QUOTE"
         image={
-          <ProductImage src={kdhImg} alt="KDH Series deep-hole drilling machine" bg="white" />
+          <ProductImage src={kdhImg} alt="KDH Series deep-hole drilling machine" bg="light" />
         }
       />
 
-      {/* SECTION 5 — KPGD — image LEFT, white */}
+      {/* KPGD — image RIGHT, light gray */}
       <ProductSection
-        bg="white"
-        imageSide="left"
+        bg="light"
+        imageSide="right"
         kicker="KPGD Series"
         title="Precision Micro Deep-Hole Drilling"
         tagline="High-speed micro-drilling for aerospace, medical, and precision work."
@@ -345,14 +308,24 @@ export default function GunDrills() {
         quoteMachine="KPGD-Series"
         quoteLabel="REQUEST KPGD QUOTE"
         image={
-          <ProductImage src={kpgdImg} alt="KPGD Series precision micro deep-hole drilling machine" bg="light" />
+          <ProductImage src={kpgdImg} alt="KPGD Series precision micro deep-hole drilling machine" bg="white" />
         }
       />
 
-      {/* SECTION 6 — KMGD — image RIGHT, light gray */}
+      {/* HELP ME CHOOSE banner #1 — between KPGD and KMGD */}
+      <HelpMeChooseBanner
+        headline="Not sure which gun drill fits your shop?"
+        subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
+        primaryLabel="HELP ME CHOOSE"
+        primaryHref="/consultation"
+        secondaryLabel="OR CALL 714-258-8526"
+        secondaryHref="tel:7142588526"
+      />
+
+      {/* KMGD — image LEFT, white */}
       <ProductSection
-        bg="light"
-        imageSide="right"
+        bg="white"
+        imageSide="left"
         kicker="KMGD Series"
         title="Multitasking Deep-Hole Drilling"
         tagline="Versatility from compact production to heavy-duty platforms."
@@ -364,11 +337,31 @@ export default function GunDrills() {
         quoteMachine="KMGD-Series"
         quoteLabel="REQUEST KMGD QUOTE"
         image={
-          <ProductImage src={kmgdImg} alt="KMGD Series multitasking deep-hole drilling machine" bg="white" />
+          <ProductImage src={kmgdImg} alt="KMGD Series multitasking deep-hole drilling machine" bg="light" />
         }
       />
 
-      {/* HELP ME CHOOSE banner #2 */}
+      {/* TSK-2150 — image RIGHT, light gray */}
+      <ProductSection
+        bg="light"
+        imageSide="right"
+        kicker="Standard Production Gun Drill"
+        title="TSK-2150"
+        subtitle="Deep Hole Drilling & Boring Machine"
+        description={
+          <p>
+            The TSK-2150 is the standard production gun drill for general manufacturing, mold work, hydraulic blocks, and tool &amp; die. Built for daily runs with consistent precision and a <strong>3,000 mm / 118 in stroke</strong>. The first machine most shops ask us about — for good reason.
+          </p>
+        }
+        specs={tskSpecs}
+        quoteMachine="TSK-2150"
+        quoteLabel="REQUEST QUOTE"
+        image={
+          <ProductImage src={tskMain} alt="TSK-2150 Deep Hole Drilling & Boring Machine" bg="white" />
+        }
+      />
+
+      {/* HELP ME CHOOSE banner #2 — after TSK, before TrustSignals */}
       <HelpMeChooseBanner
         headline="Still weighing your options?"
         subhead="Send us a note. We'll review your application, recommend the right series, and have a real number ready for the call."
