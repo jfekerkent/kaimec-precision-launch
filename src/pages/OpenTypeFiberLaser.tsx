@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
 
@@ -387,6 +388,7 @@ export default function OpenTypeFiberLaser() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

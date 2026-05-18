@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import { categories, getMachinesByCategory } from "@/data/machines";
 import kflo1530Img from "@/assets/machine-kflo-primary.png";
 import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
@@ -81,6 +82,7 @@ export default function Machines() {
           </section>
         );
       })}
+    <TrustSignals />
     </Layout>
   );
 }

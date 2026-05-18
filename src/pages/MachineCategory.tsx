@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import { getMachinesByCategory, getCategoryBySlug } from "@/data/machines";
 import fiberLaserImg from "@/assets/machine-fiber-laser.jpg";
 import tubeLaserImg from "@/assets/machine-tube-laser.jpg";
@@ -85,6 +86,7 @@ export default function MachineCategory() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

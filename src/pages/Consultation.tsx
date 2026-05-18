@@ -104,7 +104,7 @@ export default function Consultation() {
         </div>
       </section>
 
-      {/* Section B — KaiMec Commitment */}
+      {/* Section B — Kaimec Commitment */}
       <section className="bg-[#F8F9FA] py-12 md:py-16">
         <div className="container max-w-[1100px]">
           <div className="text-center">
@@ -113,7 +113,7 @@ export default function Consultation() {
               Built for Real Shops. Not Showrooms.
             </h2>
             <p className="text-[#1a1a1a]/80 max-w-[760px] mx-auto leading-relaxed" style={{ fontSize: "1.1rem" }}>
-              Every KaiMec machine is engineered for the floor — precision, consistency, and the throughput that real production demands. Fiber lasers. Press brakes. Panel benders. Tube and profile cutters. Gun drills. Backed by hands-on support from a team that's specified, installed, and stood behind these systems for decades. We pledge straight talk, fair pricing, and machines that earn their place in your shop.
+              Every Kaimec machine is engineered for the floor — precision, consistency, and the throughput that real production demands. Fiber lasers. Press brakes. Panel benders. Tube and profile cutters. Gun drills. Backed by hands-on support from a team that's specified, installed, and stood behind these systems for decades. We pledge straight talk, fair pricing, and machines that earn their place in your shop.
             </p>
           </div>
 

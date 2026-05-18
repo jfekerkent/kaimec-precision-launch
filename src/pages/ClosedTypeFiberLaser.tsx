@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import heroImg from "@/assets/flc-hero.png";
 import sideProfileImg from "@/assets/flc-side-profile.png";
@@ -488,6 +489,7 @@ export default function ClosedTypeFiberLaser() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

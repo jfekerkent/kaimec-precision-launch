@@ -24,7 +24,7 @@ export default function KaimecChatAgent() {
     <>
       {!open && (
         <button
-          aria-label="Open KaiMec chat"
+          aria-label="Open Kaimec chat"
           onClick={() => setOpen(true)}
           className="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#F5A623] shadow-lg transition-transform hover:scale-105"
         >
@@ -36,7 +36,7 @@ export default function KaimecChatAgent() {
         <div className="fixed bottom-6 right-6 z-[60] flex h-[560px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-white/10 bg-[#1a1a1a] text-white shadow-2xl">
           <header className="flex items-center justify-between border-b border-white/10 bg-[#111] px-4 py-3">
             <div>
-              <div className="text-sm font-semibold text-[#F5A623]">KaiMec Product Expert</div>
+              <div className="text-sm font-semibold text-[#F5A623]">Kaimec Product Expert</div>
               <div className="text-xs text-white/60">Typically replies instantly</div>
             </div>
             <div className="flex items-center gap-1">

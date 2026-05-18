@@ -11,6 +11,7 @@ import {
   Target,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
 import tskMain from "@/assets/tsk-2150-main.png";
 import kaimecLogo from "@/assets/kaimec-logo-dark.png";
@@ -84,7 +85,7 @@ function CTAButtons({ quoteMachine, quoteLabel }: { quoteMachine: string; quoteL
 function PlaceholderImage({ label }: { label: string }) {
   return (
     <div className="w-full min-h-[450px] bg-[#fafafa] rounded-xl border border-black/5 flex flex-col items-center justify-center gap-4 p-8">
-      <img src={kaimecLogo} alt="KaiMec" className="h-16 w-auto opacity-40" />
+      <img src={kaimecLogo} alt="Kaimec" className="h-16 w-auto opacity-40" />
       <p className="text-neutral-400 text-sm font-medium tracking-wide uppercase">
         {label} — image coming soon
       </p>
@@ -240,8 +241,8 @@ function HelpMeChooseBanner({
 
 export default function GunDrills() {
   usePageMeta(
-    "Gun Drills & Deep-Hole Drilling Solutions | KaiMec",
-    "From standard gun drilling to heavy-duty deep-hole machining for parts up to 120 tons — KaiMec delivers precision deep-hole solutions for aerospace, oil & gas, mold & die, and heavy equipment."
+    "Gun Drills & Deep-Hole Drilling Solutions | Kaimec",
+    "From standard gun drilling to heavy-duty deep-hole machining for parts up to 120 tons — Kaimec delivers precision deep-hole solutions for aerospace, oil & gas, mold & die, and heavy equipment."
   );
 
   return (
@@ -327,7 +328,7 @@ export default function GunDrills() {
         tagline="High-speed micro-drilling for aerospace, medical, and precision work."
         description={
           <p>
-            The KaiMec KPGD and KCNC Series deliver precision deep-hole drilling solutions across a range of applications. The compact <strong>KPGD-4X and KPGD-8X</strong> are engineered for high-speed micro-drilling, reaching <strong>spindle speeds of up to 30,000 rpm</strong> with built-in ER-16 spindles, making them ideal for fine, accurate holes in aerospace, medical, and high-precision components. Both handle large workpieces up to <strong>Ø1,400 mm (Ø55 in)</strong>, with the 8X tailored for even bigger diameters. By contrast, the <strong>KCNC-36</strong> offers spindle speeds up to <strong>5,000 rpm</strong> with a belt-driven R-8 spindle, supporting heavier tooling up to <strong>6.6 lb (3.0 kg)</strong> for general-purpose deep-hole work. All three share a <strong>141.7 in (3,600 mm) base length</strong> for rigidity, while rapid feed rates and <strong>micron-level positioning accuracy (±0.01 mm / ±0.0004 in)</strong> deliver repeatable, high-quality results.
+            The Kaimec KPGD and KCNC Series deliver precision deep-hole drilling solutions across a range of applications. The compact <strong>KPGD-4X and KPGD-8X</strong> are engineered for high-speed micro-drilling, reaching <strong>spindle speeds of up to 30,000 rpm</strong> with built-in ER-16 spindles, making them ideal for fine, accurate holes in aerospace, medical, and high-precision components. Both handle large workpieces up to <strong>Ø1,400 mm (Ø55 in)</strong>, with the 8X tailored for even bigger diameters. By contrast, the <strong>KCNC-36</strong> offers spindle speeds up to <strong>5,000 rpm</strong> with a belt-driven R-8 spindle, supporting heavier tooling up to <strong>6.6 lb (3.0 kg)</strong> for general-purpose deep-hole work. All three share a <strong>141.7 in (3,600 mm) base length</strong> for rigidity, while rapid feed rates and <strong>micron-level positioning accuracy (±0.01 mm / ±0.0004 in)</strong> deliver repeatable, high-quality results.
           </p>
         }
         quoteMachine="KPGD-Series"
@@ -347,7 +348,7 @@ export default function GunDrills() {
         tagline="Versatility from compact production to heavy-duty platforms."
         description={
           <p>
-            The KaiMec KMGD Series offers a wide range of multi-spindle deep-hole drilling centers designed for precision and productivity. Models vary from compact machines with <strong>tables around 380 – 685 mm (15 – 27 in) wide and 1,500 – 1,981 mm (59 – 78 in) long</strong>, up to heavy-duty platforms with <strong>travels exceeding 5,080 mm (200 in)</strong>. Across the series, <strong>spindle speeds reach 8,000 rpm (optional 10,000 rpm)</strong> with belt or gear drive systems and DIN or BT taper options. Positioning accuracy is consistently <strong>±0.01 mm (±0.0004 in)</strong>. Spindle motor power ranges from <strong>5.6 kW (7.5 hp) to over 30 kW (40 hp)</strong>, while <strong>table load capacities extend from 1,500 kg (3,300 lb) to 49,895 kg (110,000 lb)</strong>. Tooling capability accommodates diameters from <strong>Ø15 mm (Ø0.6 in) up to Ø150 mm (Ø5.9 in)</strong>, with rapid feed rates up to <strong>80,000 mm/min (3,150 ipm)</strong> on advanced models — suitable for automotive, aerospace, and heavy equipment manufacturing.
+            The Kaimec KMGD Series offers a wide range of multi-spindle deep-hole drilling centers designed for precision and productivity. Models vary from compact machines with <strong>tables around 380 – 685 mm (15 – 27 in) wide and 1,500 – 1,981 mm (59 – 78 in) long</strong>, up to heavy-duty platforms with <strong>travels exceeding 5,080 mm (200 in)</strong>. Across the series, <strong>spindle speeds reach 8,000 rpm (optional 10,000 rpm)</strong> with belt or gear drive systems and DIN or BT taper options. Positioning accuracy is consistently <strong>±0.01 mm (±0.0004 in)</strong>. Spindle motor power ranges from <strong>5.6 kW (7.5 hp) to over 30 kW (40 hp)</strong>, while <strong>table load capacities extend from 1,500 kg (3,300 lb) to 49,895 kg (110,000 lb)</strong>. Tooling capability accommodates diameters from <strong>Ø15 mm (Ø0.6 in) up to Ø150 mm (Ø5.9 in)</strong>, with rapid feed rates up to <strong>80,000 mm/min (3,150 ipm)</strong> on advanced models — suitable for automotive, aerospace, and heavy equipment manufacturing.
           </p>
         }
         quoteMachine="KMGD-Series"
@@ -395,7 +396,9 @@ export default function GunDrills() {
         </div>
       </section>
 
-      {/* SECTION 9 — Closing CTA */}
+      <TrustSignals />
+
+      {/* SECTION 10 — Closing CTA */}
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">

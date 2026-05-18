@@ -23,7 +23,7 @@ export default function TalkToExpertBanner() {
             </Link>
           </div>
           <div className="order-first md:order-last">
-            <img src={machineImg} alt="KaiMec fiber laser" loading="lazy" className="w-full h-auto object-contain" />
+            <img src={machineImg} alt="Kaimec fiber laser" loading="lazy" className="w-full h-auto object-contain" />
           </div>
         </div>
       </div>
