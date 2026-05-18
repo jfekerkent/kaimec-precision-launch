@@ -7,7 +7,7 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Press Brakes", to: "/machines/press-brakes" },
-  { label: "Gun Drills", to: "/machines/gun-drills" },
+  { label: "Gun Drills", to: "/gun-drills" },
 ];
 
 const laserCuttingLinks = [
