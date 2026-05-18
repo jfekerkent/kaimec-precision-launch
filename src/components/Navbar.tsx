@@ -42,19 +42,16 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-[#1A1A1A] hover:text-primary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            to="/"
+            className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+              location.pathname === "/"
+                ? "text-primary"
+                : "text-[#1A1A1A] hover:text-primary"
+            }`}
+          >
+            Home
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setLaserOpen(true)}
@@ -83,6 +80,19 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          {navLinks.filter((l) => l.to !== "/").map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+                location.pathname === link.to
+                  ? "text-primary"
+                  : "text-[#1A1A1A] hover:text-primary"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
           <div className="relative">
             <button
               onClick={() => setMoreOpen(!moreOpen)}
@@ -138,20 +148,17 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-background">
           <nav className="container py-4 flex flex-col gap-1">
-          {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-3 py-2 text-sm font-medium rounded-md ${
-                  location.pathname === link.to
-                    ? "text-primary bg-muted"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className={`block px-3 py-2 text-sm font-medium rounded-md ${
+                location.pathname === "/"
+                  ? "text-primary bg-muted"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              Home
+            </Link>
             <div>
               <button
                 onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
@@ -177,6 +184,20 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            {navLinks.filter((l) => l.to !== "/").map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`block px-3 py-2 text-sm font-medium rounded-md ${
+                  location.pathname === link.to
+                    ? "text-primary bg-muted"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             {moreLinks.map((link) => (
               <Link
                 key={link.to}
