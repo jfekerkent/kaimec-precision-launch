@@ -14,7 +14,7 @@ const EMAILJS_PUBLIC_KEY = "auMQyoP8IUFm3ImJd";
 const GREETING: ChatMessage = {
   role: "assistant",
   content:
-    "Hey — I'm the KaiMec product expert. Tell me what you're looking to cut, bend, or punch and I'll help find the right machine. What's the application?",
+    "Hey — I'm the Kaimec product expert. Tell me what you're looking to cut, bend, or punch and I'll help find the right machine. What's the application?",
 };
 
 function uuid() {
