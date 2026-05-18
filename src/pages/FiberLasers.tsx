@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
 import kflo1530Img from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";

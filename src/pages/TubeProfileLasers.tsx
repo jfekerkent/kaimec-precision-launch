@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
 import flp6035Front from "@/assets/machine-flp-6035-front.png";
 import flp6035Side from "@/assets/machine-flp-6035-side.png";

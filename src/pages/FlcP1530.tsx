@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";

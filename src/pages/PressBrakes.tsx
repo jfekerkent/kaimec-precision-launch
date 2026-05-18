@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";

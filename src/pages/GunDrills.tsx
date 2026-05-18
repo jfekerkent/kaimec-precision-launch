@@ -11,6 +11,7 @@ import {
   Target,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
 import tskMain from "@/assets/tsk-2150-main.png";
 import kaimecLogo from "@/assets/kaimec-logo-dark.png";
