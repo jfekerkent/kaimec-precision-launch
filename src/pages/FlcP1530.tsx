@@ -362,6 +362,7 @@ export default function FlcP1530() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

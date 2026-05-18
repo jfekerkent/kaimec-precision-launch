@@ -489,6 +489,7 @@ export default function ClosedTypeFiberLaser() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

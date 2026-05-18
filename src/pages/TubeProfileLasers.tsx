@@ -153,6 +153,7 @@ export default function TubeProfileLasers() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

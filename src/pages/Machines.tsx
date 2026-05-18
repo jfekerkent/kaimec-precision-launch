@@ -82,6 +82,7 @@ export default function Machines() {
           </section>
         );
       })}
+    <TrustSignals />
     </Layout>
   );
 }

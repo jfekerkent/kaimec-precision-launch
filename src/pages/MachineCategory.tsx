@@ -86,6 +86,7 @@ export default function MachineCategory() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

@@ -193,6 +193,7 @@ export default function FiberLasers() {
           </Link>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

@@ -396,7 +396,9 @@ export default function GunDrills() {
         </div>
       </section>
 
-      {/* SECTION 9 — Closing CTA */}
+      <TrustSignals />
+
+      {/* SECTION 10 — Closing CTA */}
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">

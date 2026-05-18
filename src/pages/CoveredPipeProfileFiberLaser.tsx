@@ -437,6 +437,7 @@ export default function CoveredPipeProfileFiberLaser() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

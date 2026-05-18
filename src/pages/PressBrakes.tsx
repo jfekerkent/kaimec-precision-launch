@@ -193,6 +193,7 @@ export default function PressBrakes() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }

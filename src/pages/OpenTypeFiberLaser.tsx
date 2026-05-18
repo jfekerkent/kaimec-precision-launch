@@ -388,6 +388,7 @@ export default function OpenTypeFiberLaser() {
           </div>
         </div>
       </section>
+    <TrustSignals />
     </Layout>
   );
 }
