@@ -90,7 +90,7 @@ export const machines: Machine[] = [
   },
   {
     id: "gun-drilling-machine",
-    model: "TSK-2150 × 3000mm",
+    model: "TSK-2150",
     category: "Gun Drills",
     categorySlug: "gun-drills",
     description: "Deep Hole Drilling & Boring Machine",

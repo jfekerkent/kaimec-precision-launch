@@ -32,7 +32,7 @@ export const machineOptions = [
   "FLP-6035",
   "MKT-1560",
   "MKT-32135",
-  "TSK-2150 × 3000mm",
+  "TSK-2150",
   "Not Sure Yet",
 ];
 
