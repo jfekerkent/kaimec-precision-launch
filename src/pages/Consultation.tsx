@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, ArrowRight, CheckCircle, User } from "lucide-react";
+import { Calendar, ArrowRight, CheckCircle, Wrench, DollarSign, Target } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 const EMAILJS_SERVICE_ID = "service_oiwu4ak";
@@ -104,28 +104,29 @@ export default function Consultation() {
         </div>
       </section>
 
-      {/* Section B — Osman */}
-      <section className="bg-[#F4F5F7] py-20">
-        <div className="container max-w-5xl">
-          <div className="grid gap-10 md:grid-cols-[260px_1fr] items-center">
-            {/* TODO: Replace placeholder with actual photo of Osman when uploaded */}
-            <div className="mx-auto md:mx-0 h-60 w-60 rounded-full bg-[#1a1a1a] flex items-center justify-center">
-              <User className="h-28 w-28 text-primary" />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">
-                Meet Osman — Our Lead Sales Engineer
-              </h2>
-              <p className="text-[#1a1a1a]/80 leading-relaxed text-lg">
-                Osman brings 40+ years of hands-on experience with fabrication equipment — from CNC fiber lasers to press brakes to panel benders. He'll spec the right machine for your shop, not the most expensive one. Most of our consults end with a clear recommendation, real numbers, and zero pressure.
-              </p>
-            </div>
+      {/* Section B — KaiMec Commitment */}
+      <section className="bg-[#F8F9FA] py-12 md:py-16">
+        <div className="container max-w-[1100px]">
+          <div className="text-center">
+            <p className="section-label mb-3" style={{ color: "#F5A623", fontSize: "13px", letterSpacing: "2.5px" }}>OUR COMMITMENT</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-6 leading-tight">
+              Built for Real Shops. Not Showrooms.
+            </h2>
+            <p className="text-[#1a1a1a]/80 max-w-[760px] mx-auto leading-relaxed" style={{ fontSize: "1.1rem" }}>
+              Every KaiMec machine is engineered for the floor — precision, consistency, and the throughput that real production demands. Fiber lasers. Press brakes. Panel benders. Tube and profile cutters. Gun drills. Backed by hands-on support from a team that's specified, installed, and stood behind these systems for decades. We pledge straight talk, fair pricing, and machines that earn their place in your shop.
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3 mt-12">
-            {["40+ years on the floor", "Honest pricing, no markup theater", "Right-sized recommendations"].map((b) => (
-              <div key={b} className="flex items-start gap-3">
-                <CheckCircle className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                <span className="text-[#1a1a1a] font-semibold">{b}</span>
+
+          <div className="grid gap-6 md:grid-cols-3 mt-20">
+            {[
+              { Icon: Wrench, h: "140+ Years on the Floor", b: "Our team has spent decades running, repairing, and selling industrial equipment. You're not talking to a script — you're talking to people who've actually pulled chips and pierced steel." },
+              { Icon: DollarSign, h: "Honest Pricing, No Markup Theater", b: "Real quotes built around your shop's actual needs. No bait-and-switch, no padded options, no fake discounts. The number we give you is the number." },
+              { Icon: Target, h: "Right-Sized Recommendations", b: "We'll spec the machine you actually need, not the most expensive one we can sell. If 6kW gets the job done, we'll tell you so." },
+            ].map(({ Icon, h, b }) => (
+              <div key={h} className="bg-white rounded-xl border border-black/5 shadow-sm p-8">
+                <Icon className="h-12 w-12 text-primary mb-5" strokeWidth={2} />
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3 leading-tight">{h}</h3>
+                <p className="text-[#1a1a1a]/70 leading-relaxed">{b}</p>
               </div>
             ))}
           </div>
