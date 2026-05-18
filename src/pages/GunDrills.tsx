@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
   Droplet,
@@ -13,6 +13,7 @@ import {
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import tskMain from "@/assets/tsk-2150-main.png";
+import kaimecLogo from "@/assets/kaimec-logo-dark.png";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 
@@ -35,58 +36,14 @@ function usePageMeta(title: string, description: string) {
   }, [title, description]);
 }
 
-const tskSpecs: { label: string; value: string }[] = [
+type Spec = { label: string; value: string };
+
+const tskSpecs: Spec[] = [
   { label: "Drilling Diameter", value: "Ø30 – Ø150 mm (Ø1.18 – Ø5.91 in)" },
   { label: "Boring Diameter", value: "Ø40 – Ø500 mm (Ø1.57 – Ø19.69 in)" },
   { label: "Max Processing Depth", value: "3,000 mm (118 in / 9.84 ft)" },
   { label: "Workpiece OD Range", value: "Ø100 – Ø700 mm (Ø3.94 – Ø27.56 in)" },
   { label: "Spindle Motor", value: "30 kW (~40 hp)" },
-];
-
-type SeriesCard = {
-  model: string;
-  title: string;
-  bullets: { bold?: string; text: string }[];
-};
-
-const seriesCards: SeriesCard[] = [
-  {
-    model: "KDH-Series",
-    title: "KDH General Deep-Hole Drilling",
-    bullets: [
-      { text: "The KDH Series is purpose-built for extreme drilling demands, combining massive capacity with proven precision." },
-      { bold: "Drilling depths from 3,100 mm to 12,000 mm (122 – 472 in / 10 – 39 ft)", text: ", supported by rigid ballscrews and base spans up to 1,400 mm (55 in) for unmatched stability." },
-      { bold: "Gear-driven spindles deliver 3 – 30 rpm", text: ", ideal for large-diameter boring, while auxiliary tool spindles reach 1,000 rpm (optionally 1,250 rpm) for added versatility." },
-      { bold: "Dual chucks up to Ø630 mm (Ø24.8 in)", text: ", with an option for Ø800 mm (Ø31.5 in) and 3- or 4-jaw configurations." },
-      { bold: "Workpieces from 20,000 kg (44,092 lb) to 120,000 kg (264,555 lb)", text: ", depending on the model." },
-      { bold: "Standard accuracy of ±0.01 mm (±0.0004 in)", text: ", ensuring reliable results even at extreme depths." },
-      { text: "Designed for oil & gas, aerospace, power generation, and heavy equipment — straight, accurate holes in the largest and most demanding parts." },
-    ],
-  },
-  {
-    model: "KPGD-Series",
-    title: "KPGD Precision Micro Deep Hole Drilling",
-    bullets: [
-      { bold: "KPGD-4X and KPGD-8X", text: " are engineered for high-speed micro-drilling, with built-in ER-16 spindles reaching up to 30,000 rpm." },
-      { text: "Perfect for aerospace, medical, and precision manufacturing — fine, accurate holes with exceptional repeatability." },
-      { bold: "Workpieces up to Ø1,400 mm (Ø55 in)", text: ", with the 8X optimized for even bigger diameters." },
-      { bold: "KCNC-36 belt-driven R-8 spindle up to 5,000 rpm", text: ", enabling heavier tooling up to 3.0 kg (6.6 lb) for versatile general-purpose deep-hole work." },
-      { bold: "3,600 mm (141.7 in) base length", text: " across all three machines, ensuring rigidity and stable performance." },
-      { bold: "Micron-level positioning accuracy ±0.01 mm (±0.0004 in)", text: " with rapid feed rates for repeatable, high-quality results." },
-    ],
-  },
-  {
-    model: "KMGD-Series",
-    title: "KMGD Multi-Spindle Deep Hole Drilling",
-    bullets: [
-      { bold: "Tables from 380 – 685 mm (15 – 27 in) wide and 1,500 – 1,981 mm (59 – 78 in) long", text: ", up to heavy-duty platforms with travels exceeding 5,080 mm (200 in)." },
-      { bold: "Spindle speeds up to 8,000 rpm (optional 10,000 rpm)", text: " with belt or gear drive, plus taper options including DIN or BT." },
-      { bold: "Positioning accuracy ±0.01 mm (±0.0004 in)", text: " across the lineup." },
-      { bold: "Motor power from 5.6 kW (7.5 hp) to over 30 kW (40 hp)", text: ", supporting table loads from 1,500 kg (3,300 lb) to 49,895 kg (110,000 lb)." },
-      { bold: "Tooling capacity Ø15 mm (Ø0.6 in) to Ø150 mm (Ø5.9 in)", text: "; advanced models deliver rapid feed rates up to 80,000 mm/min (3,150 ipm)." },
-      { text: "Ideal for automotive, aerospace, mold & die, and heavy equipment industries." },
-    ],
-  },
 ];
 
 const industries = [
@@ -100,13 +57,184 @@ const industries = [
   { icon: Target, name: "Precision Manufacturing", desc: "Aerospace fasteners, fluid passages, micro-features" },
 ];
 
-function QuoteButton({ machine, className = "" }: { machine: string; className?: string }) {
+function CTAButtons({ quoteMachine, quoteLabel }: { quoteMachine: string; quoteLabel: string }) {
   return (
-    <Link to={`/quote?machine=${encodeURIComponent(machine)}`} className={className}>
-      <Button className="w-full font-bold tracking-wide bg-primary text-primary-foreground hover:bg-primary/90">
-        REQUEST QUOTE →
-      </Button>
-    </Link>
+    <div className="mt-8 flex flex-col sm:flex-row gap-3">
+      <Link to={`/quote?machine=${encodeURIComponent(quoteMachine)}`}>
+        <Button
+          size="lg"
+          className="w-full sm:w-auto font-bold tracking-wide bg-[#F5A623] text-[#1a1a1a] hover:bg-[#f4b347] px-6"
+        >
+          {quoteLabel} →
+        </Button>
+      </Link>
+      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+        <Button
+          size="lg"
+          variant="outline"
+          className="w-full sm:w-auto font-bold tracking-wide border-2 border-[#F5A623] text-[#1a1a1a] bg-transparent hover:bg-[#F5A623] hover:text-[#1a1a1a] px-6"
+        >
+          📅 BOOK A CONSULT
+        </Button>
+      </a>
+    </div>
+  );
+}
+
+function PlaceholderImage({ label }: { label: string }) {
+  return (
+    <div className="w-full min-h-[450px] bg-[#fafafa] rounded-xl border border-black/5 flex flex-col items-center justify-center gap-4 p-8">
+      <img src={kaimecLogo} alt="KaiMec" className="h-16 w-auto opacity-40" />
+      <p className="text-neutral-400 text-sm font-medium tracking-wide uppercase">
+        {label} — image coming soon
+      </p>
+    </div>
+  );
+}
+
+interface ProductSectionProps {
+  bg: "white" | "light" | "dark";
+  imageSide: "left" | "right";
+  kicker: string;
+  title: string;
+  subtitle?: string;
+  tagline?: string;
+  description: ReactNode;
+  specs?: Spec[];
+  quoteMachine: string;
+  quoteLabel: string;
+  image: ReactNode;
+}
+
+function ProductSection({
+  bg,
+  imageSide,
+  kicker,
+  title,
+  subtitle,
+  tagline,
+  description,
+  specs,
+  quoteMachine,
+  quoteLabel,
+  image,
+}: ProductSectionProps) {
+  const bgClass =
+    bg === "white" ? "bg-white" : bg === "light" ? "bg-[#f5f5f5]" : "bg-[#1a1a1a]";
+  const imageOrder =
+    imageSide === "left" ? "md:order-1" : "md:order-2";
+  const contentOrder =
+    imageSide === "left" ? "md:order-2" : "md:order-1";
+
+  return (
+    <section className={`${bgClass} py-16 md:py-24`}>
+      <div className="container max-w-7xl">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className={`${imageOrder}`}>
+            <div className="min-h-[450px] flex items-center justify-center">
+              {image}
+            </div>
+          </div>
+          <div className={`${contentOrder}`}>
+            <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
+              {kicker}
+            </p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] leading-tight">
+              {title}
+            </h2>
+            {subtitle && (
+              <p className="text-lg md:text-xl font-medium text-neutral-600 mt-2">
+                {subtitle}
+              </p>
+            )}
+            {tagline && (
+              <p className="text-base md:text-lg italic font-medium text-[#F5A623] mt-3">
+                {tagline}
+              </p>
+            )}
+            <div className="mt-5 text-neutral-700 leading-relaxed max-w-[560px] text-[15px] md:text-base">
+              {description}
+            </div>
+            {specs && (
+              <ul className="mt-6 border-t border-black/10">
+                {specs.map((s) => (
+                  <li
+                    key={s.label}
+                    className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4 py-3 border-b border-black/10 text-sm md:text-[15px]"
+                  >
+                    <span className="font-bold text-[#1a1a1a]">{s.label}</span>
+                    <span className="text-neutral-700 sm:text-right">{s.value}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <CTAButtons quoteMachine={quoteMachine} quoteLabel={quoteLabel} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HelpMeChooseBanner({
+  headline,
+  subhead,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  secondaryExternal = false,
+}: {
+  headline: string;
+  subhead: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel: string;
+  secondaryHref: string;
+  secondaryExternal?: boolean;
+}) {
+  return (
+    <section className="bg-[#F5A623] py-10 md:py-12">
+      <div className="container max-w-5xl text-center">
+        <h2 className="text-2xl md:text-3xl font-black text-[#1a1a1a] mb-3">
+          {headline}
+        </h2>
+        <p className="text-base md:text-lg text-[#1a1a1a]/90 max-w-2xl mx-auto mb-6 leading-relaxed">
+          {subhead}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link to={primaryHref}>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto font-bold tracking-wide bg-[#1a1a1a] text-white hover:bg-[#1a1a1a]/90 px-6"
+            >
+              {primaryLabel} →
+            </Button>
+          </Link>
+          {secondaryExternal ? (
+            <a href={secondaryHref} target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto font-bold tracking-wide border-2 border-[#1a1a1a] text-[#1a1a1a] bg-transparent hover:bg-[#1a1a1a] hover:text-white px-6"
+              >
+                {secondaryLabel}
+              </Button>
+            </a>
+          ) : (
+            <a href={secondaryHref}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto font-bold tracking-wide border-2 border-[#1a1a1a] text-[#1a1a1a] bg-transparent hover:bg-[#1a1a1a] hover:text-white px-6"
+              >
+                {secondaryLabel}
+              </Button>
+            </a>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -133,109 +261,115 @@ export default function GunDrills() {
         </div>
       </section>
 
-      {/* SECTION 2 — Featured TSK-2150 */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container">
-          <div className="max-w-6xl mx-auto rounded-xl bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-black/5 overflow-hidden">
-            <div className="grid md:grid-cols-[45%_55%]">
-              {/* LEFT — image */}
-              <div className="bg-[#f7f7f7] flex items-center justify-center p-6 md:p-10">
-                {/* TODO: swap in higher-res TSK-2150 hero asset if available */}
-                <img
-                  src={tskMain}
-                  alt="TSK-2150 Deep Hole Drilling & Boring Machine"
-                  className="w-full h-auto max-h-[420px] object-contain"
-                />
-              </div>
-              {/* RIGHT — content */}
-              <div className="p-6 md:p-10 flex flex-col">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
-                  Flagship Gun Drill
-                </p>
-                <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-1">
-                  TSK-2150
-                </h2>
-                <p className="text-base md:text-lg font-medium text-neutral-600 mb-4">
-                  Deep Hole Drilling & Boring Machine
-                </p>
-                <p className="text-neutral-700 leading-relaxed mb-6">
-                  Standard production gun drilling for general manufacturing, mold work, hydraulic blocks, and tool & die. Built for daily runs with consistent precision and a 3,000 mm / 118 in stroke.
-                </p>
-                <ul className="space-y-2.5 mb-8">
-                  {tskSpecs.map((s) => (
-                    <li key={s.label} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 text-sm md:text-[15px]">
-                      <span className="font-bold text-[#1a1a1a] sm:min-w-[180px]">{s.label}:</span>
-                      <span className="text-neutral-700">{s.value}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto">
-                  <QuoteButton machine="TSK-2150" className="block max-w-xs" />
-                  <a
-                    href={CALENDLY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block mt-3 text-sm text-neutral-500 hover:text-[#F5A623] transition-colors"
-                  >
-                    or 📅 Book a 20-min consult — opens in new tab
-                  </a>
-                </div>
-              </div>
-            </div>
+      {/* SECTION 2 — TSK-2150 — image LEFT, white bg */}
+      <ProductSection
+        bg="white"
+        imageSide="left"
+        kicker="Flagship Gun Drill — Most Popular"
+        title="TSK-2150"
+        subtitle="Deep Hole Drilling & Boring Machine"
+        description={
+          <p>
+            The TSK-2150 is the standard production gun drill for general manufacturing, mold work, hydraulic blocks, and tool &amp; die. Built for daily runs with consistent precision and a <strong>3,000 mm / 118 in stroke</strong>. The first machine most shops ask us about — for good reason.
+          </p>
+        }
+        specs={tskSpecs}
+        quoteMachine="TSK-2150"
+        quoteLabel="REQUEST QUOTE"
+        image={
+          // TODO: Boss to upload higher-res TSK-2150 image — see assets folder. Target: minimum 1200×800 px for retina display.
+          <div className="w-full p-8 rounded-xl bg-gradient-to-br from-[#fff8ec] to-[#fdf1d4] shadow-[0_20px_50px_-15px_rgba(245,166,35,0.35)]">
+            <img
+              src={tskMain}
+              alt="TSK-2150 Deep Hole Drilling & Boring Machine"
+              className="w-full h-auto max-h-[420px] object-contain mx-auto"
+            />
           </div>
-        </div>
-      </section>
+        }
+      />
 
-      {/* SECTION 3 — K-Series grid */}
-      <section className="py-12 md:py-20 bg-[#f5f5f5]">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
-              Deep-Hole Drilling Lineup
-            </p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">
-              Specialized Solutions for Demanding Work
-            </h2>
-            <p className="text-neutral-700 max-w-[700px] mx-auto leading-relaxed">
-              When standard gun drilling won't cut it — purpose-built platforms for the deepest, largest, or most precise jobs.
-            </p>
-          </div>
+      {/* HELP ME CHOOSE banner #1 */}
+      <HelpMeChooseBanner
+        headline="Not sure which gun drill fits your shop?"
+        subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
+        primaryLabel="HELP ME CHOOSE"
+        primaryHref="/consultation"
+        secondaryLabel="OR CALL 714-258-8526"
+        secondaryHref="tel:7142588526"
+      />
 
-          <div className="grid md:grid-cols-3 gap-8 items-stretch">
-            {seriesCards.map((card) => (
-              <div
-                key={card.model}
-                className="flex flex-col bg-white rounded-xl border border-black/5 shadow-sm p-8"
-              >
-                {/* TODO: replace with actual product image for {card.model} */}
-                <div className="h-[200px] flex items-center justify-center mb-5 bg-[#fafafa] rounded-lg">
-                  <span className="text-neutral-400 text-sm">Image coming soon</span>
-                </div>
-                <h3 className="text-xl font-black text-[#1a1a1a] text-center">
-                  {card.title}
-                </h3>
-                <div className="h-[3px] w-[60px] bg-[#F5A623] mx-auto my-4 rounded-full" />
-                <ul className="space-y-3 text-[0.95rem] text-neutral-700 leading-relaxed flex-grow">
-                  {card.bullets.map((b, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-[#F5A623] mt-1.5 shrink-0">•</span>
-                      <span>
-                        {b.bold && <span className="font-bold text-[#1a1a1a]">{b.bold}</span>}
-                        {b.text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <QuoteButton machine={card.model} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* SECTION 4 — KDH — image RIGHT, light gray */}
+      <ProductSection
+        bg="light"
+        imageSide="right"
+        kicker="KDH Series"
+        title="General-Purpose Deep-Hole Drilling"
+        tagline="For the largest parts, the deepest holes."
+        description={
+          <p>
+            The KDH Series is purpose-built for deep-hole drilling, combining massive capacity with proven precision. Models range from <strong>3,100 mm up to 12,000 mm (122 – 472 in / 10 – 39 ft) drilling depth</strong>, supported by rigid ballscrews and wide base spans up to <strong>1,400 mm (55 in)</strong> for maximum stability. With <strong>gear-driven spindles offering speeds of 3 – 30 rpm</strong> for large-diameter boring, and auxiliary tool spindles reaching <strong>1,000 rpm (optionally 1,250 rpm)</strong>, the KDH Series balances high torque with operational flexibility. Workholding includes <strong>dual chucks up to Ø630 mm (Ø24.8 in)</strong> (optional Ø800 mm / Ø31.5 in, 3- or 4-jaw), while workpiece weight capacity extends from <strong>20,000 kg to 120,000 kg (44,092 – 264,555 lb)</strong> on larger models. Standard accuracy reaches <strong>±0.01 mm (±0.0004 in)</strong>, ensuring reliable results even at extreme depths. Designed for oil &amp; gas, aerospace, power generation, and heavy equipment, the KDH Series delivers straight, accurate holes in the largest and most demanding parts.
+          </p>
+        }
+        quoteMachine="KDH-Series"
+        quoteLabel="REQUEST KDH QUOTE"
+        image={
+          // TODO: Boss to upload KDH series machine image. Target size: minimum 1200×800 px for retina display.
+          <PlaceholderImage label="KDH Series" />
+        }
+      />
 
-      {/* SECTION 4 — Industries */}
+      {/* SECTION 5 — KPGD — image LEFT, white */}
+      <ProductSection
+        bg="white"
+        imageSide="left"
+        kicker="KPGD Series"
+        title="Precision Micro Deep-Hole Drilling"
+        tagline="High-speed micro-drilling for aerospace, medical, and precision work."
+        description={
+          <p>
+            The KaiMec KPGD and KCNC Series deliver precision deep-hole drilling solutions across a range of applications. The compact <strong>KPGD-4X and KPGD-8X</strong> are engineered for high-speed micro-drilling, reaching <strong>spindle speeds of up to 30,000 rpm</strong> with built-in ER-16 spindles, making them ideal for fine, accurate holes in aerospace, medical, and high-precision components. Both handle large workpieces up to <strong>Ø1,400 mm (Ø55 in)</strong>, with the 8X tailored for even bigger diameters. By contrast, the <strong>KCNC-36</strong> offers spindle speeds up to <strong>5,000 rpm</strong> with a belt-driven R-8 spindle, supporting heavier tooling up to <strong>6.6 lb (3.0 kg)</strong> for general-purpose deep-hole work. All three share a <strong>141.7 in (3,600 mm) base length</strong> for rigidity, while rapid feed rates and <strong>micron-level positioning accuracy (±0.01 mm / ±0.0004 in)</strong> deliver repeatable, high-quality results.
+          </p>
+        }
+        quoteMachine="KPGD-Series"
+        quoteLabel="REQUEST KPGD QUOTE"
+        image={
+          // TODO: Boss to upload KPGD series machine image (KPGD-4X or KPGD-8X). Target size: minimum 1200×800 px for retina display.
+          <PlaceholderImage label="KPGD Series" />
+        }
+      />
+
+      {/* SECTION 6 — KMGD — image RIGHT, light gray */}
+      <ProductSection
+        bg="light"
+        imageSide="right"
+        kicker="KMGD Series"
+        title="Multitasking Deep-Hole Drilling"
+        tagline="Versatility from compact production to heavy-duty platforms."
+        description={
+          <p>
+            The KaiMec KMGD Series offers a wide range of multi-spindle deep-hole drilling centers designed for precision and productivity. Models vary from compact machines with <strong>tables around 380 – 685 mm (15 – 27 in) wide and 1,500 – 1,981 mm (59 – 78 in) long</strong>, up to heavy-duty platforms with <strong>travels exceeding 5,080 mm (200 in)</strong>. Across the series, <strong>spindle speeds reach 8,000 rpm (optional 10,000 rpm)</strong> with belt or gear drive systems and DIN or BT taper options. Positioning accuracy is consistently <strong>±0.01 mm (±0.0004 in)</strong>. Spindle motor power ranges from <strong>5.6 kW (7.5 hp) to over 30 kW (40 hp)</strong>, while <strong>table load capacities extend from 1,500 kg (3,300 lb) to 49,895 kg (110,000 lb)</strong>. Tooling capability accommodates diameters from <strong>Ø15 mm (Ø0.6 in) up to Ø150 mm (Ø5.9 in)</strong>, with rapid feed rates up to <strong>80,000 mm/min (3,150 ipm)</strong> on advanced models — suitable for automotive, aerospace, and heavy equipment manufacturing.
+          </p>
+        }
+        quoteMachine="KMGD-Series"
+        quoteLabel="REQUEST KMGD QUOTE"
+        image={
+          // TODO: Boss to upload KMGD series machine image. Target size: minimum 1200×800 px for retina display.
+          <PlaceholderImage label="KMGD Series" />
+        }
+      />
+
+      {/* HELP ME CHOOSE banner #2 */}
+      <HelpMeChooseBanner
+        headline="Still weighing your options?"
+        subhead="Send us a note. We'll review your application, recommend the right series, and have a real number ready for the call."
+        primaryLabel="SEND US A NOTE"
+        primaryHref="/consultation"
+        secondaryLabel="📅 BOOK 20 MIN"
+        secondaryHref={CALENDLY_URL}
+        secondaryExternal
+      />
+
+      {/* SECTION 8 — Industries */}
       <section className="py-12 md:py-16 bg-[#1a1a1a]">
         <div className="container max-w-6xl">
           <div className="text-center mb-12">
@@ -261,7 +395,7 @@ export default function GunDrills() {
         </div>
       </section>
 
-      {/* SECTION 5 — Closing CTA */}
+      {/* SECTION 9 — Closing CTA */}
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">
