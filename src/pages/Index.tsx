@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -33,17 +34,52 @@ const whyPoints = [
 ];
 
 export default function Index() {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const tryPlay = () => {
+      const p = video.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible" && video.paused) {
+        tryPlay();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("focus", tryPlay);
+    tryPlay();
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("focus", tryPlay);
+    };
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <video
+            ref={heroVideoRef}
             src={heroVideo}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
+            disablePictureInPicture
+            onEnded={(e) => {
+              const v = e.currentTarget;
+              const p = v.play();
+              if (p && typeof p.catch === "function") p.catch(() => {});
+            }}
             className="absolute left-0 top-0 z-0 h-full w-full object-cover"
           />
           <div
