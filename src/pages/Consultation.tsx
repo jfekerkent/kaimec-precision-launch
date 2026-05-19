@@ -68,58 +68,7 @@ export default function Consultation() {
           <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-3 text-center">Send a Message</h2>
           <p className="text-muted-foreground text-center mb-10">Only name and email are required. The more you share, the better we can help.</p>
 
-          {submitted ? (
-            <div className="rounded-lg border border-primary/30 bg-primary/5 p-10 text-center">
-              <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Thanks — we got your note.</h3>
-              <p className="text-muted-foreground">
-                Osman or someone from the team will reach out within one business day. In a hurry? Call <a href="tel:7142588526" className="text-primary font-semibold">714-258-8526</a>.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={onSubmit} className="space-y-5">
-              <div>
-                <Label htmlFor="name" className="text-sm font-medium mb-1.5 block">Name <span className="text-red-500">*</span></Label>
-                <Input id="name" name="name" required value={form.name} onChange={handle} />
-              </div>
-              <div>
-                <Label htmlFor="email" className="text-sm font-medium mb-1.5 block">Email <span className="text-red-500">*</span></Label>
-                <Input id="email" name="email" type="email" required value={form.email} onChange={handle} />
-              </div>
-              <div>
-                <Label htmlFor="phone" className="text-sm font-medium mb-1.5 block">Phone</Label>
-                <Input id="phone" name="phone" value={form.phone} onChange={handle} />
-              </div>
-              <div>
-                <Label className="text-sm font-medium mb-1.5 block">Machine of Interest</Label>
-                <Select value={form.machine_of_interest} onValueChange={(v) => setForm({ ...form, machine_of_interest: v })}>
-                  <SelectTrigger><SelectValue placeholder="Select a machine" /></SelectTrigger>
-                  <SelectContent>
-                    {machineOpts.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Label className="text-sm font-medium mb-1.5 block">Timeline</Label>
-                <Select value={form.timeline} onValueChange={(v) => setForm({ ...form, timeline: v })}>
-                  <SelectTrigger><SelectValue placeholder="Select a timeline" /></SelectTrigger>
-                  <SelectContent>
-                    {timelineOpts.map((o) => <SelectItem key={o} value={o}>{o}</SelectItem>)}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Label htmlFor="message" className="text-sm font-medium mb-1.5 block">Message</Label>
-                <Textarea id="message" name="message" rows={4} value={form.message}
-                  onChange={handle}
-                  placeholder="Tell us what you're working on — material, thickness, volume, application" />
-              </div>
-              {error && <p className="text-red-500 text-sm">{error}</p>}
-              <Button type="submit" size="lg" disabled={disabled} className="font-bold w-full sm:w-auto px-10">
-                {loading ? "Sending..." : "SEND MESSAGE"} {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
-              </Button>
-            </form>
-          )}
+          <RequestInfoForm />
         </div>
       </section>
 
