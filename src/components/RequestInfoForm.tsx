@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { CheckCircle } from "lucide-react";
 
@@ -17,29 +16,11 @@ const EMAILJS_PUBLIC_KEY    = "auMQyoP8IUFm3ImJd";
 const HUBSPOT_ENDPOINT =
   "https://api.hsforms.com/submissions/v3/integration/submit/245894690/d661f94a-3786-425d-a13a-91a74ed980c1";
 
-export const machineOptions = [
-  "Open Type Fiber Laser (FLO Series)",
-  "FLO-1530",
-  "FLO-P 1530",
-  "FLC-P Series",
-  "FLC-1530",
-  "FLC-2040",
-  "FLC-2060",
-  "Closed Type Fiber Laser (FLC Series)",
-  "FLC-P 1530",
-  "FLC-P 2040",
-  "FLP-6020",
-  "FLP-6035",
-  "MKT-1560",
-  "MKT-32135",
-  "TSK-2150",
-  "Not Sure Yet",
-];
-
 const priorityOptions = [
   "Immediate",
   "Within 3 Months",
-  "Budgeting / Information Request",
+  "Budgeting",
+  "Information Request",
 ];
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,10 +32,7 @@ interface Props {
 export default function RequestInfoForm({ machine: machineProp }: Props) {
   const [searchParams] = useSearchParams();
   const queryMachine = searchParams.get("machine") || "";
-  const resolveInitial = () => {
-    const candidate = machineProp || queryMachine;
-    return candidate && machineOptions.includes(candidate) ? candidate : "";
-  };
+  const resolveMachine = () => machineProp || queryMachine || "General Inquiry";
 
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,16 +40,16 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     companyName: "",
     address: "",
-    machine: resolveInitial(),
+    machine: resolveMachine(),
     priority: "",
     message: "",
   });
 
   useEffect(() => {
-    const next = resolveInitial();
-    if (next) setFormData((p) => ({ ...p, machine: next }));
+    setFormData((p) => ({ ...p, machine: resolveMachine() }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [machineProp, queryMachine]);
 
@@ -93,6 +71,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       ["firstname", firstName],
       ["lastname", lastName],
       ["email", formData.email],
+      ["phone", formData.phone],
       ["company", formData.companyName],
       ["address", formData.address],
       ["machine_of_interest", formData.machine],
@@ -136,6 +115,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     const emailVars = {
       name: formData.name,
       email: formData.email,
+      phone: formData.phone,
       companyName: formData.companyName,
       address: formData.address,
       machine: formData.machine,
@@ -177,9 +157,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     return (
       <div className="rounded-lg border border-primary/30 bg-primary/5 p-10 text-center">
         <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-        <h3 className="text-xl font-bold text-foreground mb-2">Thank You!</h3>
         <p className="text-muted-foreground">
-          Thank you — a member of our team will be in touch shortly.
+          Thanks — we'll be in touch shortly.
         </p>
       </div>
     );
@@ -190,6 +169,9 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Hidden Machine */}
+      <input type="hidden" name="machine" value={formData.machine} />
+
       {/* Name */}
       <div>
         <Label htmlFor="name" className="text-sm font-medium text-foreground mb-1.5 block">
@@ -201,9 +183,15 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       {/* Email */}
       <div>
         <Label htmlFor="email" className="text-sm font-medium text-foreground mb-1.5 block">
-          Email Address <span className="text-red-500">*</span>
+          Email <span className="text-red-500">*</span>
         </Label>
-        <Input id="email" name="email" type="email" placeholder="Email Address" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
+        <Input id="email" name="email" type="email" placeholder="you@example.com" required value={formData.email} onChange={handleChange} className="bg-card border-border" />
+      </div>
+
+      {/* Phone */}
+      <div>
+        <Label htmlFor="phone" className="text-sm font-medium text-foreground mb-1.5 block">Phone</Label>
+        <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+1 (555) 555-5555" value={formData.phone} onChange={handleChange} className="bg-card border-border" />
       </div>
 
       {/* Company */}
@@ -215,43 +203,33 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       {/* Address */}
       <div>
         <Label htmlFor="address" className="text-sm font-medium text-foreground mb-1.5 block">Address</Label>
-        <Input id="address" name="address" placeholder="City, State or address" value={formData.address} onChange={handleChange} className="bg-card border-border" />
+        <Input id="address" name="address" placeholder="Street, City, State, Country" value={formData.address} onChange={handleChange} className="bg-card border-border" />
       </div>
 
-      {/* Machine */}
+      {/* Priority of Interest */}
       <div>
-        <Label className="text-sm font-medium text-foreground mb-1.5 block">Machine of Interest</Label>
-        <Select value={formData.machine} onValueChange={(value) => setFormData({ ...formData, machine: value })}>
+        <Label className="text-sm font-medium text-foreground mb-1.5 block">Priority of Interest</Label>
+        <Select value={formData.priority} onValueChange={(value) => setFormData({ ...formData, priority: value })}>
           <SelectTrigger className="bg-card border-border">
-            <SelectValue placeholder="Select a Machine" />
+            <SelectValue placeholder="Select a priority" />
           </SelectTrigger>
           <SelectContent>
-            {machineOptions.map((o) => (
+            {priorityOptions.map((o) => (
               <SelectItem key={o} value={o}>{o}</SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
 
-      {/* Priority of Interest */}
-      <div>
-        <Label className="text-sm font-medium text-foreground mb-3 block">Priority of Interest</Label>
-        <RadioGroup value={formData.priority} onValueChange={(value) => setFormData({ ...formData, priority: value })} className="space-y-2">
-          {priorityOptions.map((p) => (
-            <div key={p} className="flex items-center space-x-2">
-              <RadioGroupItem value={p} id={`priority-${p}`} />
-              <Label htmlFor={`priority-${p}`} className="text-sm text-muted-foreground cursor-pointer">{p}</Label>
-            </div>
-          ))}
-        </RadioGroup>
-      </div>
-
       {/* Message */}
-      <Textarea name="message" placeholder="Additional details or specifications" rows={4} value={formData.message} onChange={handleChange} className="bg-card border-border" />
+      <div>
+        <Label htmlFor="message" className="text-sm font-medium text-foreground mb-1.5 block">Additional details or specifications</Label>
+        <Textarea id="message" name="message" placeholder="Material, thickness, volume, application, timeline…" rows={5} value={formData.message} onChange={handleChange} className="bg-card border-border" />
+      </div>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
       <Button type="submit" size="lg" disabled={submitDisabled} className="font-bold px-10 w-full sm:w-auto">
-        {isLoading ? "Sending..." : "Submit Request"}
+        {isLoading ? "Sending..." : "Request Information"}
       </Button>
     </form>
   );
