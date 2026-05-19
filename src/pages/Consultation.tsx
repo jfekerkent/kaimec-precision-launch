@@ -1,82 +1,11 @@
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, ArrowRight, CheckCircle, Wrench, DollarSign, Target } from "lucide-react";
+import RequestInfoForm from "@/components/RequestInfoForm";
+import { Calendar, Wrench, DollarSign, Target } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
-const EMAILJS_SERVICE_ID = "service_oiwu4ak";
-const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
-const EMAILJS_REPLY_TEMPLATE = "template_8ghnppm";
-const EMAILJS_PUBLIC_KEY = "auMQyoP8IUFm3ImJd";
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const machineOpts = ["Fiber Laser", "Press Brake", "Panel Bender", "Tube/Pipe Laser", "Gun Drill", "Other"];
-const timelineOpts = ["ASAP", "30 days", "60-90 days", "6 months", "Just researching"];
 
 export default function Consultation() {
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", machine_of_interest: "", timeline: "", message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
-  const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const fireHubspot = () => {
-    try {
-      const w = window as unknown as { _hsq?: unknown[][] };
-      if (w._hsq && typeof w._hsq.push === "function") {
-        w._hsq.push(["identify", { email: form.email, firstname: form.name }]);
-        w._hsq.push(["trackPageView"]);
-      }
-    } catch (e) { console.warn("HubSpot identify skipped", e); }
-  };
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true); setError("");
-
-    const teamParams = {
-      name: form.name,
-      email: form.email,
-      company: "",
-      address: "",
-      machine: form.machine_of_interest || "(not specified)",
-      priority: form.timeline || "(not specified)",
-      additional_details: `Phone: ${form.phone || "n/a"}\nMessage: ${form.message || "n/a"}\n\nSource: Consultation Page Form`,
-    };
-
-    const replyPromise = emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_REPLY_TEMPLATE,
-        { name: form.name, email: form.email, machine: form.machine_of_interest || "(not specified)" },
-        EMAILJS_PUBLIC_KEY)
-      .catch((err) => console.warn("EmailJS auto-reply failed", err));
-
-    fireHubspot();
-
-    try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEAM_TEMPLATE, teamParams, EMAILJS_PUBLIC_KEY);
-      setSubmitted(true);
-    } catch (err) {
-      console.error(err);
-      setError("Something went wrong. Please email us at sales@kaimec.com or call 714-258-8526.");
-    } finally {
-      setLoading(false);
-      replyPromise;
-    }
-  };
-
-  const emailValid = EMAIL_REGEX.test(form.email.trim());
-  const disabled = loading || !form.name.trim() || !emailValid;
-
   return (
     <Layout>
       {/* Section A — Hero */}
