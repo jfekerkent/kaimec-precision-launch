@@ -45,8 +45,8 @@ const baseSpecs: [string, string][] = [
 ];
 
 const tailSpecs: [string, string][] = [
-  ["Laser Source", "Raycus / Han's / JPT"],
-  ["Laser Source Output Power", "1000 / 2000 / 3000W"],
+  ["Laser Source", "3, 6 and 12kW"],
+  ["Laser Source Output Power", "3000 / 6000 / 12000W"],
   ["CNC Control System", "Fscut"],
   ["Laser Cutting Head", "Raytools / BOCI / WSX"],
   ["Assist Gases", "Air / Oxygen / Nitrogen"],
