@@ -210,7 +210,7 @@ export default function OpenTypeFiberLaser() {
             <p>
               The Open Type Fiber Laser series is built for shops that want serious cutting capability without
               committing serious floor space. Compact, single-table design installs in roughly 160 square feet
-              and ships in 1kW, 2kW, 3kW, and 4kW power configurations — letting you match the machine to your
+              and ships in 3,6 and 12kW power configurations — letting you match the machine to your
               actual production needs instead of overspending on capacity you won't use.
             </p>
             <p>
