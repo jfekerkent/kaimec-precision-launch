@@ -279,9 +279,9 @@ export default function CoveredPipeProfileFiberLaser() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Specifications</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Configuration Comparison</h2>
-            <p className="text-white/70 text-lg mt-3">Side-by-side specs for available FLC-P series configurations.</p>
+            <p className="section-label mb-3 text-primary">{" "}</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
+            <p className="text-white/70 text-lg mt-3">{" "}</p>
           </div>
           <div className="bg-white overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[640px]">

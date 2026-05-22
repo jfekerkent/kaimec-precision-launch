@@ -273,10 +273,10 @@ export default function OpenTypeFiberLaser() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Specifications</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Configuration Comparison</h2>
+            <p className="section-label mb-3 text-primary">{" "}</p>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
             <p className="text-white/70 text-lg mt-3">
-              Side-by-side specs for available FLO series configurations.
+              {" "}
             </p>
           </div>
           <div className="bg-white overflow-x-auto">
