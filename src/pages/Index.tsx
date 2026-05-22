@@ -15,7 +15,7 @@ import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
 import facilityImg from "@/assets/why-kaimec-facility.png";
 
 const featuredMachines = [
-  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "5x10ft and 6.5x13ft \n3,6,12kW \nCombination machine with sheet and pipe/profile cutting \n\n", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "Sizes available : 5x10 and 6.5x13ft \n3,6,12kW \nCombination machine with sheet and pipe/profile cutting\n\n", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
   { tag: "Fiber Laser Cutting", name: "FLC-1530", desc: "Enclosed fiber laser for shops that demand cleaner environments and safer high-power cutting. Full enclosure, same precision.", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
   { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Cut round tube, square tube, angle iron, and custom profiles in one setup. No secondary ops. No fixturing headaches.", image: flcP1530Img, gallery: [flcP1530Img2, flcP1530Img3, flcP2040Img2], link: "/machines/cnc-fiber-lasers", isProductShot: true },
 ];
@@ -144,7 +144,7 @@ export default function Index() {
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{m.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{m.desc}</p>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
