@@ -5,7 +5,7 @@ export type FaqCategory =
   | "Software & Controls"
   | "Support & Service"
   | "Auxiliary Equipment"
-  | "Press Brakes"
+  | "CNC Press Brakes"
   | "Operation & Maintenance"
   | "Comparisons"
   | "Purchasing & Quotations";
@@ -26,7 +26,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   "Software & Controls",
   "Support & Service",
   "Auxiliary Equipment",
-  "Press Brakes",
+  "CNC Press Brakes",
   "Operation & Maintenance",
   "Comparisons",
   "Purchasing & Quotations",
@@ -85,11 +85,11 @@ export const FAQS: FaqItem[] = [
   { id: 50, category: "Machines & Capabilities", question: "Are Kaimec machines suitable for 24/7 operation?", answer: "Yes. Kaimec machines are industrial-grade systems designed for continuous production environments." },
   { id: 51, category: "Machines & Capabilities", question: "Are Kaimec machines energy efficient?", answer: "Yes. Fiber laser technology offers significantly lower power consumption compared to traditional CO2 laser systems." },
   { id: 52, category: "Machines & Capabilities", question: "Can Kaimec machines cut reflective materials?", answer: "Yes. Fiber laser systems can cut reflective materials such as aluminum and brass with proper configuration." },
-  { id: 53, category: "Press Brakes", question: "Are Kaimec press brakes CNC controlled?", answer: "Yes. All Kaimec press brakes are CNC controlled for high precision and repeatability." },
-  { id: 54, category: "Press Brakes", question: "Are hydraulic press brakes available?", answer: "Yes. Kaimec offers hydraulic CNC press brakes for industrial bending applications." },
-  { id: 55, category: "Press Brakes", question: "What tonnage options are available?", answer: "Kaimec offers multiple tonnage configurations depending on customer applications and material requirements." },
-  { id: 56, category: "Press Brakes", question: "What bending lengths are available?", answer: "Various bending lengths are available depending on machine model and customer production requirements." },
-  { id: 57, category: "Press Brakes", question: "Are safety systems included on press brakes?", answer: "Yes. Kaimec press brakes include advanced industrial safety systems and sensors." },
+  { id: 53, category: "CNC Press Brakes", question: "Are Kaimec press brakes CNC controlled?", answer: "Yes. All Kaimec press brakes are CNC controlled for high precision and repeatability." },
+  { id: 54, category: "CNC Press Brakes", question: "Are hydraulic press brakes available?", answer: "Yes. Kaimec offers hydraulic CNC press brakes for industrial bending applications." },
+  { id: 55, category: "CNC Press Brakes", question: "What tonnage options are available?", answer: "Kaimec offers multiple tonnage configurations depending on customer applications and material requirements." },
+  { id: 56, category: "CNC Press Brakes", question: "What bending lengths are available?", answer: "Various bending lengths are available depending on machine model and customer production requirements." },
+  { id: 57, category: "CNC Press Brakes", question: "Are safety systems included on press brakes?", answer: "Yes. Kaimec press brakes include advanced industrial safety systems and sensors." },
   { id: 58, category: "Support & Service", question: "Are detailed manuals included?", answer: "Yes. Detailed operation, programming, and maintenance manuals are included with the machines." },
   { id: 59, category: "Operation & Maintenance", question: "Can Kaimec machines reduce production costs?", answer: "Yes. High-speed operation, efficient nesting software, and reliable components help reduce labor, maintenance, and production costs." },
   { id: 60, category: "Operation & Maintenance", question: "Can Kaimec machines improve productivity?", answer: "Yes. High-speed cutting, FlyCut technology, automation features, and precision motion systems improve production efficiency." },

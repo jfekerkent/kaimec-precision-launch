@@ -47,7 +47,7 @@ export default function Footer() {
               {[
                 { label: "CNC Fiber Lasers", to: "/machines/cnc-fiber-lasers" },
                 { label: "Tube & Profile Lasers", to: "/machines/tube-profile-lasers" },
-                { label: "Press Brakes", to: "/machines/press-brakes" },
+                { label: "CNC Press Brakes", to: "/machines/press-brakes" },
                 { label: "Gun Drills", to: "/gun-drills" },
               ].map((l) => (
                 <li key={l.to}>

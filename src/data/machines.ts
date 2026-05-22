@@ -11,7 +11,7 @@ export interface Machine {
 export const categories = [
   { name: "Fiber Laser Cutting Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
-  { name: "Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
+  { name: "CNC Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
@@ -73,18 +73,18 @@ export const machines: Machine[] = [
   {
     id: "kmkt-1560",
     model: "MKT-1560",
-    category: "Press Brakes",
+    category: "CNC Press Brakes",
     categorySlug: "press-brakes",
-    description: "Press Brake",
+    description: "CNC Press Brake",
     specs: { "Tonnage": "60 tons", "Bending Length": "1,500 mm", "Stroke": "200 mm", "Controller": "DA-66T" },
     image: "press-brake",
   },
   {
     id: "kmkt-32135",
     model: "MKT-32135",
-    category: "Press Brakes",
+    category: "CNC Press Brakes",
     categorySlug: "press-brakes",
-    description: "Press Brake",
+    description: "CNC Press Brake",
     specs: { "Tonnage": "135 tons", "Bending Length": "3,200 mm", "Stroke": "250 mm", "Controller": "DA-69T" },
     image: "press-brake",
   },
