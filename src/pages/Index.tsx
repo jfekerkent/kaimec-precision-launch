@@ -144,7 +144,7 @@ export default function Index() {
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{m.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{m.desc}</p>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
