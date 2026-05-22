@@ -59,7 +59,7 @@ const features = [
 ];
 
 const models = [
-  { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "Compact production cell for general fabrication.", image: heroImg },
+  { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
   { id: "FLC-2040", area: "2000 × 4000 mm (6.5 × 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
@@ -67,7 +67,7 @@ const models = [
 const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 × 3000 mm", "2000 × 4000 mm", "2000 × 6000 mm"] },
+  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "2000 × 4000 mm", "2000 × 6000 mm"] },
   { label: "Loading Capacity", values: ["1200 kg", "1200 kg", "1450 kg"] },
   { label: "X-Y Axis Travel", values: ["1520 × 3030 mm", "2020 × 4040 mm", "2020 × 6050 mm"] },
   { label: "Z Axis Travel", values: ["300 mm", "300 mm", "350 mm"] },
@@ -270,7 +270,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Model Lineup</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Models</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Sizes and Models</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {models.map((m) => (
