@@ -159,7 +159,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm) models<br />Ø12" x 20ft tune capacity</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm) models<br />Ø12&quot; x 20ft tune capacity</li>
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -261,7 +261,7 @@ export default function CoveredPipeProfileFiberLaser() {
               img={flcP1530Img}
               title="FLC-P 1530"
               subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12\" diameter x 20ft in length in a single fully enclosed footprint."
+              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
               model="FLC-P 1530"
             />
             <ConfigCard
