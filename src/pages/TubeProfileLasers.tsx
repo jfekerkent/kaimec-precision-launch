@@ -17,7 +17,7 @@ const productDescription: string[] = [
   "Profiles from 15mm to 350mm in diameter, 6 meter full length cutting",
   "Special support frame prevents tube sagging and deforming, improves cutting accuracy and prolongs chuck service life",
   "Suitable for pipe, square profile, and rectangular cuts across agricultural machinery, construction equipment, defence, automotive, and industrial shelf sectors",
-  "Available in 2kW, 3kW and 4kW power options",
+  "Available in 3, 6 or 12kW laser power",
   "Various tube cutting lengths and unloading lengths available",
   "Optional Automatic Loading",
   "Cuts H, P, I-U profiles and other special shaped pipes with high repeat accuracy",
@@ -45,8 +45,8 @@ const baseSpecs: [string, string][] = [
 ];
 
 const tailSpecs: [string, string][] = [
-  ["Laser Source", "Raycus / Han's / JPT"],
-  ["Laser Source Output Power", "1000 / 2000 / 3000W"],
+  ["Laser Source", "3, 6 and 12kW"],
+  ["Laser Source Output Power", "3000 / 6000 / 12000W"],
   ["CNC Control System", "Fscut"],
   ["Laser Cutting Head", "Raytools / BOCI / WSX"],
   ["Assist Gases", "Air / Oxygen / Nitrogen"],

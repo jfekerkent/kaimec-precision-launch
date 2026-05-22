@@ -84,8 +84,8 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Z Axis Speed", values: ["30 m/min (1180 ipm)", "30 m/min (1180 ipm)"] },
   { label: "X-Y Position Accuracy", values: ['0.05 mm (0.002")', '0.05 mm (0.002")'] },
   { label: "X-Y Repeatability Accuracy", values: ['0.03 mm (0.001")', '0.03 mm (0.001")'] },
-  { label: "Laser Source", values: ["JPT / Han's", "JPT / Han's"] },
-  { label: "Laser Source Output Power", values: ["1000 / 2000 / 3000 W", "1000 / 2000 / 3000 W"] },
+  { label: "Laser Source", values: ["3, 6 and 12kW", "3, 6 and 12kW"] },
+  { label: "Laser Source Output Power", values: ["3000 / 6000 / 12000 W", "3000 / 6000 / 12000 W"] },
   { label: "CNC Control System", values: ["Fscut / Cypcut", "Fscut / Cypcut"] },
   { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
@@ -210,7 +210,7 @@ export default function OpenTypeFiberLaser() {
             <p>
               The Open Type Fiber Laser series is built for shops that want serious cutting capability without
               committing serious floor space. Compact, single-table design installs in roughly 160 square feet
-              and ships in 1kW, 2kW, 3kW, and 4kW power configurations — letting you match the machine to your
+              and ships in 3,6 and 12kW power configurations — letting you match the machine to your
               actual production needs instead of overspending on capacity you won't use.
             </p>
             <p>
@@ -319,9 +319,9 @@ export default function OpenTypeFiberLaser() {
               <thead>
                 <tr className="bg-secondary text-white">
                   <th className="px-5 py-4 text-left font-bold">Material</th>
-                  <th className="px-5 py-4 text-center font-bold">1000 W</th>
-                  <th className="px-5 py-4 text-center font-bold">2000 W</th>
                   <th className="px-5 py-4 text-center font-bold">3000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">6000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">12000 W</th>
                 </tr>
               </thead>
               <tbody>
