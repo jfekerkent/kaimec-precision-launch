@@ -164,7 +164,7 @@ export default function ClosedTypeFiberLaser() {
                 
               </p>
               <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight lg:text-5xl">
-                Fully EnClosed Fiber Laser Cutting Machines
+                Fully Enclosed Fiber Laser Cutting Machines
               </h1>
               <p className="text-base font-bold tracking-wide text-primary mb-6 uppercase">
                 HIGH QUALITY MACHINES FROM EUROPE
