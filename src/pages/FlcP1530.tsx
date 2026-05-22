@@ -243,7 +243,7 @@ export default function FlcP1530() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-5xl">
           <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Specifications</p>
+            <p className="section-label mb-3 text-primary">{" "}</p>
             <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
           </div>
 
