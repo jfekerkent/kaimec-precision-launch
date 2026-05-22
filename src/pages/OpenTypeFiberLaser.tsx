@@ -384,7 +384,7 @@ export default function OpenTypeFiberLaser() {
               Get a Quote on the Open Type Fiber Laser
             </h2>
             <p className="text-lg text-muted-foreground">
-              Talk to a U.S.-based specialist about your application. Most quotes returned within one business day.
+              Talk to a 24/7 U.S.-Based specialist about your application. Most quotes returned within one business day.
             </p>
           </div>
           <div className="bg-card border border-border p-6 md:p-10">
