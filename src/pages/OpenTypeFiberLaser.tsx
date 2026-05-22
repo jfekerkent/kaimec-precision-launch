@@ -187,7 +187,7 @@ export default function OpenTypeFiberLaser() {
                 <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-1530</figcaption>
               </figure>
               <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
-                <div className="aspect-[4/3] flex items-center justify-center p-6 bg-white">
+                <div className="aspect-[1/1] flex items-center justify-center p-6 bg-white">
                   <img
                     src={flo2040Img}
                     alt="Open Type Fiber Laser FLO-2040"
