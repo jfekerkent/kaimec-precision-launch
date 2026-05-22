@@ -294,7 +294,7 @@ export default function ClosedTypeFiberLaser() {
       <section id="specs" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Specifications</p>
+            <p className="section-label mb-3 text-primary">{" "}</p>
             <h2 className="text-3xl md:text-4xl font-black text-white">Specifications</h2>
             <p className="text-white/70 text-lg mt-3">
               Side-by-side comparison across all three FLC configurations.
