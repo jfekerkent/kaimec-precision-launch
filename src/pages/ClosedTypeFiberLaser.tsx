@@ -218,7 +218,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container max-w-4xl">
           <p className="section-label mb-3 text-primary">Overview</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">
-            Built for Thick Plate, Engineered for Uptime
+            Built for Precision and cost effectiveness
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
