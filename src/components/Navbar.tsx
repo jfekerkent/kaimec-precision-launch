@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             src={logoImg}
             alt="KAIMEC Machines"
-            className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+            className="h-14 sm:h-16 md:h-[72px] w-auto object-contain"
           />
         </Link>
 
