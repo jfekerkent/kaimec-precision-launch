@@ -158,7 +158,7 @@ export default function ClosedTypeFiberLaser() {
                 <span className="text-white">Closed Type</span>
               </nav>
               <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
-                Laser Cutting / Closed Type
+                
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight">
                 Closed Type Fiber Laser Cutting Machines
@@ -166,9 +166,12 @@ export default function ClosedTypeFiberLaser() {
               <p className="text-base font-bold tracking-wide text-primary mb-6 uppercase">
                 Serious Machines for Serious Shops.
               </p>
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
-                Fully enclosed, dual-exchange-table fiber lasers built for high-power production cutting —
-                up to 20 kW, work areas from 5×10 ft to 6.5×20 ft.
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
+                Cost effective
+                24/7 USA support
+                Made in Europe
+                2 Year Full Warranty
+                5x10ft and 6.5x13ft models
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
