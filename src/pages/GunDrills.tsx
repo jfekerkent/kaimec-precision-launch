@@ -97,7 +97,7 @@ function CTAButtons({ quoteMachine, quoteLabel }: { quoteMachine: string; quoteL
 function PlaceholderImage({ label }: { label: string }) {
   return (
     <div className="w-full min-h-[450px] bg-[#fafafa] rounded-xl border border-black/5 flex flex-col items-center justify-center gap-4 p-8">
-      <img src={kaimecLogo} alt="Kaimec" className="h-16 w-auto opacity-40" />
+      <img src={kaimecLogo} alt="Kaimec" className="h-24 w-auto opacity-40" />
       <p className="text-neutral-400 text-sm font-medium tracking-wide uppercase">
         {label} — image coming soon
       </p>
