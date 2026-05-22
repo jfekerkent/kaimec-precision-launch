@@ -14,7 +14,7 @@ const navLinks = [
 const laserCuttingLinks = [
   { label: "Open Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
   { label: "Closed Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
-  { label: "Covered Type & Pipe Profile Fiber Laser", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
+  { label: "Combo lasers (sheet + pipe cutting)", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
 ];
 
 const moreLinks = [

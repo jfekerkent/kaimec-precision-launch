@@ -66,7 +66,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut"] },
-  { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
+  { label: "Laser Cutting Head", values: ["2000 x 4000 mm", "2000 x 4000 mm"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["12000 kg (26450 lbs)", "11500 kg (25350 lbs)"] },
@@ -146,21 +146,21 @@ export default function CoveredPipeProfileFiberLaser() {
                 <ChevronRight className="h-3 w-3" />
                 <Link to="/machines" className="hover:text-white">Laser Cutting</Link>
                 <ChevronRight className="h-3 w-3" />
-                <span className="text-white">Covered Type & Pipe Profile Fiber Laser</span>
+                <span className="text-white">Combo lasers (sheet + pipe cutting)</span>
               </nav>
               <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
                 
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
-                Covered Type & Pipe Profile Fiber Laser
+                Combo lasers<br />(sheet + pipe cutting)
               </h1>
               <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm)  models</li>
-                <li>3,6 or 12kW laser power</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm) models<br />Ø12" x 20ft tune capacity</li>
+                <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
@@ -181,7 +181,7 @@ export default function CoveredPipeProfileFiberLaser() {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                <img src={flcP1530Img} alt="FLC-P Covered Type & Pipe Profile Fiber Laser" className="w-full h-full object-contain bg-white" />
+                <img src={flcP1530Img} alt="FLC-P Combo lasers (sheet + pipe cutting)" className="w-full h-full object-contain bg-white" />
               </div>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function CoveredPipeProfileFiberLaser() {
               img={flcP1530Img}
               title="FLC-P 1530"
               subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 5 x 10 ft and pipe/profile up to 350 mm diameter in a single fully enclosed footprint."
+              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12\" diameter x 20ft in length in a single fully enclosed footprint."
               model="FLC-P 1530"
             />
             <ConfigCard

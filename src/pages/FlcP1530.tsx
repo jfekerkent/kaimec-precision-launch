@@ -125,12 +125,12 @@ export default function FlcP1530() {
                 <ChevronRight className="h-3 w-3" />
                 <Link to="/machines" className="hover:text-white">Laser Cutting</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines/cnc-fiber-lasers" className="hover:text-white">Covered Type & Pipe Profile</Link>
+                <Link to="/machines/cnc-fiber-lasers" className="hover:text-white">Combo lasers (sheet + pipe cutting)</Link>
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">FLC-P 1530</span>
               </nav>
               <p className="text-xs font-bold tracking-[0.2em] text-primary mb-4 uppercase">
-                Covered Type & Pipe Profile Fiber Laser
+                Combo lasers (sheet + pipe cutting)
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
                 FLC-P 1530
@@ -159,7 +159,7 @@ export default function FlcP1530() {
               <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
                 <img
                   src={flcP1530Img}
-                  alt="FLC-P 1530 Covered Type Pipe & Profile Fiber Laser"
+                  alt="FLC-P 1530 Combo lasers (sheet + pipe cutting)"
                   className="w-full h-full object-contain bg-white"
                 />
               </div>
