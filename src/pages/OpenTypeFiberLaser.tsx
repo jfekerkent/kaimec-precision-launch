@@ -24,6 +24,7 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
+import flo2040Img from "@/assets/machine-flo-2040.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -174,14 +175,27 @@ export default function OpenTypeFiberLaser() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                <img
-                  src={flo1530Img}
-                  alt="Open Type Fiber Laser FLO Series"
-                  className="w-full h-full object-contain bg-white"
-                />
-              </div>
+            <div className="relative grid gap-4">
+              <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
+                <div className="aspect-[4/3] flex items-center justify-center p-6 bg-white">
+                  <img
+                    src={flo1530Img}
+                    alt="Open Type Fiber Laser FLO-1530"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-1530</figcaption>
+              </figure>
+              <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
+                <div className="aspect-[4/3] flex items-center justify-center p-6 bg-white">
+                  <img
+                    src={flo2040Img}
+                    alt="Open Type Fiber Laser FLO-2040"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-2040</figcaption>
+              </figure>
             </div>
           </div>
         </div>
