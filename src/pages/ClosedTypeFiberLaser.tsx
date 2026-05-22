@@ -19,6 +19,9 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import heroImg from "@/assets/flc-hero.png";
 import sideProfileImg from "@/assets/flc-side-profile.png";
 import tableExtendedImg from "@/assets/flc-table-extended.png";
+import flc1530_2 from "@/assets/flc-1530-2.png";
+import flc1530_3 from "@/assets/flc-1530-3.png";
+import flc1530_4 from "@/assets/flc-1530-4.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -192,12 +195,18 @@ export default function ClosedTypeFiberLaser() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                <img
-                  src={heroImg}
-                  alt="Closed Type Fiber Laser FLC Series"
-                  className="w-full h-full object-contain bg-white"
-                />
+              <div className="space-y-4">
+                <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-4 rounded-lg border">
+                  <img src={flc1530_2} alt="FLC-1530 front view" className="w-full h-full object-contain bg-white" />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-2 rounded-lg border">
+                    <img src={flc1530_3} alt="FLC-1530 side view" className="w-full h-full object-contain bg-white" />
+                  </div>
+                  <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-2 rounded-lg border">
+                    <img src={flc1530_4} alt="FLC-1530 with exchange table" className="w-full h-full object-contain bg-white" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
