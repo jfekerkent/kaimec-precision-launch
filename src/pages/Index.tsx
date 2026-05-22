@@ -91,7 +91,7 @@ export default function Index() {
           <div className="max-w-2xl">
             <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision CNC Equipment. Factory-Direct to Your Floor.</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-balance" style={{ color: "#FFFFFF" }}>
-              Cut Faster. Cut Cleaner. Built for Your Production Floor.
+              European Made, high-speed laser cutting machines and press brakes
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
               KAIMEC offers CNC fiber lasers, press brakes, and deep hole drilling systems not available through standard distributors — backed by US-based engineers and California inventory.
