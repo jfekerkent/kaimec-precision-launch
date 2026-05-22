@@ -149,13 +149,17 @@ export default function CoveredPipeProfileFiberLaser() {
                 <span className="text-white">Covered Type & Pipe Profile Fiber Laser</span>
               </nav>
               <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
-                Fiber Laser Cutting Series
+                
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
                 Covered Type & Pipe Profile Fiber Laser
               </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
-                Fully enclosed sheet metal AND pipe/profile cutting in a single machine — laser power up to 20 kW, fully U.S. supported.
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
+                Cost effective
+                24/7 USA support
+                Made in Europe
+                2 Year Full Warranty
+                5x10ft and 6.5x13ft models
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
