@@ -203,6 +203,17 @@ export default function OpenTypeFiberLaser() {
 
       {/* 2. PRODUCT HIGHLIGHTS */}
       <section className="py-20 bg-background">
+        <div className="container max-w-5xl mb-16">
+          <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/USZ4uyD315s?autoplay=1&mute=1&loop=1&playlist=USZ4uyD315s&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Open Type Fiber Laser in action"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
         <div className="container max-w-4xl">
           <p className="section-label mb-3 text-primary">Overview</p>
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">Product Highlights</h2>
