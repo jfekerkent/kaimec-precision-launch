@@ -319,9 +319,9 @@ export default function OpenTypeFiberLaser() {
               <thead>
                 <tr className="bg-secondary text-white">
                   <th className="px-5 py-4 text-left font-bold">Material</th>
-                  <th className="px-5 py-4 text-center font-bold">1000 W</th>
-                  <th className="px-5 py-4 text-center font-bold">2000 W</th>
                   <th className="px-5 py-4 text-center font-bold">3000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">6000 W</th>
+                  <th className="px-5 py-4 text-center font-bold">12000 W</th>
                 </tr>
               </thead>
               <tbody>
