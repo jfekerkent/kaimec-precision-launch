@@ -112,7 +112,7 @@ export default function TubeProfileLasers() {
     <Layout>
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
-          <p className="section-label mb-3">Machine Catalog</p>
+          <br />
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Tube & Profile Lasers</h1>
           <p className="text-lg text-white/80">Specialized laser systems for cutting tubes, pipes, and structural profiles.</p>
         </div>
