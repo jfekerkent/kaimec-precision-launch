@@ -31,13 +31,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white shadow-sm">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-24 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0 mr-2">
           <img
             src={logoImg}
             alt="KAIMEC Machines"
-            className="h-14 sm:h-16 md:h-[72px] w-auto object-contain"
+            className="h-[72px] sm:h-[84px] md:h-[96px] w-auto object-contain"
           />
         </Link>
 
