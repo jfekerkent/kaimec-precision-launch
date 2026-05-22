@@ -145,14 +145,14 @@ export default function OpenTypeFiberLaser() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
                 Open Type Fiber Lasers
               </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
-                Cost effective&nbsp;
-                24/7 USA support&nbsp;
-                Made in Europe&nbsp;
-                2 Year Full Warranty&nbsp;
-                5x10ft and 6.5x13ft models&nbsp;
-                3,6 and 12kW
-              </p>
+              <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
+                <li>Cost effective</li>
+                <li>24/7 USA support</li>
+                <li>Made in Europe</li>
+                <li>2 Year Full Warranty</li>
+                <li>5x10ft and 6.5x13ft models</li>
+                <li>3,6 and 12kW</li>
+              </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
                   Request a Quote
