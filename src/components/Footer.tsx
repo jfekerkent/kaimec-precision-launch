@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
-import logoImg from "@/assets/kaimec-logo-nav.png";
+import logoImg from "@/assets/kaimec-logo-footer.png";
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 src={logoImg}
                 alt="KAIMEC Machines"
-                style={{ height: "95px", width: "auto", filter: "brightness(0) invert(1)" }}
+                style={{ height: "95px", width: "auto" }}
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
