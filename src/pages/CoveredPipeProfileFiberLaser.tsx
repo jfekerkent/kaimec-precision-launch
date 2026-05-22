@@ -155,11 +155,11 @@ export default function CoveredPipeProfileFiberLaser() {
                 Covered Type & Pipe Profile Fiber Laser
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
-                Cost effective
-                24/7 USA support
-                Made in Europe
-                2 Year Full Warranty
-                5x10ft and 6.5x13ft models
+                Cost effective&nbsp;
+                24/7 USA support&nbsp;
+                Made in Europe&nbsp;
+                2 Year Full Warranty&nbsp;
+                5x10ft and 6.5x13ft models&nbsp;
                 3,6 and 12kW
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
