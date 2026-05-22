@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "Press Brakes", to: "/machines/press-brakes" },
   { label: "Gun Drills", to: "/gun-drills" },
+  { label: "FAQ", to: "/faq" },
 ];
 
 const laserCuttingLinks = [
