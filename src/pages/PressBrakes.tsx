@@ -7,8 +7,8 @@ import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
-  { id: "kmkt-1560", model: "MKT-1560", description: "Press Brake", images: [mkt1560Img] },
-  { id: "kmkt-32135", model: "MKT-32135", description: "Press Brake", images: [mkt32135Img] },
+  { id: "kmkt-1560", model: "MKT-1560", description: "CNC Press Brake 1500mm / 60Metric Ton / CNC control / 4 axis / Cybletec control", images: [mkt1560Img] },
+  { id: "kmkt-32135", model: "MKT-32135", description: "CNC Press Brake 1500mm / 60Metric Ton / CNC control / 4 axis / Cybletec control", images: [mkt32135Img] },
 ];
 
 const technicalParams1560: [string, string][] = [
@@ -100,7 +100,7 @@ const standardConfig: [string, string][] = [
 ];
 
 const optionalSpecs1560: string[] = [
-  "Y1-Y2-X-R-Z1-Z2, 6 Axis",
+  "Control Unit – CybTouch 12, CybTouch 15,Series",
   "Control Unit – CybTouch 12, CybTouch 15, Step Rock Series, ESA 6000 Series, ESA 8000 Series",
   "Quick Clamping Latch Mould Holder",
   "Manual Curved System",
