@@ -76,8 +76,8 @@ export default function About() {
       <section className="py-20 md:py-28">
         <div className="container grid gap-12 lg:grid-cols-2 items-center">
           <div className="lg:order-1 order-2">
-            <p className="section-label mb-3">U.S.-Based Support</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">U.S.-Based Support</h2>
+            <p className="section-label mb-3">24/7 U.S.-Based Support</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">24/7 U.S.-Based Support</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Every KAIMEC machine comes backed by our Tustin, CA team. We stock parts domestically, provide in-house engineering support, and show up when your floor needs us. Same-day support, no overseas tickets, no runaround — just direct access to people who know the machine.
             </p>

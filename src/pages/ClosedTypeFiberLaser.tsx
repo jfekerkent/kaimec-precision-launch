@@ -120,7 +120,7 @@ const optionalConfig = [
 const trustBand = [
   { icon: Award, title: "CE / ISO Certified", body: "Built to European standards for safety and quality." },
   { icon: ShieldCheck, title: "Built for Production", body: "Dual-table, 24/7-ready industrial fabrication platform." },
-  { icon: Wrench, title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
+  { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
 
 const gallery = [

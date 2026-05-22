@@ -34,7 +34,7 @@ const features = [
   { icon: Layers, title: "Double Exchange Table", body: "Keeps cutting continuous between loads. 10-second table changeover." },
   { icon: Crosshair, title: "Auto-Centering Chucks", body: "Pipe clamping and centering at the press of a button. No manual setup between jobs." },
   { icon: Radio, title: "Wireless Remote Control", body: "Blowing, cutting, pause, calibration, and simulation functions accessible from anywhere on the floor." },
-  { icon: Flag, title: "U.S.-Based Support", body: "Service technicians, replacement parts, and technical support all based in the United States." },
+  { icon: Flag, title: "24/7 U.S.-Based Support", body: "Service technicians, replacement parts, and technical support all based in the United States." },
 ];
 
 const industries = [
@@ -88,7 +88,7 @@ const cuttingChart: { material: string; values: string[] }[] = [
 const trustBand = [
   { icon: Award, title: "CE / ISO Certified", body: "Meets international and U.S. safety standards." },
   { icon: ShieldCheck, title: "2-Year Warranty", body: "Standard on all FLC-P series machines." },
-  { icon: Wrench, title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
+  { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
 
 const flp6035Specs = [

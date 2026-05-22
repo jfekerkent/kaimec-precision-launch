@@ -47,7 +47,7 @@ const features = [
   },
   {
     icon: Flag,
-    title: "U.S.-Based Support",
+    title: "24/7 U.S.-Based Support",
     body: "Service technicians, replacement parts, and technical support all based in the United States. No international delays.",
   },
   {

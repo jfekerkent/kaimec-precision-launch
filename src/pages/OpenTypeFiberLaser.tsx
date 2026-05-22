@@ -55,7 +55,7 @@ const features = [
   },
   {
     icon: Flag,
-    title: "U.S.-Based Support",
+    title: "24/7 U.S.-Based Support",
     body: "Service technicians, replacement parts, and technical support all based in the United States.",
   },
 ];
@@ -107,7 +107,7 @@ const cuttingChart: { material: string; values: string[] }[] = [
 const trustBand = [
   { icon: Award, title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
   { icon: ShieldCheck, title: "2-Year Warranty", body: "Standard on all FLO series machines." },
-  { icon: Wrench, title: "U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
+  { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
 
 const gallery = [
