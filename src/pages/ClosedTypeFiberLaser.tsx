@@ -76,7 +76,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "X-Y Position Accuracy", values: ["0.05 mm", "0.05 mm", "0.05 mm"] },
   { label: "X-Y Repeatability Accuracy", values: ["0.03 mm", "0.03 mm", "0.03 mm"] },
   { label: "Table Change Time", values: ["10 sec", "10 sec", "10 sec"] },
-  { label: "Laser Source", values: ["Raycus / Han's / JPT", "Raycus / Han's / JPT", "Raycus / Han's / JPT"] },
+  { label: "Laser Source", values: ["3, 6 and 12kW", "3, 6 and 12kW", "3, 6 and 12kW"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 – 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut", "Fscut"] },
   { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
