@@ -22,7 +22,7 @@ const featuredMachines = [
 
 const stats = [
   { value: "50+", label: "Years Combined Experience" },
-  { value: "500+", label: "Machines Installed" },
+  { value: "750+", label: "Machines Installed" },
   { value: "U.S.-Based", label: "Support & Parts Team" },
 ];
 
