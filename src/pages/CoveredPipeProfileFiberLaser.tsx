@@ -148,7 +148,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">Covered Type & Pipe Profile Fiber Laser</span>
               </nav>
-              <p className="text-xs font-bold tracking-[0.2em] text-primary mb-4 uppercase">
+              <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
                 Fiber Laser Cutting Series
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
