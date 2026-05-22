@@ -139,15 +139,17 @@ export default function OpenTypeFiberLaser() {
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">Open Type Fiber Laser</span>
               </nav>
-              <p className="text-xs font-bold tracking-[0.2em] text-primary mb-4 uppercase">
+              <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
                 Fiber Laser Cutting Series
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
                 Open Type Fiber Laser
               </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
-                Compact, cost-effective fiber laser cutting for shops that need precision without the footprint —
-                fully U.S. supported.
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl whitespace-pre-line">
+                Cost effective{"\n"}
+                24/7 USA support{"\n"}
+                Made in Europe{"\n"}
+                2 Year Full Warranty
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>

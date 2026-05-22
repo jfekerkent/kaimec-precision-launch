@@ -157,7 +157,7 @@ export default function ClosedTypeFiberLaser() {
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">Closed Type</span>
               </nav>
-              <p className="text-xs font-bold tracking-[0.2em] text-primary mb-4 uppercase">
+              <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
                 Laser Cutting / Closed Type
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight">
