@@ -100,7 +100,7 @@ const standardConfig: [string, string][] = [
 ];
 
 const optionalSpecs1560: string[] = [
-  "Control Unit – CybTouch 12, CybTouch 15,Series",
+  "2 year Control warranty",
   "Control Unit – CybTouch 12, CybTouch 15, Step Rock Series, ESA 6000 Series, ESA 8000 Series",
   "Quick Clamping Latch Mould Holder",
   "Manual Curved System",
@@ -143,7 +143,7 @@ export default function PressBrakes() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">Machine Catalog</p>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Press Brakes</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">CNC Press Brakes</h1>
           <p className="text-lg text-white/80">CNC hydraulic and electric press brakes for precision metal bending.</p>
         </div>
       </section>
