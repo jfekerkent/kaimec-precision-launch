@@ -151,6 +151,7 @@ export default function OpenTypeFiberLaser() {
                 Made in Europe
                 2 Year Full Warranty
                 5x10ft and 6.5x13ft models
+                3,6 and 12kW
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
