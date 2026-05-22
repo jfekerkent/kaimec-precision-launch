@@ -160,11 +160,11 @@ export default function ClosedTypeFiberLaser() {
               <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
                 
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight">
-                Closed Type Fiber Laser Cutting Machines
+              <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight lg:text-5xl">
+                Fully EnClosed Fiber Laser Cutting Machines
               </h1>
               <p className="text-base font-bold tracking-wide text-primary mb-6 uppercase">
-                Serious Machines for Serious Shops.
+                HIGH QUALITY MACHINES FROM EUROPE
               </p>
               <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>
@@ -172,7 +172,7 @@ export default function ClosedTypeFiberLaser() {
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
                 <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm)  models</li>
-                <li>3,6 or 12kW laser power</li>
+                <li>6 , 12, 20, 30kW laser powers<br />. &nbsp; &nbsp;2 exchange tables</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
