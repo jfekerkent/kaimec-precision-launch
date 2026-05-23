@@ -330,6 +330,7 @@ export default function OpenTypeFiberLaser() {
               Maximum cuttable thickness by material and laser power.
             </p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="light" />
           <div className="border border-border bg-card overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[560px]">
               <thead>
