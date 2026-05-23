@@ -294,6 +294,7 @@ export default function OpenTypeFiberLaser() {
               {" "}
             </p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
           <div className="bg-white overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[640px]">
               <thead>
@@ -309,7 +310,7 @@ export default function OpenTypeFiberLaser() {
                   <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.label}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
@@ -344,7 +345,7 @@ export default function OpenTypeFiberLaser() {
                   <tr key={row.material} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.material}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
