@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import {
   Combine,
   Zap,
@@ -133,6 +136,7 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
 }
 
 export default function CoveredPipeProfileFiberLaser() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       {/* 1. HERO */}
@@ -283,6 +287,7 @@ export default function CoveredPipeProfileFiberLaser() {
             <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
             <p className="text-white/70 text-lg mt-3">{" "}</p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
           <div className="bg-white overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[640px]">
               <thead>
@@ -298,7 +303,7 @@ export default function CoveredPipeProfileFiberLaser() {
                   <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.label}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
@@ -316,6 +321,7 @@ export default function CoveredPipeProfileFiberLaser() {
             <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">Material Cutting Capability</h2>
             <p className="text-muted-foreground text-lg">Maximum cuttable thickness by material and laser power.</p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="light" />
           <div className="border border-border bg-card overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[820px]">
               <thead>
@@ -331,7 +337,7 @@ export default function CoveredPipeProfileFiberLaser() {
                   <tr key={row.material} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border whitespace-nowrap">{row.material}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border whitespace-nowrap">{v}</td>
+                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border whitespace-nowrap">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
@@ -446,8 +452,6 @@ export default function CoveredPipeProfileFiberLaser() {
     </Layout>
   );
 }
-
-import { useEffect, useState } from "react";
 
 function CoveredQuoteForm() {
   const [machine, setMachine] = useState("FLC-P Series");

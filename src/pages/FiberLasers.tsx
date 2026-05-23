@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import kflo1530Img from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
@@ -53,6 +56,7 @@ const cuttingThickness = [
 ];
 
 export default function FiberLasers() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       <section className="py-20 bg-secondary">
@@ -111,6 +115,7 @@ export default function FiberLasers() {
       <section className="py-20">
         <div className="container">
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Specification Comparison</h2>
+          <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           {/* Desktop: comparison table */}
           <div className="hidden md:block rounded-lg border border-border bg-card overflow-x-auto">
             <Table>
@@ -128,7 +133,7 @@ export default function FiberLasers() {
                   <TableRow key={row.label} className={i % 2 === 0 ? "bg-muted/30" : ""}>
                     <TableCell className="font-medium text-foreground">{row.label}</TableCell>
                     {row.values.map((val, j) => (
-                      <TableCell key={j} className="text-center text-muted-foreground">{val}</TableCell>
+                      <TableCell key={j} className="text-center text-muted-foreground">{convertValue(val, unit)}</TableCell>
                     ))}
                   </TableRow>
                 ))}
@@ -147,7 +152,7 @@ export default function FiberLasers() {
                       className={`flex justify-between gap-3 px-4 py-2 text-sm border-b border-border ${i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}`}
                     >
                       <span className="font-medium text-foreground">{row.label}</span>
-                      <span className="text-muted-foreground text-right">{row.values[idx]}</span>
+                      <span className="text-muted-foreground text-right">{convertValue(row.values[idx], unit)}</span>
                     </div>
                   ))}
                 </div>
@@ -161,6 +166,7 @@ export default function FiberLasers() {
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-black text-foreground mb-4 text-center">Cutting Thickness — KFLO Open Type</h2>
           <p className="text-muted-foreground text-center mb-10">Maximum cutting thickness by material and laser power.</p>
+          <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           <div className="rounded-lg border border-border bg-card overflow-x-auto">
             <Table>
               <TableHeader>
@@ -176,7 +182,7 @@ export default function FiberLasers() {
                   <TableRow key={row.material} className={i % 2 === 0 ? "bg-muted/30" : ""}>
                     <TableCell className="font-medium text-foreground">{row.material}</TableCell>
                     {row.values.map((val, j) => (
-                      <TableCell key={j} className="text-center text-muted-foreground">{val}</TableCell>
+                      <TableCell key={j} className="text-center text-muted-foreground">{convertValue(val, unit)}</TableCell>
                     ))}
                   </TableRow>
                 ))}

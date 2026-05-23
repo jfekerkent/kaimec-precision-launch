@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import {
   ShieldCheck,
   Layers,
@@ -143,26 +145,6 @@ function scrollToSpecs(e: React.MouseEvent) {
   e.preventDefault();
   const el = document.getElementById("specs");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-type Unit = "metric" | "imperial";
-
-function convertValue(value: string, unit: Unit): string {
-  if (unit === "metric") return value;
-  // Convert "m/min" first (longer match)
-  let out = value.replace(/(\d+(?:\.\d+)?)\s*m\/min/g, (_, n) =>
-    `${Math.round(parseFloat(n) * 39.3701)} ipm`
-  );
-  // mm → inches
-  out = out.replace(/(\d+(?:\.\d+)?)\s*mm/g, (_, n) => {
-    const inches = parseFloat(n) / 25.4;
-    return `${inches.toFixed(inches < 10 ? 2 : 1)} in`;
-  });
-  // kg → lb
-  out = out.replace(/(\d+(?:\.\d+)?)\s*kg/g, (_, n) =>
-    `${Math.round(parseFloat(n) * 2.2046)} lb`
-  );
-  return out;
 }
 
 export default function ClosedTypeFiberLaser() {
@@ -331,26 +313,7 @@ export default function ClosedTypeFiberLaser() {
               Side-by-side comparison across all three FLC configurations.
             </p>
           </div>
-          <div className="inline-flex mb-6 border border-white/20 overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setUnit("metric")}
-              className={`px-5 py-2 text-sm font-bold transition-colors ${
-                unit === "metric" ? "bg-primary text-secondary" : "bg-transparent text-white hover:bg-white/10"
-              }`}
-            >
-              Metric (mm)
-            </button>
-            <button
-              type="button"
-              onClick={() => setUnit("imperial")}
-              className={`px-5 py-2 text-sm font-bold transition-colors ${
-                unit === "imperial" ? "bg-primary text-secondary" : "bg-transparent text-white hover:bg-white/10"
-              }`}
-            >
-              Imperial (in)
-            </button>
-          </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
           <div className="bg-white overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[720px]">
               <thead className="sticky top-0">
@@ -386,6 +349,7 @@ export default function ClosedTypeFiberLaser() {
               Maximum cutting thickness for each FLC configuration.
             </p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="light" />
           <div className="border border-border bg-card overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[720px]">
               <thead>
