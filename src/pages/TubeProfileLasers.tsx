@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import flp6035Front from "@/assets/machine-flp-6035-front.png";
 import flp6035Side from "@/assets/machine-flp-6035-side.png";
 import flp6020Front from "@/assets/machine-flp-6020-front.png";
@@ -71,7 +74,7 @@ const specs6035: [string, string][] = [
   ...tailSpecs,
 ];
 
-function SpecTable({ title, rows }: { title: string; rows: [string, string][] }) {
+function SpecTable({ title, rows, unit }: { title: string; rows: [string, string][]; unit: Unit }) {
   return (
     <div className="mb-8">
       <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-3">{title}</h4>
@@ -81,7 +84,7 @@ function SpecTable({ title, rows }: { title: string; rows: [string, string][] })
             {rows.map(([k, v], i) => (
               <tr key={k} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                 <td className="px-4 py-2 font-medium text-foreground border-b border-border w-1/2">{k}</td>
-                <td className="px-4 py-2 text-muted-foreground border-b border-border">{v}</td>
+                <td className="px-4 py-2 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
               </tr>
             ))}
           </tbody>
@@ -108,6 +111,7 @@ function DescriptionList({ items }: { items: string[] }) {
 }
 
 export default function TubeProfileLasers() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       <section className="py-20 bg-secondary">
@@ -139,16 +143,17 @@ export default function TubeProfileLasers() {
 
       <section className="py-20 bg-[#f8f8f8]">
         <div className="container">
+          <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <h3 className="text-2xl font-black text-secondary mb-6">FLP-6020</h3>
               <DescriptionList items={productDescription} />
-              <SpecTable title="Specifications" rows={specs6020} />
+              <SpecTable title="Specifications" rows={specs6020} unit={unit} />
             </div>
             <div>
               <h3 className="text-2xl font-black text-secondary mb-6">FLP-6035</h3>
               <DescriptionList items={productDescription} />
-              <SpecTable title="Specifications" rows={specs6035} />
+              <SpecTable title="Specifications" rows={specs6035} unit={unit} />
             </div>
           </div>
         </div>
