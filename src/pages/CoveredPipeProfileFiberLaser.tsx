@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import {
@@ -449,8 +449,6 @@ export default function CoveredPipeProfileFiberLaser() {
     </Layout>
   );
 }
-
-import { useEffect, useState } from "react";
 
 function CoveredQuoteForm() {
   const [machine, setMachine] = useState("FLC-P Series");
