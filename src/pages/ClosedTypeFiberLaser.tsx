@@ -145,7 +145,28 @@ function scrollToSpecs(e: React.MouseEvent) {
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+type Unit = "metric" | "imperial";
+
+function convertValue(value: string, unit: Unit): string {
+  if (unit === "metric") return value;
+  // Convert "m/min" first (longer match)
+  let out = value.replace(/(\d+(?:\.\d+)?)\s*m\/min/g, (_, n) =>
+    `${Math.round(parseFloat(n) * 39.3701)} ipm`
+  );
+  // mm → inches
+  out = out.replace(/(\d+(?:\.\d+)?)\s*mm/g, (_, n) => {
+    const inches = parseFloat(n) / 25.4;
+    return `${inches.toFixed(inches < 10 ? 2 : 1)} in`;
+  });
+  // kg → lb
+  out = out.replace(/(\d+(?:\.\d+)?)\s*kg/g, (_, n) =>
+    `${Math.round(parseFloat(n) * 2.2046)} lb`
+  );
+  return out;
+}
+
 export default function ClosedTypeFiberLaser() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       {/* 1. HERO */}
