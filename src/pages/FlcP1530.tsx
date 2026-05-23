@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import {
   Crosshair,
   ShieldAlert,
@@ -111,6 +114,7 @@ function scrollToQuote(e: React.MouseEvent) {
 }
 
 export default function FlcP1530() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       {/* 1. HERO */}
