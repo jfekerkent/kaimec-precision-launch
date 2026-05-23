@@ -331,6 +331,26 @@ export default function ClosedTypeFiberLaser() {
               Side-by-side comparison across all three FLC configurations.
             </p>
           </div>
+          <div className="inline-flex mb-6 border border-white/20 overflow-hidden">
+            <button
+              type="button"
+              onClick={() => setUnit("metric")}
+              className={`px-5 py-2 text-sm font-bold transition-colors ${
+                unit === "metric" ? "bg-primary text-secondary" : "bg-transparent text-white hover:bg-white/10"
+              }`}
+            >
+              Metric (mm)
+            </button>
+            <button
+              type="button"
+              onClick={() => setUnit("imperial")}
+              className={`px-5 py-2 text-sm font-bold transition-colors ${
+                unit === "imperial" ? "bg-primary text-secondary" : "bg-transparent text-white hover:bg-white/10"
+              }`}
+            >
+              Imperial (in)
+            </button>
+          </div>
           <div className="bg-white overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[720px]">
               <thead className="sticky top-0">
@@ -346,7 +366,7 @@ export default function ClosedTypeFiberLaser() {
                   <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.label}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
