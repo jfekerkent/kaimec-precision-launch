@@ -136,6 +136,7 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
 }
 
 export default function CoveredPipeProfileFiberLaser() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       {/* 1. HERO */}
