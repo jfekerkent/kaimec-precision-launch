@@ -349,6 +349,7 @@ export default function ClosedTypeFiberLaser() {
               Maximum cutting thickness for each FLC configuration.
             </p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="light" />
           <div className="border border-border bg-card overflow-x-auto">
             <table className="w-full text-sm md:text-base min-w-[720px]">
               <thead>
