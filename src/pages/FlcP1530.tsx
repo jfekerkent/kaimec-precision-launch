@@ -250,6 +250,7 @@ export default function FlcP1530() {
             <p className="section-label mb-3 text-primary">{" "}</p>
             <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
 
           <div className="grid gap-10 lg:grid-cols-3">
             <div className="lg:col-span-2">
@@ -260,7 +261,7 @@ export default function FlcP1530() {
                     {machineSpecs.map(([k, v], i) => (
                       <tr key={k} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                         <td className="px-5 py-3 font-semibold text-foreground border-b border-border w-1/2">{k}</td>
-                        <td className="px-5 py-3 text-muted-foreground border-b border-border">{v}</td>
+                        <td className="px-5 py-3 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -292,6 +293,7 @@ export default function FlcP1530() {
               Maximum cuttable thickness by material and laser power.
             </p>
           </div>
+          <UnitToggle unit={unit} onChange={setUnit} variant="light" />
           <div className="border border-border bg-card overflow-x-auto">
             <table className="w-full text-sm md:text-base">
               <thead>
@@ -308,7 +310,7 @@ export default function FlcP1530() {
                   <tr key={row.material} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.material}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
