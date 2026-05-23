@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
+import { convertValue, type Unit } from "@/lib/unitConvert";
+import UnitToggle from "@/components/UnitToggle";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
@@ -117,7 +120,7 @@ const optionalSpecs1560: string[] = [
   "Custom Voltage",
 ];
 
-function SpecTable({ title, rows }: { title: string; rows: [string, string][] }) {
+function SpecTable({ title, rows, unit }: { title: string; rows: [string, string][]; unit: Unit }) {
   return (
     <div className="mb-8">
       <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-3">{title}</h4>
@@ -127,7 +130,7 @@ function SpecTable({ title, rows }: { title: string; rows: [string, string][] })
             {rows.map(([k, v], i) => (
               <tr key={k} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                 <td className="px-4 py-2 font-medium text-foreground border-b border-border w-1/2">{k}</td>
-                <td className="px-4 py-2 text-muted-foreground border-b border-border">{v}</td>
+                <td className="px-4 py-2 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
               </tr>
             ))}
           </tbody>
@@ -138,6 +141,7 @@ function SpecTable({ title, rows }: { title: string; rows: [string, string][] })
 }
 
 export default function PressBrakes() {
+  const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
       <section className="py-20 bg-secondary">
@@ -169,12 +173,13 @@ export default function PressBrakes() {
 
       <section className="py-20 bg-[#f8f8f8]">
         <div className="container">
+          <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <h3 className="text-2xl font-black text-secondary mb-6">MKT-1560</h3>
-              <SpecTable title="Technical Parameters" rows={technicalParams1560} />
-              <SpecTable title="Main Configuration" rows={mainConfig} />
-              <SpecTable title="Standard Configuration" rows={standardConfig} />
+              <SpecTable title="Technical Parameters" rows={technicalParams1560} unit={unit} />
+              <SpecTable title="Main Configuration" rows={mainConfig} unit={unit} />
+              <SpecTable title="Standard Configuration" rows={standardConfig} unit={unit} />
               <div className="mb-8">
                 <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-3">Optional Specifications</h4>
                 <ul className="list-disc pl-5 space-y-1.5 text-sm text-muted-foreground bg-white border border-border p-4">
@@ -186,9 +191,9 @@ export default function PressBrakes() {
             </div>
             <div>
               <h3 className="text-2xl font-black text-secondary mb-6">MKT-32135</h3>
-              <SpecTable title="Technical Parameters" rows={technicalParams32135} />
-              <SpecTable title="Main Configuration" rows={mainConfig} />
-              <SpecTable title="Standard Configuration" rows={standardConfig} />
+              <SpecTable title="Technical Parameters" rows={technicalParams32135} unit={unit} />
+              <SpecTable title="Main Configuration" rows={mainConfig} unit={unit} />
+              <SpecTable title="Standard Configuration" rows={standardConfig} unit={unit} />
             </div>
           </div>
         </div>
