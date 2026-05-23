@@ -401,7 +401,7 @@ export default function ClosedTypeFiberLaser() {
                   <tr key={row.material} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.material}</td>
                     {row.values.map((v, j) => (
-                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{v}</td>
+                      <td key={j} className="px-5 py-3 text-center text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
                     ))}
                   </tr>
                 ))}
