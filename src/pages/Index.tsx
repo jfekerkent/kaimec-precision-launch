@@ -151,7 +151,7 @@ export default function Index() {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Laser Machines</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Laser Cutting Machines</h2>
             <p className="mt-3 text-sm text-muted-foreground font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">Available Table sizes 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;</p>
             <p className="mt-3 text-sm text-muted-foreground font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">Laser Powers : 3, 6, 12, 20, 50 kW</p>
           </div>
