@@ -50,6 +50,41 @@ import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
+const heroSlides = [
+  flcP1530Img,
+  flcP2040Img,
+  flcP1530Eu1,
+  flcP1530Eu2,
+  flcP2040Eu1a,
+  flcP2040Eu1b,
+  flo1530_3,
+  flo1530_4,
+  floP1530_2,
+  floP1530_4,
+  floP2040_1,
+  floP2040_2,
+];
+
+const HeroSlideshow = () => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % heroSlides.length), 1000);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <div className="relative w-full h-full">
+      {heroSlides.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt="FLC-P Combo lasers (sheet + pipe cutting)"
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${i === idx ? "opacity-100" : "opacity-0"}`}
+        />
+      ))}
+    </div>
+  );
+};
+
 const features = [
   { icon: Combine, title: "Sheet + Pipe Combo", body: "Eliminates the need for separate machines. One footprint, two production capabilities." },
   { icon: Zap, title: "Up to 20 kW Laser Power", body: "Scales from production sheet work to thick plate cutting without compromise." },
