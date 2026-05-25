@@ -63,7 +63,7 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 text-xs font-medium transition-colors ${
                     location.pathname.startsWith("/machines/laser-cutting/")
                       ? "text-primary"
                       : "text-slate-600 hover:text-slate-900"
