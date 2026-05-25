@@ -27,6 +27,16 @@ import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP2040Img from "@/assets/flc-p-2040-2.png";
+import flcP1530Eu1 from "@/assets/flc-p-1530-eu-1.jpg";
+import flcP1530Eu2 from "@/assets/flc-p-1530-eu-2.jpg";
+import flcP2040Eu1a from "@/assets/flc-p-2040-eu-1a.jpg";
+import flcP2040Eu1b from "@/assets/flc-p-2040-eu-1b.jpg";
+import flo1530_3 from "@/assets/flo-1530-3.png";
+import flo1530_4 from "@/assets/flo-1530-4.png";
+import floP1530_2 from "@/assets/flo-p-1530-2.png";
+import floP1530_4 from "@/assets/flo-p-1530-4.png";
+import floP2040_1 from "@/assets/flo-p-2040-1.png";
+import floP2040_2 from "@/assets/flo-p-2040-2.png";
 import floP1530A from "@/assets/flo-p-1530-a.png";
 import floP1530B from "@/assets/flo-p-1530-b.png";
 import floP1530C from "@/assets/flo-p-1530-c.png";
@@ -216,7 +226,7 @@ export default function CoveredPipeProfileFiberLaser() {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                <img src={flcP1530Img} alt="FLC-P Combo lasers (sheet + pipe cutting)" className="w-full h-full object-contain" />
+                <HeroSlideshow />
               </div>
             </div>
           </div>
