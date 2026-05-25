@@ -471,14 +471,14 @@ export default function OpenTypeFiberLaser() {
               Aerospace, Automotive & Household Product Manufacturing
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Trusted across defense, kitchenware, white goods, furniture, and elevator manufacturing.
+              Trusted across defense, kitchenware, interior / exterior, furniture, and elevator manufacturing.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {[
               { src: industryDefense, caption: "Defense & Aerospace" },
               { src: industryKitchenware, caption: "Kitchenware" },
-              { src: industryAppliances, caption: "White Goods" },
+              { src: industryAppliances, caption: "Interior / Exterior" },
               { src: industryFurniture, caption: "Metal Furniture" },
               { src: industryElevator, caption: "Elevator Manufacturing" },
             ].map((g) => (
