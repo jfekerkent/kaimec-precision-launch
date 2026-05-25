@@ -117,7 +117,7 @@ const standardConfig = [
   "Auto-focus laser cutting head with active anti-collision and auto-view",
   "Water cooling system",
   "Automatic nozzle cleaning system and dual-camera setup",
-  "CE / ISO certification",
+  "CE / ISO / FDA certification",
 ];
 
 const optionalConfig = [
@@ -129,7 +129,7 @@ const optionalConfig = [
 ];
 
 const trustBand = [
-  { icon: Award, title: "CE / ISO Certified", body: "Built to European standards for safety and quality." },
+  { icon: Award, title: "CE / ISO / FDA Certified", body: "Built to European standards for safety and quality." },
   { icon: ShieldCheck, title: "Built for Production", body: "Dual-table, 24/7-ready industrial fabrication platform." },
   { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
@@ -424,7 +424,7 @@ export default function ClosedTypeFiberLaser() {
               </ul>
             </div>
             <div className="bg-white border border-border p-8">
-              <h3 className="text-xl font-black text-foreground mb-6">Available Options</h3>
+              <h3 className="text-xl font-black text-foreground mb-6">Available configurations</h3>
               <ul className="space-y-3">
                 {optionalConfig.map((c) => (
                   <li key={c} className="flex items-start gap-3 text-muted-foreground">

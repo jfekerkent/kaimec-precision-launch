@@ -98,7 +98,7 @@ const cuttingChart: { material: string; values: string[] }[] = [
 ];
 
 const trustBand = [
-  { icon: Award, title: "CE / ISO Certified", body: "Meets international and U.S. safety standards." },
+  { icon: Award, title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
   { icon: ShieldCheck, title: "2-Year Warranty", body: "Standard on all FLC-P series machines." },
   { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
 ];
