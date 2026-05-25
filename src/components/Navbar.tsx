@@ -176,7 +176,7 @@ export default function Navbar() {
             <Link
               to="/"
               onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2 text-sm font-medium rounded-md ${
+              className={`block px-3 py-2 text-xs font-medium rounded-md ${
                 location.pathname === "/"
                   ? "text-primary bg-muted"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
