@@ -145,6 +145,27 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
   );
 }
 
+function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { img: string; hoverImg: string; title: string; subtitle: string; body: string; model: string }) {
+  return (
+    <div className="bg-white border border-border flex flex-col">
+      <div className="relative aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center rounded-lg border group">
+        <img src={img} alt={title} className="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 group-hover:opacity-0" />
+        <img src={hoverImg} alt={`${title} alternate view`} className="absolute inset-0 w-full h-full object-contain p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      </div>
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="text-xl font-black text-foreground">{title}</h3>
+        <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
+        <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
+        <Button asChild className="font-bold w-full sm:w-auto">
+          <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
+            Request Quote on {title}
+          </a>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 export default function CoveredPipeProfileFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
   return (
