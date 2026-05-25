@@ -101,10 +101,10 @@ const specRows: { label: string; values: string[] }[] = [
 ];
 
 const cuttingChart: { material: string; values: string[] }[] = [
-  { material: "Carbon Steel", values: ["14 mm", "16 mm", "10 mm", "22 mm", "25 mm", "30 mm", "45 mm"] },
-  { material: "Stainless Steel", values: ["5 mm", "6 mm", "10 mm", "20 mm", "25 mm", "25 mm", "40 mm"] },
-  { material: "Aluminum", values: ["4 mm", "5 mm", "8 mm", "10 mm", "20 mm", "25 mm", "30 mm"] },
-  { material: "Brass", values: ["4 mm", "5 mm", "8 mm", "8 mm", "12 mm", "12 mm", "18 mm"] },
+  { material: "Carbon Steel", values: ['14 mm (9/16")', '16 mm (5/8")', '10 mm (3/8")', '22 mm (7/8")', '25 mm (1")', '30 mm (1-3/16")', '45 mm (1-3/4")'] },
+  { material: "Stainless Steel", values: ['5 mm (3/16")', '6 mm (1/4")', '10 mm (3/8")', '20 mm (3/4")', '25 mm (1")', '25 mm (1")', '40 mm (1-9/16")'] },
+  { material: "Aluminum", values: ['4 mm (5/32")', '5 mm (3/16")', '8 mm (5/16")', '10 mm (3/8")', '20 mm (3/4")', '25 mm (1")', '30 mm (1-3/16")'] },
+  { material: "Brass", values: ['4 mm (5/32")', '5 mm (3/16")', '8 mm (5/16")', '8 mm (5/16")', '12 mm (1/2")', '12 mm (1/2")', '18 mm (11/16")'] },
 ];
 const powerCols = ["2 kW", "3 kW", "4 kW", "6 kW", "8 kW", "12 kW", "20 kW"];
 
