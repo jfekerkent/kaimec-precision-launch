@@ -127,8 +127,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Talk to an Expert banner */}
-      <TalkToExpertBanner />
 
       {/* Open Type Fiber Laser Video */}
       <section className="py-16 md:py-20 bg-[#f8f8f8]">
@@ -219,6 +217,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Talk to an Expert banner */}
+      <TalkToExpertBanner />
 
       {/* Why KAIMEC */}
       <section className="py-20 bg-secondary">
