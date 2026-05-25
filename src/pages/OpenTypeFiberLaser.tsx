@@ -168,30 +168,30 @@ export default function OpenTypeFiberLaser() {
   return (
     <Layout>
       {/* 1. HERO */}
-      <section className="relative bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80 pointer-events-none" />
+      <section className="relative bg-[#f5f5f5] overflow-hidden">
+        <div className="absolute inset-1 bg-gradient-to-br from-[#f5f5f5] via-[#f5f5f5] to-[#e8e8e8] pointer-events-none" />
         <div className="container relative py-16 md:py-24">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
-                <Link to="/" className="hover:text-white">Home</Link>
+              <nav className="flex items-center flex-wrap gap-1 text-xs text-muted-foreground mb-6">
+                <Link to="/" className="hover:text-foreground">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-white">Laser Cutting</Link>
+                <Link to="/machines" className="hover:text-foreground">Laser Cutting</Link>
                 <ChevronRight className="h-3 w-3" />
-                <span className="text-white">Open Type Fiber Lasers</span>
+                <span className="text-foreground">Open Type Fiber Lasers</span>
               </nav>
-              <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl text-neutral-200">
-                
+              <p className="font-bold tracking-[0.2em] text-primary mb-4 uppercase text-3xl">
+
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-6 tracking-tight">
                 Open Type Fiber Lasers
               </h1>
-              <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
+              <ul className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm)  models</li>
+                <li>5x10ft (1524x3048mm) and 6.5x13ft (2000x4000mm)  models</li>
                 <li>3,6 or 12kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -201,7 +201,7 @@ export default function OpenTypeFiberLaser() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-bold px-8 border-white/30 bg-transparent text-white hover:bg-white hover:text-secondary"
+                  className="font-bold px-8 border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-white"
                   asChild
                 >
                   <a
@@ -216,13 +216,13 @@ export default function OpenTypeFiberLaser() {
               </div>
             </div>
             <div className="relative grid gap-4">
-              <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
+              <figure className="bg-white border border-border overflow-hidden rounded-lg shadow-sm">
                 <div className="aspect-[4/3] flex items-center justify-center p-6">
                   <Flo1530Slideshow />
                 </div>
-                <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-1530</figcaption>
+                <figcaption className="px-4 py-2 text-sm font-bold text-foreground text-center">FLO-1530</figcaption>
               </figure>
-              <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
+              <figure className="bg-white border border-border overflow-hidden rounded-lg shadow-sm">
                 <div className="aspect-[1/1] flex items-center justify-center p-6">
                   <img
                     src={flo2040Img}
@@ -230,7 +230,7 @@ export default function OpenTypeFiberLaser() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-2040</figcaption>
+                <figcaption className="px-4 py-2 text-sm font-bold text-foreground text-center">FLO-2040</figcaption>
               </figure>
             </div>
           </div>
