@@ -28,6 +28,11 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP2040Img from "@/assets/flc-p-2040-2.png";
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
+import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
+import remoteControlImg from "@/assets/remote-control.png";
+import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
+import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
+import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -103,10 +108,11 @@ const flp6035Specs = [
 ];
 
 const gallery = [
-  { src: flcP1530Img, caption: "Cutting head detail" },
-  { src: flp6035Img, caption: "Pipe handling system" },
-  { src: flcP1530Img, caption: "Control interface" },
-  { src: flcP2040Img, caption: "Remote control" },
+  { src: cuttingHeadImg, caption: "Cutting head detail" },
+  { src: remoteControlImg, caption: "Remote control" },
+  { src: controlInterfaceImg, caption: "Control interface" },
+  { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
+  { src: regulatingTransformerImg, caption: "Regulating Transformer (for 220 or 480 volt input)" },
 ];
 
 function scrollToQuote(e?: React.MouseEvent) {
