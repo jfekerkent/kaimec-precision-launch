@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import {
@@ -39,6 +39,32 @@ import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
+
+const flo1530Slides = [flo1530Slide1, flo1530Slide2, flo1530Slide3, flo1530Slide4];
+
+function Flo1530Slideshow() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % flo1530Slides.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative w-full h-full">
+      {flo1530Slides.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Open Type Fiber Laser FLO-1530 view ${i + 1}`}
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
 const features = [
   {
