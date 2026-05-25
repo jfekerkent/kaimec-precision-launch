@@ -280,7 +280,7 @@ export default function Index() {
                 {whyPoints.map((p) => (
                   <li key={p} className="flex gap-3 items-start">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground">{p}</span>
+                    <span className="text-black">{p}</span>
                   </li>
                 ))}
               </ul>
