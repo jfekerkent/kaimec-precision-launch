@@ -99,6 +99,20 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
+              {navLinks.filter((l) => l.to !== "/").map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                      location.pathname === link.to
+                        ? "text-primary"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
               <li
                 className="group relative"
                 onMouseEnter={() => setDrillOpen(true)}
@@ -134,20 +148,6 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-              {navLinks.filter((l) => l.to !== "/").map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                      location.pathname === link.to
-                        ? "text-primary"
-                        : "text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
