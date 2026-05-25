@@ -83,7 +83,7 @@ const configurations = ["FLO-1530", "FLO-2040"];
 const specRows: { label: string; values: string[] }[] = [
   { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
   { label: "Loading Capacity", values: ["800 kg (1750 lbs)", "800 kg (1750 lbs)"] },
-  { label: "X-Y Axis Travel", values: ["2000 x 4000 mm (6.6 x 13.3 ft)", "2020 x 4050 mm (6.6 x 13.3 ft)"] },
+  { label: "X-Y Axis Travel", values: ["2000 x 4000 mm (6.5 x 13 ft)", "2020 x 4050 mm (6.5 x 13 ft)"] },
   { label: "Z Axis Travel", values: ['100 mm (3.94")', '100 mm (3.94")'] },
   { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged"] },
   { label: "X-Y Axis Drive System", values: ["Rack", "Rack"] },
