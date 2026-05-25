@@ -200,7 +200,7 @@ export default function OpenTypeFiberLaser() {
       {/* 1. HERO */}
       <section className="relative bg-[#f5f5f5] overflow-hidden">
         <div className="absolute inset-1 bg-gradient-to-br from-[#f5f5f5] via-[#f5f5f5] to-[#e8e8e8] pointer-events-none" />
-        <div className="container relative py-16 md:py-24">
+        <div className="container relative py-16 md:py-24 text-slate-500">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <nav className="flex items-center flex-wrap gap-1 text-xs text-muted-foreground mb-6">
