@@ -10,6 +10,8 @@ import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import mkt32135Img from "@/assets/machine-mkt-32135.png";
 import facilityImg from "@/assets/why-kaimec-facility.png";
 
 const featuredMachines = [
