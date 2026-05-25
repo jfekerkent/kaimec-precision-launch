@@ -81,9 +81,9 @@ const industries = [
 const configurations = ["FLO-1530", "FLO-2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (5 x 10 ft)"] },
   { label: "Loading Capacity", values: ["800 kg (1750 lbs)", "800 kg (1750 lbs)"] },
-  { label: "X-Y Axis Travel", values: ["1524 x 3048 mm (6.5 x 13 ft)", "2020 x 4050 mm (6.5 x 13 ft)"] },
+  { label: "X-Y Axis Travel", values: ["1524 x 3048 mm (5 x 10 ft)", "2020 x 4050 mm (5 x 10 ft)"] },
   { label: "Z Axis Travel", values: ['100 mm (3.94")', '100 mm (3.94")'] },
   { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged"] },
   { label: "X-Y Axis Drive System", values: ["Rack", "Rack"] },
@@ -161,7 +161,7 @@ export default function OpenTypeFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm)  models</li>
+                <li>5x10ft (1500X3000mm) and 5x10ft (1524x3048mm)  models</li>
                 <li>3,6 or 12kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">

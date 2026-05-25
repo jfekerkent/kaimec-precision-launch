@@ -57,7 +57,7 @@ const industries = [
 const configurations = ["FLC-P 1530", "FLC-P 2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (5 x 10 ft)"] },
   { label: "Loading Capacity", values: ["1200 kg (2650 lbs)", "1200 kg (2650 lbs)"] },
   { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2020 x 4050 mm"] },
   { label: "Z Axis Travel", values: ['300 mm (11.8")', '350 mm (13.8")'] },
@@ -169,7 +169,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
+                <li>5x10ft (1500X3000mm) and 5x10ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -277,7 +277,7 @@ export default function CoveredPipeProfileFiberLaser() {
             <ConfigCard
               img={flcP2040Img}
               title="FLC-P 2040"
-              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
+              subtitle="5 x 10 ft Working Area | 2-20 kW"
               body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
               model="FLC-P 2040"
             />
