@@ -103,7 +103,7 @@ const industries = [
   { icon: Building2, label: "Structural Fabrication" },
 ];
 
-const configurations = ["FLC-P 1530", "FLC-P 2040"];
+const configurations = ["FLC-P 2040 (fully enclosed / 2 tables)", "FLC-P 2040"];
 
 const specRows: { label: string; values: string[] }[] = [
   { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
@@ -149,7 +149,7 @@ const trustBand = [
 ];
 
 const flp6035Specs = [
-  ["Max Profile Length", "6100 mm (20 ft)"],
+  ["Max Profile Length", "1 / 2 / 3 / 6kW"],
   ["Max Profile Diameter", 'Ø 350 mm (13.8")'],
   ["Laser Power Options", "1 / 2 / 3 kW"],
   ["Machine Weight", "7000 kg (15430 lbs)"],
@@ -300,10 +300,10 @@ export default function CoveredPipeProfileFiberLaser() {
           <div className="grid gap-8 md:grid-cols-2">
             <ConfigCard
               img={flcP1530Img}
-              title="FLC-P 1530"
+              title="FLC-P 2040 (fully enclosed / 2 tables)"
               subtitle="5 x 10 ft Working Area | 2-20 kW"
               body="The compact combo machine. Sheet metal up to 5x10ft and pipe/profile up to 13.8&quot; diameter x 20ft in length in a single fully enclosed footprint."
-              model="FLC-P 1530"
+              model="FLC-P 2040 (fully enclosed / 2 tables)"
             />
             <ConfigCard
               img={flcP2040Img}
@@ -317,26 +317,26 @@ export default function CoveredPipeProfileFiberLaser() {
             <RolloverConfigCard
               img={floP1530A}
               hoverImg={floP1530B}
-              title="FLO-P 2060"
+              title="FLO-P 2060 ( open, single table)\n"
               subtitle="6.5x20ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2060"
+              model="FLO-P 2060 ( open, single table)\n"
             />
             <RolloverConfigCard
               img={floP1530C}
               hoverImg={floP1530D}
-              title="FLO-P 2060"
+              title="FLO-P 2060 ( open, single table)\n"
               subtitle="6.5x20ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2060"
+              model="FLO-P 2060 ( open, single table)\n"
             />
             <RolloverConfigCard
               img={floP1530D}
               hoverImg={floP1530A}
-              title="FLO-P 2060"
+              title="FLO-P 2060 ( open, single table)\n"
               subtitle="6.5x20ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2060"
+              model="FLO-P 2060 ( open, single table)\n"
             />
           </div>
         </div>
@@ -474,10 +474,10 @@ export default function CoveredPipeProfileFiberLaser() {
           <div className="max-w-3xl mb-10">
             <p className="section-label mb-3 text-primary">Pipe-Only Alternative</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
-              Need Pipe Cutting Only? Consider the FLP-6035
+              Need Pipe / profile  Cutting Only? Consider the FLP-6020 or FLP-6035
             </h2>
             <p className="text-muted-foreground text-lg">
-              When your shop only cuts tube and profile — no sheet — the FLP-6035 is a dedicated, purpose-built solution.
+              When your shop only cuts tube and profile — no sheet — the FLP-6020 or FLP-6035 is a dedicated, purpose-built solution.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-5 items-start">
@@ -485,13 +485,13 @@ export default function CoveredPipeProfileFiberLaser() {
               <ConfigCard
                 img={flp6035Img}
                 title="FLP-6035"
-                subtitle="Pipe & Profile Only | Up to 6 m length, Ø 350 mm"
+                subtitle="Pipe & Profile Only | Up to 20ft (6m)  length, Ø13.8&quot; (Ø350mm)"
                 body="Built exclusively for tube and profile cutting. Smaller footprint than the FLC-P combo machines, lower price point, and optimized handling for high-volume pipe production. Ideal for fabrication shops that don't need sheet cutting in the same machine."
                 model="FLP-6035"
               />
             </div>
             <div className="md:col-span-2 bg-white border border-border p-6">
-              <p className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-4">Key Specs</p>
+              <p className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-4">KEY SPECS OF FLP-6035</p>
               <dl className="space-y-3">
                 {flp6035Specs.map(([k, v]) => (
                   <div key={k} className="flex flex-col border-b border-border pb-2 last:border-0">
