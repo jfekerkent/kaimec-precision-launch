@@ -93,7 +93,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling", "Water Cooling"] },
-  { label: "Machine Weight", values: ["8500 kg", "10000 kg", "11500 kg"] },
+  { label: "Machine Weight", values: ["8500 kg", "10000 kg", "2,000 x 4,000 mm"] },
   { label: "Machine Dimensions (W × L × H)", values: ["2698 × 9175 × 2560 mm", "3500 × 11200 × 2560 mm", "4400 × 10000 × 2120 mm"] },
   { label: "Graphic Format", values: ["dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp"] },
   { label: "Voltage", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
