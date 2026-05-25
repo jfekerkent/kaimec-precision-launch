@@ -36,7 +36,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflc-1530",
-    model: "FLC-1530",
+    model: "FLC-1530, FLC 2040, FLC2060 models",
     category: "Laser Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Closed Type Laser Machine",

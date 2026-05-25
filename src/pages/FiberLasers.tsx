@@ -21,7 +21,7 @@ import mkt32135Img from "@/assets/machine-mkt-32135.png";
 const machines = [
   { id: "kflo-1530", model: "FLO-1530, FLO-2040, FLO 2060 models", description: "Open Type Laser Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
   { id: "kflo-p-1530", model: "FLO-P 2040 ( open, single table)", description: "Open Type Laser Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
-  { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Laser Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflc-1530", model: "FLC-1530, FLC 2040, FLC2060 models", description: "Closed Type Laser Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "FLC-P 1530 (fully enclosed/2 tables)", description: "Covered Type Pipe & Profile Fiber Laser", images: [flcP1530Img, flcP1530Img2, flcP1530Img3, flcP2040Img2] },
 ];
 
@@ -131,7 +131,7 @@ export default function FiberLasers() {
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Closed Type — FLC-1530</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Closed Type — FLC-1530, FLC 2040, FLC2060 models</h3>
               <p className="text-muted-foreground leading-relaxed">
                 The FLC series epitomizes speed, sensitivity, reliability, and cost-effectiveness. Capable of handling laser power of up to 30,000W, it's an excellent choice for cutting thick plates. Features double exchange table design for continuous cutting, wireless remote control, nesting software, nozzle cleaning system, and double camera setup. CE certified.
               </p>
@@ -158,7 +158,7 @@ export default function FiberLasers() {
                   <TableHead className="font-bold text-foreground min-w-[180px]">Specification</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLO-1530, FLO-2040, FLO 2060 models</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLO-P 2040 ( open, single table)</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">FLC-1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLC-1530, FLC 2040, FLC2060 models</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLC-P 1530 (fully enclosed/2 tables)</TableHead>
                 </TableRow>
               </TableHeader>
@@ -176,7 +176,7 @@ export default function FiberLasers() {
           </div>
           {/* Mobile: stacked per-machine specs */}
           <div className="md:hidden space-y-6">
-            {["FLO-1530, FLO-2040, FLO 2060 models", "FLO-P 2040 ( open, single table)", "FLC-1530", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
+            {["FLO-1530, FLO-2040, FLO 2060 models", "FLO-P 2040 ( open, single table)", "FLC-1530, FLC 2040, FLC2060 models", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
               <div key={model} className="rounded-lg border border-border bg-card overflow-hidden">
                 <div className="bg-primary/10 px-4 py-3 font-bold text-foreground">{model}</div>
                 <div>
