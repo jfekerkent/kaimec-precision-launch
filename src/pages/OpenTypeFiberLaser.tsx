@@ -227,12 +227,12 @@ export default function OpenTypeFiberLaser() {
                 Open Type Fiber Lasers
               </h1>
               <ul className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
-                <li>Cost effective</li>
-                <li>24/7 USA support</li>
-                <li>Made in Europe</li>
-                <li>2 Year Full Warranty</li>
-                <li>5x10ft / 6.5x13ft / 6.5x20ft models</li>
-                <li>3,6 or 12kW laser power</li>
+                <li className="text-black">Cost effective</li>
+                <li className="text-black">24/7 USA support</li>
+                <li className="text-black">Made in Europe</li>
+                <li className="text-black">2 Year Full Warranty</li>
+                <li className="text-black">5x10ft / 6.5x13ft / 6.5x20ft models</li>
+                <li className="text-black">3,6 or 12kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
