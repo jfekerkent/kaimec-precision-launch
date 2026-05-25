@@ -10,6 +10,8 @@ import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import mkt32135Img from "@/assets/machine-mkt-32135.png";
 import facilityImg from "@/assets/why-kaimec-facility.png";
 
 const featuredMachines = [
@@ -178,6 +180,37 @@ export default function Index() {
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                    View Specifications <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CNC Press Brakes */}
+      <section className="py-20 md:py-28 bg-[#f8f8f8]">
+        <div className="container">
+          <div className="text-center mb-14">
+            <p className="section-label mb-3">Press Brakes</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet sizes and tonnages.</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+            {[
+              { tag: "CNC Press Brake", name: "MKT 1560", desc: "5 ft / 60 ton capacity", image: mkt1560Img },
+              { tag: "CNC Press Brake", name: "MKT 32135", desc: "13.5 ft / 320 ton capacity", image: mkt32135Img },
+            ].map((m) => (
+              <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
+                <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
+                  <h3 className="text-xl font-bold text-foreground mt-2 mb-1">{m.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{m.desc}</p>
+                  <Link to="/machines/press-brakes" className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
