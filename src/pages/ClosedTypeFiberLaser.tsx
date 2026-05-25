@@ -75,7 +75,7 @@ const models = [
 const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "2000 × 4000 mm", "2000 × 6000 mm"] },
+  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "1524 x 3048 mm", "2000 × 6000 mm"] },
   { label: "Loading Capacity", values: ["1200 kg", "1200 kg", "1450 kg"] },
   { label: "X-Y Axis Travel", values: ["1520 × 3030 mm", "2020 × 4040 mm", "2020 × 6050 mm"] },
   { label: "Z Axis Travel", values: ["300 mm", "300 mm", "350 mm"] },
