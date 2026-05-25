@@ -466,7 +466,7 @@ export default function OpenTypeFiberLaser() {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Industries</p>
+            <p className="section-label mb-3 text-primary">APPLICATIONS </p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">
               Aerospace, Automotive & Household Product Manufacturing
             </h2>
