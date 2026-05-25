@@ -37,7 +37,7 @@ const facilitySlides = [
 const featuredMachines = [
   { tag: "CNC FIBER LASERS", name: "FLO-1530", image: kfloPrimaryImg, images: null, link: "/machines/open-type-fiber-laser" },
   { tag: "Fully Enclosed Lasers", name: "FLC-1530", image: kflc1530Img, images: null, link: "/machines/closed-type-fiber-laser" },
-  { tag: "Combo Lasers", name: "FLO-P 2040 ( open, single table) / FLC-P 1530 (fully enclosed/2 tables)", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/covered-pipe-profile-fiber-laser" },
+  { tag: "Combo Lasers", name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/covered-pipe-profile-fiber-laser" },
   { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/covered-pipe-profile-fiber-laser" },
 ];
 
@@ -158,7 +158,7 @@ export default function Index() {
                 </div>
                 <div className="p-6 text-center">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
-                  <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
+                  <h3 className="font-bold text-foreground mt-2 mb-2 text-sm">{m.name}</h3>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
