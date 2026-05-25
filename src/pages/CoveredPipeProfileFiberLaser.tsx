@@ -57,7 +57,7 @@ const industries = [
 const configurations = ["FLC-P 1530", "FLC-P 2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (5 x 10 ft)"] },
   { label: "Loading Capacity", values: ["1200 kg (2650 lbs)", "1200 kg (2650 lbs)"] },
   { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2020 x 4050 mm"] },
   { label: "Z Axis Travel", values: ['300 mm (11.8")', '350 mm (13.8")'] },
