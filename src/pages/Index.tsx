@@ -9,15 +9,14 @@ import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
-import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
-import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
-import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
+import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import facilityImg from "@/assets/why-kaimec-facility.png";
 
 const featuredMachines = [
-  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "5x10 and 6.5x13ft models\n6,12,20 or 30kW\nCombination machine with sheet and pipe/profile cutting\n\n", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Fiber Laser Cutting", name: "FLC-1530", desc: "Sizes available : 5x10 and 6.5x13ft\n3,6,12kW\nCombination machine to cut sheet and pipe/profiles in one machine", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Fully Enclosed combo laser with tube/profile cutting system\n5x10 or 6.5x13ft tables\n6,12,20kW\nTube/Profile size Ø12\" x 20ft long", image: flcP1530Img, gallery: [flcP1530Img2, flcP1530Img3, flcP2040Img2], link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Open Type Lasers", name: "FLO-1530", image: kfloPrimaryImg, images: null, link: "/machines/open-type-fiber-laser" },
+  { tag: "Fully Enclosed Lasers", name: "FLC-1530", image: kflc1530Img, images: null, link: "/machines/closed-type-fiber-laser" },
+  { tag: "Combo Lasers", name: "FLO-P 1530 / FLC-P 1530", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/covered-pipe-profile-fiber-laser" },
+  { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/covered-pipe-profile-fiber-laser" },
 ];
 
 const stats = [
@@ -153,17 +152,25 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-foreground">Fabrication Machines</h2>
+            <p className="mt-3 text-sm md:text-base text-muted-foreground">Table sizes in ft for each model · Available with 3, 6, 12, 20 kW lasers</p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMachines.map((m) => (
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className={`h-full w-full group-hover:scale-105 transition-transform duration-500 ${m.isProductShot ? "object-contain p-2" : "object-cover"}`} />
+                <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                  {m.images ? (
+                    <div className="grid grid-cols-2 w-full h-full">
+                      {m.images.map((src, i) => (
+                        <img key={i} src={src} alt={`${m.name} ${i + 1}`} loading="lazy" className="h-full w-full object-contain p-1 group-hover:scale-105 transition-transform duration-500" />
+                      ))}
+                    </div>
+                  ) : (
+                    <img src={m.image!} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                  )}
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{m.desc}</p>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
