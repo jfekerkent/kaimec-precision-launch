@@ -133,7 +133,7 @@ export default function Index() {
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
             <p className="section-label mb-3">Open Type Fiber Lasers</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">See It in Action</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">{"\n"}</h2>
           </div>
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
             <iframe
