@@ -317,26 +317,26 @@ export default function CoveredPipeProfileFiberLaser() {
             <RolloverConfigCard
               img={floP1530A}
               hoverImg={floP1530B}
-              title="FLO-P 2040 ( open, single table)"
-              subtitle="6.5x13ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2040 ( open, single table)"
+              title="FLO-P 1530 ( open, single table)"
+              subtitle="5x10ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530 ( open, single table)"
             />
             <RolloverConfigCard
               img={floP1530C}
               hoverImg={floP1530D}
-              title="FLO-P 2040 ( open, single table)"
-              subtitle="6.5x13ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2040 ( open, single table)"
+              title="FLO-P 1530 ( open, single table)"
+              subtitle="5x10ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530 ( open, single table)"
             />
             <RolloverConfigCard
               img={floP1530D}
               hoverImg={floP1530A}
-              title="FLO-P 2040 ( open, single table)"
-              subtitle="6.5x13ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 2040 ( open, single table)"
+              title="FLO-P 1530 ( open, single table)"
+              subtitle="5x10ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530 ( open, single table)"
             />
           </div>
         </div>
