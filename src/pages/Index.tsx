@@ -132,7 +132,7 @@ export default function Index() {
       <section className="py-16 md:py-20 bg-[#f8f8f8]">
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
-            <p className="section-label mb-3">FIBER MACHINES</p>
+            <p className="section-label mb-3">LASER MACHINES</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">See It in Action</h2>
           </div>
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
