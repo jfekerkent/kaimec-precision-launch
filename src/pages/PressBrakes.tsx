@@ -48,7 +48,7 @@ const technicalParams32135: [string, string][] = [
   ["Model", "MKT 32135"],
   ["Bending Force", "1350KN"],
   ["Bending Tonnage", "135T"],
-  ["Power Supply", "3PH / 380V / 50HZ"],
+  ["Power Supply", "3PH / 480V / 60HZ"],
   ["Bending Length", "3200mm"],
   ["Workbench Height", "900mm"],
   ["Column Spacing", "2500mm"],
