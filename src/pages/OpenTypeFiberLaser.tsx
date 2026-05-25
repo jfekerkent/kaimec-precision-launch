@@ -203,16 +203,6 @@ export default function OpenTypeFiberLaser() {
         <div className="container relative py-16 md:py-24">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <div className="mb-6 aspect-video w-full overflow-hidden rounded-lg bg-black">
-                <iframe
-                  src="https://player.vimeo.com/video/946394877?autoplay=1&loop=1&muted=1&background=1&controls=0"
-                  className="w-full h-full"
-                  frameBorder={0}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="Open Type Fiber Laser video"
-                />
-              </div>
               <nav className="flex items-center flex-wrap gap-1 text-xs text-muted-foreground mb-6">
                 <Link to="/" className="hover:text-foreground">Home</Link>
                 <ChevronRight className="h-3 w-3" />
