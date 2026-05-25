@@ -48,7 +48,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className={`text-sm font-semibold transition-colors ${
+                  className={`text-xs font-medium transition-colors ${
                     location.pathname === "/"
                       ? "text-primary"
                       : "text-slate-600 hover:text-slate-900"
