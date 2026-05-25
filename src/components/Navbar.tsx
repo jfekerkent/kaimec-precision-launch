@@ -6,9 +6,10 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
   { label: "FAQ", to: "/faq" },
 ];
+
+const pressBrakesLink = { label: "CNC Press Brakes", to: "/machines/press-brakes" };
 
 const laserCuttingLinks = [
   { label: "Open Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
@@ -98,6 +99,18 @@ export default function Navbar() {
                     </div>
                   </div>
                 )}
+              </li>
+              <li>
+                <Link
+                  to={pressBrakesLink.to}
+                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                    location.pathname === pressBrakesLink.to
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {pressBrakesLink.label}
+                </Link>
               </li>
               <li
                 className="group relative"
@@ -252,6 +265,17 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <Link
+              to={pressBrakesLink.to}
+              onClick={() => setMobileOpen(false)}
+              className={`block px-3 py-2 text-xs font-medium rounded-md ${
+                location.pathname === pressBrakesLink.to
+                  ? "text-primary bg-muted"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              {pressBrakesLink.label}
+            </Link>
             <div>
               <button
                 onClick={() => setMobileDrillOpen(!mobileDrillOpen)}
