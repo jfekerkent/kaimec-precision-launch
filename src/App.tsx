@@ -12,6 +12,8 @@ import FiberLasers from "./pages/FiberLasers";
 import TubeProfileLasers from "./pages/TubeProfileLasers";
 import PressBrakes from "./pages/PressBrakes";
 import GunDrills from "./pages/GunDrills";
+import GunDrillingMachines from "./pages/GunDrillingMachines";
+import BtaDeepHoleDrilling from "./pages/BtaDeepHoleDrilling";
 import FlcP1530 from "./pages/FlcP1530";
 import OpenTypeFiberLaser from "./pages/OpenTypeFiberLaser";
 import CoveredPipeProfileFiberLaser from "./pages/CoveredPipeProfileFiberLaser";
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/tube-profile-lasers" element={<TubeProfileLasers />} />
           <Route path="/press-brakes" element={<PressBrakes />} />
           <Route path="/gun-drills" element={<GunDrills />} />
+          <Route path="/gun-drills/gun-drilling-machines" element={<GunDrillingMachines />} />
+          <Route path="/gun-drills/bta-deep-hole-drilling" element={<BtaDeepHoleDrilling />} />
           <Route path="/machines/cnc-fiber-lasers/flc-p-1530" element={<FlcP1530 />} />
           <Route path="/flc-p-1530" element={<FlcP1530 />} />
           <Route path="/machines/laser-cutting/open-type-fiber-laser" element={<OpenTypeFiberLaser />} />

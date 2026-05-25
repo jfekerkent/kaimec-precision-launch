@@ -7,7 +7,6 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "CNC Press Brakes", to: "/machines/press-brakes" },
-  { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
   { label: "FAQ", to: "/faq" },
 ];
 
@@ -16,6 +15,11 @@ const laserCuttingLinks = [
   { label: "Closed Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
   { label: "Combo lasers (sheet + pipe cutting)", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
   { label: "Tube/Profile Cutters", to: "/machines/tube-profile-lasers" },
+];
+
+const gunDrillLinks = [
+  { label: "Gun Drilling Machines", to: "/gun-drills/gun-drilling-machines" },
+  { label: "BTA Deep Hole Drilling Machines", to: "/gun-drills/bta-deep-hole-drilling" },
 ];
 
 const moreLinks = [
@@ -28,6 +32,8 @@ export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [laserOpen, setLaserOpen] = useState(false);
   const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
+  const [drillOpen, setDrillOpen] = useState(false);
+  const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
   const location = useLocation();
 
   return (
