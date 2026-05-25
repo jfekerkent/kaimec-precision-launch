@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -13,6 +13,27 @@ import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
 import facilityImg from "@/assets/flc-p-2040.png";
+import slideFlc1530 from "@/assets/slideshow-flc-1530.png";
+import slideFlcP1530 from "@/assets/slideshow-flc-p-1530.jpg";
+import slideFlo1530 from "@/assets/slideshow-flo-1530.png";
+import slideFloP1530 from "@/assets/slideshow-flo-p-1530.png";
+import slideFloP2040a from "@/assets/slideshow-flo-p-2040-1.png";
+import slideFloP2040b from "@/assets/slideshow-flo-p-2040-2.png";
+import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
+import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
+import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
+
+const facilitySlides = [
+  slideFlo1530,
+  slideFlc1530,
+  slideFloP1530,
+  slideFlcP1530,
+  slideFloP2040a,
+  slideFloP2040b,
+  slideFloP2040c,
+  slideFlp6020,
+  slideFlo2060,
+];
 
 const featuredMachines = [
   { tag: "CNC FIBER LASERS", name: "FLO-1530", image: kfloPrimaryImg, images: null, link: "/machines/open-type-fiber-laser" },
@@ -36,6 +57,14 @@ const whyPoints = [
 
 export default function Index() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [slideIdx, setSlideIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlideIdx((i) => (i + 1) % facilitySlides.length);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -226,8 +255,16 @@ export default function Index() {
       <section className="py-20 bg-secondary">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div className="rounded-lg overflow-hidden">
-              <img src={facilityImg} alt="KAIMEC facility — Tustin, CA" loading="lazy" width={800} height={600} className="w-full h-full object-cover" />
+            <div className="rounded-lg overflow-hidden relative aspect-[4/3] bg-white">
+              {facilitySlides.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`KAIMEC machine ${i + 1}`}
+                  loading="lazy"
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${i === slideIdx ? "opacity-100" : "opacity-0"}`}
+                />
+              ))}
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
