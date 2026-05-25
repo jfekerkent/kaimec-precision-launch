@@ -177,12 +177,21 @@ export default function Index() {
                           src={src}
                           alt={`${m.name} ${i + 1}`}
                           loading="lazy"
-                          className={`absolute w-3/5 h-3/5 object-contain p-1 group-hover:scale-105 transition-transform duration-500 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
+                          style={{ animation: "spin 8s linear infinite" }}
+                          className={`absolute w-3/5 h-3/5 object-contain p-1 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
                         />
                       ))}
                     </div>
                   ) : (
-                    <img src={m.image!} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src={m.image!}
+                      alt={m.name}
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                      style={{ animation: "spin 8s linear infinite" }}
+                      className="h-3/4 w-3/4 object-contain p-2"
+                    />
                   )}
                 </div>
                 <div className="p-6">
