@@ -194,8 +194,8 @@ export default function Index() {
                     />
                   )}
                 </div>
-                <div className="p-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
+                <div className="p-6 text-center">
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
