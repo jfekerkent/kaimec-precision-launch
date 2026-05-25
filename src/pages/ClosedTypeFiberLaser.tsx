@@ -490,7 +490,7 @@ export default function ClosedTypeFiberLaser() {
               >
                 <a href="tel:5623502071">
                   <Phone className="h-4 w-4" />
-                  (714) 258-8526
+                  (562) 350-2071
                 </a>
               </Button>
             </div>

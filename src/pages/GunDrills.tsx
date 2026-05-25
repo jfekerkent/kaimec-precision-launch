@@ -318,7 +318,7 @@ export default function GunDrills() {
         subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
         primaryLabel="HELP ME CHOOSE"
         primaryHref="/consultation"
-        secondaryLabel="OR CALL 714-258-8526"
+        secondaryLabel="OR CALL 562-350-2071"
         secondaryHref="tel:5623502071"
       />
 

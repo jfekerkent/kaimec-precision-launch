@@ -132,7 +132,7 @@ export default function Navbar() {
             className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="h-4 w-4" />
-            (714) 258-8526
+            (562) 350-2071
           </a>
           <Link to="/quote">
             <Button className="font-bold">Request for Info</Button>
