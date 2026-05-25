@@ -27,6 +27,10 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
+import flo1530Slide1 from "@/assets/flo-1530-1.png";
+import flo1530Slide2 from "@/assets/flo-1530-2.png";
+import flo1530Slide3 from "@/assets/flo-1530-3.png";
+import flo1530Slide4 from "@/assets/flo-1530-4.png";
 import flo2040Img from "@/assets/machine-flo-2040.png";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
@@ -188,11 +192,7 @@ export default function OpenTypeFiberLaser() {
             <div className="relative grid gap-4">
               <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
                 <div className="aspect-[4/3] flex items-center justify-center p-6">
-                  <img
-                    src={flo1530Img}
-                    alt="Open Type Fiber Laser FLO-1530"
-                    className="w-full h-full object-contain"
-                  />
+                  <Flo1530Slideshow />
                 </div>
                 <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-1530</figcaption>
               </figure>
