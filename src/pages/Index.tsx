@@ -55,7 +55,6 @@ const whyPoints = [
 ];
 
 export default function Index() {
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [slideIdx, setSlideIdx] = useState(0);
 
   useEffect(() => {
@@ -65,51 +64,15 @@ export default function Index() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
-
-    const tryPlay = () => {
-      const p = video.play();
-      if (p && typeof p.catch === "function") p.catch(() => {});
-    };
-
-    const handleVisibility = () => {
-      if (document.visibilityState === "visible" && video.paused) {
-        tryPlay();
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibility);
-    window.addEventListener("focus", tryPlay);
-    tryPlay();
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibility);
-      window.removeEventListener("focus", tryPlay);
-    };
-  }, []);
-
   return (
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <video
-            ref={heroVideoRef}
-            src={heroVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            onEnded={(e) => {
-              const v = e.currentTarget;
-              const p = v.play();
-              if (p && typeof p.catch === "function") p.catch(() => {});
-            }}
-            className="absolute left-0 top-0 z-0 h-full w-full object-cover"
+          <iframe
+            src="https://www.youtube.com/embed/jUQt7jNPrh8?autoplay=1&mute=1&loop=1&playlist=jUQt7jNPrh8&controls=0&playsinline=1&modestbranding=1&rel=1"
+            allow="autoplay; encrypted-media; fullscreen"
+            style={{ position: "absolute", left: 1, top: 0, width: "100%", height: "100%", zIndex: 0 }}
           />
           <div
             className="absolute inset-0"
