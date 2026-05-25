@@ -18,7 +18,7 @@ export const categories = [
 export const machines: Machine[] = [
   {
     id: "kflo-1530",
-    model: "FLO-1530",
+    model: "FLO-1530, FLO-2040, FLO 2060 models",
     category: "Laser Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Laser Machine",
