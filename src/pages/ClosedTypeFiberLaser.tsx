@@ -90,7 +90,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["3, 6 and 12kW", "3, 6 and 12kW", "3, 6 and 12kW"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 – 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut", "Fscut"] },
-  { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
+  { label: "Fiber Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["8500 kg", "10000 kg", "11500 kg"] },
@@ -167,7 +167,7 @@ export default function ClosedTypeFiberLaser() {
               <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
                 <Link to="/" className="hover:text-white">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-white">Laser Cutting</Link>
+                <Link to="/machines" className="hover:text-white">Fiber</Link>
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">Closed Type</span>
               </nav>
@@ -175,7 +175,7 @@ export default function ClosedTypeFiberLaser() {
                 
               </p>
               <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight lg:text-5xl">
-                Fully Enclosed Fiber Laser Cutting Machines
+                Fully Enclosed Fiber Machines
               </h1>
               <p className="text-base font-bold tracking-wide text-primary mb-6 uppercase">
                 HIGH QUALITY MACHINES FROM EUROPE

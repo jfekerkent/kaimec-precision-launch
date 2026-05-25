@@ -125,7 +125,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["3, 6 and 12kW", "3, 6 and 12kW"] },
   { label: "Laser Source Output Power", values: ["Max / Han's / IPG", "Max / Han's / IPG"] },
   { label: "CNC Control System", values: ["Fscut / Cypcut", "Fscut / Cypcut"] },
-  { label: "Laser Cutting Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
+  { label: "Fiber Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["2300 kg (5100 lbs)", "2300 kg (5100 lbs)"] },
