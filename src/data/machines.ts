@@ -10,7 +10,7 @@ export interface Machine {
 
 export const categories = [
   { name: "Laser Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
-  { name: "Tube & Profile\nLaser Cutting Machines", slug: "tube-profile-lasers", description: "Ø9\" or 14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models" },
+  { name: "Tube & Profile\nLaser Cutting Machines", slug: "tube-profile-lasers", description: "Ø9\" or 14\" Diameter x 20ft length capacity\nTube and profile cutting\nNesting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models" },
   { name: "CNC Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   { name: "Gun & BTA Drilling Machines", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
