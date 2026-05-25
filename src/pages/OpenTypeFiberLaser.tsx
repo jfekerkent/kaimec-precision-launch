@@ -9,13 +9,6 @@ import {
   Layers,
   Gauge,
   Flag,
-  Zap,
-  Building2,
-  Hammer,
-  Droplet,
-  DoorOpen,
-  Sofa,
-  UtensilsCrossed,
   ChevronRight,
   Download,
   Award,
@@ -131,15 +124,6 @@ const features = [
     title: "24/7 U.S.-Based Support",
     body: "Service technicians, replacement parts, and technical support all based in the United States.",
   },
-];
-
-const industries = [
-  { icon: Zap, label: "Electrical Cabinet Manufacturing" },
-  { icon: Building2, label: "Billboard & Sign Production" },
-  { icon: Droplet, label: "Water Tank Fabrication" },
-  { icon: DoorOpen, label: "Steel Door Production" },
-  { icon: Sofa, label: "Metal Furniture" },
-  { icon: UtensilsCrossed, label: "Kitchenware Manufacturing" },
 ];
 
 const configurations = ["FLO-1530", "FLO-2040"];
@@ -422,27 +406,6 @@ export default function OpenTypeFiberLaser() {
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. INDUSTRIES */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Applications</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Built for These Industries</h2>
-          </div>
-          <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-            {industries.map(({ icon: Icon, label }) => (
-              <div
-                key={label}
-                className="flex flex-col items-center justify-center text-center bg-card border border-border p-8 hover:border-primary hover:bg-primary/5 transition-colors min-h-[160px]"
-              >
-                <Icon className="h-10 w-10 text-primary mb-4" />
-                <span className="text-sm md:text-base font-bold text-foreground">{label}</span>
               </div>
             ))}
           </div>
