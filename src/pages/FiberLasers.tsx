@@ -15,12 +15,19 @@ import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
 import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
   { id: "kflo-1530", model: "FLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
   { id: "kflo-p-1530", model: "FLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
   { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "FLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [flcP1530Img, flcP1530Img2, flcP1530Img3, flcP2040Img2] },
+];
+
+const pressBrakes = [
+  { id: "kmkt-1560", model: "MKT 1560", description: "CNC Press Brake — 5 ft / 60 ton capacity", image: mkt1560Img },
+  { id: "kmkt-32135", model: "MKT 32135", description: "CNC Press Brake — 13.5 ft / 320 ton capacity", image: mkt32135Img },
 ];
 
 const specRows = [
