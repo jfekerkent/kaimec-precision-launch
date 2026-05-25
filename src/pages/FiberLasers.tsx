@@ -157,7 +157,7 @@ export default function FiberLasers() {
                 <TableRow className="bg-primary/10">
                   <TableHead className="font-bold text-foreground min-w-[180px]">Specification</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLO-1530</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">FLO-P 2040 ( open, single table)</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLO-P 1530 ( open, single table)</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLC-1530</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLC-P 1530 (fully enclosed/2 tables)</TableHead>
                 </TableRow>
