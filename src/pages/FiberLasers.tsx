@@ -20,7 +20,7 @@ import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
   { id: "kflo-1530", model: "FLO-1530", description: "Open Type Laser Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
-  { id: "kflo-p-1530", model: "FLO-P 2040 ( open, single table)", description: "Open Type Laser Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
+  { id: "kflo-p-1530", model: "FLO-P 1530 ( open, single table)", description: "Open Type Laser Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
   { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Laser Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "FLC-P 1530 (fully enclosed/2 tables)", description: "Covered Type Pipe & Profile Fiber Laser", images: [flcP1530Img, flcP1530Img2, flcP1530Img3, flcP2040Img2] },
 ];
