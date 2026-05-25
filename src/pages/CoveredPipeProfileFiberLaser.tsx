@@ -334,8 +334,8 @@ export default function CoveredPipeProfileFiberLaser() {
               img={floP1530D}
               hoverImg={floP1530A}
               title="FLO-P 2060 ( open, single table)"
-              subtitle="6.5x13ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              subtitle="6.5x20ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
               model="FLO-P 2060 ( open, single table)"
             />
           </div>
