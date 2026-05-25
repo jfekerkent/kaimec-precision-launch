@@ -159,9 +159,15 @@ export default function Index() {
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
                   {m.images ? (
-                    <div className="grid grid-cols-2 w-full h-full">
+                    <div className="relative w-full h-full">
                       {m.images.map((src, i) => (
-                        <img key={i} src={src} alt={`${m.name} ${i + 1}`} loading="lazy" className="h-full w-full object-contain p-1 group-hover:scale-105 transition-transform duration-500" />
+                        <img
+                          key={i}
+                          src={src}
+                          alt={`${m.name} ${i + 1}`}
+                          loading="lazy"
+                          className={`absolute w-3/5 h-3/5 object-contain p-1 group-hover:scale-105 transition-transform duration-500 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
+                        />
                       ))}
                     </div>
                   ) : (
