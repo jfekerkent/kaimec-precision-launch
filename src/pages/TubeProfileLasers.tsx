@@ -119,10 +119,13 @@ export default function TubeProfileLasers() {
           <br />
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4 whitespace-pre-line">Tube & Profile{"\n"}Laser Cutting Machines</h1>
           <p className="text-lg text-white/80 whitespace-pre-line">
-            Ø9" or 14" Diameter x 20ft length capacity{"\n"}
+            Ø9" or 14" Diameter{"\n"}
+            20ft length capacity (30ft optional){"\n"}
             Tube and profile cutting{"\n"}
             Nesting{"\n"}
+            Nesting{"\n"}
             1, 3, 6, 12kW{"\n"}
+            {"\n"}
             Manual, semi-automatic, fully-automatic models
           </p>
         </div>
