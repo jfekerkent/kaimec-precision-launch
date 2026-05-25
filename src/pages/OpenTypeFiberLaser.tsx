@@ -28,6 +28,7 @@ import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
 import flo2040Img from "@/assets/machine-flo-2040.png";
+import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -117,7 +118,7 @@ const trustBand = [
 const gallery = [
   { src: flo1530Img, caption: "Cutting head detail" },
   { src: flo1530Img, caption: "Production view" },
-  { src: flo1530Img, caption: "Control interface" },
+  { src: controlInterfaceImg, caption: "Control interface" },
   { src: flo1530Img, caption: "Demo video" },
 ];
 
