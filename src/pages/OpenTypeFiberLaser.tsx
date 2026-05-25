@@ -210,7 +210,7 @@ export default function OpenTypeFiberLaser() {
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-foreground">Open Type Fiber Lasers</span>
               </nav>
-              <p className="font-bold tracking-[0.2em] text-[#050212]/[0.87] mb-4 uppercase text-3xl">
+              <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl">
 
               </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-6 tracking-tight">
