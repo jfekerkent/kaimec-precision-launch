@@ -383,8 +383,8 @@ export default function OpenTypeFiberLaser() {
       <section className="py-20 bg-[#f8f8f8]">
         <div className="container">
           <div className="max-w-3xl mb-12">
-            <p className=\"section-label mb-3 text-primary\">Gallery</p>
-            <h2 className=\"text-3xl md:text-4xl font-black text-foreground\">Standard Accessories included</h2>
+            <p className="section-label mb-3 text-primary">Gallery</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Standard Accessories included</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((g) => (
