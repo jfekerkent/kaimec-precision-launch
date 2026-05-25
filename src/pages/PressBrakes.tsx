@@ -18,7 +18,7 @@ const technicalParams1560: [string, string][] = [
   ["Model", "MKT 1560"],
   ["Bending Force", "600KN"],
   ["Bending Tonnage", "60T"],
-  ["Power Supply", "3PH / 380V / 50HZ"],
+  ["Power Supply", "3PH / 480V / 60HZ"],
   ["Bending Length", "1500mm"],
   ["Workbench Height", "900mm"],
   ["Column Spacing", "1000mm"],
