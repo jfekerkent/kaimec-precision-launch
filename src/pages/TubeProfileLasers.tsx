@@ -12,8 +12,8 @@ import flp6020Front from "@/assets/machine-flp-6020-front.png";
 import flp6020Side from "@/assets/machine-flp-6020-side.png";
 
 const machines = [
-  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting \n1, 3, 6, 12kW", images: [flp6020Front, flp6020Side] },
-  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting \n1, 3, 6, 12kW", images: [flp6035Front, flp6035Side] },
+  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6020Front, flp6020Side] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6035Front, flp6035Side] },
 ];
 
 const productDescription: string[] = [
@@ -117,11 +117,12 @@ export default function TubeProfileLasers() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Tube & Profile Laser</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4 whitespace-pre-line">Tube & Profile Laser</h1>
           <p className="text-lg text-white/80 whitespace-pre-line">
             Ø14" Diameter x 20ft length capacity{"\n"}
             Tube and profile cutting{"\n"}
-            1, 3, 6, 12kW
+            1, 3, 6, 12kW{"\n"}
+            Manual, semi-automatic, fully-automatic models
           </p>
         </div>
       </section>

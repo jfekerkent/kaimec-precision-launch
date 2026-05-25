@@ -10,7 +10,7 @@ export interface Machine {
 
 export const categories = [
   { name: "Laser Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
-  { name: "Tube & Profile Laser", slug: "tube-profile-lasers", description: "Ø14\" Diameter x 20ft length capacity\nTube and profile cutting \n1, 3, 6, 12kW" },
+  { name: "Tube & Profile Laser", slug: "tube-profile-lasers", description: "Ø14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models" },
   { name: "CNC Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
   { name: "Gun & BTA Drilling Machines", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
@@ -57,7 +57,7 @@ export const machines: Machine[] = [
     model: "FLP-6020",
     category: "Tube & Profile Lasers",
     categorySlug: "tube-profile-lasers",
-    description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting \n1, 3, 6, 12kW",
+    description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models",
     specs: { "Laser Power": "3,000W", "Max Tube Length": "6,000 mm", "Max Diameter": "200 mm", "Chuck Type": "4-jaw pneumatic" },
     image: "tube-laser",
   },
@@ -66,7 +66,7 @@ export const machines: Machine[] = [
     model: "FLP-6035",
     category: "Tube & Profile Lasers",
     categorySlug: "tube-profile-lasers",
-    description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting \n1, 3, 6, 12kW",
+    description: "Tube & Profile Laser\nØ14\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models",
     specs: { "Laser Power": "6,000W", "Max Tube Length": "6,000 mm", "Max Diameter": "350 mm", "Chuck Type": "4-jaw servo" },
     image: "tube-laser",
   },
