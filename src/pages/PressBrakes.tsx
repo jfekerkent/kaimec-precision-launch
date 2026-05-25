@@ -117,7 +117,7 @@ const optionalSpecs1560: string[] = [
   "Laser Bending Beam",
   "Additional Back Gauge Tongue",
   "Additional Back Gauge Tongue Group",
-  "Custom Voltage",
+  "220 or 480 volt,  3 phase 60Hz ",
 ];
 
 function SpecTable({ title, rows, unit }: { title: string; rows: [string, string][]; unit: Unit }) {
