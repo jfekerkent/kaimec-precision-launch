@@ -243,8 +243,8 @@ export default function Index() {
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
                   <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <div className="p-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
+                <div className="p-6 text-center">
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-1">{m.name}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{m.desc}</p>
                   <Link to="/machines/press-brakes" className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
