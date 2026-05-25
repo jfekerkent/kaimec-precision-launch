@@ -27,6 +27,10 @@ import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP2040Img from "@/assets/flc-p-2040-2.png";
+import floP1530A from "@/assets/flo-p-1530-a.png";
+import floP1530B from "@/assets/flo-p-1530-b.png";
+import floP1530C from "@/assets/flo-p-1530-c.png";
+import floP1530D from "@/assets/flo-p-1530-d.png";
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
@@ -126,6 +130,27 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
     <div className="bg-white border border-border flex flex-col">
       <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
         <img src={img} alt={title} className="w-full h-full object-contain" />
+      </div>
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="text-xl font-black text-foreground">{title}</h3>
+        <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
+        <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
+        <Button asChild className="font-bold w-full sm:w-auto">
+          <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
+            Request Quote on {title}
+          </a>
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { img: string; hoverImg: string; title: string; subtitle: string; body: string; model: string }) {
+  return (
+    <div className="bg-white border border-border flex flex-col">
+      <div className="relative aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center rounded-lg border group">
+        <img src={img} alt={title} className="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 group-hover:opacity-0" />
+        <img src={hoverImg} alt={`${title} alternate view`} className="absolute inset-0 w-full h-full object-contain p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-black text-foreground">{title}</h3>
@@ -314,6 +339,32 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="6.5 x 13 ft Working Area | 2-20 kW"
               body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
               model="FLC-P 2040"
+            />
+          </div>
+          <div className="grid gap-8 md:grid-cols-3 mt-8">
+            <RolloverConfigCard
+              img={floP1530A}
+              hoverImg={floP1530B}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530C}
+              hoverImg={floP1530D}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530D}
+              hoverImg={floP1530A}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
             />
           </div>
         </div>
