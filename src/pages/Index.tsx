@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
-import heroVideo from "@/assets/hero-compressed.mp4";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
