@@ -159,8 +159,8 @@ export default function ClosedTypeFiberLaser() {
   return (
     <Layout>
       {/* 1. HERO */}
-      <section className="relative bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80 pointer-events-none" />
+      <section className="relative bg-green-100 overflow-hidden">
+        <div className="absolute inset-1 bg-gradient-to-br from-green-100 via-green-200 to-green-300 pointer-events-none rounded-lg" />
         <div className="container relative py-16 md:py-24">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
