@@ -125,7 +125,7 @@ export default function FiberLasers() {
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Product Highlights</h2>
           <div className="space-y-8">
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530 & FLO-P 2040 ( open, single table)</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530, FLO-2040, FLO 2060 models & FLO-P 2040 ( open, single table)</h3>
               <p className="text-muted-foreground leading-relaxed">
                 With its compact size and cost-effective operation, this machine series stands out as the ideal choice for businesses operating within tight budgets. Occupying just 15 square meters, it's easily installed and comes in 1kW, 2kW, and 3kW power variants. Ideal for rapid and repetitive tasks, it features standard nesting software, flycut-cutting, auto-focus laser head, and Active Anti-collision Function. Constructed with one-piece aluminium alloy sheet-plate welded bridges for rigidity and precision. CE certified.
               </p>
@@ -156,7 +156,7 @@ export default function FiberLasers() {
               <TableHeader>
                 <TableRow className="bg-primary/10">
                   <TableHead className="font-bold text-foreground min-w-[180px]">Specification</TableHead>
-                  <TableHead className="font-bold text-foreground text-center">FLO-1530</TableHead>
+                  <TableHead className="font-bold text-foreground text-center">FLO-1530, FLO-2040, FLO 2060 models</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLO-P 2040 ( open, single table)</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLC-1530</TableHead>
                   <TableHead className="font-bold text-foreground text-center">FLC-P 1530 (fully enclosed/2 tables)</TableHead>
@@ -176,7 +176,7 @@ export default function FiberLasers() {
           </div>
           {/* Mobile: stacked per-machine specs */}
           <div className="md:hidden space-y-6">
-            {["FLO-1530", "FLO-P 2040 ( open, single table)", "FLC-1530", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
+            {["FLO-1530, FLO-2040, FLO 2060 models", "FLO-P 2040 ( open, single table)", "FLC-1530", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
               <div key={model} className="rounded-lg border border-border bg-card overflow-hidden">
                 <div className="bg-primary/10 px-4 py-3 font-bold text-foreground">{model}</div>
                 <div>

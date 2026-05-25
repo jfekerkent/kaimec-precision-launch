@@ -239,7 +239,7 @@ export default function OpenTypeFiberLaser() {
                 <div className="aspect-[4/3] flex items-center justify-center p-6">
                   <Flo1530Slideshow />
                 </div>
-                <figcaption className="px-4 py-2 text-sm font-bold text-foreground text-center">FLO-1530</figcaption>
+                <figcaption className="px-4 py-2 text-sm font-bold text-foreground text-center">FLO-1530, FLO-2040, FLO 2060 models</figcaption>
               </figure>
               <figure className="bg-white border border-border overflow-hidden rounded-lg shadow-sm">
                 <div className="aspect-[1/1] flex items-center justify-center p-6">
