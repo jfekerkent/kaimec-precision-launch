@@ -44,7 +44,7 @@ export default function Navbar() {
               />
             </Link>
 
-            <ul className="hidden lg:flex items-center gap-5">
+            <ul className="hidden lg:flex items-center gap-8">
               <li>
                 <Link
                   to="/"
