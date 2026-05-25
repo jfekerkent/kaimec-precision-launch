@@ -126,7 +126,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Head", values: ["1524 x 3048 mm", "1524 x 3048 mm"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
-  { label: "Machine Weight", values: ["12000 kg (26450 lbs)", "11500 kg (25350 lbs)"] },
+  { label: "Machine Weight", values: ["12000 kg (1,181 ipm)", "11500 kg (25350 lbs)"] },
   { label: "Machine Dimensions (W x L x H)", values: ["4400 x 10000 x 2120 mm", "4400 x 10000 x 2120 mm"] },
   { label: "Graphic Format Support", values: ["dwg / dxf / stp", "dwg / dxf / stp"] },
   { label: "Electrical", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
