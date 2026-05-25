@@ -72,7 +72,7 @@ const models = [
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
 
-const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
+const configurations = ["FLC-1530, FLC 2040, FLC2060 models", "FLC-2040", "FLC-2060"];
 
 const specRows: { label: string; values: string[] }[] = [
   { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)", "2000 × 6000 mm (6.5 × 20 ft)"] },
