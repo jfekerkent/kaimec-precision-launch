@@ -30,6 +30,7 @@ import flo1530Img from "@/assets/machine-kflo-1530.png";
 import flo2040Img from "@/assets/machine-flo-2040.png";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
+import remoteControlImg from "@/assets/remote-control.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -118,7 +119,7 @@ const trustBand = [
 
 const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
-  { src: flo1530Img, caption: "Remote control" },
+  { src: remoteControlImg, caption: "Remote control" },
   { src: controlInterfaceImg, caption: "Control interface" },
   { src: flo1530Img, caption: "Demo video" },
 ];
