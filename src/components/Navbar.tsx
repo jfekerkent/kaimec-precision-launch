@@ -40,7 +40,7 @@ export default function Navbar() {
               <img
                 src={logoImg}
                 alt="KAIMEC Machines"
-                className="h-16 md:h-20 w-auto object-contain"
+                className="h-32 md:h-40 w-auto object-contain"
               />
             </Link>
 
