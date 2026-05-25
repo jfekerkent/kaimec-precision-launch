@@ -15,12 +15,19 @@ import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
 import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
 import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
   { id: "kflo-1530", model: "FLO-1530", description: "Open Type Fiber Laser Cutting Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
   { id: "kflo-p-1530", model: "FLO-P 1530", description: "Open Type Fiber Laser Cutting Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
   { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Fiber Laser Cutting Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "FLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [flcP1530Img, flcP1530Img2, flcP1530Img3, flcP2040Img2] },
+];
+
+const pressBrakes = [
+  { id: "kmkt-1560", model: "MKT 1560", description: "CNC Press Brake — 5 ft / 60 ton capacity", image: mkt1560Img },
+  { id: "kmkt-32135", model: "MKT 32135", description: "CNC Press Brake — 13.5 ft / 320 ton capacity", image: mkt32135Img },
 ];
 
 const specRows = [
@@ -73,6 +80,33 @@ export default function FiberLasers() {
             {machines.map((m) => (
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <MachineGallery images={m.images} model={m.model} background="light" fit="contain" />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
+                  <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
+                    <Button className="w-full font-bold">Request Quote</Button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CNC Press Brakes */}
+      <section className="py-20 border-t border-border">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="section-label mb-3">Press Brakes</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet sizes and tonnages.</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+            {pressBrakes.map((m) => (
+              <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
+                <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                  <img src={m.image} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4" />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
