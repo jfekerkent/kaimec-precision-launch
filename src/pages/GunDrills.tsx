@@ -314,7 +314,7 @@ export default function GunDrills() {
 
       {/* HELP ME CHOOSE banner #1 — between KPGD and KMGD */}
       <HelpMeChooseBanner
-        headline="Not sure which gun drill fits your shop?"
+        headline="Not sure which Gun & BTA Drilling Machine fits your shop?"
         subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
         primaryLabel="HELP ME CHOOSE"
         primaryHref="/consultation"
@@ -345,7 +345,7 @@ export default function GunDrills() {
       <ProductSection
         bg="light"
         imageSide="right"
-        kicker="Standard Production Gun Drill"
+        kicker="Standard Production Gun & BTA Drilling Machine"
         title="TSK-2150"
         subtitle="Deep Hole Drilling & Boring Machine"
         description={
