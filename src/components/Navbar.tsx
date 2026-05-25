@@ -6,8 +6,8 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
-  { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
+  { label: "CNC Press\nBrakes", to: "/machines/press-brakes" },
+  { label: "Gun & BTA\nDrilling Machines", to: "/gun-drills" },
   { label: "FAQ", to: "/faq" },
 ];
 
