@@ -55,7 +55,7 @@ export default function About() {
       <section className="py-20 md:py-28 bg-card">
         <div className="container grid gap-12 lg:grid-cols-2 items-center">
           <div className="overflow-hidden">
-            <img src={machinesImg} alt="Fiber laser cutting steel" loading="lazy" width={1280} height={960} className="w-full h-full object-cover" />
+            <img src={machinesImg} alt="Fiber machines cutting steel" loading="lazy" width={1280} height={960} className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="section-label mb-3">Our Machines</p>
