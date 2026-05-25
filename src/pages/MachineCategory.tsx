@@ -63,7 +63,7 @@ export default function MachineCategory() {
                     loading="lazy"
                     width={800}
                     height={600}
-                    className={`h-full w-full object-cover ${m.image === "kflo-1530" || m.image === "kflo-p-1530" ? "bg-white object-contain p-2" : ""}`}
+                      className={`h-full w-full object-cover ${m.image === "kflo-1530" || m.image === "kflo-p-1530" ? "object-contain p-2" : ""}`}
                   />
                 </div>
                 <div className="p-6">

@@ -125,7 +125,7 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
   return (
     <div className="bg-white border border-border flex flex-col">
       <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-        <img src={img} alt={title} className="w-full h-full object-contain bg-white" />
+        <img src={img} alt={title} className="w-full h-full object-contain" />
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-black text-foreground">{title}</h3>
@@ -191,7 +191,7 @@ export default function CoveredPipeProfileFiberLaser() {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                <img src={flcP1530Img} alt="FLC-P Combo lasers (sheet + pipe cutting)" className="w-full h-full object-contain bg-white" />
+                <img src={flcP1530Img} alt="FLC-P Combo lasers (sheet + pipe cutting)" className="w-full h-full object-contain" />
               </div>
             </div>
           </div>
@@ -423,7 +423,7 @@ export default function CoveredPipeProfileFiberLaser() {
             {gallery.map((g) => (
               <figure key={g.caption} className="bg-white border border-border overflow-hidden group">
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                  <img src={g.src} alt={g.caption} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 bg-white" />
+                  <img src={g.src} alt={g.caption} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border">{g.caption}</figcaption>
               </figure>

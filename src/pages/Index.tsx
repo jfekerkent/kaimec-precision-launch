@@ -158,7 +158,7 @@ export default function Index() {
             {featuredMachines.map((m) => (
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className={`h-full w-full group-hover:scale-105 transition-transform duration-500 ${m.isProductShot ? "object-contain bg-white p-2" : "object-cover"}`} />
+                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className={`h-full w-full group-hover:scale-105 transition-transform duration-500 ${m.isProductShot ? "object-contain p-2" : "object-cover"}`} />
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>

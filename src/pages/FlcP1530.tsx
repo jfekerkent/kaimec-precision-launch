@@ -164,7 +164,7 @@ export default function FlcP1530() {
                 <img
                   src={flcP1530Img}
                   alt="FLC-P 1530 Combo lasers (sheet + pipe cutting)"
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -334,7 +334,7 @@ export default function FlcP1530() {
                   <img
                     src={g.src}
                     alt={g.caption}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 bg-white"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border">
