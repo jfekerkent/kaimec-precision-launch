@@ -106,7 +106,7 @@ const gallery = [
   { src: flcP1530Img, caption: "Cutting head detail" },
   { src: flp6035Img, caption: "Pipe handling system" },
   { src: flcP1530Img, caption: "Control interface" },
-  { src: flcP2040Img, caption: "Production view" },
+  { src: flcP2040Img, caption: "Remote control" },
 ];
 
 function scrollToQuote(e?: React.MouseEvent) {
