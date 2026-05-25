@@ -95,7 +95,7 @@ export default function Index() {
               European Made, high-speed laser cutting machines and press brakes
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
-              KAIMEC offers CNC fiber lasers, CNC press brakes, CNC gun drilling and deep hole drilling machines— backed by US-based engineers and California inventory.
+              KAIMEC offers CNC fiber lasers, CNC press brakes, and CNC Gun & BTA Drilling Machines — backed by US-based engineers and California inventory.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/machines">
