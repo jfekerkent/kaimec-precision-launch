@@ -33,18 +33,18 @@ export default function Navbar() {
   return (
     <header className="fixed top-3 left-0 right-0 z-50 px-3">
       <div className="container max-w-7xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl">
-        <div className="px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+        <div className="px-4 md:px-6 py-2 flex items-center justify-between gap-4">
           {/* Logo + primary nav */}
           <div className="flex items-center gap-8 min-w-0">
             <Link to="/" className="flex items-center shrink-0">
               <img
                 src={logoImg}
                 alt="KAIMEC Machines"
-                className="h-32 md:h-40 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </Link>
 
-            <ul className="hidden lg:flex items-center gap-8">
+            <ul className="hidden lg:flex flex-wrap items-center gap-x-6 gap-y-1 max-w-2xl">
               <li>
                 <Link
                   to="/"
