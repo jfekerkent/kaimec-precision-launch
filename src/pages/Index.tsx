@@ -261,7 +261,7 @@ export default function Index() {
       <TalkToExpertBanner />
 
       {/* Why KAIMEC */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="rounded-lg overflow-hidden relative aspect-[4/3] bg-white">
@@ -277,24 +277,24 @@ export default function Index() {
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-4">The machines your shop needs. The support your floor demands.</h2>
-              <div className="space-y-4 text-muted-foreground mb-6 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-4">The machines your shop needs. The support your floor demands.</h2>
+              <div className="space-y-4 text-gray-600 mb-6 leading-relaxed">
                 <p>Kaimec machines are manufactured in Europe using premium-quality international components and supported by USA-based service personnel. Many low-cost machines focus primarily on initial purchase price, while Kaimec focuses on long-term reliability, precision, safety, productivity, and customer support.</p>
-                
-                <h3 className="text-xl font-bold text-white mt-8 mb-4">What advantages does Kaimec offer over low-cost Chinese machines?</h3>
-                
+
+                <h3 className="text-xl font-bold text-gray-800 mt-8 mb-4">What advantages does Kaimec offer over low-cost Chinese machines?</h3>
+
                 <p>Kaimec offers free installation, free training, 24/7 online support, premium international components, detailed manuals, spare parts availability, FDA compliance, CE-certified manufacturing, and English-speaking support personnel.</p>
               </div>
               <ul className="space-y-4 mb-8">
                 {whyPoints.map((p) => (
                   <li key={p} className="flex gap-3 items-start">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-black">{p}</span>
+                    <span className="text-gray-800">{p}</span>
                   </li>
                 ))}
               </ul>
               <Link to="/about">
-                <Button variant="outline" className="font-bold border-foreground/30 text-foreground hover:bg-foreground/10">
+                <Button variant="outline" className="font-bold border-gray-800/30 text-gray-800 hover:bg-gray-800/10">
                   About KAIMEC <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
