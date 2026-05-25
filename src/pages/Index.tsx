@@ -152,7 +152,7 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-foreground">Fabrication Machines</h2>
-            <p className="mt-3 text-sm text-muted-foreground font-bold md:text-6xl font-serif border-4 rounded-lg shadow-lg">Available with Table sizes 5x10ft and 6.5x13ft and 3, 6, 12, 20 kW lasers</p>
+            <p className="mt-3 text-sm text-muted-foreground font-bold font-serif border-4 rounded-lg shadow-lg md:text-9xl">Available with Table sizes 5x10ft and 6.5x13ft and 3, 6, 12, 20 kW lasers</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMachines.map((m) => (
