@@ -277,7 +277,7 @@ export default function CoveredPipeProfileFiberLaser() {
             <ConfigCard
               img={flcP2040Img}
               title="FLC-P 2040"
-              subtitle="5 x 10 ft Working Area | 2-20 kW"
+              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
               body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
               model="FLC-P 2040"
             />
