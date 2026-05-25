@@ -118,7 +118,7 @@ const trustBand = [
 
 const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
-  { src: flo1530Img, caption: "Production view" },
+  { src: flo1530Img, caption: "Remote control" },
   { src: controlInterfaceImg, caption: "Control interface" },
   { src: flo1530Img, caption: "Demo video" },
 ];
