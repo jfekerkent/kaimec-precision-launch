@@ -27,7 +27,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflo-p-1530",
-    model: "FLO-P 1530 ( open, single table)",
+    model: "FLO-P 2040 ( open, single table)",
     category: "Laser Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Open Type Laser Machine",
