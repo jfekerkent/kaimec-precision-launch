@@ -7,7 +7,6 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "CNC Press Brakes", to: "/machines/press-brakes" },
-  { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
   { label: "FAQ", to: "/faq" },
 ];
 
@@ -16,6 +15,11 @@ const laserCuttingLinks = [
   { label: "Closed Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
   { label: "Combo lasers (sheet + pipe cutting)", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
   { label: "Tube/Profile Cutters", to: "/machines/tube-profile-lasers" },
+];
+
+const gunDrillLinks = [
+  { label: "Gun Drilling Machines", to: "/gun-drills/gun-drilling-machines" },
+  { label: "BTA Deep Hole Drilling Machines", to: "/gun-drills/bta-deep-hole-drilling" },
 ];
 
 const moreLinks = [
@@ -28,6 +32,8 @@ export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [laserOpen, setLaserOpen] = useState(false);
   const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
+  const [drillOpen, setDrillOpen] = useState(false);
+  const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -81,6 +87,41 @@ export default function Navbar() {
                   <div className="absolute top-full left-0 pt-2 w-72 z-50">
                     <div className="rounded-md border border-border bg-card shadow-lg py-1">
                       {laserCuttingLinks.map((sub) => (
+                        <Link
+                          key={sub.to}
+                          to={sub.to}
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+              <li
+                className="group relative"
+                onMouseEnter={() => setDrillOpen(true)}
+                onMouseLeave={() => setDrillOpen(false)}
+              >
+                <button
+                  className={`flex items-center gap-1 text-xs font-medium transition-colors whitespace-nowrap ${
+                    location.pathname.startsWith("/gun-drills")
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Gun & BTA Drilling Machines
+                  <ChevronDown
+                    className={`h-4 w-4 text-slate-400 transition-transform ${
+                      drillOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {drillOpen && (
+                  <div className="absolute top-full left-0 pt-2 w-72 z-50">
+                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
+                      {gunDrillLinks.map((sub) => (
                         <Link
                           key={sub.to}
                           to={sub.to}
@@ -225,6 +266,31 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div>
+              <button
+                onClick={() => setMobileDrillOpen(!mobileDrillOpen)}
+                className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+              >
+                Gun & BTA Drilling Machines
+                <ChevronDown
+                  className={`h-3 w-3 transition-transform ${mobileDrillOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {mobileDrillOpen && (
+                <div className="pl-4">
+                  {gunDrillLinks.map((sub) => (
+                    <Link
+                      key={sub.to}
+                      to={sub.to}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+                    >
+                      {sub.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {moreLinks.map((link) => (
               <Link
                 key={link.to}
