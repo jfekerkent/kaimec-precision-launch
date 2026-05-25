@@ -12,7 +12,7 @@ export const categories = [
   { name: "Fiber Laser Cutting Machines", slug: "cnc-fiber-lasers", description: "High-speed precision fiber laser cutting systems for sheet metal fabrication." },
   { name: "Tube & Profile Lasers", slug: "tube-profile-lasers", description: "Specialized laser systems for cutting tubes, pipes, and structural profiles." },
   { name: "CNC Press Brakes", slug: "press-brakes", description: "CNC hydraulic and electric press brakes for precision metal bending." },
-  { name: "Gun Drills", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
+  { name: "Gun & BTA Drilling Machines", slug: "gun-drills", description: "Deep hole drilling machines for precision boring in demanding industrial applications." },
 ];
 
 export const machines: Machine[] = [
@@ -91,7 +91,7 @@ export const machines: Machine[] = [
   {
     id: "gun-drilling-machine",
     model: "TSK-2150",
-    category: "Gun Drills",
+    category: "Gun & BTA Drilling Machines",
     categorySlug: "gun-drills",
     description: "Deep Hole Drilling & Boring Machine",
     specs: { "Drilling Diameter": "Ø30 – Ø150 mm", "Boring Diameter": "Ø40 – Ø500 mm", "Max Processing Depth": "3,000 mm", "Spindle Motor": "30 kW", "Machine Weight": "~39 Tons" },

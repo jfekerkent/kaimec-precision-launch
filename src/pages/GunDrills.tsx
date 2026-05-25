@@ -253,7 +253,7 @@ function HelpMeChooseBanner({
 
 export default function GunDrills() {
   usePageMeta(
-    "Gun Drills & Deep-Hole Drilling Solutions | Kaimec",
+    "Gun & BTA Drilling Machines | Kaimec",
     "From standard gun drilling to heavy-duty deep-hole machining for parts up to 120 tons — Kaimec delivers precision deep-hole solutions for aerospace, oil & gas, mold & die, and heavy equipment."
   );
 
@@ -263,7 +263,7 @@ export default function GunDrills() {
       <section className="bg-[#1a1a1a] py-14 md:py-20">
         <div className="container max-w-5xl">
           <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-4">
-            Gun Drills & Deep-Hole Drilling
+            Gun & BTA Drilling Machines
           </p>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
             CNC Deep-Hole Drilling Solutions
