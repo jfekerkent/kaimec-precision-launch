@@ -169,7 +169,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 5x10ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
