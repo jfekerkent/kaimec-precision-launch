@@ -208,14 +208,14 @@ export default function ClosedTypeFiberLaser() {
             <div className="relative">
               <div className="space-y-4">
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-4 rounded-lg border">
-                  <img src={flc1530_2} alt="FLC-1530 front view" className="w-full h-full object-contain bg-white" />
+                  <img src={flc1530_2} alt="FLC-1530 front view" className="w-full h-full object-contain" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-2 rounded-lg border">
-                    <img src={flc1530_3} alt="FLC-1530 side view" className="w-full h-full object-contain bg-white" />
+                    <img src={flc1530_3} alt="FLC-1530 side view" className="w-full h-full object-contain" />
                   </div>
                   <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-2 rounded-lg border">
-                    <img src={flc1530_4} alt="FLC-1530 with exchange table" className="w-full h-full object-contain bg-white" />
+                    <img src={flc1530_4} alt="FLC-1530 with exchange table" className="w-full h-full object-contain" />
                   </div>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function ClosedTypeFiberLaser() {
                 className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors flex flex-col"
               >
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                  <img src={m.image} alt={m.id} className="w-full h-full object-contain bg-white" />
+                  <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-black text-foreground mb-1">{m.id}</h3>
@@ -452,7 +452,7 @@ export default function ClosedTypeFiberLaser() {
                   <img
                     src={g.src}
                     alt={g.caption}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 bg-white"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border">
