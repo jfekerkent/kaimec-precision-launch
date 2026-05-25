@@ -279,7 +279,7 @@ export default function OpenTypeFiberLaser() {
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/JYqQlWx0ePE?autoplay=1&mute=1&loop=1&playlist=JYqQlWx0ePE&controls=1&modestbranding=1&playsinline=1&rel=2"
+              src="https://www.youtube.com/embed/Re38vgppBAo?autoplay=1&mute=1&loop=1&playlist=Re38vgppBAo&controls=1&modestbranding=1&playsinline=1&rel=2"
               title="Open Type Fiber Laser in action"
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
