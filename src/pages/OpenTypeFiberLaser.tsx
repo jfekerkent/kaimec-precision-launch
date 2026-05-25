@@ -121,7 +121,7 @@ const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
   { src: remoteControlImg, caption: "Remote control" },
   { src: controlInterfaceImg, caption: "Control interface" },
-  { src: flo1530Img, caption: "Demo video" },
+  { src: flo1530Img, caption: "Chiller / Heater Unit" },
 ];
 
 function scrollToQuote(e: React.MouseEvent) {
