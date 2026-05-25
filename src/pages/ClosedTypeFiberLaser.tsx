@@ -164,23 +164,23 @@ export default function ClosedTypeFiberLaser() {
         <div className="container relative py-16 md:py-24 text-slate-50">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
-                <Link to="/" className="hover:text-white">Home</Link>
+              <nav className="flex items-center flex-wrap gap-1 text-xs text-blue-900/60 mb-6">
+                <Link to="/" className="hover:text-blue-900">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-white">Laser</Link>
+                <Link to="/machines" className="hover:text-blue-900">Laser</Link>
                 <ChevronRight className="h-3 w-3" />
-                <span className="text-white">Closed Type</span>
+                <span className="text-blue-900">Closed Type</span>
               </nav>
-              <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl text-neutral-200">
+              <p className="font-bold tracking-[0.2em] text-blue-900 mb-4 uppercase text-3xl">
                 
               </p>
-              <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight lg:text-5xl">
+              <h1 className="text-5xl md:text-6xl font-black text-blue-900 mb-4 tracking-tight lg:text-5xl">
                 Fully Enclosed Laser Machines
               </h1>
-              <p className="text-base font-bold tracking-wide text-primary mb-6 uppercase">
+              <p className="text-base font-bold tracking-wide text-blue-800 mb-6 uppercase">
                 HIGH QUALITY MACHINES FROM EUROPE
               </p>
-              <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
+              <ul className="text-lg md:text-xl text-blue-900/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
@@ -195,7 +195,7 @@ export default function ClosedTypeFiberLaser() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-bold px-8 border-white/30 bg-transparent text-white hover:bg-white hover:text-secondary"
+                  className="font-bold px-8 border-blue-900/30 bg-transparent text-blue-900 hover:bg-blue-900 hover:text-white"
                   asChild
                 >
                   <a href={brochurePdf} download="Kaimec-Fiber-Laser-Brochure.pdf">
