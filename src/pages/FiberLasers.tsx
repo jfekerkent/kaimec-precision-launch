@@ -176,7 +176,7 @@ export default function FiberLasers() {
           </div>
           {/* Mobile: stacked per-machine specs */}
           <div className="md:hidden space-y-6">
-            {["FLO-1530", "FLO-P 2040 ( open, single table)", "FLC-1530", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
+            {["FLO-1530", "FLO-P 1530 ( open, single table)", "FLC-1530", "FLC-P 1530 (fully enclosed/2 tables)"].map((model, idx) => (
               <div key={model} className="rounded-lg border border-border bg-card overflow-hidden">
                 <div className="bg-primary/10 px-4 py-3 font-bold text-foreground">{model}</div>
                 <div>
