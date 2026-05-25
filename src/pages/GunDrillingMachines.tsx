@@ -44,7 +44,7 @@ function Card({ src, alt, title, children }: { src: string; alt: string; title: 
 
 export default function GunDrillingMachines() {
   usePageMeta(
-    "CNC Dual Spindle Gun Drilling Machines | Kaimec",
+    "CNC Single and Dual Spindle Gun Drilling Machines | Kaimec",
     "CNC gun drilling machines for deep, straight, high-precision holes — single and dual spindle configurations for automotive, aerospace, oil & gas, and mold making."
   );
 
@@ -57,7 +57,7 @@ export default function GunDrillingMachines() {
             Gun Drilling Machines
           </p>
           <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
-            CNC Dual Spindle Gun Drilling Machines
+            CNC Single and Dual Spindle Gun Drilling Machines
           </h1>
           <p className="text-base md:text-lg font-medium text-white/90 max-w-[800px] leading-relaxed">
             Gun drilling produces precise holes from 1–50 mm (0.04–2.00 in) and maintains accuracy at high
