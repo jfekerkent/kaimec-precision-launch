@@ -232,7 +232,13 @@ export default function Index() {
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4">The machines your shop needs. The support your floor demands.</h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">We're a focused precision equipment company — not a catalog brand. We carry Mekotek machines because they're what we'd put in our own shop. Every unit comes backed by our Southern California team, U.S. parts inventory, and direct technical support. No overseas tickets. No runaround.</p>
+              <div className="space-y-4 text-muted-foreground mb-6 leading-relaxed">
+                <p>Kaimec machines are manufactured in Europe using premium-quality international components and supported by USA-based service personnel. Many low-cost machines focus primarily on initial purchase price, while Kaimec focuses on long-term reliability, precision, safety, productivity, and customer support.</p>
+                
+                <h3 className="text-xl font-bold text-white mt-8 mb-4">What advantages does Kaimec offer over low-cost Chinese machines?</h3>
+                
+                <p>Kaimec offers free installation, free training, 24/7 online support, premium international components, detailed manuals, spare parts availability, FDA compliance, CE-certified manufacturing, and English-speaking support personnel.</p>
+              </div>
               <ul className="space-y-4 mb-8">
                 {whyPoints.map((p) => (
                   <li key={p} className="flex gap-3 items-start">
