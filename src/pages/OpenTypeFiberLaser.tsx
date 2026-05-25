@@ -165,7 +165,7 @@ const powerCols = ["2 kW", "3 kW", "4 kW", "6 kW", "8 kW", "12 kW", "20 kW"];
 const trustBand = [
   { icon: Award, title: "CE / ISO / FDA Certified", body: "Meets international and U.S. safety standards." },
   { icon: ShieldCheck, title: "2-Year Warranty", body: "Standard on all FLO series machines." },
-  { icon: Wrench, title: "24/7 U.S.-Based Service", body: "Parts, support, and service technicians in the U.S." },
+  { icon: Wrench, title: "Free Installation / Training", body: "Standard on all machines." },
 ];
 
 const gallery = [
