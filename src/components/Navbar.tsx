@@ -252,6 +252,20 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            {navLinks.filter((l) => l.to !== "/").map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`block px-3 py-2 text-xs font-medium rounded-md ${
+                  location.pathname === link.to
+                    ? "text-primary bg-muted"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
             <div>
               <button
                 onClick={() => setMobileDrillOpen(!mobileDrillOpen)}
@@ -277,20 +291,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            {navLinks.filter((l) => l.to !== "/").map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-3 py-2 text-xs font-medium rounded-md ${
-                  location.pathname === link.to
-                    ? "text-primary bg-muted"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
             {moreLinks.map((link) => (
               <Link
                 key={link.to}
