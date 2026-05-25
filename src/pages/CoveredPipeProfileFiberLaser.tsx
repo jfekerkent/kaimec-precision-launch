@@ -57,9 +57,9 @@ const industries = [
 const configurations = ["FLC-P 1530", "FLC-P 2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
   { label: "Loading Capacity", values: ["1200 kg (2650 lbs)", "1200 kg (2650 lbs)"] },
-  { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2020 x 4050 mm"] },
+  { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2000 x 4000 mm"] },
   { label: "Z Axis Travel", values: ['300 mm (11.8")', '350 mm (13.8")'] },
   { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged"] },
   { label: "X-Y Axis Drive System", values: ["Rack", "Rack"] },
@@ -169,7 +169,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm) models<br />Ø12&quot; x 20ft tune capacity</li>
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
