@@ -75,9 +75,9 @@ const models = [
 const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "2000 x 4000 mm", "2000 × 6000 mm"] },
+  { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)", "2000 × 6000 mm (6.5 × 20 ft)"] },
   { label: "Loading Capacity", values: ["1200 kg", "1200 kg", "1450 kg"] },
-  { label: "X-Y Axis Travel", values: ["1520 × 3030 mm", "2020 × 4040 mm", "2020 × 6050 mm"] },
+  { label: "X-Y Axis Travel", values: ["1525 x 3048 mm (5 x 10 ft)", "2020 × 4040 mm (6.5 × 13 ft)", "2020 × 6050 mm (6.5 × 20 ft)"] },
   { label: "Z Axis Travel", values: ["300 mm", "300 mm", "350 mm"] },
   { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged", "4 Point Ball Caged"] },
   { label: "X-Y Axis Drive System", values: ["Rack", "Rack", "Rack"] },
