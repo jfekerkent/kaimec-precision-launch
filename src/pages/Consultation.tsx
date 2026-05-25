@@ -77,7 +77,7 @@ export default function Consultation() {
         <div className="container max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Prefer to Just Call?</h2>
           <p className="text-white/80 text-lg mb-2">
-            Phone: <a href="tel:7142588526" className="text-primary font-semibold">714-258-8526</a> — Mon–Fri 9am–5pm Pacific
+            Phone: <a href="tel:5623502071" className="text-primary font-semibold">562-350-2071</a> — Mon–Fri 9am–5pm Pacific
           </p>
           <p className="text-white/80 text-lg">
             Email: <a href="mailto:sales@kaimec.com" className="text-primary font-semibold">sales@kaimec.com</a>

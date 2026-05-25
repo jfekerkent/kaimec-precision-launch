@@ -34,7 +34,7 @@ export default function Quote() {
                     <Phone className="h-5 w-5 text-primary shrink-0" />
                     <div>
                       <div className="font-semibold text-foreground">Phone</div>
-                      <a href="tel:7142588526" className="hover:text-primary transition-colors">(714) 258-8526</a>
+                      <a href="tel:5623502071" className="hover:text-primary transition-colors">(562) 350-2071</a>
                     </div>
                   </li>
                   <li className="flex gap-3 text-sm text-muted-foreground">

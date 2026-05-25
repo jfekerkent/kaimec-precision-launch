@@ -488,7 +488,7 @@ export default function ClosedTypeFiberLaser() {
                 asChild
                 className="font-bold px-8 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-white"
               >
-                <a href="tel:7142588526">
+                <a href="tel:5623502071">
                   <Phone className="h-4 w-4" />
                   (714) 258-8526
                 </a>

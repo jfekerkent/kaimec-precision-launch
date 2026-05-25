@@ -66,7 +66,7 @@ export default function Footer() {
                 1231 Edinger Ave, Tustin, CA
               </li>
               <li>
-                <a href="tel:7142588526" className="flex gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:5623502071" className="flex gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
                   (714) 258-8526
                 </a>

@@ -319,7 +319,7 @@ export default function GunDrills() {
         primaryLabel="HELP ME CHOOSE"
         primaryHref="/consultation"
         secondaryLabel="OR CALL 714-258-8526"
-        secondaryHref="tel:7142588526"
+        secondaryHref="tel:5623502071"
       />
 
       {/* KMGD — image LEFT, white */}
@@ -418,7 +418,7 @@ export default function GunDrills() {
                 📅 BOOK A 20-MIN CONSULT
               </Button>
             </a>
-            <a href="tel:7142588526">
+            <a href="tel:5623502071">
               <Button
                 size="lg"
                 variant="outline"

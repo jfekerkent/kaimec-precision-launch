@@ -51,8 +51,8 @@ const FlcP1530 = () => {
                     Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
                   </button>
                 </Link>
-                <a href="tel:7142588526" className="w-full border border-gray-300 py-3 px-6 rounded-lg font-bold text-gray-700 hover:bg-gray-100 transition-colors flex items-center justify-center">
-                  <Phone className="mr-2 h-4 w-4" /> (714) 258-8526
+                <a href="tel:5623502071" className="w-full border border-gray-300 py-3 px-6 rounded-lg font-bold text-gray-700 hover:bg-gray-100 transition-colors flex items-center justify-center">
+                  <Phone className="mr-2 h-4 w-4" /> (562) 350-2071
                 </a>
               </div>
             </div>

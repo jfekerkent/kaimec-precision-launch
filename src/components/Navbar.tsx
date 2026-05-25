@@ -128,7 +128,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:7142588526"
+            href="tel:5623502071"
             className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="h-4 w-4" />
