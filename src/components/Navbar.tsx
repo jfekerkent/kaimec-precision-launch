@@ -65,7 +65,7 @@ export default function Navbar() {
                   : "text-[#1A1A1A] hover:text-primary"
               }`}
             >
-              Fiber <ChevronDown className="h-3 w-3" />
+              Laser <ChevronDown className="h-3 w-3" />
             </button>
             {laserOpen && (
               <div className="absolute top-full left-0 mt-1 w-72 rounded-md border border-border bg-card shadow-lg py-1 z-50">
