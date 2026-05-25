@@ -248,25 +248,25 @@ export default function CoveredPipeProfileFiberLaser() {
   return (
     <Layout>
       {/* 1. HERO */}
-      <section className="relative bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80 pointer-events-none" />
-        <div className="container relative py-16 md:py-24 text-slate-50">
+      <section className="relative bg-green-100 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-green-100 to-green-200 pointer-events-none" />
+        <div className="container relative py-16 md:py-24 text-blue-900">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
-                <Link to="/" className="hover:text-white">Home</Link>
+              <nav className="flex items-center flex-wrap gap-1 text-xs text-blue-900/60 mb-6">
+                <Link to="/" className="hover:text-blue-900">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-white">Laser</Link>
+                <Link to="/machines" className="hover:text-blue-900">Laser</Link>
                 <ChevronRight className="h-3 w-3" />
-                <span className="text-white">Combo lasers (sheet + pipe cutting)</span>
+                <span className="text-blue-900">Combo lasers (sheet + pipe cutting)</span>
               </nav>
-              <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl text-neutral-200">
+              <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl text-blue-900/80">
                 
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-blue-900 mb-6 tracking-tight">
                 Combo lasers<br />(sheet + pipe cutting)
               </h1>
-              <ul className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
+              <ul className="text-lg md:text-xl text-blue-900/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
@@ -275,13 +275,13 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
+                <Button size="lg" className="font-bold px-8 bg-blue-900 hover:bg-blue-800" onClick={scrollToQuote}>
                   Request a Quote
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="font-bold px-8 border-white/30 bg-transparent text-white hover:bg-white hover:text-secondary"
+                  className="font-bold px-8 border-blue-900/30 bg-transparent text-blue-900 hover:bg-blue-900 hover:text-white"
                   asChild
                 >
                   <a href={brochurePdf} download="Kaimec-Fiber-Laser-Brochure.pdf" aria-label="Download Kaimec fiber laser brochure">
@@ -292,7 +292,7 @@ export default function CoveredPipeProfileFiberLaser() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
+              <div className="aspect-[4/3] bg-blue-900/5 border-blue-900/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
                 <HeroSlideshow />
               </div>
             </div>
