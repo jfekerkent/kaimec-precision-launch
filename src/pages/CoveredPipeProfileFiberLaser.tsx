@@ -173,7 +173,7 @@ export default function CoveredPipeProfileFiberLaser() {
       {/* 1. HERO */}
       <section className="relative bg-secondary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-secondary/80 pointer-events-none" />
-        <div className="container relative py-16 md:py-24 text-slate-500">
+        <div className="container relative py-16 md:py-24 text-slate-50">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
