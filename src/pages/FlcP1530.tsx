@@ -13,20 +13,20 @@ const FlcP1530 = () => {
             <span className="mx-2">/</span>
             <Link to="/machines" className="hover:text-white">Laser</Link>
             <span className="mx-2">/</span>
-            <span className="text-white font-medium">FLC-P 2040 (fully enclosed/2 tables)</span>
+            <span className="text-white font-medium">FLC-P 1530 (fully enclosed/2 tables)</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">FLC-P 2040 (fully enclosed/2 tables)</h1>
+              <h1 className="text-4xl font-black text-gray-900 mb-4">FLC-P 1530 (fully enclosed/2 tables)</h1>
               <p className="text-xl text-gray-600 mb-6">Closed Type Pipe & Profile Fiber Laser Cutting Machine</p>
-              <img src={flcP1530Img} alt="FLC-P 2040 (fully enclosed/2 tables)" className="w-full rounded-xl border border-gray-200 shadow-sm" />
+              <img src={flcP1530Img} alt="FLC-P 1530 (fully enclosed/2 tables)" className="w-full rounded-xl border border-gray-200 shadow-sm" />
             </div>
 
             <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
               <h2 className="text-2xl font-bold mb-6">Machine Overview</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                The FLC-P 2040 (fully enclosed/2 tables) is a high-performance closed-type fiber laser system designed for both sheet metal and pipe/profile cutting. 
+                The FLC-P 1530 (fully enclosed/2 tables) is a high-performance closed-type fiber laser system designed for both sheet metal and pipe/profile cutting. 
                 It offers exceptional precision, safety, and versatility for modern fabrication shops.
               </p>
               

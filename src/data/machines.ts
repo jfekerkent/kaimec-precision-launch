@@ -45,7 +45,7 @@ export const machines: Machine[] = [
   },
   {
     id: "kflc-p-1530",
-    model: "FLC-P 2040 (fully enclosed/2 tables)",
+    model: "FLC-P 1530 (fully enclosed/2 tables)",
     category: "Laser Machines",
     categorySlug: "cnc-fiber-lasers",
     description: "Closed Type Pipe & Profile Fiber Laser",
