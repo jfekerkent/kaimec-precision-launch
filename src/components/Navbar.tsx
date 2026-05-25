@@ -6,8 +6,8 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
-  { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
+  { label: "CNC Press\nBrakes", to: "/machines/press-brakes" },
+  { label: "Gun & BTA\nDrilling Machines", to: "/gun-drills" },
   { label: "FAQ", to: "/faq" },
 ];
 
@@ -96,7 +96,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                    className={`text-xs font-medium transition-colors whitespace-pre-line text-center leading-tight ${
                       location.pathname === link.to
                         ? "text-primary"
                         : "text-slate-600 hover:text-slate-900"
