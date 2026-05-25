@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import {
@@ -27,6 +27,10 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
+import flo1530Slide1 from "@/assets/flo-1530-1.png";
+import flo1530Slide2 from "@/assets/flo-1530-2.png";
+import flo1530Slide3 from "@/assets/flo-1530-3.png";
+import flo1530Slide4 from "@/assets/flo-1530-4.png";
 import flo2040Img from "@/assets/machine-flo-2040.png";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
@@ -35,6 +39,32 @@ import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
+
+const flo1530Slides = [flo1530Slide1, flo1530Slide2, flo1530Slide3, flo1530Slide4];
+
+function Flo1530Slideshow() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % flo1530Slides.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative w-full h-full">
+      {flo1530Slides.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Open Type Fiber Laser FLO-1530 view ${i + 1}`}
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
 
 const features = [
   {
@@ -188,11 +218,7 @@ export default function OpenTypeFiberLaser() {
             <div className="relative grid gap-4">
               <figure className="bg-white/5 border-white/10 overflow-hidden rounded-lg border">
                 <div className="aspect-[4/3] flex items-center justify-center p-6">
-                  <img
-                    src={flo1530Img}
-                    alt="Open Type Fiber Laser FLO-1530"
-                    className="w-full h-full object-contain"
-                  />
+                  <Flo1530Slideshow />
                 </div>
                 <figcaption className="px-4 py-2 text-sm font-bold text-white text-center">FLO-1530</figcaption>
               </figure>
