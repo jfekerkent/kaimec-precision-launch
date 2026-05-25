@@ -341,6 +341,32 @@ export default function CoveredPipeProfileFiberLaser() {
               model="FLC-P 2040"
             />
           </div>
+          <div className="grid gap-8 md:grid-cols-3 mt-8">
+            <RolloverConfigCard
+              img={floP1530A}
+              hoverImg={floP1530B}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530C}
+              hoverImg={floP1530D}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530D}
+              hoverImg={floP1530A}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+          </div>
         </div>
       </section>
 
