@@ -151,18 +151,19 @@ export default function TubeProfileLasers() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-8">
             <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
-            <p className="text-white/70 text-lg mt-3">Compare FLP-6020 and FLP-6035 side by side. Toggle between metric and imperial units.</p>
+            <p className="text-white/70 text-lg mt-3">Compare FLP-6020 and FLP-6035 side by side.</p>
           </div>
-          <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
           <div className="grid gap-10 md:grid-cols-2">
             <div className="bg-white p-6">
               <h3 className="text-2xl font-black text-secondary mb-6">FLP-6020</h3>
               <DescriptionList items={productDescription} />
+              <UnitToggle unit={unit} onChange={setUnit} variant="light" />
               <SpecTable title="Specifications" rows={specs6020} unit={unit} />
             </div>
             <div className="bg-white p-6">
               <h3 className="text-2xl font-black text-secondary mb-6">FLP-6035</h3>
               <DescriptionList items={productDescription} />
+              <UnitToggle unit={unit} onChange={setUnit} variant="light" />
               <SpecTable title="Specifications" rows={specs6035} unit={unit} />
             </div>
           </div>
