@@ -92,7 +92,7 @@ export default function Index() {
           <div className="max-w-2xl">
             <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision CNC Equipment. Factory-Direct to Your Floor.</p>
             <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f5f5ef]">
-              European high-speed fiber laser cutting machines and CNC press brakes
+              European high-speed laser cutting machines and CNC press brakes
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
               KAIMEC offers CNC fiber lasers, CNC press brakes, and CNC Gun & BTA Drilling Machines — backed by US-based engineers and California inventory.
