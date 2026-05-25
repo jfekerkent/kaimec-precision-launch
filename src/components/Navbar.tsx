@@ -136,37 +136,39 @@ export default function Navbar() {
                 )}
               </li>
             </ul>
-          </div>
+            {/* Divider separating nav from phone */}
+            <div className="hidden lg:block w-px h-4 bg-slate-300 mx-1 shrink-0" />
 
-          {/* Actions */}
-          <div className="flex items-center gap-4 md:gap-5">
+            <a
+              href="tel:5623502071"
+              className="hidden md:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors shrink-0"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="text-xs font-medium">(562) 350-2071</span>
+            </a>
+
             <Link
               to="/consultation"
-              className="hidden xl:inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md"
+              className="hidden xl:inline-flex items-center justify-center px-3 py-1.5 border border-primary text-xs font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md shrink-0"
             >
               Talk to an Expert
             </Link>
-            <a
-              href="tel:5623502071"
-              className="hidden md:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="text-sm font-medium">(562) 350-2071</span>
-            </a>
+
             <Link
               to="/quote"
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 shrink-0"
             >
               Request for Info
             </Link>
-            <button
-              className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
+
+          <button
+            className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md ml-auto"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
       {/* Mobile menu */}
