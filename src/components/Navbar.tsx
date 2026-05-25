@@ -6,8 +6,8 @@ import logoImg from "@/assets/kaimec-logo-nav.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "CNC Press\nBrakes", to: "/machines/press-brakes" },
-  { label: "Gun & BTA\nDrilling Machines", to: "/gun-drills" },
+  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
+  { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
   { label: "FAQ", to: "/faq" },
 ];
 
@@ -33,22 +33,23 @@ export default function Navbar() {
   return (
     <header className="fixed top-3 left-0 right-0 z-50 px-3">
       <div className="container max-w-7xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl">
-        <div className="pl-0 pr-4 md:pr-6 py-2 flex items-center justify-between gap-4">
-          {/* Logo + primary nav */}
-          <div className="flex items-center gap-8 min-w-0">
-            <Link to="/" className="flex items-center shrink-0">
-              <img
-                src={logoImg}
-                alt="KAIMEC Machines"
-                className="h-16 md:h-20 w-auto object-contain"
-              />
-            </Link>
+        <div className="px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center shrink-1">
+            <img
+              src={logoImg}
+              alt="KAIMEC Machines"
+              className="h-32 md:h-40 w-auto object-contain"
+            />
+          </Link>
 
-            <ul className="hidden lg:flex flex-wrap items-center gap-x-6 gap-y-1 max-w-2xl">
+          {/* All nav + actions in one line */}
+          <div className="hidden lg:flex items-center justify-between flex-1 ml-6">
+            <ul className="flex items-center gap-6 xl:gap-8">
               <li>
                 <Link
                   to="/"
-                  className={`text-xs font-medium transition-colors ${
+                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
                     location.pathname === "/"
                       ? "text-primary"
                       : "text-slate-600 hover:text-slate-900"
@@ -63,7 +64,7 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-xs font-medium transition-colors ${
+                  className={`flex items-center gap-1 text-xs font-medium transition-colors whitespace-nowrap ${
                     location.pathname.startsWith("/machines/laser-cutting/")
                       ? "text-primary"
                       : "text-slate-600 hover:text-slate-900"
@@ -96,7 +97,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className={`text-xs font-medium transition-colors whitespace-pre-line text-center leading-tight ${
+                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
                       location.pathname === link.to
                         ? "text-primary"
                         : "text-slate-600 hover:text-slate-900"
@@ -109,7 +110,7 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                  className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors whitespace-nowrap"
                 >
                   More
                   <ChevronDown
@@ -136,37 +137,38 @@ export default function Navbar() {
                 )}
               </li>
             </ul>
+
+            <div className="flex items-center gap-4 xl:gap-6 ml-4">
+              <a
+                href="tel:5623502071"
+                className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
+              >
+                <Phone className="h-4 w-4" />
+                <span className="text-sm font-medium">(562) 350-2071</span>
+              </a>
+              <Link
+                to="/consultation"
+                className="inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
+              >
+                Talk to an Expert
+              </Link>
+              <Link
+                to="/quote"
+                className="inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
+              >
+                Request for Info
+              </Link>
+            </div>
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-4 md:gap-5">
-            <Link
-              to="/consultation"
-              className="hidden xl:inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md"
-            >
-              Talk to an Expert
-            </Link>
-            <a
-              href="tel:5623502071"
-              className="hidden md:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="text-sm font-medium">(562) 350-2071</span>
-            </a>
-            <Link
-              to="/quote"
-              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5"
-            >
-              Request for Info
-            </Link>
-            <button
-              className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md ml-auto"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
       {/* Mobile menu */}
