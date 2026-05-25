@@ -65,7 +65,7 @@ export default function Navbar() {
                   : "text-[#1A1A1A] hover:text-primary"
               }`}
             >
-              Laser <ChevronDown className="h-3 w-3" />
+              Laser Cutting machines <ChevronDown className="h-3 w-3" />
             </button>
             {laserOpen && (
               <div className="absolute top-full left-0 mt-1 w-72 rounded-md border border-border bg-card shadow-lg py-1 z-50">
@@ -165,7 +165,7 @@ export default function Navbar() {
                 onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
                 className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
               >
-                Laser
+                Laser Cutting machines
                 <ChevronDown
                   className={`h-3 w-3 transition-transform ${mobileLaserOpen ? "rotate-180" : ""}`}
                 />
