@@ -287,6 +287,61 @@ export default function CoveredPipeProfileFiberLaser() {
         </div>
       </section>
 
+      {/* 6. AVAILABLE CONFIGURATIONS */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="container max-w-6xl">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Configurations</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
+            <p className="text-muted-foreground text-lg mt-3">
+              Two sizes. Same proven FLC-P platform. Built around the cutting capacity your shop actually needs.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <ConfigCard
+              img={flcP1530Img}
+              title="FLC-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-20 kW"
+              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
+              model="FLC-P 1530"
+            />
+            <ConfigCard
+              img={flcP2040Img}
+              title="FLC-P 2040"
+              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
+              body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
+              model="FLC-P 2040"
+            />
+          </div>
+          <div className="grid gap-8 md:grid-cols-3 mt-8">
+            <RolloverConfigCard
+              img={floP1530A}
+              hoverImg={floP1530B}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530C}
+              hoverImg={floP1530D}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+            <RolloverConfigCard
+              img={floP1530D}
+              hoverImg={floP1530A}
+              title="FLO-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 1530"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 3. SPECIFICATIONS COMPARISON */}
       <section className="py-20 bg-secondary">
         <div className="container max-w-6xl">
@@ -356,61 +411,6 @@ export default function CoveredPipeProfileFiberLaser() {
                 <span className="text-sm md:text-base font-bold text-foreground">{label}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. AVAILABLE CONFIGURATIONS */}
-      <section className="py-20 bg-[#f8f8f8]">
-        <div className="container max-w-6xl">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Configurations</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
-            <p className="text-muted-foreground text-lg mt-3">
-              Two sizes. Same proven FLC-P platform. Built around the cutting capacity your shop actually needs.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <ConfigCard
-              img={flcP1530Img}
-              title="FLC-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
-              model="FLC-P 1530"
-            />
-            <ConfigCard
-              img={flcP2040Img}
-              title="FLC-P 2040"
-              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
-              body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
-              model="FLC-P 2040"
-            />
-          </div>
-          <div className="grid gap-8 md:grid-cols-3 mt-8">
-            <RolloverConfigCard
-              img={floP1530A}
-              hoverImg={floP1530B}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
-            />
-            <RolloverConfigCard
-              img={floP1530C}
-              hoverImg={floP1530D}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
-            />
-            <RolloverConfigCard
-              img={floP1530D}
-              hoverImg={floP1530A}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
-            />
           </div>
         </div>
       </section>
