@@ -379,7 +379,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specs of&nbsp; FLC-P models</h2>
             <p className="text-white/70 text-lg mt-3">{" "}</p>
           </div>
           <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
