@@ -240,7 +240,7 @@ export default function Navbar() {
             <Link
               to="/consultation"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 px-3 py-2 text-sm font-bold border-2 border-primary text-primary text-center"
+              className="mt-2 px-3 py-2 text-xs font-bold border-2 border-primary text-primary text-center"
             >
               Talk to an Expert
             </Link>
