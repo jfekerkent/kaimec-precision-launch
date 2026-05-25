@@ -152,17 +152,25 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-foreground">Fabrication Machines</h2>
+            <p className="mt-3 text-sm md:text-base text-muted-foreground">Table sizes in ft for each model · Available with 3, 6, 12, 20 kW lasers</p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMachines.map((m) => (
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className={`h-full w-full group-hover:scale-105 transition-transform duration-500 ${m.isProductShot ? "object-contain p-2" : "object-cover"}`} />
+                <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                  {m.images ? (
+                    <div className="grid grid-cols-2 w-full h-full">
+                      {m.images.map((src, i) => (
+                        <img key={i} src={src} alt={`${m.name} ${i + 1}`} loading="lazy" className="h-full w-full object-contain p-1 group-hover:scale-105 transition-transform duration-500" />
+                      ))}
+                    </div>
+                  ) : (
+                    <img src={m.image!} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" />
+                  )}
                 </div>
                 <div className="p-6">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-2">{m.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{m.desc}</p>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
                     View Specifications <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
