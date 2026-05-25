@@ -96,7 +96,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                    className={`text-xs font-medium transition-colors whitespace-pre-line text-center leading-tight ${
                       location.pathname === link.to
                         ? "text-primary"
                         : "text-slate-600 hover:text-slate-900"
