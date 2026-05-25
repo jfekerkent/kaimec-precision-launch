@@ -278,7 +278,7 @@ export default function CoveredPipeProfileFiberLaser() {
               The FLC-P series represents a fusion of speed, sensitivity, reliability, and cost-effectiveness in fiber laser cutting — purpose-built for shops that need to cut both sheet metal and pipe/profile in a single fully enclosed machine. Laser power scales up to 20,000 watts, making it capable for thick plate work alongside everyday production cutting.
             </p>
             <p>
-              Standard 6-meter pipe and profile cutting length, extendable to 9 meters if needed, with support for pipe diameters up to 350 mm. Chucks clamp and auto-center at the press of a button. A double exchange table design keeps cutting continuous between loads, and a wireless remote provides fast access to blowing, cutting, pause, calibration, and simulation functions.
+              Standard 20ft (6m) pipe and profile cutting length, extendable to 30ft (9m) if requested,  with support for pipe diameters up to 13.8" (350 mm). Chucks clamp and auto-center at the press of a button. A double exchange table design keeps cutting continuous between loads, and a wireless remote provides fast access to blowing, cutting, pause, calibration, and simulation functions.
             </p>
             <p className="border-l-4 border-primary pl-6 text-foreground font-medium">
               Every FLC-P Series machine sold by Kaimec ships with full U.S.-based technical support, parts inventory, and service. No international shipping delays for spare parts. No time-zone games when something needs answering. That's the Kaimec difference.
@@ -302,7 +302,7 @@ export default function CoveredPipeProfileFiberLaser() {
               img={flcP1530Img}
               title="FLC-P 1530"
               subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
+              body="The compact combo machine. Sheet metal up to 5x10ft and pipe/profile up to 13.8&quot; diameter x 20ft in length in a single fully enclosed footprint."
               model="FLC-P 1530"
             />
             <ConfigCard
@@ -317,26 +317,26 @@ export default function CoveredPipeProfileFiberLaser() {
             <RolloverConfigCard
               img={floP1530A}
               hoverImg={floP1530B}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
+              title="FLO-P 2060"
+              subtitle="6.5x20ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 2060"
             />
             <RolloverConfigCard
               img={floP1530C}
               hoverImg={floP1530D}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
+              title="FLO-P 2060"
+              subtitle="6.5x20ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 2060"
             />
             <RolloverConfigCard
               img={floP1530D}
               hoverImg={floP1530A}
-              title="FLO-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-12 kW"
-              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 12" diameter x 20ft in length in a single footprint.'}
-              model="FLO-P 1530"
+              title="FLO-P 2060"
+              subtitle="6.5x20ft Working Area | 2-12 kW"
+              body={'The compact combo machine. Sheet metal sizes up to 6.5 x 13ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
+              model="FLO-P 2060"
             />
           </div>
         </div>
