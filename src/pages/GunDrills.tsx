@@ -424,7 +424,7 @@ export default function GunDrills() {
                 variant="outline"
                 className="font-bold tracking-wide border-2 border-[#1a1a1a] text-[#1a1a1a] bg-transparent hover:bg-[#1a1a1a] hover:text-white px-8"
               >
-                CALL 714-258-8526
+                CALL 562-350-2071
               </Button>
             </a>
           </div>
