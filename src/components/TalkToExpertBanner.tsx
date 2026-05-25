@@ -11,7 +11,7 @@ export default function TalkToExpertBanner() {
           <div>
             <p className="section-label mb-3" style={{ color: "#F5A623", fontSize: "13px", letterSpacing: "2.5px" }}>{"\n"}</p>
             <h2 className="text-3xl font-black text-white mb-4 leading-[1.05] md:text-3xl">
-              TALK TO AN EXPERT
+              TALK TO AN&nbsp; EXPERT
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-lg leading-relaxed">
               50+ years of combined fabrication expertise. Real specs, real pricing, no fluff.
