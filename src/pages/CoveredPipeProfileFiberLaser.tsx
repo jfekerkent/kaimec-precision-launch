@@ -74,7 +74,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut"] },
-  { label: "Laser Cutting Head", values: ["2000 x 4000 mm", "2000 x 4000 mm"] },
+  { label: "Laser Cutting Head", values: ["1524 x 3048 mm", "1524 x 3048 mm"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["12000 kg (26450 lbs)", "11500 kg (25350 lbs)"] },
