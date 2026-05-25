@@ -217,75 +217,7 @@ export default function CoveredPipeProfileFiberLaser() {
         </div>
       </section>
 
-      {/* 3. KEY FEATURES */}
-      <section className="py-20 bg-[#f8f8f8]">
-        <div className="container">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Engineering</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Key Features</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="bg-white border border-border p-8 hover:border-primary transition-colors">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-5">
-                  <Icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. INDUSTRIES */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Applications</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Built for These Industries</h2>
-          </div>
-          <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-            {industries.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center justify-center text-center bg-card border border-border p-8 hover:border-primary hover:bg-primary/5 transition-colors min-h-[160px]">
-                <Icon className="h-10 w-10 text-primary mb-4" />
-                <span className="text-sm md:text-base font-bold text-foreground">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. AVAILABLE CONFIGURATIONS */}
-      <section className="py-20 bg-[#f8f8f8]">
-        <div className="container max-w-6xl">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Configurations</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
-            <p className="text-muted-foreground text-lg mt-3">
-              Two sizes. Same proven FLC-P platform. Built around the cutting capacity your shop actually needs.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <ConfigCard
-              img={flcP1530Img}
-              title="FLC-P 1530"
-              subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
-              model="FLC-P 1530"
-            />
-            <ConfigCard
-              img={flcP2040Img}
-              title="FLC-P 2040"
-              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
-              body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
-              model="FLC-P 2040"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 6. SPECIFICATIONS COMPARISON */}
+      {/* 3. SPECIFICATIONS COMPARISON */}
       <section className="py-20 bg-secondary">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
@@ -315,6 +247,74 @@ export default function CoveredPipeProfileFiberLaser() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. KEY FEATURES */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="container">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Engineering</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Key Features</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {features.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-white border border-border p-8 hover:border-primary transition-colors">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. INDUSTRIES */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Applications</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Built for These Industries</h2>
+          </div>
+          <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
+            {industries.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex flex-col items-center justify-center text-center bg-card border border-border p-8 hover:border-primary hover:bg-primary/5 transition-colors min-h-[160px]">
+                <Icon className="h-10 w-10 text-primary mb-4" />
+                <span className="text-sm md:text-base font-bold text-foreground">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. AVAILABLE CONFIGURATIONS */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="container max-w-6xl">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Configurations</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
+            <p className="text-muted-foreground text-lg mt-3">
+              Two sizes. Same proven FLC-P platform. Built around the cutting capacity your shop actually needs.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <ConfigCard
+              img={flcP1530Img}
+              title="FLC-P 1530"
+              subtitle="5 x 10 ft Working Area | 2-20 kW"
+              body="The compact combo machine. Sheet metal up to 6.5 x 13ft and pipe/profile up to 12&quot; diameter x 20ft in length in a single fully enclosed footprint."
+              model="FLC-P 1530"
+            />
+            <ConfigCard
+              img={flcP2040Img}
+              title="FLC-P 2040"
+              subtitle="6.5 x 13 ft Working Area | 2-20 kW"
+              body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
+              model="FLC-P 2040"
+            />
           </div>
         </div>
       </section>
