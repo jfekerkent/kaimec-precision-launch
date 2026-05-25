@@ -32,6 +32,7 @@ import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
+import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -123,6 +124,7 @@ const gallery = [
   { src: remoteControlImg, caption: "Remote control" },
   { src: controlInterfaceImg, caption: "Control interface" },
   { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
+  { src: regulatingTransformerImg, caption: "Regulating Transformer (for 220 or 480 volt input)" },
 ];
 
 function scrollToQuote(e: React.MouseEvent) {
