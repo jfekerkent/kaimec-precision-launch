@@ -301,6 +301,36 @@ export default function OpenTypeFiberLaser() {
       </section>
 
       {/* 3. KEY FEATURES */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Model Lineup</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Sizes and Models</h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { id: "FLO-1530", area: "1524 x 3048 mm (5 x 10 ft)", image: flo1530Img },
+              { id: "FLO-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", image: flo2040Img },
+              { id: "FLO-2060", area: "2000 x 6000 mm (6.5 x 20 ft)", image: flo2060Img },
+            ].map((m) => (
+              <div
+                key={m.id}
+                className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors flex flex-col"
+              >
+                <div className="aspect-[4/3] bg-white overflow-hidden flex items-center justify-center p-6 rounded-lg border border-border">
+                  <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col items-center text-center">
+                  <h3 className="text-xl font-black text-foreground mb-1">{m.id}</h3>
+                  <p className="text-sm font-semibold text-primary">{m.area}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. KEY FEATURES */}
       <section className="py-20 bg-[#f8f8f8]">
         <div className="container">
           <div className="max-w-3xl mb-12">
