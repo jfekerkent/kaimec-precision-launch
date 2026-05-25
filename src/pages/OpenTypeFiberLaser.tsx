@@ -81,7 +81,7 @@ const industries = [
 const configurations = ["FLO-1530", "FLO-2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
   { label: "Loading Capacity", values: ["800 kg (1750 lbs)", "800 kg (1750 lbs)"] },
   { label: "X-Y Axis Travel", values: ["1524 x 3048 mm (6.5 x 13 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
   { label: "Z Axis Travel", values: ['100 mm (3.94")', '100 mm (3.94")'] },
