@@ -9,15 +9,14 @@ import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
-import flcP1530Img2 from "@/assets/flc-p-1530-2.png";
-import flcP1530Img3 from "@/assets/flc-p-1530-3.png";
-import flcP2040Img2 from "@/assets/flc-p-2040-2.png";
+import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import facilityImg from "@/assets/why-kaimec-facility.png";
 
 const featuredMachines = [
-  { tag: "Fiber Laser Cutting", name: "FLO-P 1530", desc: "5x10 and 6.5x13ft models\n6,12,20 or 30kW\nCombination machine with sheet and pipe/profile cutting\n\n", image: kfloSecondaryImg, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Fiber Laser Cutting", name: "FLC-1530", desc: "Sizes available : 5x10 and 6.5x13ft\n3,6,12kW\nCombination machine to cut sheet and pipe/profiles in one machine", image: kflc1530Img, link: "/machines/cnc-fiber-lasers", isProductShot: true },
-  { tag: "Tube & Profile Laser", name: "FLC-P 1530", desc: "Fully Enclosed combo laser with tube/profile cutting system\n5x10 or 6.5x13ft tables\n6,12,20kW\nTube/Profile size Ø12\" x 20ft long", image: flcP1530Img, gallery: [flcP1530Img2, flcP1530Img3, flcP2040Img2], link: "/machines/cnc-fiber-lasers", isProductShot: true },
+  { tag: "Open Type Lasers", name: "FLO-1530", image: kfloPrimaryImg, images: null, link: "/machines/open-type-fiber-laser" },
+  { tag: "Fully Enclosed Lasers", name: "FLC-1530", image: kflc1530Img, images: null, link: "/machines/closed-type-fiber-laser" },
+  { tag: "Combo Lasers", name: "FLO-P 1530 / FLC-P 1530", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/covered-pipe-profile-fiber-laser" },
+  { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/covered-pipe-profile-fiber-laser" },
 ];
 
 const stats = [
