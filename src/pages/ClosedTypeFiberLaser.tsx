@@ -255,28 +255,7 @@ export default function ClosedTypeFiberLaser() {
         </div>
       </section>
 
-      {/* 3. KEY FEATURES */}
-      <section className="py-20 bg-[#f8f8f8]">
-        <div className="container">
-          <div className="max-w-3xl mb-12">
-            <p className="section-label mb-3 text-primary">Engineering</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Why the FLC Series</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, title, body }) => (
-              <div key={title} className="bg-white border border-border p-8 hover:border-primary transition-colors">
-                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-5">
-                  <Icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. MODEL LINEUP */}
+      {/* 3. MODEL LINEUP */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="max-w-3xl mb-12">
@@ -304,6 +283,27 @@ export default function ClosedTypeFiberLaser() {
                     View Specs <ChevronRight className="h-3 w-3" />
                   </a>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. KEY FEATURES */}
+      <section className="py-20 bg-[#f8f8f8]">
+        <div className="container">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Engineering</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Why the FLC Series</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {features.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="bg-white border border-border p-8 hover:border-primary transition-colors">
+                <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
