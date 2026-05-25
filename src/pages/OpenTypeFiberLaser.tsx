@@ -176,7 +176,7 @@ export default function OpenTypeFiberLaser() {
               <nav className="flex items-center flex-wrap gap-1 text-xs text-muted-foreground mb-6">
                 <Link to="/" className="hover:text-foreground">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-foreground">Laser Cutting</Link>
+                <Link to="/machines" className="hover:text-foreground">Fiber</Link>
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-foreground">Open Type Fiber Lasers</span>
               </nav>
