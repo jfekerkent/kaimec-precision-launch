@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Leading manufacturer of high-precision laser machines, press brakes, and deep hole drilling systems for modern industrial fabrication.
+              The best source for high-precision laser machines, press brakes, and deep hole drilling systems for modern industrial fabrication.
             </p>
             <div className="flex gap-3 mt-5">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
