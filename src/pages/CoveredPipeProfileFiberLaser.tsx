@@ -182,7 +182,7 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
         <Button asChild className="font-bold w-full sm:w-auto">
           <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
-            Request Quote on {title.includes("2040") ? title.replace("2040", "1530") : title}
+            Request Quote on {title}
           </a>
         </Button>
       </div>
@@ -203,7 +203,7 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { i
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
         <Button asChild className="font-bold w-full sm:w-auto">
           <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
-            Request Quote on {title.includes("2040") ? title.replace("2040", "1530") : title}
+            Request Quote on {title}
           </a>
         </Button>
       </div>
