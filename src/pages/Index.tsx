@@ -129,7 +129,7 @@ export default function Index() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMachines.map((m) => (
-              <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
+              <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors shadow-lg">
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
                   {m.images ? (
                     <div className="relative w-full h-full">
