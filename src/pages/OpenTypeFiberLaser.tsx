@@ -99,7 +99,7 @@ const features = [
   {
     icon: Minimize2,
     title: "Compact Footprint",
-    body: "Installs in roughly 160 sq ft. Single-table design fits where larger systems can't.",
+    body: "Installs in roughly 80 sq ft. Single-table design fits where larger systems can't.",
   },
   {
     icon: Crosshair,
