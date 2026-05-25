@@ -48,7 +48,7 @@ export default function Footer() {
                 { label: "CNC Fiber Lasers", to: "/machines/cnc-fiber-lasers" },
                 { label: "Tube & Profile Lasers", to: "/machines/tube-profile-lasers" },
                 { label: "CNC Press Brakes", to: "/machines/press-brakes" },
-                { label: "Gun Drills", to: "/gun-drills" },
+                { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
               ].map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">{l.label}</Link>
