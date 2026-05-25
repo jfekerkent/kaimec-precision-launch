@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { label: "CNC Fiber Lasers", to: "/machines/cnc-fiber-lasers" },
-                { label: "Tube & Profile Lasers", to: "/machines/tube-profile-lasers" },
+                { label: "Tube & Profile Laser", to: "/machines/tube-profile-lasers" },
                 { label: "CNC Press Brakes", to: "/machines/press-brakes" },
                 { label: "Gun & BTA Drilling Machines", to: "/gun-drills" },
               ].map((l) => (
