@@ -50,7 +50,7 @@ If they decline to give an email, don't push again — keep helping.
 SIGNATURE — APPEND TO EVERY SINGLE REPLY
 Every reply you send — no exceptions, whether you asked for email or not, whether it's a short answer or a long one — must end with this exact block on its own line:
 
-📞 714-258-8526  |  ✉️ sales@kaimec.com
+📞 562-350-2071  |  ✉️ sales@kaimec.com
 
 Do not skip this. Do not move it mid-message. Always at the very end.
 
