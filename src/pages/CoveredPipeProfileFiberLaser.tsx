@@ -275,13 +275,13 @@ export default function CoveredPipeProfileFiberLaser() {
           <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">Product Highlights</h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              The FLC-P series represents a fusion of speed, sensitivity, reliability, and cost-effectiveness in fiber laser cutting — purpose-built for shops that need to cut both sheet metal and pipe/profile in a single fully enclosed machine. Laser power scales up to 20,000 watts, making it capable for thick plate work alongside everyday production cutting.
+              The FLO-P and FLC-P series represent a fusion of speed, sensitivity, reliability, and cost-effectiveness in fiber laser cutting — purpose-built for shops that need to cut both sheet metal and pipe/profile in a single fully enclosed machine. Laser power scales up to 20,000 watts, making it capable for thick plate work alongside everyday production cutting.
             </p>
             <p>
               Standard 20ft (6m) pipe and profile cutting length, extendable to 30ft (9m) if requested,  with support for pipe diameters up to 13.8" (350 mm). Chucks clamp and auto-center at the press of a button. A double exchange table design keeps cutting continuous between loads, and a wireless remote provides fast access to blowing, cutting, pause, calibration, and simulation functions.
             </p>
             <p className="border-l-4 border-primary pl-6 text-foreground font-medium">
-              Every FLC-P Series machine sold by Kaimec ships with full U.S.-based technical support, parts inventory, and service. No international shipping delays for spare parts. No time-zone games when something needs answering. That's the Kaimec difference.
+              Every FLO-P and FLC-P Series machines sold by Kaimec ships with full U.S.-based technical support, parts inventory, and service. No international shipping delays for spare parts. No time-zone games when something needs answering. That's the Kaimec difference.
             </p>
           </div>
         </div>
