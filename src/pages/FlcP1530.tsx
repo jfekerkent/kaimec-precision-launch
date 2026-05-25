@@ -11,7 +11,7 @@ const FlcP1530 = () => {
           <nav className="flex mb-8 text-sm text-muted-foreground bg-gray-900 p-4 rounded-lg">
             <Link to="/" className="hover:text-white">Home</Link>
             <span className="mx-2">/</span>
-            <Link to="/machines" className="hover:text-white">Fiber</Link>
+            <Link to="/machines" className="hover:text-white">Laser</Link>
             <span className="mx-2">/</span>
             <span className="text-white font-medium">FLC-P 1530</span>
           </nav>
