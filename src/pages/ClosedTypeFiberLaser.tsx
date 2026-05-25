@@ -96,7 +96,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Machine Weight", values: ["8500 kg", "10000 kg", "11500 kg"] },
   { label: "Machine Dimensions (W × L × H)", values: ["2698 × 9175 × 2560 mm", "3500 × 11200 × 2560 mm", "4400 × 10000 × 2120 mm"] },
   { label: "Graphic Format", values: ["dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp"] },
-  { label: "Voltage", values: ["220 or 380 V / 60 Hz", "220 or 380 V / 60 Hz", "220 or 380 V / 60 Hz"] },
+  { label: "Voltage", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
   { label: "Certifications", values: ["CE / ISO", "CE / ISO", "CE / ISO"] },
 ];
 
@@ -125,7 +125,7 @@ const optionalConfig = [
   "Cutting heads: Raytools, BOCI, or WSX",
   "Laser power: 2, 3, 4, 6, 8, 12, or 20 kW",
   "Assist gas configurations: Air, Oxygen, Nitrogen",
-  "Voltage: 220 V or 380 V / 60 Hz",
+  "Voltage: 220 or 480 V / 60 Hz",
 ];
 
 const trustBand = [

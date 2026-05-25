@@ -101,7 +101,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Machine Weight", values: ["2300 kg (5100 lbs)", "2300 kg (5100 lbs)"] },
   { label: "Machine Dimensions (L x W x H)", values: ["2355 x 4302 x 1980 mm (7.7 x 14.1 x 6.5 ft)", "2355 x 5302 x 1980 mm (7.7 x 17.4 x 6.5 ft)"] },
   { label: "Graphic Format Support", values: ["dwg / dxf / stp", "dwg / dxf / stp"] },
-  { label: "Electrical", values: ["220 or 380 Volt / 3 phase / 60 Hz", "220 or 380 Volt / 3 phase / 60 Hz"] },
+  { label: "Electrical", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
   { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA"] },
   { label: "Warranty", values: ["2 Years", "2 Years"] },
 ];
