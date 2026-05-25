@@ -31,6 +31,7 @@ import flo2040Img from "@/assets/machine-flo-2040.png";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
+import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -121,7 +122,7 @@ const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
   { src: remoteControlImg, caption: "Remote control" },
   { src: controlInterfaceImg, caption: "Control interface" },
-  { src: flo1530Img, caption: "Demo video" },
+  { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
 ];
 
 function scrollToQuote(e: React.MouseEvent) {
