@@ -189,9 +189,9 @@ export default function Index() {
       </section>
 
       {/* CNC Press Brakes */}
-      <section className="py-20 md:py-28 bg-[#f8f8f8]">
+      <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-[#f8f8f8]">
         <div className="container">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <p className="section-label mb-3">{"\n"}</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet sizes and tonnages.</p>
