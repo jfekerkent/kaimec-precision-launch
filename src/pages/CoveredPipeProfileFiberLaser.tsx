@@ -302,7 +302,7 @@ export default function CoveredPipeProfileFiberLaser() {
               img={flcP1530Img}
               title="FLC-P 1530"
               subtitle="5 x 10 ft Working Area | 2-20 kW"
-              body="The compact combo machine. Sheet metal up to 5x10ft and pipe/profile up to 13.8\" diameter x 20ft in length in a single fully enclosed footprint."
+              body="The compact combo machine. Sheet metal up to 5x10ft and pipe/profile up to 13.8&quot; diameter x 20ft in length in a single fully enclosed footprint."
               model="FLC-P 1530"
             />
             <ConfigCard
