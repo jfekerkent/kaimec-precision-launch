@@ -31,120 +31,143 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white shadow-sm">
-      <div className="container flex h-24 items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0 mr-2">
-          <img
-            src={logoImg}
-            alt="KAIMEC Machines"
-            className="h-[72px] sm:h-[84px] md:h-[96px] w-auto object-contain"
-          />
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          <Link
-            to="/"
-            className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-              location.pathname === "/"
-                ? "text-primary"
-                : "text-[#1A1A1A] hover:text-primary"
-            }`}
-          >
-            Home
-          </Link>
-          <div
-            className="relative"
-            onMouseEnter={() => setLaserOpen(true)}
-            onMouseLeave={() => setLaserOpen(false)}
-          >
-            <button
-              className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                location.pathname.startsWith("/machines/laser-cutting/")
-                  ? "text-primary"
-                  : "text-[#1A1A1A] hover:text-primary"
-              }`}
-            >
-              Laser Cutting machines <ChevronDown className="h-3 w-3" />
-            </button>
-            {laserOpen && (
-              <div className="absolute top-full left-0 mt-1 w-72 rounded-md border border-border bg-card shadow-lg py-1 z-50">
-                {laserCuttingLinks.map((sub) => (
-                  <Link
-                    key={sub.to}
-                    to={sub.to}
-                    className="block px-4 py-2 text-sm text-[#1A1A1A] bg-white hover:bg-[#F4F5F7] hover:text-primary transition-colors"
-                  >
-                    {sub.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-          {navLinks.filter((l) => l.to !== "/").map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-md ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-[#1A1A1A] hover:text-primary"
-              }`}
-            >
-              {link.label}
+    <header className="fixed top-3 left-0 right-0 z-50 px-3">
+      <div className="container max-w-7xl mx-auto bg-white border border-gray-200 shadow-sm rounded-xl">
+        <div className="px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+          {/* Logo + primary nav */}
+          <div className="flex items-center gap-8 min-w-0">
+            <Link to="/" className="flex items-center shrink-0">
+              <img
+                src={logoImg}
+                alt="KAIMEC Machines"
+                className="h-12 md:h-14 w-auto object-contain"
+              />
             </Link>
-          ))}
-          <div className="relative">
-            <button
-              onClick={() => setMoreOpen(!moreOpen)}
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#1A1A1A] hover:text-primary transition-colors rounded-md"
-            >
-              More <ChevronDown className="h-3 w-3" />
-            </button>
-            {moreOpen && (
-              <div className="absolute top-full right-0 mt-1 w-48 rounded-md border border-border bg-card shadow-lg py-1">
-                {moreLinks.map((link) => (
+
+            <ul className="hidden lg:flex items-center gap-5">
+              <li>
+                <Link
+                  to="/"
+                  className={`text-sm font-semibold transition-colors ${
+                    location.pathname === "/"
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Home
+                </Link>
+              </li>
+              <li
+                className="group relative"
+                onMouseEnter={() => setLaserOpen(true)}
+                onMouseLeave={() => setLaserOpen(false)}
+              >
+                <button
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    location.pathname.startsWith("/machines/laser-cutting/")
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Laser Cutting machines
+                  <ChevronDown
+                    className={`h-4 w-4 text-slate-400 transition-transform ${
+                      laserOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {laserOpen && (
+                  <div className="absolute top-full left-0 pt-2 w-72 z-50">
+                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
+                      {laserCuttingLinks.map((sub) => (
+                        <Link
+                          key={sub.to}
+                          to={sub.to}
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+              {navLinks.filter((l) => l.to !== "/").map((link) => (
+                <li key={link.to}>
                   <Link
-                    key={link.to}
                     to={link.to}
-                    onClick={() => setMoreOpen(false)}
-                    className="block px-4 py-2 text-sm text-[#1A1A1A] bg-white hover:bg-[#F4F5F7] hover:text-primary transition-colors"
+                    className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                      location.pathname === link.to
+                        ? "text-primary"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
                   >
                     {link.label}
                   </Link>
-                ))}
-              </div>
-            )}
+                </li>
+              ))}
+              <li className="relative">
+                <button
+                  onClick={() => setMoreOpen(!moreOpen)}
+                  className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                >
+                  More
+                  <ChevronDown
+                    className={`h-4 w-4 text-slate-400 transition-transform ${
+                      moreOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {moreOpen && (
+                  <div className="absolute top-full right-0 pt-2 w-48 z-50">
+                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
+                      {moreLinks.map((link) => (
+                        <Link
+                          key={link.to}
+                          to={link.to}
+                          onClick={() => setMoreOpen(false)}
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+            </ul>
           </div>
-          <Link
-            to="/consultation"
-            className="ml-2 px-3 py-2 text-sm font-bold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            Talk to an Expert
-          </Link>
-        </nav>
 
-        {/* Right side */}
-        <div className="flex items-center gap-3">
-          <a
-            href="tel:5623502071"
-            className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            (562) 350-2071
-          </a>
-          <Link to="/quote">
-            <Button className="font-bold">Request for Info</Button>
-          </Link>
-          <button
-            className="lg:hidden text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Actions */}
+          <div className="flex items-center gap-4 md:gap-5">
+            <Link
+              to="/consultation"
+              className="hidden xl:inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md"
+            >
+              Talk to an Expert
+            </Link>
+            <a
+              href="tel:5623502071"
+              className="hidden md:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="text-sm font-medium">(562) 350-2071</span>
+            </a>
+            <Link
+              to="/quote"
+              className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5"
+            >
+              Request for Info
+            </Link>
+            <button
+              className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
-      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
