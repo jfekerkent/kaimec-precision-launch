@@ -198,7 +198,7 @@ export default function Index() {
           <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
             {[
               { tag: "CNC Press Brake", name: "MKT 1560", desc: "5 ft / 60 ton capacity", image: mkt1560Img },
-              { tag: "CNC Press Brake", name: "MKT 32135", desc: "13.5 ft / 320 ton capacity", image: mkt32135Img },
+              { tag: "CNC Press Brake", name: "MKT 32135", desc: "12 ft x 135ton capacity", image: mkt32135Img },
             ].map((m) => (
               <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
