@@ -165,7 +165,7 @@ export default function Navbar() {
                 onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
                 className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
               >
-                Laser Cutting
+                Fiber
                 <ChevronDown
                   className={`h-3 w-3 transition-transform ${mobileLaserOpen ? "rotate-180" : ""}`}
                 />
