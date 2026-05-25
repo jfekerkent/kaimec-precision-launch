@@ -35,6 +35,7 @@ import flo2040Img from "@/assets/machine-flo-2040.png";
 import flo2040Slide1 from "@/assets/flo-2040-1.png";
 import flo2040Slide2 from "@/assets/flo-2040-2.png";
 import flo2040Slide3 from "@/assets/flo-2040-3.png";
+import flo2060Img from "@/assets/machine-flo-2060.avif";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
