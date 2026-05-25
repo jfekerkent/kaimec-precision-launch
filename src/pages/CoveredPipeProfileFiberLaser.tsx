@@ -134,6 +134,38 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Warranty", values: ["2 Years", "2 Years"] },
 ];
 
+const flopConfigurations = [
+  "FLO-P 1530 (open, single table)",
+  "FLO-P 2040 (open, single table)",
+  "FLO-P 2060 (open, single table)",
+];
+
+const flopSpecRows: { label: string; values: string[] }[] = [
+  { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 3048 mm (6.5 x 10 ft)", "2000 x 6096 mm (6.5 x 20 ft)"] },
+  { label: "Loading Capacity", values: ["900 kg (1985 lbs)", "1000 kg (2205 lbs)", "1500 kg (3307 lbs)"] },
+  { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2000 x 3030 mm", "2000 x 6080 mm"] },
+  { label: "Z Axis Travel", values: ['300 mm (11.8")', '300 mm (11.8")', '300 mm (11.8")'] },
+  { label: "X-Y-Z Axis Guideway", values: ["4 Point Ball Caged", "4 Point Ball Caged", "4 Point Ball Caged"] },
+  { label: "X-Y Axis Drive System", values: ["Rack", "Rack", "Rack"] },
+  { label: "Z Axis Drive System", values: ["Ballscrew", "Ballscrew", "Ballscrew"] },
+  { label: "X-Y Axis Speed", values: ["100 m/min", "100 m/min", "100 m/min"] },
+  { label: "Z Axis Speed", values: ["30 m/min", "30 m/min", "30 m/min"] },
+  { label: "X-Y Position Accuracy", values: ['0.05 mm (0.002")', '0.05 mm (0.002")', '0.05 mm (0.002")'] },
+  { label: "X-Y Repeatability Accuracy", values: ['0.03 mm (0.001")', '0.03 mm (0.001")', '0.03 mm (0.001")'] },
+  { label: "Table Type", values: ["Single (open)", "Single (open)", "Single (open)"] },
+  { label: "Max Pipe Diameter", values: ['Ø 350 mm (13.8")', 'Ø 350 mm (13.8")', 'Ø 350 mm (13.8")'] },
+  { label: "Max Pipe Length", values: ["6000 mm (20 ft) standard / 9000 mm optional", "6000 mm (20 ft) standard / 9000 mm optional", "6000 mm (20 ft) standard / 9000 mm optional"] },
+  { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's", "Raycus / JPT / Han's"] },
+  { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 kW", "2 / 3 / 4 / 6 / 8 / 12 kW", "2 / 3 / 4 / 6 / 8 / 12 kW"] },
+  { label: "CNC Control System", values: ["Fscut", "Fscut", "Fscut"] },
+  { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
+  { label: "Cooling Type", values: ["Water Cooling", "Water Cooling", "Water Cooling"] },
+  { label: "Graphic Format Support", values: ["dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp"] },
+  { label: "Electrical", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
+  { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA", "CE / ISO / FDA"] },
+  { label: "Warranty", values: ["2 Years", "2 Years", "2 Years"] },
+];
+
 const powerCols = ["2 kW", "3 kW", "4 kW", "6 kW", "8 kW", "12 kW", "20 kW"];
 const cuttingChart: { material: string; values: string[] }[] = [
   { material: "Carbon Steel", values: ['14 mm (9/16")', '16 mm (5/8")', '20 mm (3/4")', '22 mm (7/8")', '25 mm (1")', '30 mm (1-3/16")', '45 mm (1-3/4")'] },
@@ -363,6 +395,32 @@ export default function CoveredPipeProfileFiberLaser() {
               </thead>
               <tbody>
                 {specRows.map((row, i) => (
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
+                    <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.label}</td>
+                    {row.values.map((v, j) => (
+                      <td key={j} className="px-5 py-3 text-muted-foreground border-b border-border">{convertValue(v, unit)}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-16 mb-8">
+            <h3 className="text-2xl md:text-3xl font-black text-white">Technical specs of FLO-P models</h3>
+          </div>
+          <div className="bg-white overflow-x-auto">
+            <table className="w-full text-sm md:text-base min-w-[820px]">
+              <thead>
+                <tr className="bg-secondary text-white">
+                  <th className="px-5 py-4 text-left font-bold w-1/4">Specification</th>
+                  {flopConfigurations.map((c) => (
+                    <th key={c} className="px-5 py-4 text-left font-bold">{c}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {flopSpecRows.map((row, i) => (
                   <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]"}>
                     <td className="px-5 py-3 font-semibold text-foreground border-b border-border">{row.label}</td>
                     {row.values.map((v, j) => (
