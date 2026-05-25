@@ -294,7 +294,7 @@ export default function CoveredPipeProfileFiberLaser() {
             <p className="section-label mb-3 text-primary">Configurations</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
             <p className="text-muted-foreground text-lg mt-3">
-              Two sizes. Same proven FLC-P platform. Built around the cutting capacity your shop actually needs.
+              Different sizes. Proven FLC-P and FLO-P platforms. Built around the cutting capacity your shop actually needs.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
