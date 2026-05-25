@@ -103,7 +103,7 @@ const industries = [
   { icon: Building2, label: "Structural Fabrication" },
 ];
 
-const configurations = ["FLC-P 1530 (fully enclosed/2 tables)", "FLC-P 2040"];
+const configurations = ["FLC-P 1530 (fully enclosed/2 tables)", "FLC-P 2040 (fully enclosed with 2 tables)"];
 
 const specRows: { label: string; values: string[] }[] = [
   { label: "Working Area", values: ["1524 x 3048 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
@@ -339,10 +339,10 @@ export default function CoveredPipeProfileFiberLaser() {
             />
             <ConfigCard
               img={flcP2040Img}
-              title="FLC-P 2040"
+              title="FLC-P 2040 (fully enclosed with 2 tables)"
               subtitle="6.5 x 13 ft Working Area | 2-20 kW"
               body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
-              model="FLC-P 2040"
+              model="FLC-P 2040 (fully enclosed with 2 tables)"
             />
           </div>
           <div className="grid gap-8 md:grid-cols-3 mt-8">
