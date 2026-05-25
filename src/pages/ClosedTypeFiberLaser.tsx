@@ -68,14 +68,14 @@ const features = [
 
 const models = [
   { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
-  { id: "FLC-2040", area: "2000 × 4000 mm (6.5 × 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
+  { id: "FLC-2040", area: "1524 x 3048 mm (6.5 × 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
 
 const configurations = ["FLC-1530", "FLC-2040", "FLC-2060"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "2000 × 4000 mm", "2000 × 6000 mm"] },
+  { label: "Working Area", values: ["220 or 480 V / 60 Hz", "1524 x 3048 mm", "2000 × 6000 mm"] },
   { label: "Loading Capacity", values: ["1200 kg", "1200 kg", "1450 kg"] },
   { label: "X-Y Axis Travel", values: ["1520 × 3030 mm", "2020 × 4040 mm", "2020 × 6050 mm"] },
   { label: "Z Axis Travel", values: ["300 mm", "300 mm", "350 mm"] },
@@ -185,7 +185,7 @@ export default function ClosedTypeFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm)  models</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm)  models</li>
                 <li>6 , 12, 20, 30kW laser powers<br />. &nbsp; &nbsp;2 exchange tables</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">

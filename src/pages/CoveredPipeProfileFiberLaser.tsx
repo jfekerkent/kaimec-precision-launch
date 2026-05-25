@@ -57,7 +57,7 @@ const industries = [
 const configurations = ["FLC-P 1530", "FLC-P 2040"];
 
 const specRows: { label: string; values: string[] }[] = [
-  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "2000 x 4000 mm (6.5 x 13 ft)"] },
+  { label: "Working Area", values: ["1500 x 3000 mm (5 x 10 ft)", "1524 x 3048 mm (6.5 x 13 ft)"] },
   { label: "Loading Capacity", values: ["1200 kg (2650 lbs)", "1200 kg (2650 lbs)"] },
   { label: "X-Y Axis Travel", values: ["1520 x 3030 mm", "2020 x 4050 mm"] },
   { label: "Z Axis Travel", values: ['300 mm (11.8")', '350 mm (13.8")'] },
@@ -74,7 +74,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut"] },
-  { label: "Laser Cutting Head", values: ["2000 x 4000 mm", "2000 x 4000 mm"] },
+  { label: "Laser Cutting Head", values: ["1524 x 3048 mm", "1524 x 3048 mm"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["12000 kg (26450 lbs)", "11500 kg (25350 lbs)"] },
@@ -169,7 +169,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm) models<br />Ø12&quot; x 20ft tune capacity</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm) models<br />Ø12&quot; x 20ft tune capacity</li>
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
