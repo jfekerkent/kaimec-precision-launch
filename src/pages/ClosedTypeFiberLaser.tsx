@@ -185,8 +185,8 @@ export default function ClosedTypeFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 6.5x13ft (2000x4000mm)  models</li>
-                <li>6 , 12, 20, 30kW laser powers<br />. &nbsp; &nbsp;2 exchange tables</li>
+                <li>5x10ft / 6.5x13ft / 6.5x20ft models</li>
+                <li>6 , 12, 20, 30, 50 kW laser powers<br />. &nbsp; &nbsp;2 (two) exchange tables</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
