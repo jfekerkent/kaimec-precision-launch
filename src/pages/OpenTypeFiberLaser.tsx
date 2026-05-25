@@ -219,7 +219,7 @@ export default function OpenTypeFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1524x3048mm) and 6.5x13ft (2000x4000mm)  models</li>
+                <li>5x10ft / 6.5x13ft / 6.5x20ft models</li>
                 <li>3,6 or 12kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
