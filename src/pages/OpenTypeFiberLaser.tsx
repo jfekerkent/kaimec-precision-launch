@@ -32,6 +32,9 @@ import flo1530Slide2 from "@/assets/flo-1530-2.png";
 import flo1530Slide3 from "@/assets/flo-1530-3.png";
 import flo1530Slide4 from "@/assets/flo-1530-4.png";
 import flo2040Img from "@/assets/machine-flo-2040.png";
+import flo2040Slide1 from "@/assets/flo-2040-1.png";
+import flo2040Slide2 from "@/assets/flo-2040-2.png";
+import flo2040Slide3 from "@/assets/flo-2040-3.png";
 import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
@@ -41,6 +44,7 @@ import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
 const flo1530Slides = [flo1530Slide1, flo1530Slide2, flo1530Slide3, flo1530Slide4];
+const flo2040Slides = [flo2040Slide1, flo2040Slide2, flo2040Slide3];
 
 function Flo1530Slideshow() {
   const [index, setIndex] = useState(0);
@@ -57,6 +61,30 @@ function Flo1530Slideshow() {
           key={i}
           src={src}
           alt={`Open Type Fiber Laser FLO-1530 view ${i + 1}`}
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
+function Flo2040Slideshow() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % flo2040Slides.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="relative w-full h-full">
+      {flo2040Slides.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`Open Type Fiber Laser FLO-2040 view ${i + 1}`}
           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
@@ -224,11 +252,7 @@ export default function OpenTypeFiberLaser() {
               </figure>
               <figure className="bg-white border border-border overflow-hidden rounded-lg shadow-sm">
                 <div className="aspect-[1/1] flex items-center justify-center p-6">
-                  <img
-                    src={flo2040Img}
-                    alt="Open Type Fiber Laser FLO-2040"
-                    className="w-full h-full object-contain"
-                  />
+                  <Flo2040Slideshow />
                 </div>
                 <figcaption className="px-4 py-2 text-sm font-bold text-foreground text-center">FLO-2040</figcaption>
               </figure>
