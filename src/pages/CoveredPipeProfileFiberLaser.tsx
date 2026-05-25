@@ -74,7 +74,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's"] },
   { label: "Laser Source Output Power", values: ["2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut"] },
-  { label: "Fiber Head", values: ["1524 x 3048 mm", "1524 x 3048 mm"] },
+  { label: "Laser Head", values: ["1524 x 3048 mm", "1524 x 3048 mm"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["12000 kg (26450 lbs)", "11500 kg (25350 lbs)"] },
@@ -154,7 +154,7 @@ export default function CoveredPipeProfileFiberLaser() {
               <nav className="flex items-center flex-wrap gap-1 text-xs text-white/60 mb-6">
                 <Link to="/" className="hover:text-white">Home</Link>
                 <ChevronRight className="h-3 w-3" />
-                <Link to="/machines" className="hover:text-white">Fiber</Link>
+                <Link to="/machines" className="hover:text-white">Laser</Link>
                 <ChevronRight className="h-3 w-3" />
                 <span className="text-white">Combo lasers (sheet + pipe cutting)</span>
               </nav>

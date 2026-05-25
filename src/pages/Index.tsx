@@ -132,7 +132,7 @@ export default function Index() {
       <section className="py-16 md:py-20 bg-[#f8f8f8]">
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
-            <p className="section-label mb-3">FIBER MACHINES</p>
+            <p className="section-label mb-3">LASER MACHINES</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">See It in Action</h2>
           </div>
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
@@ -151,7 +151,7 @@ export default function Index() {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Fiber Machines</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">Laser Machines</h2>
             <p className="mt-3 text-sm text-muted-foreground font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">Available with Table sizes 5x10ft&nbsp;and 6.5x13ft&nbsp;</p>
             <p className="mt-3 text-sm text-muted-foreground font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">and 3, 6, 12, 20 kW lasers&nbsp;&nbsp;</p>
           </div>

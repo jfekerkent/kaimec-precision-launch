@@ -19,9 +19,9 @@ import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
-  { id: "kflo-1530", model: "FLO-1530", description: "Open Type Fiber Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
-  { id: "kflo-p-1530", model: "FLO-P 1530", description: "Open Type Fiber Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
-  { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Fiber Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
+  { id: "kflo-1530", model: "FLO-1530", description: "Open Type Laser Machine", images: [kflo1530Img, kfloSecondaryImg, kfloTertiaryImg, "placeholder:4"] },
+  { id: "kflo-p-1530", model: "FLO-P 1530", description: "Open Type Laser Machine", images: [kfloTertiaryImg, kfloSecondaryImg, "placeholder:4"] },
+  { id: "kflc-1530", model: "FLC-1530", description: "Closed Type Laser Machine", images: [kflc1530Img, "placeholder:2", "placeholder:3", "placeholder:4"] },
   { id: "kflc-p-1530", model: "FLC-P 1530", description: "Covered Type Pipe & Profile Fiber Laser", images: [flcP1530Img, flcP1530Img2, flcP1530Img3, flcP2040Img2] },
 ];
 
@@ -46,7 +46,7 @@ const specRows = [
   { label: "Laser Source", values: ["Raycus / JPT / Han's", "Raycus / JPT / Han's", "Raycus / Han's / JPT", "Raycus / Han's / JPT"] },
   { label: "Laser Output Power", values: ["1000 / 2000 / 3000W", "1000 / 2000 / 3000W", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW", "2 / 3 / 4 / 6 / 8 / 12 / 20 kW"] },
   { label: "CNC Control System", values: ["Fscut", "Fscut", "Fscut", "Fscut"] },
-  { label: "Fiber Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
+  { label: "Laser Head", values: ["Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX", "Raytools / BOCI / WSX"] },
   { label: "Assist Gases", values: ["Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen", "Air / Oxygen / Nitrogen"] },
   { label: "Cooling Type", values: ["Water Cooling", "Water Cooling", "Water Cooling", "Water Cooling"] },
   { label: "Machine Weight", values: ["4500 kg", "4500 kg", "8500 kg", "12000 kg"] },
@@ -69,8 +69,8 @@ export default function FiberLasers() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Fiber Machines</h1>
-          <p className="text-lg text-white/80">High-speed precision fiber systems for sheet metal fabrication.</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Laser Machines</h1>
+          <p className="text-lg text-white/80">High-speed precision laser systems for sheet metal fabrication.</p>
         </div>
       </section>
 
