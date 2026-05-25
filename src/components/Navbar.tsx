@@ -171,7 +171,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-white rounded-b-xl">
           <nav className="container py-4 flex flex-col gap-1">
             <Link
               to="/"
@@ -247,6 +247,7 @@ export default function Navbar() {
           </nav>
         </div>
       )}
+      </div>
     </header>
   );
 }
