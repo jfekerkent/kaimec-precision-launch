@@ -485,7 +485,7 @@ export default function CoveredPipeProfileFiberLaser() {
               <ConfigCard
                 img={flp6035Img}
                 title="FLP-6035"
-                subtitle="Pipe & Profile Only | Up to 20ft (6m)  length, Ø13.8\" (Ø350mm)"
+                subtitle="Pipe & Profile Only | Up to 20ft (6m)  length, Ø13.8&quot; (Ø350mm)"
                 body="Built exclusively for tube and profile cutting. Smaller footprint than the FLC-P combo machines, lower price point, and optimized handling for high-volume pipe production. Ideal for fabrication shops that don't need sheet cutting in the same machine."
                 model="FLP-6035"
               />
