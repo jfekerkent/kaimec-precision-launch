@@ -118,7 +118,7 @@ export function useKaimecChat() {
       if (error || !data) {
         setMessages((m) => [
           ...m,
-          { role: "assistant", content: "Connection hiccup. Try again, or call 714-258-8526." },
+          { role: "assistant", content: "Connection hiccup. Try again, or call 562-350-2071." },
         ]);
         return;
       }
