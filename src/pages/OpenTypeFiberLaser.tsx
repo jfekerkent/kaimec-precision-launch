@@ -41,6 +41,11 @@ import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
+import industryDefense from "@/assets/industry-defense.avif";
+import industryKitchenware from "@/assets/industry-kitchenware.avif";
+import industryAppliances from "@/assets/industry-appliances.avif";
+import industryFurniture from "@/assets/industry-furniture.avif";
+import industryElevator from "@/assets/industry-elevator.avif";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -490,6 +495,44 @@ export default function OpenTypeFiberLaser() {
             <Button size="lg" className="font-bold px-10" onClick={scrollToQuote}>
               Request a Quote
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 7b. INDUSTRIES */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="max-w-3xl mb-12">
+            <p className="section-label mb-3 text-primary">Industries</p>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground">
+              Aerospace, Automotive & Household Product Manufacturing
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Trusted across defense, kitchenware, white goods, furniture, and elevator manufacturing.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { src: industryDefense, caption: "Defense & Aerospace" },
+              { src: industryKitchenware, caption: "Kitchenware" },
+              { src: industryAppliances, caption: "White Goods" },
+              { src: industryFurniture, caption: "Metal Furniture" },
+              { src: industryElevator, caption: "Elevator Manufacturing" },
+            ].map((g) => (
+              <figure key={g.caption} className="bg-card border border-border overflow-hidden group rounded-lg">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={g.src}
+                    alt={g.caption}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm font-medium text-foreground border-t border-border text-center">
+                  {g.caption}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
