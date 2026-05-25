@@ -187,7 +187,7 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
-                className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+                className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
               >
                 Laser Cutting machines
                 <ChevronDown
