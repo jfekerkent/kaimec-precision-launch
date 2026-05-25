@@ -97,7 +97,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Machine Dimensions (W × L × H)", values: ["2698 × 9175 × 2560 mm", "3500 × 11200 × 2560 mm", "4400 × 10000 × 2120 mm"] },
   { label: "Graphic Format", values: ["dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp"] },
   { label: "Voltage", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
-  { label: "Certifications", values: ["CE / ISO", "CE / ISO", "CE / ISO"] },
+  { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA", "CE / ISO / FDA"] },
 ];
 
 const cuttingChart: { material: string; values: string[] }[] = [

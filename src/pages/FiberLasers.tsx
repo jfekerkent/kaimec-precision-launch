@@ -52,7 +52,7 @@ const specRows = [
   { label: "Machine Weight", values: ["4500 kg", "4500 kg", "8500 kg", "12000 kg"] },
   { label: "Graphic Format", values: ["dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp", "dwg / dxf / stp"] },
   { label: "Voltage", values: ["220 or 380V / 3ph / 60Hz", "220 or 380V / 3ph / 60Hz", "220 or 380V / 60Hz", "220 or 380V / 60Hz"] },
-  { label: "Certifications", values: ["CE / ISO", "CE / ISO", "CE / ISO", "CE / ISO"] },
+  { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA", "CE / ISO / FDA", "CE / ISO / FDA"] },
 ];
 
 const cuttingThickness = [

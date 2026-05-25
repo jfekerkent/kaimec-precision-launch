@@ -85,7 +85,7 @@ const specRows: { label: string; values: string[] }[] = [
   { label: "Machine Dimensions (W x L x H)", values: ["4400 x 10000 x 2120 mm", "4400 x 10000 x 2120 mm"] },
   { label: "Graphic Format Support", values: ["dwg / dxf / stp", "dwg / dxf / stp"] },
   { label: "Electrical", values: ["220 or 480 V / 60 Hz", "220 or 480 V / 60 Hz"] },
-  { label: "Certifications", values: ["CE / ISO", "CE / ISO"] },
+  { label: "Certifications", values: ["CE / ISO / FDA", "CE / ISO / FDA"] },
   { label: "Warranty", values: ["2 Years", "2 Years"] },
 ];
 

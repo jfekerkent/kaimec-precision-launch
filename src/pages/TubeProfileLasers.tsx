@@ -58,7 +58,7 @@ const tailSpecs: [string, string][] = [
   ["Machine Dimensions (WxLxH)", "2000 x 10380 x 2660mm"],
   ["Graphic Format", "dwg / dxf / stp"],
   ["Voltage", "380V / 50Hz"],
-  ["Certifications", "CE / ISO"],
+  ["Certifications", "CE / ISO / FDA"],
   ["Warranty", "2 Years"],
 ];
 
