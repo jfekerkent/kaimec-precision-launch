@@ -68,7 +68,7 @@ const features = [
 
 const models = [
   { id: "FLC-1530", area: "1500 × 3000 mm (5 × 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
-  { id: "FLC-2040", area: "1524 x 3048 mm (5 x 10 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
+  { id: "FLC-2040", area: "1524 x 3048 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
 
@@ -185,7 +185,7 @@ export default function ClosedTypeFiberLaser() {
                 <li>24/7 USA support</li>
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
-                <li>5x10ft (1500X3000mm) and 5x10ft (1524x3048mm)  models</li>
+                <li>5x10ft (1500X3000mm) and 6.5x13ft (1524x3048mm)  models</li>
                 <li>6 , 12, 20, 30kW laser powers<br />. &nbsp; &nbsp;2 exchange tables</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
