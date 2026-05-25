@@ -125,7 +125,7 @@ export default function FiberLasers() {
           <h2 className="text-3xl font-black text-foreground mb-10 text-center">Product Highlights</h2>
           <div className="space-y-8">
             <div className="rounded-lg border border-border bg-card p-8">
-              <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530 & FLO-P 2040 ( open, single table)</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530 & FLO-P 1530 ( open, single table)</h3>
               <p className="text-muted-foreground leading-relaxed">
                 With its compact size and cost-effective operation, this machine series stands out as the ideal choice for businesses operating within tight budgets. Occupying just 15 square meters, it's easily installed and comes in 1kW, 2kW, and 3kW power variants. Ideal for rapid and repetitive tasks, it features standard nesting software, flycut-cutting, auto-focus laser head, and Active Anti-collision Function. Constructed with one-piece aluminium alloy sheet-plate welded bridges for rigidity and precision. CE certified.
               </p>
