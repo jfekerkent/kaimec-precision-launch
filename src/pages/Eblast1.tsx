@@ -69,7 +69,7 @@ export default function Eblast1() {
             IN STOCK IN CALIFORNIA
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
-            European. Precision. Power. Productivity.
+            European.&nbsp; Precision.&nbsp; 24/7 USA support&nbsp;
           </h1>
         </header>
 
