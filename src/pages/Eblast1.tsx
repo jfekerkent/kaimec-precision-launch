@@ -20,7 +20,7 @@ const sharedSpecsFLC = [
   "Wi-Fi ready",
   "24/7 online service / programming help-line",
   "220/480 power input",
-  "25ft x 7.1ft foot print",
+  "25ft x 8 ft foot print",
 ];
 
 const sharedSpecsFLO = [
