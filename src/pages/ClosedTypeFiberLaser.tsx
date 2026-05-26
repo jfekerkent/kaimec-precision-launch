@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import {
@@ -156,6 +156,13 @@ function scrollToSpecs(e: React.MouseEvent) {
 
 export default function ClosedTypeFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, [location]);
   return (
     <Layout>
       {/* 1. HERO */}
@@ -307,7 +314,7 @@ export default function ClosedTypeFiberLaser() {
       </section>
 
       {/* 5. SPECIFICATIONS COMPARISON */}
-      <section id="specs" className="py-20 bg-secondary scroll-mt-24">
+      <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
