@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/assets/kaimec-logo-dark.png";
 import flc1530 from "@/assets/flc-1530-2.png";
-import flc1530b from "@/assets/flc-1530-3.png";
 import flc1530c from "@/assets/flc-1530-4.png";
 import flo1530 from "@/assets/flo-1530-1.png";
 import flo1530b from "@/assets/flo-1530.png";
@@ -74,8 +73,8 @@ export default function Eblast1() {
 
         {/* FLC-1530 */}
         <section className="mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {[flc1530, flc1530b, flc1530c].map((src, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[flc1530, flc1530c].map((src, i) => (
               <div key={i} className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
                 <img src={src} alt={`FLC-1530 x 6kW view ${i + 1}`} className="w-full h-auto object-contain" />
               </div>
