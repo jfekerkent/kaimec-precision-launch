@@ -65,8 +65,8 @@ export default function Eblast1() {
           </Link>
           <p className="mt-4 uppercase tracking-[0.3em] text-primary text-2xl font-extrabold my-[8px]">
             FIBER LASER CUTTING MACHINES
-            <br /><br /><br />
-            IN STOCK IN CALIFORNIA
+            <br /><br />
+            IN STOCK / IN CALIFORNIA
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
             European.&nbsp; Precision.&nbsp; 24/7 USA support&nbsp;
