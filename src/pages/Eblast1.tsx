@@ -94,11 +94,11 @@ export default function Eblast1() {
         <section>
           <div className="grid grid-cols-1 gap-3">
             <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
-              <img src={flo1530} alt="FLO-1530 view" className="w-full h-auto object-contain" />
+              <img src={flo1530} alt="FLO-1530 x 6kW view" className="w-full h-auto object-contain" />
             </div>
           </div>
           <div className="mt-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLO-1530</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLO-1530 x 6kW</h2>
             <p className="mt-1 text-sm uppercase tracking-wider text-slate-500">
               Open Type Fiber Laser
             </p>
