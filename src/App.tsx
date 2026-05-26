@@ -22,6 +22,7 @@ import NotFound from "./pages/NotFound";
 import KaimecChatAgent from "./components/chat/KaimecChatAgent";
 import Consultation from "./pages/Consultation";
 import Faq from "./pages/Faq";
+import Eblast1 from "./pages/Eblast1";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/request-info" element={<Quote />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/eblast-1" element={<Eblast1 />} />
           <Route path="/machines" element={<Machines />} />
           <Route path="/machines/cnc-fiber-lasers" element={<FiberLasers />} />
           <Route path="/machines/tube-profile-lasers" element={<TubeProfileLasers />} />

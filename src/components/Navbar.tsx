@@ -26,6 +26,7 @@ const gunDrillLinks = [
 const moreLinks = [
   { label: "About Us", to: "/about" },
   { label: "Request for Info", to: "/quote" },
+  { label: "eblast 1", to: "/eblast-1" },
 ];
 
 export default function Navbar() {
