@@ -60,7 +60,7 @@ export default function Eblast1() {
         {/* Header / Logo */}
         <header className="flex flex-col items-center text-center border-b border-slate-200 pb-8">
           <Link to="/">
-            <img src={logo} alt="KAIMEC Machines" className="h-24 w-auto object-contain" />
+            <img src={logo} alt="KAIMEC Machines" className="h-36 w-auto object-contain" />
           </Link>
           <p className="mt-4 uppercase tracking-[0.3em] text-primary text-2xl font-extrabold">
             FIBER LASER CUTTING MACHINES
