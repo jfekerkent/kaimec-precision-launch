@@ -5,6 +5,8 @@ import flc1530 from "@/assets/flc-1530-2.png";
 import flc1530a from "@/assets/flc-1530-6kw.jpg";
 import flc1530b from "@/assets/flc-1530-4-alt.png";
 import flo1530 from "@/assets/flo-1530-1.png";
+import flo1530a from "@/assets/flo-1530-6kw.png";
+import flo1530b from "@/assets/flo-1530-3-alt.png";
 
 const sharedSpecsFLC = [
   "2 Tables (exchange tables)",
@@ -105,6 +107,14 @@ export default function Eblast1() {
           <div className="grid grid-cols-1 gap-3">
             <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
               <img src={flo1530} alt="FLO-1530 x 6kW view" className="w-full h-auto object-contain" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+                <img src={flo1530a} alt="FLO-1530 x 6kW front view" className="w-full h-auto object-contain" />
+              </div>
+              <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+                <img src={flo1530b} alt="FLO-1530 x 6kW side view" className="w-full h-auto object-contain" />
+              </div>
             </div>
           </div>
           <div className="mt-6">
