@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
@@ -142,6 +143,15 @@ function SpecTable({ title, rows, unit }: { title: string; rows: [string, string
 
 export default function PressBrakes() {
   const [unit, setUnit] = useState<Unit>("metric");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash === "#specifications") {
+      const el = document.getElementById("specifications");
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    }
+  }, [location]);
   return (
     <Layout>
       <section className="py-20 bg-secondary">
@@ -171,7 +181,7 @@ export default function PressBrakes() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#f8f8f8]">
+      <section id="specifications" className="py-20 bg-[#f8f8f8] scroll-mt-24">
         <div className="container">
           <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           <div className="grid gap-10 md:grid-cols-2">

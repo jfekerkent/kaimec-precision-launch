@@ -1,9 +1,9 @@
-Wire up two more "View Specifications" links on the Index page.
+Wire the homepage "View Specifications" link on the CNC Press Brakes cards (MKT 1560 / MKT 32135) to jump directly to the spec section on the CNC Press Brakes page, matching the pattern used for the laser cards.
 
-1. **Combo Lasers card** (`src/pages/Index.tsx` line 40): change link to
-   `/machines/laser-cutting/covered-pipe-profile-fiber-laser#specifications`.
-   - In `src/pages/CoveredPipeProfileFiberLaser.tsx`, add `id="specifications"` and `scroll-mt-24` to the FLC-P "Technical Specs" section (line 382), and add a hash-based scroll `useEffect` like the other laser pages.
+1. **`src/pages/Index.tsx`** (line 212): change `to="/machines/press-brakes"` to `to="/machines/press-brakes#specifications"`.
 
-2. **Tube / Profile Cutting Lasers card – FLP 6035** (`src/pages/Index.tsx` line 41): change link to
-   `/machines/tube-profile-lasers#specifications`.
-   - In `src/pages/TubeProfileLasers.tsx`, add `id="specifications"` and `scroll-mt-24` to the "Technical Specifications" section (line 156), and add the hash-scroll `useEffect`.
+2. **`src/pages/PressBrakes.tsx`**:
+   - Add `id="specifications"` and `scroll-mt-24` to the specs section (`<section className="py-20 bg-[#f8f8f8]">`).
+   - Add a `useLocation` + `useEffect` hash-scroll hook so navigating with `#specifications` smoothly scrolls to that section (same pattern as the other laser pages).
+
+No other pages or sections are touched.
