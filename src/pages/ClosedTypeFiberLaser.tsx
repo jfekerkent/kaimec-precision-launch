@@ -150,7 +150,7 @@ function scrollToQuote(e: React.MouseEvent) {
 
 function scrollToSpecs(e: React.MouseEvent) {
   e.preventDefault();
-  const el = document.getElementById("specs");
+  const el = document.getElementById("specifications");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -279,7 +279,7 @@ export default function ClosedTypeFiberLaser() {
                   <p className="text-sm font-semibold text-primary mb-3">{m.area}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">{m.detail}</p>
                   <a
-                    href="#specs"
+                    href="#specifications"
                     onClick={scrollToSpecs}
                     className="text-sm font-bold text-primary hover:underline inline-flex items-center gap-1"
                   >
