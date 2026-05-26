@@ -94,12 +94,10 @@ export default function Eblast1() {
 
         {/* FLO-1530 */}
         <section>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[flo1530, flo1530b].map((src, i) => (
-              <div key={i} className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
-                <img src={src} alt={`FLO-1530 view ${i + 1}`} className="w-full h-auto object-contain" />
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-3">
+            <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+              <img src={flo1530} alt="FLO-1530 view" className="w-full h-auto object-contain" />
+            </div>
           </div>
           <div className="mt-6">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLO-1530</h2>
