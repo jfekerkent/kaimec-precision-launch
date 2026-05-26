@@ -73,12 +73,10 @@ export default function Eblast1() {
 
         {/* FLC-1530 */}
         <section className="mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[flc1530, flc1530c].map((src, i) => (
-              <div key={i} className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
-                <img src={src} alt={`FLC-1530 x 6kW view ${i + 1}`} className="w-full h-auto object-contain" />
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-3">
+            <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+              <img src={flc1530} alt="FLC-1530 x 6kW view" className="w-full h-auto object-contain" />
+            </div>
           </div>
           <div className="mt-6">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLC-1530 x 6kW</h2>
