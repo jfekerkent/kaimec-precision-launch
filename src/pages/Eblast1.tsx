@@ -10,7 +10,7 @@ import flo1530b from "@/assets/flo-1530.png";
 const sharedSpecsFLC = [
   "2 Tables (exchange tables)",
   "Fully enclosed",
-  "Travels: 5x10ft",
+  "Travels: 5x10ft (1,524x3,048mm)",
   "Cutting capacity — Mild steel: 7/8\u201D, SS: 1/2\u201D, Al: 3/8\u201D",
   "Anti-collision function",
   "Automatic Nesting",
@@ -26,7 +26,7 @@ const sharedSpecsFLC = [
 
 const sharedSpecsFLO = [
   "Single Table",
-  "Travels: 5x10ft",
+  "Travels: 5x10ft (1,524x3,048mm)",
   "Cutting capacity — Mild steel: 7/8\u201D, SS: 1/2\u201D, Al: 3/8\u201D",
   "Anti-collision function",
   "Automatic Nesting",
