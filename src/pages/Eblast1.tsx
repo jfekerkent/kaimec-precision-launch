@@ -36,7 +36,7 @@ const sharedSpecsFLO = [
   "Wi-Fi ready",
   "24/7 online service / programming help-line",
   "220/480 power input",
-  "14ft x 7.1ft foot print",
+  "14ft x 7 ft foot print",
 ];
 
 function SpecsList({ items }: { items: string[] }) {
