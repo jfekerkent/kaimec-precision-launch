@@ -82,7 +82,6 @@ export default function Eblast1() {
               <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
                 <img src={flc1530b} alt="FLC-1530 x 6kW with exchange table" className="w-full h-auto object-contain" />
               </div>
-            </div>
           </div>
           <div className="mt-6">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLC-1530 x 6kW</h2>
