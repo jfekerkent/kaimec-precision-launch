@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
+import HeroLeadForm from "@/components/HeroLeadForm";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
@@ -100,18 +101,12 @@ export default function Index() {
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
               KAIMEC offers CNC fiber lasers, CNC press brakes, and CNC Gun & BTA Drilling Machines — backed by US-based engineers and California inventory.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/machines">
-                <Button size="lg" className="font-bold text-base px-8">
-                  Explore Machines <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/quote">
-                <Button variant="outline" size="lg" className="font-bold text-base px-8 border-white/30 bg-transparent text-white hover:bg-white/10">
-                  Talk to a Specialist
-                </Button>
-              </Link>
-            </div>
+            {/* <Link to="/machines">
+              <Button size="lg" className="font-bold text-base px-8">
+                Explore Machines <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link> */}
+            <HeroLeadForm />
           </div>
         </div>
       </section>
