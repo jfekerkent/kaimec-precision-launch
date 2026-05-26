@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
@@ -184,6 +184,13 @@ function scrollToQuote(e: React.MouseEvent) {
 
 export default function OpenTypeFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, [location]);
   return (
     <Layout>
       {/* 1. HERO */}
@@ -320,7 +327,7 @@ export default function OpenTypeFiberLaser() {
       </section>
 
       {/* 4. SPECIFICATIONS COMPARISON */}
-      <section className="py-20 bg-secondary">
+      <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
