@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
@@ -112,6 +112,13 @@ function DescriptionList({ items }: { items: string[] }) {
 
 export default function TubeProfileLasers() {
   const [unit, setUnit] = useState<Unit>("metric");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, [location]);
   return (
     <Layout>
       <section className="py-20 bg-secondary">
@@ -150,7 +157,7 @@ export default function TubeProfileLasers() {
         </div>
       </section>
 
-      <section className="py-20 bg-secondary">
+      <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-8">
             <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>

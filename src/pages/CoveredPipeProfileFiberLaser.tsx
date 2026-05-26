@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
@@ -245,6 +245,13 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { i
 
 export default function CoveredPipeProfileFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+  }, [location]);
   return (
     <Layout>
       {/* 1. HERO */}
@@ -375,7 +382,7 @@ export default function CoveredPipeProfileFiberLaser() {
       </section>
 
       {/* 3. SPECIFICATIONS COMPARISON */}
-      <section className="py-20 bg-secondary">
+      <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
