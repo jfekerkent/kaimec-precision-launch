@@ -62,10 +62,10 @@ export default function Eblast1() {
             <img src={logo} alt="KAIMEC Machines" className="h-24 w-auto object-contain" />
           </Link>
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Featured Fiber Laser Cutters
+            In stock in California.
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
-            Precision. Power. Productivity.
+            European Precision. Power. Productivity.
           </h1>
         </header>
 
@@ -81,7 +81,7 @@ export default function Eblast1() {
           <div className="mt-6">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">FLC-1530 x 6kW</h2>
             <p className="mt-1 text-sm uppercase tracking-wider text-slate-500">
-              Closed Type Fiber Laser
+              Fully Enclosed Fiber Laser
             </p>
             <div className="mt-5">
               <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-3">Specs</h3>
