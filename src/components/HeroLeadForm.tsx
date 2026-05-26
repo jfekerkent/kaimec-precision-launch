@@ -86,7 +86,7 @@ export default function HeroLeadForm() {
   return (
     <div className="w-full max-w-sm">
       <p className="text-white/85 italic text-sm mb-3">
-        Tell us what you need — we'll get back to you within one business day.
+        Tell us what you need — we'll get back to you asap.
       </p>
       <form
         onSubmit={handleSubmit}
