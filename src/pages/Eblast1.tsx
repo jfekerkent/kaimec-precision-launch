@@ -65,7 +65,7 @@ export default function Eblast1() {
             In stock in California.
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
-            European Precision. Power. Productivity.
+            European. Precision. Power. Productivity.
           </h1>
         </header>
 
