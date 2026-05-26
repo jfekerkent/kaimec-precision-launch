@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ChevronDown } from "lucide-react";
 
 const EMAILJS_SERVICE_ID = "service_oiwu4ak";
 const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
@@ -20,6 +21,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export default function HeroLeadForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [machine, setMachine] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,7 @@ export default function HeroLeadForm() {
       email,
       company: "",
       address: "",
+      phone: phone || "(not provided)",
       machine: machineVal,
       priority: "(not specified)",
       additional_details: "Source: Homepage Hero Form",
@@ -67,22 +70,27 @@ export default function HeroLeadForm() {
     setLoading(false);
   };
 
+  const inputBase =
+    "w-full h-11 px-3 rounded-md bg-white/[0.08] text-white placeholder-white/50 border border-white/20 focus:outline-none focus:border-[rgba(245,166,35,0.7)] text-sm transition-colors";
+
   if (submitted) {
     return (
-      <p className="text-white font-medium text-base md:text-lg">
-        ✓ Got it — we'll be in touch shortly. Check your email for a confirmation.
-      </p>
+      <div className="w-full max-w-xl rounded-xl bg-black/[0.55] backdrop-blur-[8px] border border-white/[0.12] p-5 md:py-6 md:px-6">
+        <p className="text-white font-medium text-base text-center">
+          ✓ Got it — we'll be in touch shortly. Check your email for a confirmation.
+        </p>
+      </div>
     );
   }
 
   return (
-    <div className="max-w-3xl">
+    <div className="w-full max-w-xl">
       <p className="text-white/85 italic text-sm mb-3">
         Tell us what you need — we'll get back to you within one business day.
       </p>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col md:flex-row gap-2 p-3 rounded-md bg-black/40 backdrop-blur-sm border border-white/10"
+        className="w-full rounded-xl bg-black/[0.55] backdrop-blur-[8px] border border-white/[0.12] p-5 md:py-6 md:px-6 space-y-3"
       >
         <input
           type="text"
@@ -90,7 +98,7 @@ export default function HeroLeadForm() {
           placeholder="Your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="flex-1 h-11 px-3 rounded-md bg-white text-foreground placeholder:text-muted-foreground border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          className={inputBase}
         />
         <input
           type="email"
@@ -98,24 +106,36 @@ export default function HeroLeadForm() {
           placeholder="Your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 h-11 px-3 rounded-md bg-white text-foreground placeholder:text-muted-foreground border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          className={inputBase}
         />
-        <select
-          value={machine}
-          onChange={(e) => setMachine(e.target.value)}
-          className="flex-1 h-11 px-3 rounded-md bg-white text-foreground border border-white/20 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-        >
-          <option value="">What are you looking for?</option>
-          {MACHINE_OPTIONS.map((m) => (
-            <option key={m} value={m}>
-              {m}
+        <input
+          type="tel"
+          placeholder="Phone number (optional)"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className={inputBase}
+        />
+        <div className="relative">
+          <select
+            value={machine}
+            onChange={(e) => setMachine(e.target.value)}
+            className={`${inputBase} appearance-none pr-8`}
+          >
+            <option value="" className="bg-gray-900 text-white">
+              What are you looking for?
             </option>
-          ))}
-        </select>
+            {MACHINE_OPTIONS.map((m) => (
+              <option key={m} value={m} className="bg-gray-900 text-white">
+                {m}
+              </option>
+            ))}
+          </select>
+          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/50 pointer-events-none" />
+        </div>
         <button
           type="submit"
           disabled={loading}
-          className="h-11 px-6 rounded-md font-bold text-white text-sm whitespace-nowrap transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="w-full h-12 rounded-md font-bold text-white text-sm transition-colors hover:bg-[#d4891a] disabled:opacity-60 mt-1"
           style={{ backgroundColor: "#F5A623" }}
         >
           {loading ? "SENDING..." : "GET INFO →"}
