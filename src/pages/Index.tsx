@@ -37,8 +37,8 @@ const facilitySlides = [
 const featuredMachines = [
   { tag: "CNC FIBER LASERS", name: "FLO-1530, FLO-2040, FLO 2060 models", image: kfloPrimaryImg, images: null, link: "/machines/laser-cutting/open-type-fiber-laser#specifications" },
   { tag: "Fully Enclosed Lasers", name: "FLC-1530, FLC 2040, FLC2060 models", image: kflc1530Img, images: null, link: "/machines/laser-cutting/closed-type-fiber-laser#specifications" },
-  { tag: "Combo Lasers", name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/covered-pipe-profile-fiber-laser" },
-  { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/covered-pipe-profile-fiber-laser" },
+  { tag: "Combo Lasers", name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser#specifications" },
+  { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/tube-profile-lasers#specifications" },
 ];
 
 const stats = [
