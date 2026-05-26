@@ -137,7 +137,7 @@ export default function Eblast1() {
 
         {/* Footer */}
         <footer className="mt-16 border-t border-slate-200 pt-8 text-center">
-          <img src={logo} alt="KAIMEC Machines" className="mx-auto h-12 w-auto object-contain opacity-80" />
+          <img src={logo} alt="KAIMEC Machines" className="mx-auto h-24 w-auto object-contain opacity-80" />
           <div className="mt-4 flex flex-col items-center gap-2 text-sm text-slate-600">
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-primary" />
