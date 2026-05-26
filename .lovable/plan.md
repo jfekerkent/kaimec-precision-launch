@@ -1,7 +1,9 @@
-I found the issue: the Fully Enclosed Lasers card still points to `/machines/closed-type-fiber-laser#specifications`, but the actual Laser Cutting Machines route is `/machines/laser-cutting/closed-type-fiber-laser`.
+Wire up two more "View Specifications" links on the Index page.
 
-Plan:
-1. Update the Fully Enclosed Lasers card link in `src/pages/Index.tsx` to:
-   `/machines/laser-cutting/closed-type-fiber-laser#specifications`
-2. Fix `src/pages/ClosedTypeFiberLaser.tsx` so its own “View Specifications” button uses `#specifications` instead of the old `#specs` anchor.
-3. Ensure the closed type page scroll handler targets the `specifications` section consistently.
+1. **Combo Lasers card** (`src/pages/Index.tsx` line 40): change link to
+   `/machines/laser-cutting/covered-pipe-profile-fiber-laser#specifications`.
+   - In `src/pages/CoveredPipeProfileFiberLaser.tsx`, add `id="specifications"` and `scroll-mt-24` to the FLC-P "Technical Specs" section (line 382), and add a hash-based scroll `useEffect` like the other laser pages.
+
+2. **Tube / Profile Cutting Lasers card – FLP 6035** (`src/pages/Index.tsx` line 41): change link to
+   `/machines/tube-profile-lasers#specifications`.
+   - In `src/pages/TubeProfileLasers.tsx`, add `id="specifications"` and `scroll-mt-24` to the "Technical Specifications" section (line 156), and add the hash-scroll `useEffect`.
