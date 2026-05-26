@@ -160,7 +160,7 @@ export default function Index() {
                   <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
                   <h3 className="font-bold text-foreground mt-2 mb-2 text-sm">{m.name}</h3>
                   <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
-                    View Specifications <ArrowRight className="ml-1 h-3 w-3" />
+                    View Details <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export default function Index() {
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-1">{m.name}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{m.desc}</p>
                   <Link to="/machines/press-brakes" className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
-                    View Specifications <ArrowRight className="ml-1 h-3 w-3" />
+                    View Details <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
               </div>
