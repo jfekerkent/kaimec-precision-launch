@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/assets/kaimec-logo-dark.png";
 import flc1530 from "@/assets/flc-1530-2.png";
-import flc1530c from "@/assets/flc-1530-4.png";
 import flo1530 from "@/assets/flo-1530-1.png";
-import flo1530b from "@/assets/flo-1530.png";
 
 const sharedSpecsFLC = [
   "2 Tables (exchange tables)",
