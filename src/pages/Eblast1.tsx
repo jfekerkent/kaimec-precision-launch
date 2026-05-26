@@ -53,7 +53,7 @@ function SpecsList({ items }: { items: string[] }) {
 export default function Eblast1() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="mx-auto max-w-3xl px-6 py-12">
+      <div className="mx-auto max-w-5xl px-6 py-12">
         {/* Header / Logo */}
         <header className="flex flex-col items-center text-center border-b border-slate-200 pb-8">
           <Link to="/">
