@@ -61,8 +61,10 @@ export default function Eblast1() {
           <Link to="/">
             <img src={logo} alt="KAIMEC Machines" className="h-24 w-auto object-contain" />
           </Link>
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            In stock in California.
+          <p className="mt-4 uppercase tracking-[0.3em] text-primary text-2xl font-extrabold">
+            FIBER LASER CUTTING MACHINES
+            <br /><br /><br />
+            IN STOCK IN CALIFORNIA.
           </p>
           <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
             European. Precision. Power. Productivity.
