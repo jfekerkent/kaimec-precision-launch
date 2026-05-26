@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
 import logo from "@/assets/kaimec-logo-dark.png";
 import flc1530 from "@/assets/flc-1530-2.png";
+import flc1530a from "@/assets/flc-1530-6kw.jpg";
+import flc1530b from "@/assets/flc-1530-4-alt.png";
 import flo1530 from "@/assets/flo-1530-1.png";
 
 const sharedSpecsFLC = [
@@ -74,6 +76,14 @@ export default function Eblast1() {
           <div className="grid grid-cols-1 gap-3">
             <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
               <img src={flc1530} alt="FLC-1530 x 6kW view" className="w-full h-auto object-contain" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+                <img src={flc1530a} alt="FLC-1530 x 6kW exterior" className="w-full h-auto object-contain" />
+              </div>
+              <div className="rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+                <img src={flc1530b} alt="FLC-1530 x 6kW with exchange table" className="w-full h-auto object-contain" />
+              </div>
             </div>
           </div>
           <div className="mt-6">
