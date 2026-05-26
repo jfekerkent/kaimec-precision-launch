@@ -68,18 +68,30 @@ export default function Index() {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/jUQt7jNPrh8?autoplay=1&mute=1&loop=1&playlist=jUQt7jNPrh8&controls=0&playsinline=1&modestbranding=1&rel=1"
-            allow="autoplay; encrypted-media; fullscreen"
-            style={{ position: "absolute", left: 1, top: 0, width: "100%", height: "100%", zIndex: 0 }}
+            src="https://www.youtube.com/embed/jUQt7jNPrh8?autoplay=1&mute=1&loop=1&playlist=jUQt7jNPrh8&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
+            allow="autoplay; encrypted-media"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "177.78vh",
+              minWidth: "100%",
+              height: "56.25vw",
+              minHeight: "100%",
+              pointerEvents: "none",
+              border: 0,
+              zIndex: 0,
+            }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)" }}
+            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)", zIndex: 1 }}
           />
         </div>
-        <div className="container relative py-28 md:py-40">
+        <div className="container relative z-10 py-28 md:py-40">
           <div className="max-w-2xl">
             <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision Fabrication Machines... From Factory-Direct to Your Floor.</p>
             <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f6f5ef]">
