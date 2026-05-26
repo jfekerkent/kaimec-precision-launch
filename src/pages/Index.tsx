@@ -48,7 +48,7 @@ const stats = [
 ];
 
 const whyPoints = [
-  "Mekotek precision machines —In stock in CA",
+  "Precision machines —In stock in CA",
   "Factory-direct pricing, no middleman markup",
   "In-house engineering support from our Tustin, CA team",
   "U.S. parts inventory — same-day support when your floor needs it",
