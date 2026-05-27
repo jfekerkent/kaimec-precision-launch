@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronRight, Wind, Zap } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -13,6 +13,8 @@ import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
 import flc1530_12kw from "@/assets/flc-1530-2.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
+import dustCollectorImg from "@/assets/dust-collector.jpg";
+import airCompressorImg from "@/assets/air-compressor.jpg";
 
 const machines = [
   { id: "FLO-1530 x 3kW", name: "FLO-1530 x 3kW", subtitle: "Open Type Fiber Laser", image: flo1530_3kw },
@@ -26,8 +28,36 @@ const machines = [
 ];
 
 const accessories = [
-  { id: "Dust collector", name: "Dust collector", icon: Wind },
-  { id: "Special air compressor", name: "Special air compressor", icon: Zap },
+  {
+    id: "Dust / Smoke Collector",
+    name: "Dust / Smoke Collector",
+    subtitle: "Pulse Filter Cartridge",
+    image: dustCollectorImg,
+    specs: [
+      ["Filter Type", "Pulse filter cartridge"],
+      ["Air Speed", "236 ft/min"],
+      ["Cleaning", "Automatic pulse cleaning"],
+      ["Size", '48" × 48" × 48"'],
+      ["Design", "Stand-alone integrated unit"],
+      ["Sections", "Fan (top) · Cartridge (mid) · Drawer (base)"],
+      ["Compliance", "GB16297-1996 emission standards"],
+    ],
+  },
+  {
+    id: "Screw Type Air Compressor",
+    name: "Screw Type Air Compressor",
+    subtitle: "30HP · With Refrigerated Dryer",
+    image: airCompressorImg,
+    specs: [
+      ["Power", "30 HP"],
+      ["Air Capacity", "81 CFM (with refrigerated dryer)"],
+      ["Pressure", "232 PSI"],
+      ["Noise Level", "70 ± 2 dB(A)"],
+      ["Tank", "105.7 Gallon air receiver"],
+      ["Dimensions", "67.4 × 31.5 × 73.2 in (L×W×H)"],
+      ["Includes", "Integrated refrigerated dryer"],
+    ],
+  },
 ];
 
 export default function Quotations() {
@@ -161,38 +191,48 @@ export default function Quotations() {
                 Add optional accessories to complete your configuration.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 max-w-lg">
+            <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
               {accessories.map((a) => {
                 const isSelected = selectedAccessories.has(a.id);
-                const Icon = a.icon;
                 return (
                   <button
                     key={a.id}
                     onClick={() => toggleAccessory(a.id)}
-                    className={`relative text-left border rounded-lg overflow-hidden transition-all group flex items-center gap-4 p-5 ${
+                    className={`relative text-left border rounded-lg overflow-hidden transition-all group flex flex-col ${
                       isSelected
-                        ? "border-primary ring-2 ring-primary/30 shadow-lg bg-card"
-                        : "border-border hover:border-primary/50 hover:shadow-md bg-card"
+                        ? "border-primary ring-2 ring-primary/30 shadow-lg"
+                        : "border-border hover:border-primary/50 hover:shadow-md"
                     }`}
                   >
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                        isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-bold text-foreground">
-                        {a.name}
-                      </h3>
-                    </div>
-                    <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
+                      className={`absolute top-3 right-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
                         isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
                       }`}
                     >
                       <Check className="h-4 w-4" />
+                    </div>
+                    <div className="aspect-[4/3] bg-white overflow-hidden flex items-center justify-center p-6">
+                      <img
+                        src={a.image}
+                        alt={a.name}
+                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5 flex-1 flex flex-col bg-card">
+                      <h3 className="text-lg font-black text-foreground leading-tight">
+                        {a.name}
+                      </h3>
+                      <p className="text-xs text-primary font-semibold mt-1 uppercase tracking-wide">
+                        {a.subtitle}
+                      </p>
+                      <dl className="mt-4 space-y-1.5 text-sm">
+                        {a.specs.map(([k, v]) => (
+                          <div key={k} className="flex gap-2">
+                            <dt className="font-semibold text-foreground/80 min-w-[110px]">{k}:</dt>
+                            <dd className="text-muted-foreground">{v}</dd>
+                          </div>
+                        ))}
+                      </dl>
                     </div>
                   </button>
                 );
