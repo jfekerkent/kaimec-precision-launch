@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Wind, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -25,12 +25,30 @@ const machines = [
   { id: "FLC-P 1530 x 12kW", name: "FLC-P 1530 x 12kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_12kw },
 ];
 
+const accessories = [
+  { id: "Dust collector", name: "Dust collector", icon: Wind },
+  { id: "Special air compressor", name: "Special air compressor", icon: Zap },
+];
+
 export default function Quotations() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
   const [showForm, setShowForm] = useState(false);
 
   const toggleMachine = (id: string) => {
     setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const toggleAccessory = (id: string) => {
+    setSelectedAccessories((prev) => {
       const next = new Set(prev);
       if (next.has(id)) {
         next.delete(id);
@@ -50,6 +68,7 @@ export default function Quotations() {
   };
 
   const selectedMachines = Array.from(selected).join(", ");
+  const selectedAccessoriesText = Array.from(selectedAccessories).join(", ");
 
   return (
     <Layout>
@@ -131,6 +150,56 @@ export default function Quotations() {
             })}
           </div>
 
+          {/* Accessories */}
+          <div className="mt-16">
+            <div className="max-w-3xl mb-8">
+              <p className="section-label mb-3 text-primary">Optional Accessories</p>
+              <h2 className="text-2xl md:text-3xl font-black text-foreground">
+                Enhance Your Setup
+              </h2>
+              <p className="text-muted-foreground text-lg mt-3">
+                Add optional accessories to complete your configuration.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 max-w-lg">
+              {accessories.map((a) => {
+                const isSelected = selectedAccessories.has(a.id);
+                const Icon = a.icon;
+                return (
+                  <button
+                    key={a.id}
+                    onClick={() => toggleAccessory(a.id)}
+                    className={`relative text-left border rounded-lg overflow-hidden transition-all group flex items-center gap-4 p-5 ${
+                      isSelected
+                        ? "border-primary ring-2 ring-primary/30 shadow-lg bg-card"
+                        : "border-border hover:border-primary/50 hover:shadow-md bg-card"
+                    }`}
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                        isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-bold text-foreground">
+                        {a.name}
+                      </h3>
+                    </div>
+                    <div
+                      className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
+                        isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      <Check className="h-4 w-4" />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Selection summary + CTA */}
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-card border border-border rounded-lg">
             <div>
@@ -142,6 +211,11 @@ export default function Quotations() {
               {selected.size > 0 && (
                 <p className="text-sm font-semibold text-foreground mt-1">
                   {selectedMachines}
+                </p>
+              )}
+              {selectedAccessories.size > 0 && (
+                <p className="text-sm text-muted-foreground mt-1">
+                  Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
                 </p>
               )}
             </div>
@@ -170,6 +244,11 @@ export default function Quotations() {
                 <p className="text-muted-foreground mt-2">
                   Machines selected: <span className="font-semibold text-foreground">{selectedMachines}</span>
                 </p>
+                {selectedAccessories.size > 0 && (
+                  <p className="text-muted-foreground mt-1">
+                    Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
+                  </p>
+                )}
               </div>
               <RequestInfoForm machine={selectedMachines} />
             </div>
