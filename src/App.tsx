@@ -23,6 +23,7 @@ import KaimecChatAgent from "./components/chat/KaimecChatAgent";
 import Consultation from "./pages/Consultation";
 import Faq from "./pages/Faq";
 import Eblast1 from "./pages/Eblast1";
+import Quotations from "./pages/Quotations";
 
 const queryClient = new QueryClient();
 
