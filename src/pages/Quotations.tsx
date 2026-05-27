@@ -32,10 +32,23 @@ const accessories = [
 
 export default function Quotations() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
   const [showForm, setShowForm] = useState(false);
 
   const toggleMachine = (id: string) => {
     setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const toggleAccessory = (id: string) => {
+    setSelectedAccessories((prev) => {
       const next = new Set(prev);
       if (next.has(id)) {
         next.delete(id);
@@ -55,6 +68,7 @@ export default function Quotations() {
   };
 
   const selectedMachines = Array.from(selected).join(", ");
+  const selectedAccessoriesText = Array.from(selectedAccessories).join(", ");
 
   return (
     <Layout>
