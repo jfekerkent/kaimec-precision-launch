@@ -44,7 +44,7 @@ import floP1530D from "@/assets/flo-p-1530-d.png";
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
-import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
+
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
@@ -191,7 +191,6 @@ const flp6035Specs = [
 const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
   { src: remoteControlImg, caption: "Remote control" },
-  { src: controlInterfaceImg, caption: "Control interface" },
   { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
   { src: regulatingTransformerImg, caption: "Regulating Transformer (for 220 or 480 volt input)" },
 ];
