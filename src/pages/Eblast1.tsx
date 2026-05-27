@@ -57,6 +57,19 @@ function SpecsList({ items }: { items: string[] }) {
 export default function Eblast1() {
   return (
     <main className="min-h-screen bg-white">
+      <nav className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
+          <Link to="/">
+            <img src={logo} alt="KAIMEC Machines" className="h-10 w-auto object-contain" />
+          </Link>
+          <Link
+            to="/"
+            className="text-sm font-semibold text-slate-700 hover:text-primary"
+          >
+            Home
+          </Link>
+        </div>
+      </nav>
       <div className="mx-auto max-w-5xl px-6 py-12">
         {/* Header / Logo */}
         <header className="flex flex-col items-center text-center border-b border-slate-200 pb-8">
