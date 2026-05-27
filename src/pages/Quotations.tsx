@@ -244,6 +244,11 @@ export default function Quotations() {
                 <p className="text-muted-foreground mt-2">
                   Machines selected: <span className="font-semibold text-foreground">{selectedMachines}</span>
                 </p>
+                {selectedAccessories.size > 0 && (
+                  <p className="text-muted-foreground mt-1">
+                    Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
+                  </p>
+                )}
               </div>
               <RequestInfoForm machine={selectedMachines} />
             </div>
