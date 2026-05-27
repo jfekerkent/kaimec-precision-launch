@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronRight, Wind, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -23,6 +23,11 @@ const machines = [
   { id: "FLC-1530 x 12kW", name: "FLC-1530 x 12kW", subtitle: "Fully Enclosed Fiber Laser", image: flc1530_12kw },
   { id: "FLC-P 1530 x 6kW", name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_6kw },
   { id: "FLC-P 1530 x 12kW", name: "FLC-P 1530 x 12kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_12kw },
+];
+
+const accessories = [
+  { id: "Dust collector", name: "Dust collector", icon: Wind },
+  { id: "Special air compressor", name: "Special air compressor", icon: Zap },
 ];
 
 export default function Quotations() {
