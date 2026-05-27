@@ -60,7 +60,7 @@ export default function Eblast1() {
       <nav className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
           <Link to="/">
-            <img src={logo} alt="KAIMEC Machines" className="h-10 w-auto object-contain" />
+            <img src={logo} alt="KAIMEC Machines" className="h-20 w-auto object-contain" />
           </Link>
           <Link
             to="/"
