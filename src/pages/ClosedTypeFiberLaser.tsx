@@ -27,7 +27,7 @@ import flc1530_3 from "@/assets/flc-1530-3.png";
 import flc1530_4 from "@/assets/flc-1530-4.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
-import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
+
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
 
@@ -137,7 +137,6 @@ const trustBand = [
 const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
   { src: remoteControlImg, caption: "Remote control" },
-  { src: controlInterfaceImg, caption: "Control interface" },
   { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
   { src: regulatingTransformerImg, caption: "Regulating Transformer (for 220 or 480 volt input)" },
 ];

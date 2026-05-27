@@ -29,7 +29,7 @@ import flo2040Slide1 from "@/assets/flo-2040-1.png";
 import flo2040Slide2 from "@/assets/flo-2040-2.png";
 import flo2040Slide3 from "@/assets/flo-2040-3.png";
 import flo2060Img from "@/assets/machine-flo-2060.avif";
-import controlInterfaceImg from "@/assets/mekotek-control-interface.png";
+
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
@@ -171,7 +171,6 @@ const trustBand = [
 const gallery = [
   { src: cuttingHeadImg, caption: "Cutting head detail" },
   { src: remoteControlImg, caption: "Remote control" },
-  { src: controlInterfaceImg, caption: "Control interface" },
   { src: chillerHeaterImg, caption: "Chiller / Heater Unit" },
   { src: regulatingTransformerImg, caption: "Regulating Transformer (for 220 or 480 volt input)" },
 ];
