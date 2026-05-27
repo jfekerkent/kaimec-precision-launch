@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Check, ChevronRight, Wind, Zap } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -13,6 +13,8 @@ import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
 import flc1530_12kw from "@/assets/flc-1530-2.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
+import dustCollectorImg from "@/assets/dust-collector.jpg";
+import airCompressorImg from "@/assets/air-compressor.jpg";
 
 const machines = [
   { id: "FLO-1530 x 3kW", name: "FLO-1530 x 3kW", subtitle: "Open Type Fiber Laser", image: flo1530_3kw },
@@ -26,8 +28,36 @@ const machines = [
 ];
 
 const accessories = [
-  { id: "Dust collector", name: "Dust collector", icon: Wind },
-  { id: "Special air compressor", name: "Special air compressor", icon: Zap },
+  {
+    id: "Dust / Smoke Collector",
+    name: "Dust / Smoke Collector",
+    subtitle: "Pulse Filter Cartridge",
+    image: dustCollectorImg,
+    specs: [
+      ["Filter Type", "Pulse filter cartridge"],
+      ["Air Speed", "236 ft/min"],
+      ["Cleaning", "Automatic pulse cleaning"],
+      ["Size", '48" × 48" × 48"'],
+      ["Design", "Stand-alone integrated unit"],
+      ["Sections", "Fan (top) · Cartridge (mid) · Drawer (base)"],
+      ["Compliance", "GB16297-1996 emission standards"],
+    ],
+  },
+  {
+    id: "Screw Type Air Compressor",
+    name: "Screw Type Air Compressor",
+    subtitle: "30HP · With Refrigerated Dryer",
+    image: airCompressorImg,
+    specs: [
+      ["Power", "30 HP"],
+      ["Air Capacity", "81 CFM (with refrigerated dryer)"],
+      ["Pressure", "232 PSI"],
+      ["Noise Level", "70 ± 2 dB(A)"],
+      ["Tank", "105.7 Gallon air receiver"],
+      ["Dimensions", "67.4 × 31.5 × 73.2 in (L×W×H)"],
+      ["Includes", "Integrated refrigerated dryer"],
+    ],
+  },
 ];
 
 export default function Quotations() {
