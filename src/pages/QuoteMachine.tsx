@@ -81,7 +81,7 @@ export default function QuoteMachine() {
                   ?.scrollIntoView({ behavior: "smooth", block: "start" })
               }
             >
-              Press Here to Get a Quote
+              Press here to see the price of the machine and accessories
             </Button>
           </div>
 
