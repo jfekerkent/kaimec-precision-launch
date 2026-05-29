@@ -2,6 +2,7 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
+import { Button } from "@/components/ui/button";
 
 import flo1530_3kw from "@/assets/machine-kflo-1530.png";
 import flo1530_6kw from "@/assets/flo-1530-6kw.png";
@@ -63,15 +64,28 @@ export default function QuoteMachine() {
 
       <section className="py-16 bg-background">
         <div className="container grid gap-10 lg:grid-cols-2">
-          <div className="bg-white border border-border rounded-lg p-6 flex items-center justify-center">
-            <img
-              src={machine.image}
-              alt={machine.name}
-              className="w-full h-auto max-h-[480px] object-contain"
-            />
+          <div className="flex flex-col gap-4">
+            <div className="bg-white border border-border rounded-lg p-6 flex items-center justify-center">
+              <img
+                src={machine.image}
+                alt={machine.name}
+                className="w-full h-auto max-h-[480px] object-contain"
+              />
+            </div>
+            <Button
+              size="lg"
+              className="w-full"
+              onClick={() =>
+                document
+                  .getElementById("quote-form")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+            >
+              Press Here to Get a Quote
+            </Button>
           </div>
 
-          <div className="bg-card border border-border rounded-lg p-6 md:p-8">
+          <div id="quote-form" className="bg-card border border-border rounded-lg p-6 md:p-8 scroll-mt-24">
             <p className="section-label mb-3 text-primary">Get Pricing</p>
             <h2 className="text-2xl md:text-3xl font-black text-foreground mb-2">
               Request Quote
