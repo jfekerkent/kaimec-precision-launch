@@ -106,7 +106,7 @@ export default function QuoteMachine() {
                   </li>
                 </ul>
                 <p className="text-xs text-muted-foreground mt-4">
-                  Prices are indicative and subject to final quotation.
+                  Fill in information on the box on the right hand side to get an official detailed quote
                 </p>
               </div>
             )}
