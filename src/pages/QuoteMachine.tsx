@@ -1,6 +1,6 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import { Button } from "@/components/ui/button";
@@ -38,6 +38,10 @@ export default function QuoteMachine() {
   const [searchParams] = useSearchParams();
   const accessories = searchParams.get("accessories") || "";
   const [showPrice, setShowPrice] = useState(false);
+
+  useEffect(() => {
+    setShowPrice(false);
+  }, [slug]);
 
   if (!machine) {
     return (
