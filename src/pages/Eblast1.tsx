@@ -156,9 +156,9 @@ export default function Eblast1() {
               <MapPin className="h-4 w-4 text-primary" />
               1231 Edinger Ave, Tustin, CA
             </div>
-            <a href="tel:5623502071" className="flex items-center gap-2 hover:text-primary">
+            <a href="tel:+19495431508" className="flex items-center gap-2 hover:text-primary">
               <Phone className="h-4 w-4 text-primary" />
-              (562) 350-2071
+              (949) 543-1508
             </a>
             <a href="mailto:sales@kaimec.com" className="flex items-center gap-2 hover:text-primary">
               <Mail className="h-4 w-4 text-primary" />

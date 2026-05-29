@@ -1,9 +1,26 @@
-Wire the homepage "View Specifications" link on the CNC Press Brakes cards (MKT 1560 / MKT 32135) to jump directly to the spec section on the CNC Press Brakes page, matching the pattern used for the laser cards.
+## Goal
 
-1. **`src/pages/Index.tsx`** (line 212): change `to="/machines/press-brakes"` to `to="/machines/press-brakes#specifications"`.
+Replace the current phone number `(562) 350-2071` with the new main number `+1 (949) 543-1508` across the site, while keeping the original 562 number only on the Consultation page "Prefer to Just Call?" section (salesperson direct line).
 
-2. **`src/pages/PressBrakes.tsx`**:
-   - Add `id="specifications"` and `scroll-mt-24` to the specs section (`<section className="py-20 bg-[#f8f8f8]">`).
-   - Add a `useLocation` + `useEffect` hash-scroll hook so navigating with `#specifications` smoothly scrolls to that section (same pattern as the other laser pages).
+## Files to update (replace 562-350-2071 → 949-543-1508)
 
-No other pages or sections are touched.
+- `src/components/Navbar.tsx` — top bar phone link
+- `src/components/Footer.tsx` — contact list phone link
+- `src/pages/Quote.tsx` — Contact Information card
+- `src/pages/Faq.tsx` — "Call …" CTA button
+- `src/pages/GunDrills.tsx` — secondary CTA label/href and bottom "CALL …" link
+- `src/pages/FlcP1530.tsx` — sidebar phone button
+- `src/pages/ClosedTypeFiberLaser.tsx` — phone link
+- `src/pages/Eblast1.tsx` — phone link
+- `src/hooks/useChat.ts` — both chat error fallback strings
+- `src/agent/system-prompt.md` and `supabase/functions/chat/system-prompt.md` / `system-prompt.ts` — all references in the agent's contact lines
+
+Display format: `(949) 543-1508`. `tel:` href: `tel:+19495431508`.
+
+## Files to leave unchanged
+
+- `src/pages/Consultation.tsx` — "Prefer to Just Call?" keeps `562-350-2071` (salesperson direct).
+
+## Verification
+
+Re-run `rg "562|949"` after edits to confirm only Consultation.tsx still holds the 562 number and all other locations show the new 949 number.

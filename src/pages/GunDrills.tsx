@@ -318,8 +318,8 @@ export default function GunDrills() {
         subhead="Tell us your application and we'll match you to the right machine — usually in under 20 minutes."
         primaryLabel="HELP ME CHOOSE"
         primaryHref="/consultation"
-        secondaryLabel="OR CALL 562-350-2071"
-        secondaryHref="tel:5623502071"
+        secondaryLabel="OR CALL 949-543-1508"
+        secondaryHref="tel:+19495431508"
       />
 
       {/* KMGD — image LEFT, white */}
@@ -418,13 +418,13 @@ export default function GunDrills() {
                 📅 BOOK A 20-MIN CONSULT
               </Button>
             </a>
-            <a href="tel:5623502071">
+            <a href="tel:+19495431508">
               <Button
                 size="lg"
                 variant="outline"
                 className="font-bold tracking-wide border-2 border-[#1a1a1a] text-[#1a1a1a] bg-transparent hover:bg-[#1a1a1a] hover:text-white px-8"
               >
-                CALL 562-350-2071
+                CALL 949-543-1508
               </Button>
             </a>
           </div>

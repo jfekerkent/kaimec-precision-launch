@@ -247,9 +247,9 @@ export default function Faq() {
             Talk directly with our team — we're here to help.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="tel:+15623502071">
+            <a href="tel:+19495431508">
               <Button size="lg" className="font-bold">
-                <Phone className="mr-2 h-4 w-4" /> Call 562-350-2071
+                <Phone className="mr-2 h-4 w-4" /> Call 949-543-1508
               </Button>
             </a>
             <Link to="/quote">

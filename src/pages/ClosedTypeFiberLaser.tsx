@@ -490,9 +490,9 @@ export default function ClosedTypeFiberLaser() {
                 asChild
                 className="font-bold px-8 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-white"
               >
-                <a href="tel:5623502071">
+                <a href="tel:+19495431508">
                   <Phone className="h-4 w-4" />
-                  (562) 350-2071
+                  (949) 543-1508
                 </a>
               </Button>
             </div>
