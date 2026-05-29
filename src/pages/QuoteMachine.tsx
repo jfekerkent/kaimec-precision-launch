@@ -1,5 +1,6 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import { Button } from "@/components/ui/button";
@@ -14,15 +15,20 @@ import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
 
 export const quoteMachines = {
-  "flo-1530-3kw":   { name: "FLO-1530 x 3kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_3kw },
-  "flo-1530-6kw":   { name: "FLO-1530 x 6kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_6kw },
-  "flo-p-1530-3kw": { name: "FLO-P 1530 x 3kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_3kw },
-  "flo-p-1530-6kw": { name: "FLO-P 1530 x 6kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_6kw },
-  "flc-1530-6kw":   { name: "FLC-1530 x 6kW",   subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_6kw },
-  "flc-1530-12kw":  { name: "FLC-1530 x 12kW",  subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_12kw },
-  "flc-p-1530-6kw": { name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_6kw },
-  "flc-p-1530-12kw":{ name: "FLC-P 1530 x 12kW",subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_12kw },
+  "flo-1530-3kw":   { name: "FLO-1530 x 3kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_3kw,   price: 75000 },
+  "flo-1530-6kw":   { name: "FLO-1530 x 6kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_6kw,   price: null },
+  "flo-p-1530-3kw": { name: "FLO-P 1530 x 3kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_3kw,  price: null },
+  "flo-p-1530-6kw": { name: "FLO-P 1530 x 6kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_6kw,  price: null },
+  "flc-1530-6kw":   { name: "FLC-1530 x 6kW",   subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_6kw,   price: null },
+  "flc-1530-12kw":  { name: "FLC-1530 x 12kW",  subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_12kw,  price: null },
+  "flc-p-1530-6kw": { name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_6kw,  price: null },
+  "flc-p-1530-12kw":{ name: "FLC-P 1530 x 12kW",subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_12kw, price: null },
 } as const;
+
+const accessoryPrices: { match: RegExp; label: string; price: number }[] = [
+  { match: /dust|smoke/i,           label: "Dust collector",                price: 22000 },
+  { match: /air\s*compressor|screw/i, label: "Screw special air compressor", price: 22000 },
+];
 
 export type QuoteSlug = keyof typeof quoteMachines;
 
@@ -31,6 +37,7 @@ export default function QuoteMachine() {
   const machine = slug ? quoteMachines[slug] : undefined;
   const [searchParams] = useSearchParams();
   const accessories = searchParams.get("accessories") || "";
+  const [showPrice, setShowPrice] = useState(false);
 
   if (!machine) {
     return (
@@ -75,14 +82,34 @@ export default function QuoteMachine() {
             <Button
               size="lg"
               className="w-full"
-              onClick={() =>
-                document
-                  .getElementById("quote-form")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
-              }
+              onClick={() => setShowPrice((v) => !v)}
             >
               Press here to see the price of the machine and accessories
             </Button>
+            {showPrice && machine && (
+              <div className="bg-card border border-border rounded-lg p-6">
+                <p className="section-label mb-3 text-primary">Indicative Pricing</p>
+                <ul className="space-y-2 text-foreground">
+                  {machine.price != null && (
+                    <li className="flex justify-between gap-4">
+                      <span className="font-semibold">{machine.name}</span>
+                      <span>${machine.price.toLocaleString()} FOB Tustin, CA</span>
+                    </li>
+                  )}
+                  {accessoryPrices
+                    .filter((a) => a.match.test(accessories))
+                    .map((a) => (
+                      <li key={a.label} className="flex justify-between gap-4">
+                        <span>+ {a.label}</span>
+                        <span>${a.price.toLocaleString()}</span>
+                      </li>
+                    ))}
+                </ul>
+                <p className="text-xs text-muted-foreground mt-4">
+                  Prices are indicative and subject to final quotation.
+                </p>
+              </div>
+            )}
           </div>
 
           <div id="quote-form" className="bg-card border border-border rounded-lg p-6 md:p-8 scroll-mt-24">
