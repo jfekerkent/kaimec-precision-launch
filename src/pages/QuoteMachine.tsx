@@ -96,14 +96,14 @@ export default function QuoteMachine() {
                       <span>${machine.price.toLocaleString()} FOB Tustin, CA</span>
                     </li>
                   )}
-                  {accessoryPrices
-                    .filter((a) => a.match.test(accessories))
-                    .map((a) => (
-                      <li key={a.label} className="flex justify-between gap-4">
-                        <span>+ {a.label}</span>
-                        <span>${a.price.toLocaleString()}</span>
-                      </li>
-                    ))}
+                  <li className="flex justify-between gap-4">
+                    <span>+ Dust Collector</span>
+                    <span>$22,000</span>
+                  </li>
+                  <li className="flex justify-between gap-4">
+                    <span>+ Special Air Compressor</span>
+                    <span>$22,000</span>
+                  </li>
                 </ul>
                 <p className="text-xs text-muted-foreground mt-4">
                   Prices are indicative and subject to final quotation.
