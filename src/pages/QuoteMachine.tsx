@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -28,6 +28,8 @@ export type QuoteSlug = keyof typeof quoteMachines;
 export default function QuoteMachine() {
   const { slug } = useParams<{ slug: QuoteSlug }>();
   const machine = slug ? quoteMachines[slug] : undefined;
+  const [searchParams] = useSearchParams();
+  const accessories = searchParams.get("accessories") || "";
 
   if (!machine) {
     return (
@@ -77,7 +79,14 @@ export default function QuoteMachine() {
             <p className="text-muted-foreground mb-6">
               Pricing for: <span className="font-semibold text-foreground">{machine.name}</span>
             </p>
-            <RequestInfoForm machine={machine.name} />
+            {accessories && (
+              <p className="text-muted-foreground mb-6 -mt-4">
+                Accessories: <span className="font-semibold text-foreground">{accessories}</span>
+              </p>
+            )}
+            <RequestInfoForm
+              machine={accessories ? `${machine.name} + ${accessories}` : machine.name}
+            />
           </div>
         </div>
       </section>

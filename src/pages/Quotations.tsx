@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -17,14 +17,14 @@ import dustCollectorImg from "@/assets/dust-collector.jpg";
 import airCompressorImg from "@/assets/air-compressor.jpg";
 
 const machines = [
-  { id: "FLO-1530 x 3kW", name: "FLO-1530 x 3kW", subtitle: "Open Type Fiber Laser", image: flo1530_3kw },
-  { id: "FLO-1530 x 6kW", name: "FLO-1530 x 6kW", subtitle: "Open Type Fiber Laser", image: flo1530_6kw },
-  { id: "FLO-P 1530 x 3kW", name: "FLO-P 1530 x 3kW", subtitle: "Open Type Sheet + Pipe", image: floP1530_3kw },
-  { id: "FLO-P 1530 x 6kW", name: "FLO-P 1530 x 6kW", subtitle: "Open Type Sheet + Pipe", image: floP1530_6kw },
-  { id: "FLC-1530 x 6kW", name: "FLC-1530 x 6kW", subtitle: "Fully Enclosed Fiber Laser", image: flc1530_6kw },
-  { id: "FLC-1530 x 12kW", name: "FLC-1530 x 12kW", subtitle: "Fully Enclosed Fiber Laser", image: flc1530_12kw },
-  { id: "FLC-P 1530 x 6kW", name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_6kw },
-  { id: "FLC-P 1530 x 12kW", name: "FLC-P 1530 x 12kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_12kw },
+  { id: "FLO-1530 x 3kW",    slug: "flo-1530-3kw",    name: "FLO-1530 x 3kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_3kw },
+  { id: "FLO-1530 x 6kW",    slug: "flo-1530-6kw",    name: "FLO-1530 x 6kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_6kw },
+  { id: "FLO-P 1530 x 3kW",  slug: "flo-p-1530-3kw",  name: "FLO-P 1530 x 3kW",  subtitle: "Open Type Sheet + Pipe",      image: floP1530_3kw },
+  { id: "FLO-P 1530 x 6kW",  slug: "flo-p-1530-6kw",  name: "FLO-P 1530 x 6kW",  subtitle: "Open Type Sheet + Pipe",      image: floP1530_6kw },
+  { id: "FLC-1530 x 6kW",    slug: "flc-1530-6kw",    name: "FLC-1530 x 6kW",    subtitle: "Fully Enclosed Fiber Laser",  image: flc1530_6kw },
+  { id: "FLC-1530 x 12kW",   slug: "flc-1530-12kw",   name: "FLC-1530 x 12kW",   subtitle: "Fully Enclosed Fiber Laser",  image: flc1530_12kw },
+  { id: "FLC-P 1530 x 6kW",  slug: "flc-p-1530-6kw",  name: "FLC-P 1530 x 6kW",  subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_6kw },
+  { id: "FLC-P 1530 x 12kW", slug: "flc-p-1530-12kw", name: "FLC-P 1530 x 12kW", subtitle: "Fully Enclosed Sheet + Pipe", image: flcP1530_12kw },
 ];
 
 const accessories = [
@@ -64,6 +64,7 @@ export default function Quotations() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMachine = (id: string) => {
     setSelected((prev) => {
@@ -90,6 +91,18 @@ export default function Quotations() {
   };
 
   const handleRequestQuote = () => {
+    // If exactly one machine is selected, route to its dedicated quote sub-page
+    // (carrying any selected accessories along via query string).
+    if (selected.size === 1) {
+      const onlyId = Array.from(selected)[0];
+      const match = machines.find((m) => m.id === onlyId);
+      if (match) {
+        const acc = Array.from(selectedAccessories);
+        const qs = acc.length ? `?accessories=${encodeURIComponent(acc.join(", "))}` : "";
+        navigate(`/quotations/${match.slug}${qs}`);
+        return;
+      }
+    }
     setShowForm(true);
     setTimeout(() => {
       const el = document.getElementById("quote-form");
