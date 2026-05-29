@@ -16,13 +16,13 @@ import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
 
 export const quoteMachines = {
   "flo-1530-3kw":   { name: "FLO-1530 x 3kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_3kw,   price: 75000 },
-  "flo-1530-6kw":   { name: "FLO-1530 x 6kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_6kw,   price: null },
-  "flo-p-1530-3kw": { name: "FLO-P 1530 x 3kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_3kw,  price: null },
-  "flo-p-1530-6kw": { name: "FLO-P 1530 x 6kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_6kw,  price: null },
-  "flc-1530-6kw":   { name: "FLC-1530 x 6kW",   subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_6kw,   price: null },
+  "flo-1530-6kw":   { name: "FLO-1530 x 6kW",   subtitle: "Open Type Fiber Laser",        image: flo1530_6kw,   price: 92000 },
+  "flo-p-1530-3kw": { name: "FLO-P 1530 x 3kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_3kw,  price: 131000 },
+  "flo-p-1530-6kw": { name: "FLO-P 1530 x 6kW", subtitle: "Open Type Sheet + Pipe",       image: floP1530_6kw,  price: 154000 },
+  "flc-1530-6kw":   { name: "FLC-1530 x 6kW",   subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_6kw,   price: 188000 },
   "flc-1530-12kw":  { name: "FLC-1530 x 12kW",  subtitle: "Fully Enclosed Fiber Laser",   image: flc1530_12kw,  price: null },
-  "flc-p-1530-6kw": { name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_6kw,  price: null },
-  "flc-p-1530-12kw":{ name: "FLC-P 1530 x 12kW",subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_12kw, price: null },
+  "flc-p-1530-6kw": { name: "FLC-P 1530 x 6kW", subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_6kw,  price: 180000 },
+  "flc-p-1530-12kw":{ name: "FLC-P 1530 x 12kW",subtitle: "Fully Enclosed Sheet + Pipe",  image: flcP1530_12kw, price: 235000 },
 } as const;
 
 const accessoryPrices: { match: RegExp; label: string; price: number }[] = [
