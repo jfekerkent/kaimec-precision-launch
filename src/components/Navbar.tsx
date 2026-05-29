@@ -196,11 +196,11 @@ export default function Navbar() {
 
             <div className="flex items-center gap-3 xl:gap-4 ml-3">
               <a
-                href="tel:5623502071"
+                href="tel:+19495431508"
                 className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
               >
                 <Phone className="h-4 w-4" />
-                <span className="text-sm font-medium">(562) 350-2071</span>
+                <span className="text-sm font-medium">(949) 543-1508</span>
               </a>
               <Link
                 to="/consultation"

@@ -66,9 +66,9 @@ export default function Footer() {
                 1231 Edinger Ave, Tustin, CA
               </li>
               <li>
-                <a href="tel:5623502071" className="flex gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+19495431508" className="flex gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
-                  (562) 350-2071
+                  (949) 543-1508
                 </a>
               </li>
               <li>
