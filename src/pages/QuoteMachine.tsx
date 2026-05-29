@@ -100,6 +100,10 @@ export default function QuoteMachine() {
                       <span>${machine.price.toLocaleString()} FOB Tustin, CA</span>
                     </li>
                   )}
+                  <li className="text-sm text-muted-foreground pl-2">
+                    <span className="font-semibold text-foreground">Included: </span>
+                    5x10ft travels, Auto nesting, Auto collision protection, Edge finding, Fly cutting, Yaskawa servo motors, 24/7 online USA support, Installation and training, heater/chiller, 220 or 480 volt regulating transformer
+                  </li>
                   <li className="flex justify-between gap-4">
                     <span>+ Dust Collector</span>
                     <span>$22,000</span>
