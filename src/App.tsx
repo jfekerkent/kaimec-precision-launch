@@ -24,6 +24,7 @@ import Consultation from "./pages/Consultation";
 import Faq from "./pages/Faq";
 import Eblast1 from "./pages/Eblast1";
 import Quotations from "./pages/Quotations";
+import QuoteMachine from "./pages/QuoteMachine";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/faq" element={<Faq />} />
           <Route path="/eblast-1" element={<Eblast1 />} />
           <Route path="/quotations" element={<Quotations />} />
+          <Route path="/quotations/:slug" element={<QuoteMachine />} />
           <Route path="/machines" element={<Machines />} />
           <Route path="/machines/cnc-fiber-lasers" element={<FiberLasers />} />
           <Route path="/machines/tube-profile-lasers" element={<TubeProfileLasers />} />
