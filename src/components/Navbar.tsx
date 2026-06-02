@@ -353,59 +353,18 @@ export default function Navbar() {
               </Link>
             ))}
             {moreLinks.map((link) => (
-              link.to === "/quotations" ? (
-                <div key={link.to}>
-                  <div className="flex items-center">
-                    <Link
-                      to={link.to}
-                      onClick={() => setMobileOpen(false)}
-                      className={`flex-1 px-3 py-2 text-xs font-medium rounded-md ${
-                        location.pathname === link.to
-                          ? "text-primary bg-muted"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                    <button
-                      onClick={() => setMobileQuotesOpen(!mobileQuotesOpen)}
-                      className="p-2 text-muted-foreground"
-                      aria-label="Toggle quotation sub-pages"
-                    >
-                      <ChevronDown
-                        className={`h-3 w-3 transition-transform ${mobileQuotesOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                  </div>
-                  {mobileQuotesOpen && (
-                    <div className="pl-4">
-                      {quotationLinks.map((q) => (
-                        <Link
-                          key={q.to}
-                          to={q.to}
-                          onClick={() => setMobileOpen(false)}
-                          className="block px-3 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
-                        >
-                          {q.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setMobileOpen(false)}
-                  className={`px-3 py-2 text-xs font-medium rounded-md ${
-                    location.pathname === link.to
-                      ? "text-primary bg-muted"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`px-3 py-2 text-xs font-medium rounded-md ${
+                  location.pathname === link.to
+                    ? "text-primary bg-muted"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
             ))}
             <Link
               to="/consultation"
