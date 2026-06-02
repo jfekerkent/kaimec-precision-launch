@@ -228,7 +228,7 @@ function ConfigCard({ img, title, subtitle, body, model, onClick }: { img: strin
   );
 }
 
-function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { img: string; hoverImg: string; title: string; subtitle: string; body: string; model: string }) {
+function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model, onClick }: { img: string; hoverImg: string; title: string; subtitle: string; body: string; model: string; onClick?: () => void }) {
   return (
     <div className="bg-white border border-border flex flex-col">
       <div className="relative aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center rounded-lg border group">
@@ -240,7 +240,14 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { i
         <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
         <Button asChild className="font-bold w-full sm:w-auto">
-          <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
+          <a href="#quote-form" onClick={(e) => {
+            if (onClick) {
+              e.preventDefault();
+              onClick();
+              return;
+            }
+            e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt);
+          }}>
             Request Quote on {title}
           </a>
         </Button>
