@@ -350,6 +350,7 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="5 x 10 ft Working Area | 2-20 kW"
               body="The compact combo machine. Sheet metal up to 5x10ft and pipe/profile up to 13.8&quot; diameter x 20ft in length in a single fully enclosed footprint."
               model="FLC-P 1530 (fully enclosed with 2 tables)"
+              onClick={() => navigate("/quotations")}
             />
             <ConfigCard
               img={flcP2040Img}
@@ -357,6 +358,7 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="6.5 x 13 ft Working Area | 2-20 kW"
               body="Larger working area for shops handling oversized sheet stock alongside pipe cutting. Same proven FLC-P platform, more sheet cutting capacity."
               model="FLC-P 2040 (fully enclosed with 2 tables)"
+              onClick={() => navigate("/quotations")}
             />
           </div>
           <div className="grid gap-8 md:grid-cols-3 mt-8">
