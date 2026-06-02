@@ -26,20 +26,9 @@ const gunDrillLinks = [
 const moreLinks = [
   { label: "About Us", to: "/about" },
   { label: "Request for Info", to: "/quote" },
-  { label: "Quotations", to: "/quotations" },
   { label: "eblast 1", to: "/eblast-1" },
 ];
 
-const quotationLinks = [
-  { label: "QUOTE - FLO-1530 x 3kW",   to: "/quotations/flo-1530-3kw" },
-  { label: "QUOTE - FLO-1530 x 6kW",   to: "/quotations/flo-1530-6kw" },
-  { label: "QUOTE - FLO-P 1530 x 3kW", to: "/quotations/flo-p-1530-3kw" },
-  { label: "QUOTE - FLO-P 1530 x 6kW", to: "/quotations/flo-p-1530-6kw" },
-  { label: "QUOTE - FLC-1530 x 6kW",   to: "/quotations/flc-1530-6kw" },
-  { label: "QUOTE - FLC-1530 x 12kW",  to: "/quotations/flc-1530-12kw" },
-  { label: "QUOTE - FLC-P 1530 x 6kW", to: "/quotations/flc-p-1530-6kw" },
-  { label: "QUOTE - FLC-P 1530 x 12kW",to: "/quotations/flc-p-1530-12kw" },
-];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,8 +37,6 @@ export default function Navbar() {
   const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);
   const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
-  const [quotesOpen, setQuotesOpen] = useState(false);
-  const [mobileQuotesOpen, setMobileQuotesOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -127,6 +114,18 @@ export default function Navbar() {
                   {pressBrakesLink.label}
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/quotations"
+                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                    location.pathname === "/quotations"
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Quotations
+                </Link>
+              </li>
               <li
                 className="group relative"
                 onMouseEnter={() => setDrillOpen(true)}
@@ -192,48 +191,14 @@ export default function Navbar() {
                   <div className="absolute top-full right-0 pt-2 w-56 z-50">
                     <div className="rounded-md border border-border bg-card shadow-lg py-1">
                       {moreLinks.map((link) => (
-                        link.to === "/quotations" ? (
-                          <div
-                            key={link.to}
-                            className="relative"
-                            onMouseEnter={() => setQuotesOpen(true)}
-                            onMouseLeave={() => setQuotesOpen(false)}
-                          >
-                            <Link
-                              to={link.to}
-                              onClick={() => { setMoreOpen(false); setQuotesOpen(false); }}
-                              className="flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                            >
-                              {link.label}
-                              <ChevronDown className="h-3 w-3 -rotate-90" />
-                            </Link>
-                            {quotesOpen && (
-                              <div className="absolute top-0 right-full pr-1 w-64 z-50">
-                                <div className="rounded-md border border-border bg-card shadow-lg py-1">
-                                  {quotationLinks.map((q) => (
-                                    <Link
-                                      key={q.to}
-                                      to={q.to}
-                                      onClick={() => { setMoreOpen(false); setQuotesOpen(false); }}
-                                      className="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors whitespace-nowrap"
-                                    >
-                                      {q.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ) : (
-                          <Link
-                            key={link.to}
-                            to={link.to}
-                            onClick={() => setMoreOpen(false)}
-                            className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        )
+                        <Link
+                          key={link.to}
+                          to={link.to}
+                          onClick={() => setMoreOpen(false)}
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        >
+                          {link.label}
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -325,6 +290,17 @@ export default function Navbar() {
             >
               {pressBrakesLink.label}
             </Link>
+            <Link
+              to="/quotations"
+              onClick={() => setMobileOpen(false)}
+              className={`block px-3 py-2 text-xs font-medium rounded-md ${
+                location.pathname === "/quotations"
+                  ? "text-primary bg-muted"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              Quotations
+            </Link>
             <div>
               <button
                 onClick={() => setMobileDrillOpen(!mobileDrillOpen)}
@@ -365,59 +341,18 @@ export default function Navbar() {
               </Link>
             ))}
             {moreLinks.map((link) => (
-              link.to === "/quotations" ? (
-                <div key={link.to}>
-                  <div className="flex items-center">
-                    <Link
-                      to={link.to}
-                      onClick={() => setMobileOpen(false)}
-                      className={`flex-1 px-3 py-2 text-xs font-medium rounded-md ${
-                        location.pathname === link.to
-                          ? "text-primary bg-muted"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                    <button
-                      onClick={() => setMobileQuotesOpen(!mobileQuotesOpen)}
-                      className="p-2 text-muted-foreground"
-                      aria-label="Toggle quotation sub-pages"
-                    >
-                      <ChevronDown
-                        className={`h-3 w-3 transition-transform ${mobileQuotesOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                  </div>
-                  {mobileQuotesOpen && (
-                    <div className="pl-4">
-                      {quotationLinks.map((q) => (
-                        <Link
-                          key={q.to}
-                          to={q.to}
-                          onClick={() => setMobileOpen(false)}
-                          className="block px-3 py-2 text-xs text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
-                        >
-                          {q.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setMobileOpen(false)}
-                  className={`px-3 py-2 text-xs font-medium rounded-md ${
-                    location.pathname === link.to
-                      ? "text-primary bg-muted"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`px-3 py-2 text-xs font-medium rounded-md ${
+                  location.pathname === link.to
+                    ? "text-primary bg-muted"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
             ))}
             <Link
               to="/consultation"
