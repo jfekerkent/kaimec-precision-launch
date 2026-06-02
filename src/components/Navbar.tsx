@@ -203,48 +203,14 @@ export default function Navbar() {
                   <div className="absolute top-full right-0 pt-2 w-56 z-50">
                     <div className="rounded-md border border-border bg-card shadow-lg py-1">
                       {moreLinks.map((link) => (
-                        link.to === "/quotations" ? (
-                          <div
-                            key={link.to}
-                            className="relative"
-                            onMouseEnter={() => setQuotesOpen(true)}
-                            onMouseLeave={() => setQuotesOpen(false)}
-                          >
-                            <Link
-                              to={link.to}
-                              onClick={() => { setMoreOpen(false); setQuotesOpen(false); }}
-                              className="flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                            >
-                              {link.label}
-                              <ChevronDown className="h-3 w-3 -rotate-90" />
-                            </Link>
-                            {quotesOpen && (
-                              <div className="absolute top-0 right-full pr-1 w-64 z-50">
-                                <div className="rounded-md border border-border bg-card shadow-lg py-1">
-                                  {quotationLinks.map((q) => (
-                                    <Link
-                                      key={q.to}
-                                      to={q.to}
-                                      onClick={() => { setMoreOpen(false); setQuotesOpen(false); }}
-                                      className="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors whitespace-nowrap"
-                                    >
-                                      {q.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ) : (
-                          <Link
-                            key={link.to}
-                            to={link.to}
-                            onClick={() => setMoreOpen(false)}
-                            className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        )
+                        <Link
+                          key={link.to}
+                          to={link.to}
+                          onClick={() => setMoreOpen(false)}
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        >
+                          {link.label}
+                        </Link>
                       ))}
                     </div>
                   </div>
