@@ -113,6 +113,7 @@ function DescriptionList({ items }: { items: string[] }) {
 export default function TubeProfileLasers() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));

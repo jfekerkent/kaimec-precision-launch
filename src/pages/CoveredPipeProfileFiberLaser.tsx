@@ -201,7 +201,7 @@ function scrollToQuote(e?: React.MouseEvent) {
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function ConfigCard({ img, title, subtitle, body, model }: { img: string; title: string; subtitle: string; body: string; model: string }) {
+function ConfigCard({ img, title, subtitle, body, model, onClick }: { img: string; title: string; subtitle: string; body: string; model: string; onClick?: () => void }) {
   return (
     <div className="bg-white border border-border flex flex-col">
       <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
@@ -212,7 +212,14 @@ function ConfigCard({ img, title, subtitle, body, model }: { img: string; title:
         <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
         <Button asChild className="font-bold w-full sm:w-auto">
-          <a href="#quote-form" onClick={(e) => { e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt); }}>
+          <a href="#quote-form" onClick={(e) => {
+            if (onClick) {
+              e.preventDefault();
+              onClick();
+              return;
+            }
+            e.preventDefault(); const el = document.getElementById(`quote-form`); el?.scrollIntoView({ behavior: "smooth" }); const evt = new CustomEvent("set-machine", { detail: model }); window.dispatchEvent(evt);
+          }}>
             Request Quote on {title}
           </a>
         </Button>
