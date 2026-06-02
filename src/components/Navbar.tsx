@@ -127,6 +127,18 @@ export default function Navbar() {
                   {pressBrakesLink.label}
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/quotations"
+                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                    location.pathname === "/quotations"
+                      ? "text-primary"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Quotations
+                </Link>
+              </li>
               <li
                 className="group relative"
                 onMouseEnter={() => setDrillOpen(true)}
