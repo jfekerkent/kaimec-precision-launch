@@ -29,16 +29,6 @@ const moreLinks = [
   { label: "eblast 1", to: "/eblast-1" },
 ];
 
-const quotationLinks = [
-  { label: "QUOTE - FLO-1530 x 3kW",   to: "/quotations/flo-1530-3kw" },
-  { label: "QUOTE - FLO-1530 x 6kW",   to: "/quotations/flo-1530-6kw" },
-  { label: "QUOTE - FLO-P 1530 x 3kW", to: "/quotations/flo-p-1530-3kw" },
-  { label: "QUOTE - FLO-P 1530 x 6kW", to: "/quotations/flo-p-1530-6kw" },
-  { label: "QUOTE - FLC-1530 x 6kW",   to: "/quotations/flc-1530-6kw" },
-  { label: "QUOTE - FLC-1530 x 12kW",  to: "/quotations/flc-1530-12kw" },
-  { label: "QUOTE - FLC-P 1530 x 6kW", to: "/quotations/flc-p-1530-6kw" },
-  { label: "QUOTE - FLC-P 1530 x 12kW",to: "/quotations/flc-p-1530-12kw" },
-];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
