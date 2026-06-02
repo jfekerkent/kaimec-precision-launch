@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -113,6 +113,7 @@ function DescriptionList({ items }: { items: string[] }) {
 export default function TubeProfileLasers() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
@@ -147,9 +148,7 @@ export default function TubeProfileLasers() {
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
                   <p className="text-sm text-muted-foreground mb-4 whitespace-pre-line">{m.description}</p>
-                  <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
-                    <Button className="w-full font-bold">Request Quote</Button>
-                  </Link>
+                  <Button className="w-full font-bold" onClick={() => navigate("/quotations")}>Request Quote</Button>
                 </div>
               </div>
             ))}
