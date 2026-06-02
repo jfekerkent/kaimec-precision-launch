@@ -376,6 +376,7 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="5x10ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
               model="FLO-P 1530 ( open, single table)"
+              onClick={() => navigate("/quotations")}
             />
             <RolloverConfigCard
               img={floP1530C}
@@ -384,6 +385,7 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="6.5x10ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
               model="FLO-P 2040 ( open, single table)"
+              onClick={() => navigate("/quotations")}
             />
             <RolloverConfigCard
               img={floP1530D}
@@ -392,6 +394,7 @@ export default function CoveredPipeProfileFiberLaser() {
               subtitle="6.5x20ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
               model="FLO-P 2060 ( open, single table)"
+              onClick={() => navigate("/quotations")}
             />
           </div>
         </div>
