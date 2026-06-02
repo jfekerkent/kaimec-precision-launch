@@ -245,6 +245,7 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { i
 export default function CoveredPipeProfileFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));

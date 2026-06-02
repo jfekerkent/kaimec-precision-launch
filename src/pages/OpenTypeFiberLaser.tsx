@@ -184,6 +184,7 @@ function scrollToQuote(e: React.MouseEvent) {
 export default function OpenTypeFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
