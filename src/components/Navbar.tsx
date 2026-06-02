@@ -37,8 +37,6 @@ export default function Navbar() {
   const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
   const [drillOpen, setDrillOpen] = useState(false);
   const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
-  const [quotesOpen, setQuotesOpen] = useState(false);
-  const [mobileQuotesOpen, setMobileQuotesOpen] = useState(false);
   const location = useLocation();
 
   return (
