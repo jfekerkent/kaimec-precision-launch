@@ -221,7 +221,7 @@ export default function OpenTypeFiberLaser() {
                 <li className="text-black">3,6 or 12kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
+                <Button size="lg" className="font-bold px-8" onClick={() => navigate("/quotations")}>
                   Request a Quote
                 </Button>
                 <Button
@@ -462,7 +462,7 @@ export default function OpenTypeFiberLaser() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <Button size="lg" className="font-bold px-10" onClick={scrollToQuote}>
+            <Button size="lg" className="font-bold px-10" onClick={() => navigate("/quotations")}>
               Request a Quote
             </Button>
           </div>
