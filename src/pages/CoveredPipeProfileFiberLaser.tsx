@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
@@ -245,6 +245,7 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model }: { i
 export default function CoveredPipeProfileFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
@@ -281,7 +282,7 @@ export default function CoveredPipeProfileFiberLaser() {
                 <li>3,6, 12, 20kW laser power</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="font-bold px-8 bg-blue-900 hover:bg-blue-800" onClick={scrollToQuote}>
+                <Button size="lg" className="font-bold px-8 bg-blue-900 hover:bg-blue-800" onClick={() => navigate("/quotations")}>
                   Request a Quote
                 </Button>
                 <Button
@@ -590,7 +591,7 @@ export default function CoveredPipeProfileFiberLaser() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <Button size="lg" className="font-bold px-10" onClick={scrollToQuote}>
+            <Button size="lg" className="font-bold px-10" onClick={() => navigate("/quotations")}>
               Request a Quote
             </Button>
           </div>

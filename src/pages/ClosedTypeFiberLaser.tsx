@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
@@ -156,6 +156,7 @@ function scrollToSpecs(e: React.MouseEvent) {
 export default function ClosedTypeFiberLaser() {
   const [unit, setUnit] = useState<Unit>("metric");
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     if (location.hash) {
       const el = document.getElementById(location.hash.slice(1));
@@ -195,7 +196,7 @@ export default function ClosedTypeFiberLaser() {
                 <li>6 , 12, 20, 30, 50 kW laser powers<br />. &nbsp; &nbsp;2 (two) exchange tables</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="font-bold px-8" onClick={scrollToQuote}>
+                <Button size="lg" className="font-bold px-8" onClick={() => navigate("/quotations")}>
                   Request a Quote
                 </Button>
                 <Button
@@ -479,7 +480,7 @@ export default function ClosedTypeFiberLaser() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Button
                 size="lg"
-                onClick={scrollToQuote}
+                onClick={() => navigate("/quotations")}
                 className="font-bold px-8 bg-secondary text-white hover:bg-secondary/90"
               >
                 Request a Quote
