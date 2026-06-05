@@ -196,7 +196,7 @@ export default function Quotations() {
           {/* Accessories */}
           <div className="mt-16">
             <div className="max-w-3xl mb-8">
-              <p className="section-label mb-3 text-primary">Optional Accessories</p>
+              <p className="section-label mb-3 text-primary">Recommended Optional Accessories</p>
               <h2 className="text-2xl md:text-3xl font-black text-foreground">
                 Enhance Your Setup
               </h2>
