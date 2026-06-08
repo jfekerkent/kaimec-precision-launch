@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { MapPin, Phone, Smartphone, Globe, User } from "lucide-react";
+import etgiLogo from "@/assets/etgi-logo.png.asset.json";
 
 export default function Dealers() {
   return (
@@ -32,6 +33,14 @@ export default function Dealers() {
 
           <div className="grid gap-8 md:grid-cols-2">
             <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
+                <img
+                  src={etgiLogo.url}
+                  alt="Executive Technologies Group Inc. (ETGI) logo"
+                  className="h-auto w-full max-w-xs object-contain"
+                  loading="lazy"
+                />
+              </div>
               <h3 className="text-xl md:text-2xl font-black uppercase text-foreground tracking-tight mb-2">
                 Executive Technologies Group Inc.
               </h3>
