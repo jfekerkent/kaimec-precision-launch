@@ -129,9 +129,7 @@ export default function Quotations() {
             Quotations
           </h1>
           <p className="text-white/70 max-w-2xl text-lg">
-            Select the machines you are interested in and request a detailed quotation.
-            Our sales team will provide competitive pricing and flexible financing options tailored
-            to your production needs.
+            Select the machine you are interested in.
           </p>
         </div>
       </section>
