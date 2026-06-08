@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { MapPin, Phone, Smartphone, Globe, User } from "lucide-react";
 import etgiLogo from "@/assets/etgi-logo.png.asset.json";
+import dhmLogo from "@/assets/dhm-logo.png.asset.json";
 
 export default function Dealers() {
   return (
@@ -84,6 +85,69 @@ export default function Dealers() {
                   >
                     <Globe className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
                     <span>www.etgi.ca</span>
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Mexico */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container">
+          <p className="section-label mb-3">Mexico</p>
+          <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-10 tracking-tight">
+            Mexico
+          </h2>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <article className="rounded-lg border border-border bg-card p-8 shadow-sm">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
+                <img
+                  src={dhmLogo.url}
+                  alt="DHM Tools logo"
+                  className="h-auto w-full max-w-xs object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-xl md:text-2xl font-black uppercase text-foreground tracking-tight mb-2">
+                DHM Tools
+              </h3>
+              <p className="text-sm font-semibold text-primary mb-6">
+                Authorized KAIMEC Dealer — Mexico
+              </p>
+
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex gap-3">
+                  <User className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                  <span>
+                    <span className="font-semibold text-foreground">Luis Dominguez</span> — Director General
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                  <span>
+                    Av. Nicolas Gogol #11342 Bodega 34<br />
+                    Compleja Industrial Chihuahua<br />
+                    C.P 31136, Chihuahua, Mexico
+                  </span>
+                </li>
+                <li>
+                  <a href="tel:+526142054617" className="flex gap-3 hover:text-primary transition-colors">
+                    <Phone className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                    <span>Tel: 614 205 4617</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.dhmtools.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-3 hover:text-primary transition-colors"
+                  >
+                    <Globe className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+                    <span>www.dhmtools.com</span>
                   </a>
                 </li>
               </ul>
