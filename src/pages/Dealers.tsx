@@ -27,13 +27,14 @@ export default function Dealers() {
       {/* Dealers list */}
       <section className="py-20 md:py-28 bg-card">
         <div className="container">
-          <p className="section-label mb-3">Canada</p>
+          <p className="section-label mb-3">Our Network</p>
           <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-10 tracking-tight">
-            Canada
+            Authorized Dealers
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 items-start">
             <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
+              <p className="section-label mb-3">Canada</p>
               <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
                 <img
                   src={etgiLogo.url}
@@ -89,20 +90,9 @@ export default function Dealers() {
                 </li>
               </ul>
             </article>
-          </div>
-        </div>
-      </section>
 
-      {/* Mexico */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container">
-          <p className="section-label mb-3">Mexico</p>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-10 tracking-tight">
-            Mexico
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            <article className="rounded-lg border border-border bg-card p-8 shadow-sm">
+            <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
+              <p className="section-label mb-3">Mexico</p>
               <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
                 <img
                   src={dhmLogo.url}
