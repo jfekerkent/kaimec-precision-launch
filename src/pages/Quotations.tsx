@@ -149,6 +149,15 @@ export default function Quotations() {
             </p>
           </div>
 
+          {selected.size > 1 && (
+            <Alert variant="destructive" className="mb-8 max-w-3xl">
+              <AlertTriangle className="h-4 w-4" />
+              <AlertDescription>
+                Please select only one machine
+              </AlertDescription>
+            </Alert>
+          )}
+
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => {
               const isSelected = selected.has(m.id);
