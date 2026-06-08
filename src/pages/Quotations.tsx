@@ -145,7 +145,7 @@ export default function Quotations() {
               Choose Your Configuration
             </h2>
             <p className="text-muted-foreground text-lg mt-3">
-              Click on the machines below to select the models you want quoted.
+              Click on the boxes below to select the model you want quoted.
             </p>
           </div>
 
