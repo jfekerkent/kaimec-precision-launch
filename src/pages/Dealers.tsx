@@ -39,7 +39,7 @@ export default function Dealers() {
                 <img
                   src={etgiLogo.url}
                   alt="Executive Technologies Group Inc. (ETGI) logo"
-                  className="h-auto w-full max-w-xs object-contain"
+                  className="h-auto w-full max-w-[200px] object-contain"
                   loading="lazy"
                 />
               </div>
