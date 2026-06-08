@@ -1,26 +1,30 @@
-## Goal
+## Plan
 
-Replace the current phone number `(562) 350-2071` with the new main number `+1 (949) 543-1508` across the site, while keeping the original 562 number only on the Consultation page "Prefer to Just Call?" section (salesperson direct line).
+### Goal
+Add a "Dealers" navigation item under the "More" dropdown and create a dedicated page listing the Canada dealer (Marco Franchitto / Executive Technologies Group Inc.).
 
-## Files to update (replace 562-350-2071 → 949-543-1508)
+### Changes
 
-- `src/components/Navbar.tsx` — top bar phone link
-- `src/components/Footer.tsx` — contact list phone link
-- `src/pages/Quote.tsx` — Contact Information card
-- `src/pages/Faq.tsx` — "Call …" CTA button
-- `src/pages/GunDrills.tsx` — secondary CTA label/href and bottom "CALL …" link
-- `src/pages/FlcP1530.tsx` — sidebar phone button
-- `src/pages/ClosedTypeFiberLaser.tsx` — phone link
-- `src/pages/Eblast1.tsx` — phone link
-- `src/hooks/useChat.ts` — both chat error fallback strings
-- `src/agent/system-prompt.md` and `supabase/functions/chat/system-prompt.md` / `system-prompt.ts` — all references in the agent's contact lines
+1. **New Page — `src/pages/Dealers.tsx`**
+   - Use the existing `Layout` wrapper (Navbar + Footer + `pt-24` main).
+   - Follow the visual style of `About.tsx` (section labels, uppercase headings, card/grid layouts).
+   - Display the Canada dealer entry with all provided details:
+     - Name: Marco Franchitto – President
+     - Company: Executive Technologies Group Inc.
+     - Address: 7-1455 Britannia Rd E. | Mississauga | Ontario | L4W 1C7
+     - Office: 289-212-ETGI(3844)
+     - Mobile: 416-951-7800
+     - Website: www.etgi.ca
 
-Display format: `(949) 543-1508`. `tel:` href: `tel:+19495431508`.
+2. **Routing — `src/App.tsx`**
+   - Add `import Dealers from "./pages/Dealers";`
+   - Add `<Route path="/dealers" element={<Dealers />} />` inside `<Routes>`.
 
-## Files to leave unchanged
+3. **Navbar — `src/components/Navbar.tsx`**
+   - Append `{ label: "Dealers", to: "/dealers" }` to the `moreLinks` array so it appears in both desktop and mobile "More" dropdowns.
 
-- `src/pages/Consultation.tsx` — "Prefer to Just Call?" keeps `562-350-2071` (salesperson direct).
-
-## Verification
-
-Re-run `rg "562|949"` after edits to confirm only Consultation.tsx still holds the 562 number and all other locations show the new 949 number.
+### Out of scope (unless requested)
+- Adding dealer to Footer quick-links.
+- SEO meta tags beyond basic `<title>` / `<meta name="description">`.
+- Multiple dealer cards / regional filters.
+- Contact form on the dealers page.
