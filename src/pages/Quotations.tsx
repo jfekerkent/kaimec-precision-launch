@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Check, ChevronRight } from "lucide-react";
+import { AlertTriangle, Check, ChevronRight } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
@@ -147,6 +148,15 @@ export default function Quotations() {
               Click on the machines below to select the models you want quoted.
             </p>
           </div>
+
+          {selected.size > 1 && (
+            <Alert variant="destructive" className="mb-8 max-w-3xl">
+              <AlertTriangle className="h-4 w-4" />
+              <AlertDescription>
+                Please select only one machine
+              </AlertDescription>
+            </Alert>
+          )}
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => {
