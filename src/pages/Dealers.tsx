@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { MapPin, Phone, Smartphone, Globe, User } from "lucide-react";
 import etgiLogo from "@/assets/etgi-logo.png.asset.json";
+import dhmLogo from "@/assets/dhm-logo.png.asset.json";
 
 export default function Dealers() {
   return (
