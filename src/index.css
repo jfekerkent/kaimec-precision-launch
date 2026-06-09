@@ -80,4 +80,14 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .hero-background-video::-webkit-media-controls,
+  .hero-background-video::-webkit-media-controls-panel,
+  .hero-background-video::-webkit-media-controls-play-button,
+  .hero-background-video::-webkit-media-controls-start-playback-button,
+  .hero-background-video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
