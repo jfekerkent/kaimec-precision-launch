@@ -48,12 +48,7 @@ export default function HeroLeadForm() {
       .catch((err) => console.error("EmailJS team error:", err));
 
     emailjs
-      .send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_REPLY_TEMPLATE,
-        { to_email: email, to_name: name },
-        EMAILJS_PUBLIC_KEY,
-      )
+      .send(EMAILJS_SERVICE_ID, EMAILJS_REPLY_TEMPLATE, { to_email: email, to_name: name }, EMAILJS_PUBLIC_KEY)
       .catch((err) => console.error("EmailJS reply error:", err));
 
     try {
@@ -85,9 +80,7 @@ export default function HeroLeadForm() {
 
   return (
     <div className="w-full max-w-sm">
-      <p className="text-white/85 italic text-sm mb-3">
-        Tell us what you need — we'll get back to you asap.
-      </p>
+      <p className="text-white/85 italic text-sm mb-3">Tell us what you need — we'll get back to you asap.</p>
       <form
         onSubmit={handleSubmit}
         className="w-full rounded-xl bg-black/[0.55] backdrop-blur-[8px] border border-white/[0.12] p-5 md:py-6 md:px-6 space-y-3"
