@@ -46,7 +46,7 @@ const FlcP1530 = () => {
               </div>
 
               <div className="flex flex-col gap-4">
-                <Link to="/quote" className="w-full">
+                <Link to={`/quote?machine=${encodeURIComponent("FLO-P 1530 Pallet Changer Laser")}`} className="w-full">
                   <button className="w-full bg-primary text-white py-3 px-6 rounded-lg font-bold hover:bg-primary/90 transition-colors flex items-center justify-center">
                     Request a Quote <ArrowRight className="ml-2 h-4 w-4" />
                   </button>

@@ -116,7 +116,7 @@ export default function GunDrillingMachines() {
                 <li><strong>Drilling Depth:</strong> 500 mm (20.0 in)</li>
               </ul>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Link to="/quote?machine=Gun-Drilling-Machine">
+                <Link to={`/quote?machine=${encodeURIComponent("Gun Drill")}`}>
                   <Button size="lg" className="font-bold tracking-wide bg-[#F5A623] text-[#1a1a1a] hover:bg-[#f4b347] px-6">
                     REQUEST QUOTE →
                   </Button>
@@ -142,7 +142,7 @@ export default function GunDrillingMachines() {
           <p className="text-[#1a1a1a]/90 mb-8 text-lg">
             Tell us your hole diameter, depth, and material — we'll come back with the right machine.
           </p>
-          <Link to="/quote">
+          <Link to={`/quote?machine=${encodeURIComponent("Gun Drill")}`}>
             <Button size="lg" className="font-bold tracking-wide bg-[#1a1a1a] text-white hover:bg-[#1a1a1a]/90 px-8">
               REQUEST FOR INFO →
             </Button>

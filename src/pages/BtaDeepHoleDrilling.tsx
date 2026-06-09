@@ -162,7 +162,7 @@ export default function BtaDeepHoleDrilling() {
                 ))}
               </ul>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Link to="/quote?machine=TSK-2150">
+                <Link to={`/quote?machine=${encodeURIComponent("Gun Drill")}`}>
                   <Button size="lg" className="font-bold tracking-wide bg-[#F5A623] text-[#1a1a1a] hover:bg-[#f4b347] px-6">
                     REQUEST TSK QUOTE →
                   </Button>
@@ -188,7 +188,7 @@ export default function BtaDeepHoleDrilling() {
           <p className="text-[#1a1a1a]/90 mb-8 text-lg">
             Send us your part drawing and target tolerances — we'll spec the right machine and tooling.
           </p>
-          <Link to="/quote">
+          <Link to={`/quote?machine=${encodeURIComponent("Gun Drill")}`}>
             <Button size="lg" className="font-bold tracking-wide bg-[#1a1a1a] text-white hover:bg-[#1a1a1a]/90 px-8">
               REQUEST FOR INFO →
             </Button>
