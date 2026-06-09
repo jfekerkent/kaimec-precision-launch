@@ -20,8 +20,7 @@ const HUBSPOT_ENDPOINT =
 const priorityOptions = [
   "Immediate",
   "Within 3 Months",
-  "Budgeting",
-  "Information Request",
+  "Budgeting / Information Request",
 ];
 
 const machineOptions = [
@@ -127,9 +126,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       ["phone", formData.phone],
       ["company", formData.companyName],
       ["address", formData.address],
-      ["machine_requested", machineOfInterest],
+      ["machine_of_interest", machineOfInterest],
       ["accessories_selected", accessoriesSelected],
-      ["machine_of_interest", machineOfInterest ? machineOfInterest : ""],
       ["accessories_of_interest", accessories.join(", ")],
       ["priority_of_interest", formData.priority],
       ["message", formData.message],
