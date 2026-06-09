@@ -35,11 +35,11 @@ export default function Dealers() {
           <div className="grid gap-8 md:grid-cols-2 items-start">
             <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
               <p className="section-label mb-3">Canada</p>
-              <div className="mb-6 flex items-center justify-center rounded-md bg-black p-6">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-black p-6 h-40">
                 <img
                   src={etgiLogo}
                   alt="Executive Technologies Group Inc. (ETGI) logo"
-                  className="h-auto w-full max-w-[240px] object-contain"
+                  className="h-full w-auto max-w-[200px] object-contain"
                   loading="lazy"
                 />
               </div>
@@ -93,11 +93,11 @@ export default function Dealers() {
 
             <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
               <p className="section-label mb-3">Mexico</p>
-              <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6 h-40">
                 <img
                   src={dhmLogo}
                   alt="DHM Tools logo"
-                  className="h-auto w-full max-w-xs object-contain"
+                  className="h-full w-auto max-w-[200px] object-contain"
                   loading="lazy"
                 />
               </div>
