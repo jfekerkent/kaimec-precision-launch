@@ -22,7 +22,7 @@ import slideFloP2040b from "@/assets/slideshow-flo-p-2040-2.png";
 import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
 import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
 import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const facilitySlides = [
   slideFlo1530,
@@ -72,7 +72,7 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <video
-            src={heroVideo.url}
+            src={heroVideo}
             autoPlay
             muted
             loop
