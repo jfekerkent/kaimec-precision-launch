@@ -35,12 +35,8 @@ const machineOptions = [
 ] as const;
 
 const accessoryOptions = [
-  "Fume Extractor / Air Filtration",
-  "Rotary Axis Attachment",
-  "Auto Sheet Feeder / Loader",
-  "Conveyor System",
-  "Chiller Unit",
-  "Red Dot Pointer",
+  "Dust / Smoke Collector",
+  "Screw Type Air Compressor (30HP with Refrigerated Dryer)",
 ] as const;
 
 function detectMachineFromPath(pathname: string): string {
