@@ -1,55 +1,26 @@
 ## Goal
-Fix the hero background video so:
-1. No YouTube branding ever flashes (no title bar, no big play/pause button, no spinner).
-2. The video looks higher quality (sharper, less compressed).
 
-## Why the current setup looks bad
-The hero uses a YouTube embed (`/embed/jUQt7jNPrh8?...`). Even with `controls=0&modestbranding=1`, YouTube still shows:
-- A brief title/branding bar at the very start before autoplay kicks in
-- A center play/pause button on the first frame
-- A low-bitrate stream — YouTube embeds auto-pick quality based on player size and there is no reliable parameter to force HD
+Switch the dealer logos and hero video from Lovable's CDN (`.asset.json` pointers) back to real binary files that Vite bundles into `dist/`, so they work when hosted on cPanel.
 
-There is no YouTube embed parameter combination that fully removes those overlays — it's a platform limitation.
+## Files affected
 
-## Recommended approach: self-hosted MP4
-Replace the YouTube iframe with a native HTML5 `<video>` tag using a self-hosted MP4 served from Lovable's CDN (asset pointer). This gives:
-- Zero branding, zero buttons, no spinner — ever
-- Full control over bitrate/quality
-- Faster first paint (no YouTube player bootstrap)
-- True `autoplay muted loop playsinline` behavior
+- `src/assets/dhm-logo.png.asset.json` → delete, replace with real `src/assets/dhm-logo.png`
+- `src/assets/etgi-logo.png.asset.json` → delete, replace with real `src/assets/etgi-logo.png`
+- `src/assets/hero-video.mp4.asset.json` → delete, replace with real `src/assets/hero-video.mp4`
+- `src/pages/Dealers.tsx` → import the PNGs directly (`import dhmLogo from "@/assets/dhm-logo.png"`) instead of reading the `.asset.json`
+- `src/pages/Index.tsx` → import the MP4 directly instead of reading the `.asset.json`
 
-### What I need from you
-Either:
-- **(A)** Upload the source MP4 of that video (drag into chat). I'll push it to the CDN and wire it up.
-- **(B)** Confirm it's okay for me to download the YouTube video `jUQt7jNPrh8` as an MP4 and host it on the CDN (only do this if you own/have rights to that footage — it's your KAIMEC content, correct?).
+## Steps
 
-Target encoding: 1080p H.264, ~4–6 Mbps, no audio track (since it's muted anyway — cuts file size in half).
+1. Download each binary from its current CDN URL (stored in the `.asset.json` files) into `src/assets/` with the real extension.
+2. Delete the three `.asset.json` pointer files.
+3. Update `Dealers.tsx` and `Index.tsx` so the imports point at the real files and the `src=` attributes use the imported variable directly (no `.url` lookup).
+4. Run the build to confirm Vite emits hashed copies of the logos and video into `dist/assets/`.
 
-## Implementation steps (after you confirm)
-1. Obtain the MP4 source (your upload or downloaded from your YouTube).
-2. If needed, re-encode to a web-optimized 1080p MP4 with `+faststart` and audio stripped.
-3. Upload via `lovable-assets` → get `src/assets/hero-video.mp4.asset.json`.
-4. In `src/pages/Index.tsx` (lines 73–89), replace the `<iframe>` with:
-   ```tsx
-   <video
-     src={heroVideo.url}
-     autoPlay muted loop playsInline
-     preload="auto"
-     style={{ position:"absolute", top:"50%", left:"50%",
-              transform:"translate(-50%,-50%)",
-              width:"177.78vh", minWidth:"100%",
-              height:"56.25vw", minHeight:"100%",
-              objectFit:"cover", border:0, zIndex:0,
-              pointerEvents:"none" }}
-   />
-   ```
-5. Keep the existing dark gradient overlay (line 90–93) unchanged.
-6. Apply the same treatment to the second hero/video on the page (line 187) only if you also want that one swapped — let me know.
+## After this lands
 
-## Fallback (if you'd rather stay on YouTube)
-I can stack a black `<div>` over the iframe for the first ~1 second to mask YouTube's startup branding, but the player still occasionally shows a pause icon on hover/tap and quality won't improve. Not recommended.
+You'll need to redeploy the new `dist/` to cPanel and hard-refresh (Ctrl+Shift+R) to clear the old broken URLs from your browser cache. The Lovable preview will keep working too — Vite-bundled assets work on every host.
 
-## Decision needed
-1. Approve switching to a self-hosted MP4? (yes / no)
-2. Will you upload the MP4, or should I pull it from YouTube?
-3. Apply the same fix to the second video (line 187) too?
+## Note
+
+This is the reverse of Lovable's default "migrate to CDN" workflow. The trade-off is a slightly larger repo and `dist/` in exchange for host-portability. If you ever move fully to Lovable hosting, we can flip back to the CDN pointers.
