@@ -22,6 +22,7 @@ import slideFloP2040b from "@/assets/slideshow-flo-p-2040-2.png";
 import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
 import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
 import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const facilitySlides = [
   slideFlo1530,
