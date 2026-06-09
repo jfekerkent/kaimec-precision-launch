@@ -22,6 +22,7 @@ import slideFloP2040b from "@/assets/slideshow-flo-p-2040-2.png";
 import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
 import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
 import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const facilitySlides = [
   slideFlo1530,
@@ -70,9 +71,13 @@ export default function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/jUQt7jNPrh8?autoplay=1&mute=1&loop=1&playlist=jUQt7jNPrh8&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
-            allow="autoplay; encrypted-media"
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             style={{
               position: "absolute",
               top: "50%",
@@ -82,6 +87,7 @@ export default function Index() {
               minWidth: "100%",
               height: "56.25vw",
               minHeight: "100%",
+              objectFit: "cover",
               pointerEvents: "none",
               border: 0,
               zIndex: 0,
