@@ -23,6 +23,7 @@ import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
 import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
 import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
 import heroVideo from "@/assets/hero-video.mp4";
+import heroLogo from "@/assets/kaimec-logo-hero.png";
 
 const facilitySlides = [
   slideFlo1530,
@@ -122,6 +123,11 @@ export default function Index() {
         </div>
         <div className="container relative z-10 py-28 md:py-40">
           <div className="max-w-2xl">
+            <img
+              src={heroLogo}
+              alt="KAIMEC"
+              className="mb-6 h-20 md:h-28 w-auto drop-shadow-lg"
+            />
             <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision Fabrication Machines... From Factory-Direct to Your Floor.</p>
             <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f6f5ef]">
               European high-speed laser cutting machines and CNC press brakes
