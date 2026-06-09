@@ -91,32 +91,41 @@ export default function QuoteMachine() {
               Press here to see the price of the machine and accessories
             </Button>
             {showPrice && machine && (
-              <div className="bg-card border border-border rounded-lg p-6">
-                <p className="section-label mb-3 text-primary">Indicative Pricing</p>
-                <ul className="space-y-2 text-foreground">
-                  {machine.price != null && (
-                    <li className="flex justify-between gap-4">
-                      <span className="font-semibold">{machine.name}</span>
-                      <span>${machine.price.toLocaleString()} FOB Tustin, CA</span>
-                    </li>
-                  )}
-                  <li className="text-sm text-muted-foreground pl-2">
-                    <span className="font-semibold text-foreground">Included: </span>
-                    5x10ft travels, Auto nesting, Auto collision protection, Edge finding, Fly cutting, Yaskawa servo motors, 24/7 online USA support, Installation and training, heater/chiller, 220 or 480 volt regulating transformer
-                  </li>
-                  <li className="flex justify-between gap-4">
-                    <span>+ Dust Collector</span>
-                    <span>$22,000</span>
-                  </li>
-                  <li className="flex justify-between gap-4">
-                    <span>+ Special Air Compressor</span>
-                    <span>$22,000</span>
-                  </li>
-                </ul>
-                <p className="text-xs text-muted-foreground mt-4">
-                  Fill in information on the box on the right hand side to get an official detailed quote
-                </p>
-              </div>
+              (() => {
+                const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
+                const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
+                const total = (machine.price ?? 0) + accessoriesTotal;
+                return (
+                  <div className="bg-card border border-border rounded-lg p-6">
+                    <p className="section-label mb-3 text-primary">Indicative Pricing</p>
+                    <ul className="space-y-2 text-foreground">
+                      {machine.price != null && (
+                        <li className="flex justify-between gap-4">
+                          <span className="font-semibold">{machine.name}</span>
+                          <span>${machine.price.toLocaleString()} FOB Tustin, CA</span>
+                        </li>
+                      )}
+                      <li className="text-sm text-muted-foreground pl-2">
+                        <span className="font-semibold text-foreground">Included: </span>
+                        5x10ft travels, Auto nesting, Auto collision protection, Edge finding, Fly cutting, Yaskawa servo motors, 24/7 online USA support, Installation and training, heater/chiller, 220 or 480 volt regulating transformer
+                      </li>
+                      {selectedAccessories.map((a) => (
+                        <li key={a.label} className="flex justify-between gap-4">
+                          <span>+ {a.label}</span>
+                          <span>${a.price.toLocaleString()}</span>
+                        </li>
+                      ))}
+                      <li className="flex justify-between gap-4 border-t border-border pt-3 mt-2 font-bold">
+                        <span>Total</span>
+                        <span>${total.toLocaleString()} FOB Tustin, CA</span>
+                      </li>
+                    </ul>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Fill in information on the box on the right hand side to get an official detailed quote
+                    </p>
+                  </div>
+                );
+              })()
             )}
           </div>
 

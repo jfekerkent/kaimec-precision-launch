@@ -1,30 +1,22 @@
-## Plan
+## Add total price to quote breakdown
 
-### Goal
-Add a "Dealers" navigation item under the "More" dropdown and create a dedicated page listing the Canada dealer (Marco Franchitto / Executive Technologies Group Inc.).
+On the machine quote page (`src/pages/QuoteMachine.tsx`), under the "Indicative Pricing" list, add a **Total** row that sums:
 
-### Changes
+- The machine base price (e.g. FLO-1530 x 3kW → $75,000)
+- Only the accessories the user actually selected on the Quotations page (passed via the `?accessories=` query string), matched against the existing `accessoryPrices` table:
+  - Dust / Smoke Collector → $22,000
+  - Screw Type Air Compressor → $22,000
 
-1. **New Page — `src/pages/Dealers.tsx`**
-   - Use the existing `Layout` wrapper (Navbar + Footer + `pt-24` main).
-   - Follow the visual style of `About.tsx` (section labels, uppercase headings, card/grid layouts).
-   - Display the Canada dealer entry with all provided details:
-     - Name: Marco Franchitto – President
-     - Company: Executive Technologies Group Inc.
-     - Address: 7-1455 Britannia Rd E. | Mississauga | Ontario | L4W 1C7
-     - Office: 289-212-ETGI(3844)
-     - Mobile: 416-951-7800
-     - Website: www.etgi.ca
+### Display
 
-2. **Routing — `src/App.tsx`**
-   - Add `import Dealers from "./pages/Dealers";`
-   - Add `<Route path="/dealers" element={<Dealers />} />` inside `<Routes>`.
+- Show line items only for selected accessories (currently both are hardcoded; will change to conditional based on `accessories` query param).
+- Append a bold `Total: $XX,XXX FOB Tustin, CA` row with a top border separator.
+- Keep the "Fill in information…" helper text below it.
 
-3. **Navbar — `src/components/Navbar.tsx`**
-   - Append `{ label: "Dealers", to: "/dealers" }` to the `moreLinks` array so it appears in both desktop and mobile "More" dropdowns.
+### Example outputs
 
-### Out of scope (unless requested)
-- Adding dealer to Footer quick-links.
-- SEO meta tags beyond basic `<title>` / `<meta name="description">`.
-- Multiple dealer cards / regional filters.
-- Contact form on the dealers page.
+- Machine only: Total = $75,000
+- Machine + Dust Collector: Total = $97,000
+- Machine + both accessories: Total = $119,000
+
+No backend or pricing-data changes — purely a presentation update in `QuoteMachine.tsx`.
