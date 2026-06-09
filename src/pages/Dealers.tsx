@@ -35,7 +35,7 @@ export default function Dealers() {
           <div className="grid gap-8 md:grid-cols-2 items-start">
             <article className="rounded-lg border border-border bg-background p-8 shadow-sm">
               <p className="section-label mb-3">Canada</p>
-              <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
+              <div className="mb-6 flex items-center justify-center rounded-md bg-black p-6">
                 <img
                   src={etgiLogo.url}
                   alt="Executive Technologies Group Inc. (ETGI) logo"
