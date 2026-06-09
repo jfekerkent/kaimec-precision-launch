@@ -1,22 +1,33 @@
-## Add total price to quote breakdown
+## Summary
+Split the combined `machine` string into two separate HubSpot fields while leaving the EmailJS submission and visible form unchanged.
 
-On the machine quote page (`src/pages/QuoteMachine.tsx`), under the "Indicative Pricing" list, add a **Total** row that sums:
+## Details
+In `src/components/RequestInfoForm.tsx`, inside the `submitToHubspot` function:
 
-- The machine base price (e.g. FLO-1530 x 3kW → $75,000)
-- Only the accessories the user actually selected on the Quotations page (passed via the `?accessories=` query string), matched against the existing `accessoryPrices` table:
-  - Dust / Smoke Collector → $22,000
-  - Screw Type Air Compressor → $22,000
+1. Before building the `map` array, split `formData.machine` on `" + "` (space-plus-space):
+   - `const separator = " + ";`
+   - `const machineValue = formData.machine;`
+   - `const splitIndex = machineValue.indexOf(separator);`
 
-### Display
+2. Determine the two values:
+   - If `splitIndex !== -1`:
+     - `machine_of_interest = machineValue.slice(0, splitIndex)`
+     - `accessories_selected = machineValue.slice(splitIndex + separator.length)`
+   - Else:
+     - `machine_of_interest = machineValue`
+     - `accessories_selected = "None"`
 
-- Show line items only for selected accessories (currently both are hardcoded; will change to conditional based on `accessories` query param).
-- Append a bold `Total: $XX,XXX FOB Tustin, CA` row with a top border separator.
-- Keep the "Fill in information…" helper text below it.
+3. Update the `map` array so that:
+   - `machine_of_interest` maps to the computed `machine_of_interest` value
+   - Add a new entry `accessories_selected` mapping to the computed `accessories_selected` value
 
-### Example outputs
+## What stays the same
+- `emailVars` and both `emailjs.send` calls continue to use `formData.machine` (the full combined string).
+- No visible form field changes.
+- No other submission logic changes.
 
-- Machine only: Total = $75,000
-- Machine + Dust Collector: Total = $97,000
-- Machine + both accessories: Total = $119,000
-
-No backend or pricing-data changes — purely a presentation update in `QuoteMachine.tsx`.
+## Acceptance criteria
+- Machine + accessories → HubSpot: `Machine of Interest` = machine model, `Accessories Selected` = accessories.
+- Machine only → HubSpot: `Machine of Interest` = machine model, `Accessories Selected` = "None".
+- EmailJS email still shows the full combined string.
+- No console errors.
