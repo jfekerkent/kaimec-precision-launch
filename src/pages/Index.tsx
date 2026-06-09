@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -57,7 +57,17 @@ const whyPoints = [
 ];
 
 export default function Index() {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [slideIdx, setSlideIdx] = useState(0);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.controls = false;
+    video.muted = true;
+    video.play().catch(() => undefined);
+  }, []);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -72,12 +82,24 @@ export default function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <video
+            ref={heroVideoRef}
             src={heroVideo}
             autoPlay
             muted
             loop
             playsInline
+            controls={false}
+            disablePictureInPicture
+            disableRemotePlayback
+            aria-hidden="true"
+            tabIndex={-1}
             preload="auto"
+            className="hero-background-video"
+            onContextMenu={(event) => event.preventDefault()}
+            onLoadedMetadata={(event) => {
+              event.currentTarget.controls = false;
+              event.currentTarget.play().catch(() => undefined);
+            }}
             style={{
               position: "absolute",
               top: "50%",
@@ -192,7 +214,7 @@ export default function Index() {
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/fa_p1uCkvIo?autoplay=1&mute=1&loop=1&playlist=fa_p1uCkvIo&controls=1&modestbranding=1&playsinline=1&rel=0"
+              src="https://www.youtube.com/embed/fa_p1uCkvIo?autoplay=1&mute=1&loop=1&playlist=fa_p1uCkvIo&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&vq=hd1080"
               title="Open Type Fiber Laser in action"
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
