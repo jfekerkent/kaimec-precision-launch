@@ -110,13 +110,13 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     const separator = " + ";
     const machineValue = formData.machine;
     const splitIndex = machineValue.indexOf(separator);
-    let machineOfInterest: string;
+    let parsedMachine: string;
     let accessoriesSelected: string;
     if (splitIndex !== -1) {
-      machineOfInterest = machineValue.slice(0, splitIndex);
+      parsedMachine = machineValue.slice(0, splitIndex);
       accessoriesSelected = machineValue.slice(splitIndex + separator.length);
     } else {
-      machineOfInterest = machineValue;
+      parsedMachine = machineValue;
       accessoriesSelected = "None";
     }
     const map: Array<[string, string]> = [
