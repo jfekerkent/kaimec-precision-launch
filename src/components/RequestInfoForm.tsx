@@ -86,7 +86,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       ["phone", formData.phone],
       ["company", formData.companyName],
       ["address", formData.address],
-      ["machine_of_interest", machineOfInterest],
+      ["machine_requested", machineOfInterest],
       ["accessories_selected", accessoriesSelected],
       ["priority_of_interest", formData.priority],
       ["message", formData.message],
