@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { MapPin, Phone, Smartphone, Globe, User } from "lucide-react";
-import etgiLogo from "@/assets/etgi-logo.png.asset.json";
-import dhmLogo from "@/assets/dhm-logo.png.asset.json";
+import etgiLogo from "@/assets/etgi-logo.png";
+import dhmLogo from "@/assets/dhm-logo.png";
 
 export default function Dealers() {
   return (
@@ -37,7 +37,7 @@ export default function Dealers() {
               <p className="section-label mb-3">Canada</p>
               <div className="mb-6 flex items-center justify-center rounded-md bg-black p-6">
                 <img
-                  src={etgiLogo.url}
+                  src={etgiLogo}
                   alt="Executive Technologies Group Inc. (ETGI) logo"
                   className="h-auto w-full max-w-[240px] object-contain"
                   loading="lazy"
@@ -95,7 +95,7 @@ export default function Dealers() {
               <p className="section-label mb-3">Mexico</p>
               <div className="mb-6 flex items-center justify-center rounded-md bg-secondary p-6">
                 <img
-                  src={dhmLogo.url}
+                  src={dhmLogo}
                   alt="DHM Tools logo"
                   className="h-auto w-full max-w-xs object-contain"
                   loading="lazy"
