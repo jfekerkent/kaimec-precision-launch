@@ -59,7 +59,7 @@ export default function HeroLeadForm() {
     try {
       const hsq = (window as unknown as { _hsq?: unknown[] })._hsq;
       if (hsq) {
-        hsq.push(["identify", { email, firstname: name, machine_of_interest: machineVal }]);
+        hsq.push(["identify", { email, firstname: name }]);
         hsq.push(["trackPageView"]);
       }
     } catch (err) {
