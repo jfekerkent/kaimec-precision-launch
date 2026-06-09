@@ -67,6 +67,18 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       firstName = fullName.slice(0, spaceIdx).trim();
       lastName = fullName.slice(spaceIdx + 1).trim();
     }
+    const separator = " + ";
+    const machineValue = formData.machine;
+    const splitIndex = machineValue.indexOf(separator);
+    let machineOfInterest: string;
+    let accessoriesSelected: string;
+    if (splitIndex !== -1) {
+      machineOfInterest = machineValue.slice(0, splitIndex);
+      accessoriesSelected = machineValue.slice(splitIndex + separator.length);
+    } else {
+      machineOfInterest = machineValue;
+      accessoriesSelected = "None";
+    }
     const map: Array<[string, string]> = [
       ["firstname", firstName],
       ["lastname", lastName],
@@ -74,7 +86,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       ["phone", formData.phone],
       ["company", formData.companyName],
       ["address", formData.address],
-      ["machine_of_interest", formData.machine],
+      ["machine_of_interest", machineOfInterest],
+      ["accessories_selected", accessoriesSelected],
       ["priority_of_interest", formData.priority],
       ["message", formData.message],
     ];
