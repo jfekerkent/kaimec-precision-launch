@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle } from "lucide-react";
 
 const EMAILJS_SERVICE_ID    = "service_oiwu4ak";
@@ -23,6 +24,36 @@ const priorityOptions = [
   "Information Request",
 ];
 
+const machineOptions = [
+  "FLO-1530 Open Type Fiber Laser",
+  "FLC-1530 Closed Type Fiber Laser",
+  "FLO-P 1530 Pallet Changer Laser",
+  "Tube & Profile Laser",
+  "Press Brake",
+  "Gun Drill",
+  "Multiple / Not sure yet",
+] as const;
+
+const accessoryOptions = [
+  "Fume Extractor / Air Filtration",
+  "Rotary Axis Attachment",
+  "Auto Sheet Feeder / Loader",
+  "Conveyor System",
+  "Chiller Unit",
+  "Red Dot Pointer",
+] as const;
+
+function detectMachineFromPath(pathname: string): string {
+  const p = pathname.toLowerCase();
+  if (p.includes("flc-p") || p.includes("flo-p") || p.includes("pallet")) return "FLO-P 1530 Pallet Changer Laser";
+  if (p.includes("open-type") || p.includes("flo-1530")) return "FLO-1530 Open Type Fiber Laser";
+  if (p.includes("closed-type") || p.includes("flc-1530")) return "FLC-1530 Closed Type Fiber Laser";
+  if (p.includes("tube") || p.includes("profile") || p.includes("covered-pipe")) return "Tube & Profile Laser";
+  if (p.includes("press-brake")) return "Press Brake";
+  if (p.includes("gun-drill") || p.includes("bta-deep")) return "Gun Drill";
+  return "";
+}
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Props {
@@ -31,8 +62,18 @@ interface Props {
 
 export default function RequestInfoForm({ machine: machineProp }: Props) {
   const [searchParams] = useSearchParams();
+  const location = useLocation();
   const queryMachine = searchParams.get("machine") || "";
   const resolveMachine = () => machineProp || queryMachine || "General Inquiry";
+
+  const resolveMachineOfInterest = (): string => {
+    const fromQuery = (searchParams.get("machine") || "").trim();
+    if (fromQuery && (machineOptions as readonly string[]).includes(fromQuery)) return fromQuery;
+    const fromRoute = detectMachineFromPath(location.pathname);
+    if (fromRoute) return fromRoute;
+    if (machineProp && (machineOptions as readonly string[]).includes(machineProp)) return machineProp;
+    return "";
+  };
 
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,11 +88,15 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     priority: "",
     message: "",
   });
+  const [machineOfInterest, setMachineOfInterest] = useState<string>(resolveMachineOfInterest());
+  const [accessories, setAccessories] = useState<string[]>([]);
+  const [machineError, setMachineError] = useState("");
 
   useEffect(() => {
     setFormData((p) => ({ ...p, machine: resolveMachine() }));
+    setMachineOfInterest((prev) => prev || resolveMachineOfInterest());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [machineProp, queryMachine]);
+  }, [machineProp, queryMachine, location.pathname]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -88,6 +133,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       ["address", formData.address],
       ["machine_requested", machineOfInterest],
       ["accessories_selected", accessoriesSelected],
+      ["machine_of_interest", machineOfInterest ? machineOfInterest : ""],
+      ["accessories_of_interest", accessories.join(", ")],
       ["priority_of_interest", formData.priority],
       ["message", formData.message],
     ];
@@ -122,6 +169,11 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!machineOfInterest) {
+      setMachineError("Please select a machine of interest.");
+      return;
+    }
+    setMachineError("");
     setIsLoading(true);
     setError("");
 
@@ -134,6 +186,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       machine: formData.machine,
       priority: formData.priority,
       message: formData.message,
+      machine_of_interest: machineOfInterest,
+      accessories_of_interest: accessories.join(", "),
     };
 
     const emailjsPromise = (async () => {
@@ -145,6 +199,8 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
           name: formData.name,
           email: formData.email,
           machine: formData.machine,
+          machine_of_interest: machineOfInterest,
+          accessories_of_interest: accessories.join(", "),
         },
         EMAILJS_PUBLIC_KEY,
       );
@@ -178,7 +234,7 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
   }
 
   const emailValid = EMAIL_REGEX.test(formData.email.trim());
-  const submitDisabled = isLoading || !formData.name.trim() || !emailValid;
+  const submitDisabled = isLoading || !formData.name.trim() || !emailValid || !machineOfInterest;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -217,6 +273,55 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
       <div>
         <Label htmlFor="address" className="text-sm font-medium text-foreground mb-1.5 block">Address</Label>
         <Input id="address" name="address" placeholder="Street, City, State, Country" value={formData.address} onChange={handleChange} className="bg-card border-border" />
+      </div>
+
+      {/* Machine of Interest */}
+      <div>
+        <Label className="text-sm font-medium text-foreground mb-1.5 block">
+          Machine of Interest <span className="text-red-500">*</span>
+        </Label>
+        <Select
+          value={machineOfInterest}
+          onValueChange={(v) => {
+            setMachineOfInterest(v);
+            if (v) setMachineError("");
+          }}
+        >
+          <SelectTrigger className="bg-card border-border">
+            <SelectValue placeholder="Select a machine" />
+          </SelectTrigger>
+          <SelectContent>
+            {machineOptions.map((o) => (
+              <SelectItem key={o} value={o}>{o}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {machineError && <p className="text-red-500 text-sm mt-1">{machineError}</p>}
+      </div>
+
+      {/* Accessories of Interest */}
+      <div>
+        <Label className="text-sm font-medium text-foreground mb-1.5 block">
+          Accessories of Interest (optional)
+        </Label>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {accessoryOptions.map((opt) => {
+            const checked = accessories.includes(opt);
+            return (
+              <label key={opt} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                <Checkbox
+                  checked={checked}
+                  onCheckedChange={(c) => {
+                    setAccessories((prev) =>
+                      c ? [...prev, opt] : prev.filter((a) => a !== opt),
+                    );
+                  }}
+                />
+                <span>{opt}</span>
+              </label>
+            );
+          })}
+        </div>
       </div>
 
       {/* Priority of Interest */}
