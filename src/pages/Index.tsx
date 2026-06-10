@@ -211,14 +211,15 @@ export default function Index() {
             <p className="section-label mb-3 text-3xl">KAIMEC LASER CUTTING MACHINES IN ACTION</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">{"\n"}</h2>
           </div>
-          <div className="aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border shadow-lg">
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/fa_p1uCkvIo?autoplay=1&mute=1&loop=1&playlist=fa_p1uCkvIo&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&vq=hd1080"
+              src="https://www.youtube.com/embed/fa_p1uCkvIo?autoplay=1&mute=1&loop=1&playlist=fa_p1uCkvIo&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&vq=hd1080"
               title="Open Type Fiber Laser in action"
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             />
+            <div className="absolute inset-0 pointer-events-none" aria-hidden="true" />
           </div>
         </div>
       </section>
