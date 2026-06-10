@@ -219,7 +219,16 @@ export default function Index() {
               allow="autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
             />
-            <div className="absolute inset-0 pointer-events-none" aria-hidden="true" />
+            <div
+              aria-hidden="true"
+              className="absolute top-0 left-0 right-0 pointer-events-none"
+              style={{ height: "80px", backgroundColor: "#f8f8f8", zIndex: 10 }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 left-0 right-0 pointer-events-none"
+              style={{ height: "50px", backgroundColor: "#f8f8f8", zIndex: 10 }}
+            />
           </div>
         </div>
       </section>
