@@ -10,9 +10,9 @@ const EMAILJS_PUBLIC_KEY = "auMQyoP8IUFm3ImJd";
 const MACHINE_OPTIONS = [
   "Fiber Laser Cutting Machine",
   "CNC Press Brake",
-  "Gun & BTA Drilling Machine",
-  "Mekotek Machine",
-  "Kent Machine",
+  "Tube & Profile Laser",
+  "Gun Drill / BTA Drilling",
+  "General Inquiry",
   "Not sure yet",
 ];
 
