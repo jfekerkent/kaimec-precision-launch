@@ -1,26 +1,14 @@
-## Goal
+## Plan: Robot avatar for Kaimec chat agent
 
-Switch the dealer logos and hero video from Lovable's CDN (`.asset.json` pointers) back to real binary files that Vite bundles into `dist/`, so they work when hosted on cPanel.
+Replace the generic `MessageCircle` icon on the floating chat button and add a matching avatar in the chat header so the agent has a clear visual identity.
 
-## Files affected
+### Steps
+1. Generate a robot mascot image (friendly industrial-style robot head, transparent PNG on clean background, matching the brand's `#F5A623` / dark `#1a1a1a` palette) and save to `src/assets/chat-robot.png`.
+2. Update `src/components/chat/KaimecChatAgent.tsx`:
+   - Import the new image.
+   - Replace the `MessageCircle` icon inside the closed floating launcher button with an `<img>` of the robot (keep the round orange button, button size, position, and aria-label unchanged).
+   - Add a small circular robot avatar next to the "Kaimec Product Expert" title in the open chat header.
+3. No other files, routes, EmailJS, or chat logic touched.
 
-- `src/assets/dhm-logo.png.asset.json` → delete, replace with real `src/assets/dhm-logo.png`
-- `src/assets/etgi-logo.png.asset.json` → delete, replace with real `src/assets/etgi-logo.png`
-- `src/assets/hero-video.mp4.asset.json` → delete, replace with real `src/assets/hero-video.mp4`
-- `src/pages/Dealers.tsx` → import the PNGs directly (`import dhmLogo from "@/assets/dhm-logo.png"`) instead of reading the `.asset.json`
-- `src/pages/Index.tsx` → import the MP4 directly instead of reading the `.asset.json`
-
-## Steps
-
-1. Download each binary from its current CDN URL (stored in the `.asset.json` files) into `src/assets/` with the real extension.
-2. Delete the three `.asset.json` pointer files.
-3. Update `Dealers.tsx` and `Index.tsx` so the imports point at the real files and the `src=` attributes use the imported variable directly (no `.url` lookup).
-4. Run the build to confirm Vite emits hashed copies of the logos and video into `dist/assets/`.
-
-## After this lands
-
-You'll need to redeploy the new `dist/` to cPanel and hard-refresh (Ctrl+Shift+R) to clear the old broken URLs from your browser cache. The Lovable preview will keep working too — Vite-bundled assets work on every host.
-
-## Note
-
-This is the reverse of Lovable's default "migrate to CDN" workflow. The trade-off is a slightly larger repo and `dist/` in exchange for host-portability. If you ever move fully to Lovable hosting, we can flip back to the CDN pointers.
+### Open question
+Do you want the robot to fully replace the orange circular button (image-only, no background), or keep the orange circle with the robot inside it (current style, just swap the icon)? Default if unspecified: keep the orange circle with the robot inside.

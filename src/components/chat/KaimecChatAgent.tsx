@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, RotateCcw } from "lucide-react";
+import { X, Send, RotateCcw } from "lucide-react";
 import { useKaimecChat } from "@/hooks/useChat";
 import ConsultCTA from "./ConsultCTA";
+import chatRobot from "@/assets/chat-robot.png";
 
 export default function KaimecChatAgent() {
   const [open, setOpen] = useState(false);
@@ -28,16 +29,33 @@ export default function KaimecChatAgent() {
           onClick={() => setOpen(true)}
           className="fixed bottom-6 right-6 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#F5A623] shadow-lg transition-transform hover:scale-105"
         >
-          <MessageCircle className="h-6 w-6" color="#1a1a1a" />
+          <img
+            src={chatRobot}
+            alt="Kaimec chat robot"
+            width={512}
+            height={512}
+            loading="lazy"
+            className="h-10 w-10 object-contain"
+          />
         </button>
       )}
 
       {open && (
         <div className="fixed bottom-6 right-6 z-[60] flex h-[560px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-white/10 bg-[#1a1a1a] text-white shadow-2xl">
           <header className="flex items-center justify-between border-b border-white/10 bg-[#111] px-4 py-3">
-            <div>
-              <div className="text-sm font-semibold text-[#F5A623]">Kaimec Product Expert</div>
-              <div className="text-xs text-white/60">Typically replies instantly</div>
+            <div className="flex items-center gap-2">
+              <img
+                src={chatRobot}
+                alt="Kaimec chat robot"
+                width={512}
+                height={512}
+                loading="lazy"
+                className="h-9 w-9 rounded-full bg-[#F5A623] object-contain p-1"
+              />
+              <div>
+                <div className="text-sm font-semibold text-[#F5A623]">Kaimec Product Expert</div>
+                <div className="text-xs text-white/60">Typically replies instantly</div>
+              </div>
             </div>
             <div className="flex items-center gap-1">
               <button
