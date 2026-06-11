@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Wrench, Users, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Wrench, Users, CheckCircle, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
