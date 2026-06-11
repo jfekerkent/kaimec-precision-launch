@@ -21,6 +21,7 @@ import slideFlp6020New from "@/assets/slide-flp-6020.png.asset.json";
 import slideFlc15304 from "@/assets/slide-flc-1530-4.png.asset.json";
 import slideFlo2040New from "@/assets/slide-flo-2040.png.asset.json";
 import laserCuttingVideo from "@/assets/laser-cutting.mp4.asset.json";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const facilitySlides = [
   slideFlo1530New.url,
@@ -208,12 +209,17 @@ export default function Index() {
             <h2 className="text-3xl md:text-4xl font-black text-foreground">{"\n"}</h2>
           </div>
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
-            <iframe
-              src="https://www.youtube.com/embed/jUQt7jNPrh8?autoplay=1&mute=1&loop=1&playlist=jUQt7jNPrh8&controls=0&modestbranding=1&rel=0&playsinline=1"
-              title="KAIMEC Laser Cutting Machines in Action"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
+            <video
+              src={heroVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              disablePictureInPicture
+              aria-label="KAIMEC Laser Cutting Machines in Action"
+              className="absolute inset-0 w-full h-full object-cover"
+              onContextMenu={(event) => event.preventDefault()}
             />
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
           </div>
