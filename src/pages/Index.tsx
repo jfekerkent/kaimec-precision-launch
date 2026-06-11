@@ -210,6 +210,7 @@ export default function Index() {
           </div>
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
+              id="kaimec-action-video"
               src={mekotekVideo.url}
               autoPlay
               muted
@@ -220,6 +221,32 @@ export default function Index() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
+          </div>
+          <div className="mt-6 rounded-lg bg-white border border-border p-5 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">Chapters</p>
+            <ul className="space-y-2 text-sm">
+              {[
+                { time: 0, label: "0:00 – 0:25  Fly cutting" },
+                { time: 55, label: "0:55  Finished result" },
+                { time: 70, label: "1:10  Pipe cutting (FLP pipe-cutting attachment)" },
+              ].map((c) => (
+                <li key={c.time}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const v = document.getElementById("kaimec-action-video") as HTMLVideoElement | null;
+                      if (v) {
+                        v.currentTime = c.time;
+                        v.play().catch(() => {});
+                      }
+                    }}
+                    className="text-left text-foreground hover:text-primary font-medium"
+                  >
+                    {c.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
