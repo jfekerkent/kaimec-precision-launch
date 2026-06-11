@@ -222,31 +222,50 @@ export default function Index() {
             />
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
           </div>
-          <div className="mt-6 rounded-lg bg-white border border-border p-5 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">Chapters</p>
-            <ul className="space-y-2 text-sm">
+          <div className="mt-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Video Chapters</span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { time: 0, label: "0:00 – 0:25  Fly cutting" },
-                { time: 55, label: "0:55  Finished result" },
-                { time: 70, label: "1:10  Pipe cutting (FLP pipe-cutting attachment)" },
-              ].map((c) => (
-                <li key={c.time}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const v = document.getElementById("kaimec-action-video") as HTMLVideoElement | null;
-                      if (v) {
-                        v.currentTime = c.time;
-                        v.play().catch(() => {});
-                      }
-                    }}
-                    className="text-left text-foreground hover:text-primary font-medium"
-                  >
-                    {c.label}
-                  </button>
-                </li>
+                { time: 0, stamp: "0:00", end: "0:25", title: "Fly Cutting", desc: "High-speed sheet metal cutting" },
+                { time: 55, stamp: "0:55", end: null, title: "Finished Result", desc: "Clean, precise cut parts" },
+                { time: 70, stamp: "1:10", end: null, title: "Pipe Cutting", desc: "FLP pipe-cutting attachment" },
+              ].map((c, i) => (
+                <button
+                  key={c.time}
+                  type="button"
+                  onClick={() => {
+                    const v = document.getElementById("kaimec-action-video") as HTMLVideoElement | null;
+                    if (v) {
+                      v.currentTime = c.time;
+                      v.play().catch(() => {});
+                    }
+                  }}
+                  className="group relative text-left rounded-xl border border-border bg-white p-5 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-200"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-sm shadow-sm">
+                      <Play className="w-4 h-4" />
+                    </span>
+                    <div>
+                      <span className="block text-lg font-black text-foreground leading-none">
+                        {c.stamp}{c.end ? ` – ${c.end}` : ""}
+                      </span>
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-primary mt-0.5 block">
+                        Chapter {i + 1}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="font-bold text-foreground text-[15px] leading-snug mb-1">{c.title}</p>
+                  <p className="text-sm text-muted-foreground leading-snug">{c.desc}</p>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl" />
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
