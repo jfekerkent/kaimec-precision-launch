@@ -209,13 +209,22 @@ export default function Index() {
             <h2 className="text-3xl md:text-4xl font-black text-foreground">{"\n"}</h2>
           </div>
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
-            <iframe
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-              style={{ width: "100%", height: "130%" }}
-              src="https://www.youtube.com/embed/fa_p1uCkvIo?autoplay=1&mute=1&loop=1&playlist=fa_p1uCkvIo&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&vq=hd1080"
-              title="Open Type Fiber Laser in action"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
+            <video
+              src={laserCuttingVideo.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              controls={false}
+              disablePictureInPicture
+              disableRemotePlayback
+              onLoadedMetadata={(e) => {
+                const v = e.currentTarget;
+                v.controls = false;
+                v.play().catch(() => {});
+              }}
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
           </div>
