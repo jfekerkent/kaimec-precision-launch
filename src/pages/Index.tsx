@@ -13,27 +13,23 @@ import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
 import facilityImg from "@/assets/flc-p-2040.png";
-import slideFlc1530 from "@/assets/slideshow-flc-1530.png";
-import slideFlcP1530 from "@/assets/slideshow-flc-p-1530.jpg";
-import slideFlo1530 from "@/assets/slideshow-flo-1530.png";
-import slideFloP1530 from "@/assets/slideshow-flo-p-1530.png";
-import slideFloP2040a from "@/assets/slideshow-flo-p-2040-1.png";
-import slideFloP2040b from "@/assets/slideshow-flo-p-2040-2.png";
-import slideFloP2040c from "@/assets/slideshow-flo-p-2040-4.png";
-import slideFlp6020 from "@/assets/slideshow-flp-6020.png";
-import slideFlo2060 from "@/assets/slideshow-flo-2060.avif";
+import slideFlo1530New from "@/assets/slide-flo-1530-6kw.png.asset.json";
+import slideFlc1530New from "@/assets/slide-flc-1530-6kw.jpg.asset.json";
+import slideFlo2060New from "@/assets/slide-flo-2060.avif.asset.json";
+import slideMkt1560 from "@/assets/slide-mkt-1560.jpg.asset.json";
+import slideFlp6020New from "@/assets/slide-flp-6020.png.asset.json";
+import slideFlc15304 from "@/assets/slide-flc-1530-4.png.asset.json";
+import slideFlo2040New from "@/assets/slide-flo-2040.png.asset.json";
 import heroVideo from "@/assets/hero-video.mp4";
 
 const facilitySlides = [
-  slideFlo1530,
-  slideFlc1530,
-  slideFloP1530,
-  slideFlcP1530,
-  slideFloP2040a,
-  slideFloP2040b,
-  slideFloP2040c,
-  slideFlp6020,
-  slideFlo2060,
+  slideFlo1530New.url,
+  slideFlc1530New.url,
+  slideFlo2060New.url,
+  slideMkt1560.url,
+  slideFlp6020New.url,
+  slideFlc15304.url,
+  slideFlo2040New.url,
 ];
 
 const featuredMachines = [
