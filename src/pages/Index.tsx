@@ -215,11 +215,9 @@ export default function Index() {
               muted
               loop
               playsInline
-              controls={false}
-              disablePictureInPicture
+              controls
               aria-label="KAIMEC Laser Cutting Machines in Action"
               className="absolute inset-0 w-full h-full object-cover"
-              onContextMenu={(event) => event.preventDefault()}
             />
             <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
           </div>
