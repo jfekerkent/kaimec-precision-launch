@@ -21,7 +21,7 @@ import slideFlp6020New from "@/assets/slide-flp-6020.png.asset.json";
 import slideFlc15304 from "@/assets/slide-flc-1530-4.png.asset.json";
 import slideFlo2040New from "@/assets/slide-flo-2040.png.asset.json";
 import laserCuttingVideo from "@/assets/laser-cutting.mp4.asset.json";
-import heroVideo from "@/assets/hero-video.mp4";
+import mekotekVideo from "@/assets/mekotek-flc-p-1530.mp4.asset.json";
 
 const facilitySlides = [
   slideFlo1530New.url,
@@ -210,7 +210,7 @@ export default function Index() {
           </div>
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
-              src={heroVideo}
+              src={mekotekVideo.url}
               autoPlay
               muted
               loop
