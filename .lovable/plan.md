@@ -1,27 +1,48 @@
-## Plan
+## Goal
+Replace the YouTube embed in the "Kaimec Laser Cutting Machines in Action" section with a self-hosted MP4 — instant autoplay, muted loop, no chrome — matching the hero video's behavior.
 
-Replace the image slideshow on the left of the "The machines your shop needs..." heading (the "Why KAIMEC" section in `src/pages/Index.tsx`) with the 6 newly uploaded machine images.
+## Processing (no re-encode)
+Using `ffmpeg -c copy` (stream copy, zero quality loss):
 
-### Steps
+1. Trim an **8-second** clip starting at `00:00:49` from the uploaded source.
+2. **Strip audio** (video is muted anyway).
+3. Add `+faststart` so the moov atom is at the front and playback can start before the file fully downloads.
 
-1. Upload the 6 attached images to Lovable Assets CDN via `lovable-assets create` and write `.asset.json` pointer files into `src/assets/`:
-   - `slide-flo-1530-6kw.png.asset.json` (FLO_1530_X_6KW-2.png)
-   - `slide-flc-1530-6kw.jpg.asset.json` (FLC_1530_6KW-2.jpg)
-   - `slide-flo-2060.avif.asset.json` (mekotek-flo-2060...avif)
-   - `slide-mkt-1560.jpg.asset.json` (mkt-1560.jpg)
-   - `slide-flp-6020.png.asset.json` (FLP-6020-3.png)
-   - `slide-flc-1530-4.png.asset.json` (FLC-1530-4-7.png)
-   - `slide-flo-2040.png.asset.json` (FLO-2040-2-2.png)
+No re-encoding — the video bytes are bit-for-bit identical to the source. Expected size for an 8-second slice at 14.6 Mbps: roughly **14–15 MB**.
 
-   (Note: 6 images attached + 1 avif file = 7 total. I'll include all 7.)
+Heads-up: that's significantly heavier than the hero video, so first paint of the clip on slow connections will be slower than the hero. If load feels sluggish once you see it, we can re-run with a light CRF 20 pass (visually identical, ~4 MB) without touching anything else.
 
-2. In `src/pages/Index.tsx`:
-   - Remove the 9 existing `slideshow-*` imports.
-   - Import the 7 new `.asset.json` pointers and reference `.url`.
-   - Replace the `facilitySlides` array with the 7 new image URLs.
-   - Keep the same 1-second rotation, layout, sizing, and section structure unchanged.
+## Upload
+Push the trimmed MP4 to the Lovable Assets CDN and write an `.asset.json` pointer at `src/assets/laser-cutting.mp4.asset.json`.
 
-3. No other sections, components, AI chatbot, EmailJS config, navigation, or product pages will be touched.
+## Code change — `src/pages/Index.tsx` (lines 210–220 only)
 
-### Open question
-The current slideshow has 9 slides; you've uploaded 7 images. I'll replace all 9 with the 7 new ones (the slideshow will simply cycle through 7). Confirm if you'd rather keep some of the existing slides mixed in.
+Swap the YouTube `<iframe>` for a `<video>` mirroring the hero's exact config:
+
+```tsx
+<video
+  src={laserCuttingVideo.url}
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  controls={false}
+  disablePictureInPicture
+  disableRemotePlayback
+  onLoadedMetadata={(e) => {
+    const v = e.currentTarget;
+    v.controls = false;
+    v.play().catch(() => {});
+  }}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+```
+
+Wrapper (`relative aspect-video rounded-xl shadow-2xl ring-1 ring-black/5 bg-black`) stays exactly as-is. No other section is touched.
+
+## Untouched
+Hero video, AI chatbot, EmailJS, HubSpot form, navigation, all product pages, every other homepage section, and the video container styling/cropping.
+
+## Verify
+Run `bun run build`, then check the preview to confirm the clip autoplays instantly and loops cleanly at the 8-second mark.
