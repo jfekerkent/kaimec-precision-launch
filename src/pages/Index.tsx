@@ -21,6 +21,7 @@ import slideFlp6020New from "@/assets/slide-flp-6020.png.asset.json";
 import slideFlc15304 from "@/assets/slide-flc-1530-4.png.asset.json";
 import slideFlo2040New from "@/assets/slide-flo-2040.png.asset.json";
 import heroVideo from "@/assets/hero-video.mp4";
+import laserCuttingVideo from "@/assets/laser-cutting.mp4.asset.json";
 
 const facilitySlides = [
   slideFlo1530New.url,
