@@ -156,8 +156,7 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash-cyan"
                 >
                   More
                   <ChevronDown
