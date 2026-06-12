@@ -82,9 +82,6 @@ export default function QuoteSummary() {
                       className="w-full h-auto max-h-[280px] object-contain"
                     />
                   </div>
-                  <div className="mt-3 pt-3 border-t border-border text-center">
-                    <p className="text-sm text-muted-foreground">Indicative pricing</p>
-                  </div>
                 </div>
               ))}
             </div>
