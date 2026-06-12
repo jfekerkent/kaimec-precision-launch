@@ -60,8 +60,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-red"
                 >
                   Home
                 </Link>
@@ -72,8 +71,7 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash-blue"
                 >
                   Laser Cutting machines
                   <ChevronDown
@@ -101,8 +99,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-green"
                 >
                   {pressBrakesLink.label}
                 </Link>
@@ -110,8 +107,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-orange"
                 >
                   Quotations
                 </Link>
@@ -122,8 +118,7 @@ export default function Navbar() {
                 onMouseLeave={() => setDrillOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash-purple"
                 >
                   Gun & BTA Drilling Machines
                   <ChevronDown
@@ -152,7 +147,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                    className="text-xs font-bold whitespace-nowrap animate-nav-flash-pink"
                   >
                     {link.label}
                   </Link>
@@ -161,8 +156,7 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash-cyan"
                 >
                   More
                   <ChevronDown
@@ -193,20 +187,20 @@ export default function Navbar() {
             <div className="flex items-center gap-3 xl:gap-4 ml-3">
               <a
                 href="tel:+19495431508"
-                className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
+                className="flex items-center gap-2 text-teal-600 hover:text-teal-500 transition-colors whitespace-nowrap animate-nav-flash-teal"
               >
                 <Phone className="h-4 w-4" />
                 <span className="text-sm font-medium">(949) 543-1508</span>
               </a>
               <Link
                 to="/consultation"
-                className="inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
+                className="inline-flex items-center justify-center px-4 py-2 border border-amber-500 text-sm font-semibold text-amber-600 hover:bg-amber-50 transition-colors rounded-md whitespace-nowrap animate-nav-flash-amber"
               >
                 Talk to an Expert
               </Link>
               <Link
                 to="/quote"
-                className="inline-flex items-center justify-center px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white text-sm font-bold tracking-wide rounded-md shadow-lg shadow-rose-500/20 transition-all hover:-translate-y-0.5 whitespace-nowrap animate-nav-flash-rose"
               >
                 Request Info
               </Link>

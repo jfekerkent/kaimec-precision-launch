@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kaimec-industrial-hub.lovable.app/request-info</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://kaimec-industrial-hub.lovable.app/consultation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -57,6 +62,26 @@
   </url>
   <url>
     <loc>https://kaimec-industrial-hub.lovable.app/machines/gun-drills</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaimec-industrial-hub.lovable.app/fiber-lasers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaimec-industrial-hub.lovable.app/tube-profile-lasers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaimec-industrial-hub.lovable.app/press-brakes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaimec-industrial-hub.lovable.app/gun-drills</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
