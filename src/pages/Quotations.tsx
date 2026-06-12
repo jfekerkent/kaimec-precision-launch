@@ -93,23 +93,16 @@ export default function Quotations() {
   };
 
   const handleRequestQuote = () => {
-    // If exactly one machine is selected, route to its dedicated quote sub-page
-    // (carrying any selected accessories along via query string).
-    if (selected.size === 1) {
-      const onlyId = Array.from(selected)[0];
-      const match = machines.find((m) => m.id === onlyId);
-      if (match) {
-        const acc = Array.from(selectedAccessories);
-        const qs = acc.length ? `?accessories=${encodeURIComponent(acc.join(", "))}` : "";
-        navigate(`/quotations/${match.slug}${qs}`);
-        return;
-      }
-    }
-    setShowForm(true);
-    setTimeout(() => {
-      const el = document.getElementById("quote-form");
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    // Route to the summary page with all selected machines + accessories.
+    const slugs = Array.from(selected)
+      .map((id) => machines.find((m) => m.id === id)?.slug)
+      .filter(Boolean) as string[];
+    if (slugs.length === 0) return;
+    const params = new URLSearchParams();
+    params.set("machines", slugs.join(","));
+    const acc = Array.from(selectedAccessories);
+    if (acc.length) params.set("accessories", acc.join(", "));
+    navigate(`/quotations/summary?${params.toString()}`);
   };
 
   const selectedMachines = Array.from(selected).join(", ");
@@ -147,15 +140,6 @@ export default function Quotations() {
               Click on the boxes below to select the model you want quoted.
             </p>
           </div>
-
-          {selected.size > 1 && (
-            <Alert variant="destructive" className="mb-8 max-w-3xl">
-              <AlertTriangle className="h-4 w-4" />
-              <AlertDescription>
-                Please select only one machine
-              </AlertDescription>
-            </Alert>
-          )}
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => {
