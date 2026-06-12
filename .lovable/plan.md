@@ -1,8 +1,11 @@
-## Remove navbar left/right margins
+## Replace FLP-6035 rollover images
 
-The navbar currently sits inside a `max-w-7xl mx-auto` container (`src/components/Navbar.tsx` line 45). On wide screens this creates white gutters on both sides.
+Mirror the FLP-6020 update for FLP-6035 on `/machines/tube-profile-lasers`.
 
-**Change:**
-- `src/components/Navbar.tsx`: Replace `max-w-7xl mx-auto` with just `w-full` on the inner container so nav content stretches edge-to-edge.
+**Steps**
+1. Upload the 3 attached images via `lovable-assets` and write pointer files to `src/assets/flp-6035-1.png.asset.json`, `flp-6035-2.png.asset.json`, `flp-6035-3.png.asset.json`.
+2. In `src/pages/TubeProfileLasers.tsx`:
+   - Replace the `flp6035Front` / `flp6035Side` imports with the 3 new `.asset.json` imports.
+   - Update the `kflp-6035` entry's `images` array to `[flp6035_1.url, flp6035_2.url, flp6035_3.url]`.
 
-No other styles or components will be touched.
+No other pages or styling touched.
