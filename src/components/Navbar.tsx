@@ -60,8 +60,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-red"
                 >
                   Home
                 </Link>
