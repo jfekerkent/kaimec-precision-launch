@@ -88,6 +88,7 @@ export default function HeroLeadForm() {
         <input
           type="text"
           required
+          aria-label="Your name"
           placeholder="Your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -96,6 +97,7 @@ export default function HeroLeadForm() {
         <input
           type="email"
           required
+          aria-label="Your email address"
           placeholder="Your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -103,6 +105,7 @@ export default function HeroLeadForm() {
         />
         <input
           type="tel"
+          aria-label="Phone number (optional)"
           placeholder="Phone number (optional)"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
@@ -110,6 +113,7 @@ export default function HeroLeadForm() {
         />
         <div className="relative">
           <select
+            aria-label="What are you looking for?"
             value={machine}
             onChange={(e) => setMachine(e.target.value)}
             className={`${inputBase} appearance-none pr-8`}
