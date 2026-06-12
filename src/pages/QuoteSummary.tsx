@@ -55,11 +55,8 @@ export default function QuoteSummary() {
           </nav>
           <p className="section-label mb-3 text-primary">Quote Request</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
-            Your Selection
+            The laser cutting machine and accessories selected
           </h1>
-          <p className="text-white/70 text-lg">
-            {selected.length} machine{selected.length > 1 ? "s" : ""} selected
-          </p>
         </div>
       </section>
 
