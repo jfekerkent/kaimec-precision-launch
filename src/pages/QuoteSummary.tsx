@@ -82,19 +82,6 @@ export default function QuoteSummary() {
                       alt={m.name}
                       className="absolute inset-0 w-full h-full object-contain p-3"
                     />
-                    {selectedAccessories.length > 0 && (
-                      <div className="absolute top-2 right-2 flex flex-col gap-1 z-10">
-                        {selectedAccessories.map((a) => (
-                          <img
-                            key={a.label}
-                            src={a.image}
-                            alt={a.label}
-                            title={a.label}
-                            className="w-10 h-10 object-contain bg-white/80 rounded border border-border/40 p-0.5"
-                          />
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
