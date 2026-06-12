@@ -13,7 +13,8 @@ import flc1530_12kwAsset from "@/assets/flc-1530-12kw-quote.png.asset.json";
 const flc1530_12kw = flc1530_12kwAsset.url;
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
-import dustCollectorImg from "@/assets/dust-collector.jpg";
+import dustCollectorAsset from "@/assets/dust-collector-v2.jpg.asset.json";
+const dustCollectorImg = dustCollectorAsset.url;
 import airCompressorImg from "@/assets/air-compressor.jpg";
 
 const machines = [
