@@ -20,10 +20,14 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
-import flo1530Slide1 from "@/assets/flo-1530-1.png";
-import flo1530Slide2 from "@/assets/flo-1530-2.png";
-import flo1530Slide3 from "@/assets/flo-1530-3.png";
-import flo1530Slide4 from "@/assets/flo-1530-4.png";
+import floTop1530A from "@/assets/flo-top-1530-a.png.asset.json";
+import floTop1530B from "@/assets/flo-top-1530-b.png.asset.json";
+import floTop1530C from "@/assets/flo-top-1530-c.png.asset.json";
+import floTop2040A from "@/assets/flo-top-2040-a.png.asset.json";
+import floTop2040B from "@/assets/flo-top-2040-b.png.asset.json";
+import floTop2040C from "@/assets/flo-top-2040-c.png.asset.json";
+import floTop2040D from "@/assets/flo-top-2040-d.png.asset.json";
+import floTop2060 from "@/assets/flo-top-2060.jpg.asset.json";
 import flo2040Img from "@/assets/machine-flo-2040.png";
 import flo2040Slide1 from "@/assets/flo-2040-1.png";
 import flo2040Slide2 from "@/assets/flo-2040-2.png";
@@ -42,7 +46,16 @@ import industryElevator from "@/assets/industry-elevator.avif";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
-const flo1530Slides = [flo1530Slide1, flo1530Slide2, flo1530Slide3, flo1530Slide4];
+const flo1530Slides = [
+  floTop1530A.url,
+  floTop1530B.url,
+  floTop1530C.url,
+  floTop2040A.url,
+  floTop2040B.url,
+  floTop2040C.url,
+  floTop2040D.url,
+  floTop2060.url,
+];
 const flo2040Slides = [flo2040Slide1, flo2040Slide2, flo2040Slide3];
 
 function Flo1530Slideshow() {
