@@ -105,7 +105,10 @@ export default function QuoteSummary() {
                 </li>
                 {selectedAccessories.map((a) => (
                   <li key={a.label} className="flex justify-between gap-4">
-                    <span>+ {a.label}</span>
+                    <span className="flex items-center gap-2">
+                      <img src={a.image} alt={a.label} className="w-8 h-8 object-contain rounded border border-border/40 p-0.5" />
+                      + {a.label}
+                    </span>
                     <span>${a.price.toLocaleString()}</span>
                   </li>
                 ))}
