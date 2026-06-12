@@ -77,7 +77,7 @@ export default function QuoteSummary() {
                   key={m.slug}
                   className="bg-white border border-border rounded-lg p-4 flex flex-col overflow-hidden"
                 >
-                  <div className="flex-1 flex items-center justify-center gap-4 min-h-0">
+                  <div className="flex items-center justify-center gap-4 min-h-[280px]">
                     <img
                       src={m.image}
                       alt={m.name}
