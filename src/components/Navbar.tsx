@@ -147,12 +147,11 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-              {navLinks.filter((l) => l.to !== "/").map((link, i) => (
+              {navLinks.filter((l) => l.to !== "/").map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
                     className="text-xs font-bold whitespace-nowrap"
-                    style={{ animationDelay: `${-0.75 - i * 0.15}s` }}
                   >
                     {link.label}
                   </Link>
