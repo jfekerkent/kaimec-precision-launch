@@ -187,7 +187,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3 xl:gap-4 ml-3">
               <a
                 href="tel:+19495431508"
-                className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
+                className="flex items-center gap-2 text-teal-600 hover:text-teal-500 transition-colors whitespace-nowrap animate-nav-flash-teal"
               >
                 <Phone className="h-4 w-4" />
                 <span className="text-sm font-medium">(949) 543-1508</span>
