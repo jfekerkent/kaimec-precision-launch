@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/kaimec-logo-light.png";
+import logoAsset from "@/assets/kaimec-logo-nav-v2.png.asset.json";
+const logoImg = logoAsset.url;
 
 const navLinks = [
   { label: "Home", to: "/" },
