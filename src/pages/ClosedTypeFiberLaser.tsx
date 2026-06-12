@@ -34,8 +34,36 @@ import remoteControlImg from "@/assets/remote-control.png";
 
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
+import closedFlc1 from "@/assets/closed-flc-1.jpg.asset.json";
+import closedFlc2 from "@/assets/closed-flc-2.png.asset.json";
+import closedFlc3 from "@/assets/closed-flc-3.png.asset.json";
+import closedFlc4 from "@/assets/closed-flc-4.png.asset.json";
+import closedFlc5 from "@/assets/closed-flc-5.png.asset.json";
+import closedFlc6 from "@/assets/closed-flc-6.png.asset.json";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
+
+function RotatingImage({ images, alt }: { images: string[]; alt: string }) {
+  const [hover, setHover] = useState(false);
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (!hover) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 1000);
+    return () => clearInterval(t);
+  }, [hover, images.length]);
+  useEffect(() => {
+    if (!hover) setIdx(0);
+  }, [hover]);
+  return (
+    <div
+      className="w-full h-full flex items-center justify-center"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <img src={images[idx]} alt={alt} className="w-full h-full object-contain transition-opacity duration-300" />
+    </div>
+  );
+}
 
 const features = [
   {
@@ -71,7 +99,7 @@ const features = [
 ];
 
 const models = [
-  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
+  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg, images: [closedFlc1.url, closedFlc2.url, closedFlc3.url, closedFlc4.url, closedFlc5.url, closedFlc6.url] },
   { id: "FLC-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: flc2040Img },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: flc2060Img },
 ];
@@ -276,7 +304,11 @@ export default function ClosedTypeFiberLaser() {
                 className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors flex flex-col"
               >
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                  <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
+                  {("images" in m && m.images) ? (
+                    <RotatingImage images={m.images as string[]} alt={m.id} />
+                  ) : (
+                    <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
+                  )}
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-black text-foreground mb-1">{m.id}</h3>
