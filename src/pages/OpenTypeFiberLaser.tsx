@@ -20,14 +20,13 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
-import floTop1530A from "@/assets/flo-top-1530-a.png.asset.json";
-import floTop1530B from "@/assets/flo-top-1530-b.png.asset.json";
-import floTop1530C from "@/assets/flo-top-1530-c.png.asset.json";
-import floTop2040A from "@/assets/flo-top-2040-a.png.asset.json";
-import floTop2040B from "@/assets/flo-top-2040-b.png.asset.json";
-import floTop2040C from "@/assets/flo-top-2040-c.png.asset.json";
-import floTop2040D from "@/assets/flo-top-2040-d.png.asset.json";
-import floTop2060 from "@/assets/flo-top-2060.jpg.asset.json";
+import floTop2_1530A from "@/assets/flo-top2-1530-a.png.asset.json";
+import floTop2_1530B from "@/assets/flo-top2-1530-b.png.asset.json";
+import floTop2_1530C from "@/assets/flo-top2-1530-c.png.asset.json";
+import floTop2_1530D from "@/assets/flo-top2-1530-d.png.asset.json";
+import floTop2_1530E from "@/assets/flo-top2-1530-e.png.asset.json";
+import floTop2_2060A from "@/assets/flo-top2-2060-a.jpg.asset.json";
+import floTop2_2060B from "@/assets/flo-top2-2060-b.jpg.asset.json";
 import flo2040ConfigAsset from "@/assets/flo2040-config.png.asset.json";
 const flo2040Img = flo2040ConfigAsset.url;
 import flo2040New1 from "@/assets/flo2040-new-1.png.asset.json";
@@ -50,14 +49,13 @@ import industryElevator from "@/assets/industry-elevator.avif";
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
 const flo1530Slides = [
-  floTop1530A.url,
-  floTop1530B.url,
-  floTop1530C.url,
-  floTop2040A.url,
-  floTop2040B.url,
-  floTop2040C.url,
-  floTop2040D.url,
-  floTop2060.url,
+  floTop2_1530A.url,
+  floTop2_1530B.url,
+  floTop2_1530C.url,
+  floTop2_1530D.url,
+  floTop2_1530E.url,
+  floTop2_2060A.url,
+  floTop2_2060B.url,
 ];
 const flo2040Slides = [flo2040New1.url, flo2040New2.url, flo2040New3.url, flo2040New4.url];
 
