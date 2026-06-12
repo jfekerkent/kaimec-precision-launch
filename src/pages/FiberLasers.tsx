@@ -67,6 +67,19 @@ export default function FiberLasers() {
   const [unit, setUnit] = useState<Unit>("metric");
   return (
     <Layout>
+      <Seo
+        title="CNC Fiber Laser Cutters | KAIMEC FLO & FLC Series"
+        description="Explore KAIMEC CNC fiber laser cutting machines — open and enclosed FLO and FLC models from 1.5kW to 30kW for sheet and pipe."
+        path="/machines/cnc-fiber-lasers"
+        type="product"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "KAIMEC CNC Fiber Laser Cutters",
+          url: "https://kaimec-industrial-hub.lovable.app/machines/cnc-fiber-lasers",
+          about: "CNC fiber laser cutting machines",
+        }}
+      />
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />
