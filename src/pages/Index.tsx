@@ -124,7 +124,7 @@ export default function Index() {
         path="/"
       />
       {/* Hero */}
-      <section className="relative overflow-hidden w-full aspect-video min-h-[480px] md:min-h-[560px] max-h-[80vh]">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <video
             ref={heroVideoRef}
@@ -152,7 +152,7 @@ export default function Index() {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: "center center",
+              objectPosition: "center 30%",
               pointerEvents: "none",
               border: 0,
               zIndex: 0,
@@ -163,9 +163,8 @@ export default function Index() {
             style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)", zIndex: 1 }}
           />
         </div>
-        <div className="absolute inset-0 z-10 flex items-center">
-          <div className="container">
-            <div className="max-w-2xl">
+        <div className="container relative z-10 py-28 md:py-40">
+          <div className="max-w-2xl">
             <p
               className="section-label mb-4"
               style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}
@@ -180,7 +179,6 @@ export default function Index() {
               engineers and California inventory.
             </p>
             <HeroLeadForm />
-            </div>
           </div>
         </div>
       </section>
