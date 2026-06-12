@@ -200,7 +200,7 @@ export default function Navbar() {
               </Link>
               <Link
                 to="/quote"
-                className="inline-flex items-center justify-center px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-4 py-2 bg-rose-500 hover:bg-rose-600 text-white text-sm font-bold tracking-wide rounded-md shadow-lg shadow-rose-500/20 transition-all hover:-translate-y-0.5 whitespace-nowrap animate-nav-flash-rose"
               >
                 Request Info
               </Link>
