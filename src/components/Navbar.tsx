@@ -118,8 +118,7 @@ export default function Navbar() {
                 onMouseLeave={() => setDrillOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash-purple"
                 >
                   Gun & BTA Drilling Machines
                   <ChevronDown
