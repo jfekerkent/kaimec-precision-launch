@@ -60,8 +60,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
                 >
                   Home
                 </Link>
@@ -101,8 +100,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
                 >
                   {pressBrakesLink.label}
                 </Link>
@@ -110,8 +108,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
                 >
                   Quotations
                 </Link>
@@ -152,7 +149,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                    className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
                   >
                     {link.label}
                   </Link>
