@@ -74,21 +74,21 @@ export default function QuoteSummary() {
                   key={m.slug}
                   className="bg-white border border-border rounded-lg p-4 flex flex-col overflow-hidden"
                 >
-                  <div className="flex items-center justify-center gap-1 min-h-[280px] w-fit mx-auto">
+                  <div className="relative w-full aspect-[4/3] bg-white flex items-center justify-center">
                     <img
                       src={m.image}
                       alt={m.name}
-                      className="max-w-full max-h-[200px] h-auto object-contain"
+                      className="absolute inset-0 w-full h-full object-contain p-3"
                     />
                     {selectedAccessories.length > 0 && (
-                      <div className="flex flex-col gap-1 w-12 shrink-0">
+                      <div className="absolute top-2 right-2 flex flex-col gap-1 z-10">
                         {selectedAccessories.map((a) => (
                           <img
                             key={a.label}
                             src={a.image}
                             alt={a.label}
                             title={a.label}
-                            className="max-w-full max-h-[50px] h-auto object-contain"
+                            className="w-10 h-10 object-contain bg-white/80 rounded border border-border/40 p-0.5"
                           />
                         ))}
                       </div>
