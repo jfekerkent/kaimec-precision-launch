@@ -147,7 +147,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                    className="text-xs font-bold whitespace-nowrap animate-nav-flash-pink"
                   >
                     {link.label}
                   </Link>
