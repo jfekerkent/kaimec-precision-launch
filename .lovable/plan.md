@@ -1,16 +1,39 @@
-# Make quote-summary machine images flush & same size
+# Redesign accessory cards on /quotations
 
-In `src/pages/QuoteSummary.tsx`, each selected machine card renders its image inside a `w-fit` wrapper with `max-h-[200px]` and `object-contain`. Because the wrapper sizes to the image, machines with different aspect ratios render at visibly different widths — the two cards end up mismatched.
+Scope: visual redesign of the two accessory cards (Dust / Smoke Collector, Screw Type Air Compressor) in `src/pages/Quotations.tsx` only. Selection state, query-string routing, machine cards, pricing logic in `QuoteSummary.tsx`, EmailJS/HubSpot/chat — all untouched.
 
-## Change
+## What changes
 
-Rewrite the image area of each card (lines ~77–96) so both cards share an **identical fixed-size image frame**:
+In `src/pages/Quotations.tsx`, replace the JSX inside the `accessories.map((a) => …)` block (lines ~198–245) with a new card layout. The `accessories` data array stays the same; we extend it locally with two new display-only fields:
 
-- Replace the `w-fit` flex wrapper with a full-width frame: `relative w-full aspect-[4/3] bg-white flex items-center justify-center`.
-- Make the main `<img>` fill that frame uniformly: `absolute inset-0 w-full h-full object-contain p-3`.
-- Move the accessory thumbnails out of the image flex row and into a small overlay strip in the top-right corner of the same frame (`absolute top-2 right-2 flex flex-col gap-1`), so the accessory column no longer steals horizontal space from the main image.
-- Keep the card container as-is otherwise so spacing matches the rest of the layout.
+- `displayPrice: string` — `"+$22,000"` for Dust Collector, `"+$8,500"` for Air Compressor (UI label only; does not alter `accessoryPrices` in `QuoteSummary.tsx`).
+- `shortSubtitle: string` — `"Pulse Filter Cartridge · Stand-alone Unit"` and `"30HP · With Refrigerated Dryer"`.
 
-Result: both cards have an identical image box (same width and height), each machine photo is centered and scaled uniformly, and accessory icons sit as small overlays — flush and consistent.
+Existing `toggleAccessory`, `selectedAccessories` Set, and the summary/CTA block remain unchanged.
 
-No data, pricing, or form changes.
+## New card structure (per accessory)
+
+Container: `<div>` (not a button) — `bg-[#111111] border rounded-lg overflow-hidden flex flex-col`, border `border-[#2a2a2a]` by default, `border-2 border-[#F5A623]` when selected.
+
+1. **Image** — `h-[180px] w-full bg-[#1a1a1a] flex items-center justify-center overflow-hidden`. Uses the existing `dustCollectorImg` / `airCompressorImg` with `object-cover w-full h-full`. (Both assets exist; no placeholder needed.)
+2. **Body** — `p-4 flex flex-col gap-3`:
+   - Name: `text-[18px] font-bold text-white leading-tight`
+   - Subtitle: `text-[13px] text-neutral-400`
+   - **Specs accordion**: shadcn `<Accordion type="single" collapsible>` with one item. Trigger styled as `text-[13px] text-[#F5A623] hover:no-underline` reading `View Specs`. Content renders the existing `a.specs` array as a two-column list — each row `flex justify-between gap-4 py-2 border-b border-[#2a2a2a] last:border-0`, key `text-neutral-400 text-[13px]`, value `text-white text-[13px] text-right`.
+3. **Add row** — `mt-auto px-4 py-3 border-t border-[#2a2a2a] flex items-center justify-between`:
+   - Left: `<span className="text-white font-semibold">{a.displayPrice}</span>`
+   - Right: a `<button onClick={() => toggleAccessory(a.id)}>` toggling between:
+     - Unselected: `border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10 px-4 py-2 rounded-md text-sm font-semibold` → `+ Add to Quote`
+     - Selected: `bg-[#F5A623] text-[#111111] px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-1` → `✓ Added` (Check icon from lucide-react)
+
+The whole card is no longer a `<button>` — only the Add to Quote control toggles selection. The check-badge in the top-right corner is removed (the border + button state communicate selection).
+
+## Grid
+
+Wrapping grid stays `grid gap-6 sm:grid-cols-2 max-w-4xl` (already side-by-side on desktop, stacked on mobile).
+
+## Files
+
+- `src/pages/Quotations.tsx` — only the accessories `data array` (add two fields) and the accessories `.map(...)` JSX. Also add `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent` imports from `@/components/ui/accordion`.
+
+No other files modified.
