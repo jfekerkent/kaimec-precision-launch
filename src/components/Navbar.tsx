@@ -44,19 +44,19 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <div className="w-full">
-        <div className="px-4 md:px-6 py-3 flex items-center justify-between gap-4">
+        <div className="px-4 md:px-6 py-2 flex items-center justify-between gap-3">
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0 mr-auto">
+          <Link to="/" className="flex items-center shrink-0">
             <img
               src={logoImg}
               alt="KAIMEC Machines"
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-12 md:h-14 w-auto object-contain"
             />
           </Link>
 
           {/* All nav + actions in one line */}
-          <div className="hidden lg:flex items-center justify-between flex-1 ml-4">
-            <ul className="flex items-center gap-4 xl:gap-6">
+          <div className="hidden lg:flex items-center justify-end flex-1 gap-4 xl:gap-6">
+            <ul className="flex items-center gap-3 xl:gap-5">
               <li>
                 <Link
                   to="/"
@@ -190,23 +190,23 @@ export default function Navbar() {
               </li>
             </ul>
 
-            <div className="flex items-center gap-3 xl:gap-4 ml-3">
+            <div className="flex items-center gap-2 xl:gap-3 shrink-0">
               <a
                 href="tel:+19495431508"
-                className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
+                className="hidden xl:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
               >
                 <Phone className="h-4 w-4" />
-                <span className="text-sm font-medium">(949) 543-1508</span>
+                <span className="text-xs font-medium">(949) 543-1508</span>
               </a>
               <Link
                 to="/consultation"
-                className="inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
+                className="inline-flex items-center justify-center px-3 py-1.5 border border-primary text-xs font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
               >
                 Talk to an Expert
               </Link>
               <Link
                 to="/quote"
-                className="inline-flex items-center justify-center px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-3 py-1.5 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
               >
                 Request Info
               </Link>
