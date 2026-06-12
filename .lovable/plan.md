@@ -1,23 +1,12 @@
-# Wire up hero + Kaimec-in-action videos
+# Make logo background match navbar white
 
-Both videos referenced in `src/pages/Index.tsx` point to `/videos/*.mp4` paths that don't exist. You've now uploaded both, so I'll host them on the Lovable Assets CDN and update the code.
+The current logo (`kaimec-logo-nav-v3.png`) has a non-white background that shows against the white navbar.
 
-## Steps
+## Step
 
-1. **Upload both videos to the CDN** using `lovable-assets` from `/mnt/user-uploads/`:
-   - `Laser cutting, no KENT Branding (2).mp4` → `src/assets/hero-laser-cutting.mp4.asset.json` (hero background)
-   - `MEKOTEK FLC-P 1530 ... (1).mp4` → `src/assets/kaimec-in-action.mp4.asset.json` (Kaimec in Action section)
+1. Run `imagegen--edit_image` on the existing logo with `transparent_background: true` to produce a transparent PNG (`src/assets/kaimec-logo-nav-v4.png`). A transparent background blends perfectly with the navbar's white — and stays correct if the navbar color ever changes.
+2. Upload the new PNG via `lovable-assets` → `src/assets/kaimec-logo-nav-v4.png.asset.json`.
+3. Update `src/components/Navbar.tsx` to import `kaimec-logo-nav-v4.png.asset.json` instead of v3.
+4. Delete the old `kaimec-logo-nav-v3.png.asset.json` pointer via `assets--delete_asset`.
 
-2. **Update `src/pages/Index.tsx`:**
-   - Import both `.asset.json` pointers.
-   - Replace `src="/videos/laser-cutting.mp4"` with the hero asset URL.
-   - Replace the two `/videos/mekotek-flc-p-1530.mp4` references (main player + chapter previews) with the Kaimec asset URL.
-
-3. **Fix hero video stretching** so it fills the section cleanly:
-   - Remove the conflicting `width: 177.78vh` / `height: 56.25vw` sizing (which can leave gaps on extreme aspect ratios).
-   - Use `width: 100%; height: 100%; inset: 0; object-fit: cover` so the video always covers the hero with no letterboxing, regardless of viewport ratio.
-
-## Notes
-
-- No changes to layout, copy, or other sections.
-- Chapter thumbnails will keep using `#t=` time fragments against the new CDN URL (supported by the asset CDN).
+No other navbar styling changes.
