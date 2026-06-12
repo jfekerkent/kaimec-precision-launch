@@ -5,7 +5,7 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import { quoteMachines, type QuoteSlug } from "./QuoteMachine";
 import dustCollectorAsset from "@/assets/dust-collector-v2.jpg.asset.json";
 const dustCollectorImg = dustCollectorAsset.url;
-import airCompressorAsset from "@/assets/air-compressor-v2.png.asset.json";
+import airCompressorAsset from "@/assets/air-compressor-v3.png.asset.json";
 const airCompressorImg = airCompressorAsset.url;
 
 const accessoryPrices: { match: RegExp; label: string; price: number; image: string }[] = [
