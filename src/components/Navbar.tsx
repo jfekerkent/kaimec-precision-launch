@@ -107,8 +107,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-orange"
                 >
                   Quotations
                 </Link>
