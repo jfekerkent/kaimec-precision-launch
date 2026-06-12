@@ -60,7 +60,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="text-xs font-bold whitespace-nowrap"
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   Home
@@ -72,7 +72,7 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   Laser Cutting machines
@@ -101,7 +101,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className="text-xs font-bold whitespace-nowrap"
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   {pressBrakesLink.label}
@@ -110,7 +110,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className="text-xs font-bold whitespace-nowrap"
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   Quotations
@@ -122,7 +122,7 @@ export default function Navbar() {
                 onMouseLeave={() => setDrillOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   Gun & BTA Drilling Machines
@@ -152,7 +152,7 @@ export default function Navbar() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-xs font-bold whitespace-nowrap"
+                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
                   >
                     {link.label}
                   </Link>
@@ -161,7 +161,7 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
 
                 >
                   More

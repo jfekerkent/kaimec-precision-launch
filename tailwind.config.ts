@@ -120,6 +120,12 @@ export default {
           "72%": { opacity: "1", transform: "scale(1.4)" },
           "85%": { opacity: "0", transform: "scale(0.8)" },
         },
+        "nav-flash": {
+          "0%, 100%": { color: "#ef4444", textShadow: "0 0 8px rgba(239,68,68,0.6)" },
+          "25%": { color: "#eab308", textShadow: "0 0 8px rgba(234,179,8,0.6)" },
+          "50%": { color: "#22c55e", textShadow: "0 0 8px rgba(34,197,94,0.6)" },
+          "75%": { color: "#3b82f6", textShadow: "0 0 8px rgba(59,130,246,0.6)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -133,6 +139,7 @@ export default {
         "press-stamp": "press-stamp 1s ease-in-out infinite",
         "press-punch": "press-punch 1s ease-in-out infinite",
         "press-spark": "press-spark 1s ease-in-out infinite",
+        "nav-flash": "nav-flash 1s linear infinite",
       },
     },
   },
