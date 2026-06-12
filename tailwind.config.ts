@@ -80,8 +80,10 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         flash: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
+          "0%, 100%": { opacity: "1", color: "hsl(var(--foreground))" },
+          "25%": { opacity: "1", color: "#2563eb" },
+          "50%": { opacity: "0", color: "#dc2626" },
+          "75%": { opacity: "1", color: "#d97706" },
         },
       },
       animation: {
