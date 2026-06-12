@@ -43,6 +43,28 @@ import closedFlc6 from "@/assets/closed-flc-6.png.asset.json";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
+function RotatingImage({ images, alt }: { images: string[]; alt: string }) {
+  const [hover, setHover] = useState(false);
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (!hover) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 1000);
+    return () => clearInterval(t);
+  }, [hover, images.length]);
+  useEffect(() => {
+    if (!hover) setIdx(0);
+  }, [hover]);
+  return (
+    <div
+      className="w-full h-full flex items-center justify-center"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <img src={images[idx]} alt={alt} className="w-full h-full object-contain transition-opacity duration-300" />
+    </div>
+  );
+}
+
 const features = [
   {
     icon: ShieldCheck,
@@ -282,7 +304,11 @@ export default function ClosedTypeFiberLaser() {
                 className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors flex flex-col"
               >
                 <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-6 rounded-lg border">
-                  <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
+                  {("images" in m && m.images) ? (
+                    <RotatingImage images={m.images as string[]} alt={m.id} />
+                  ) : (
+                    <img src={m.image} alt={m.id} className="w-full h-full object-contain" />
+                  )}
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-black text-foreground mb-1">{m.id}</h3>
