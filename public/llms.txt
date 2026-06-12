@@ -1,0 +1,25 @@
+# KAIMEC Machines
+
+> European-built CNC fiber lasers, CNC press brakes, and deep-hole drilling systems, sold factory-direct in the US with engineering and parts support from Tustin, California.
+
+## Pages
+
+- [Home](/): Overview of KAIMEC's CNC fiber lasers, press brakes, and drilling machines.
+- [About](/about): Company background, US-based support, and European manufacturing.
+- [FAQ](/faq): Common questions about machines, support, and ordering.
+- [Request Info / Quote](/quote): Request pricing or specs for a specific machine.
+- [Talk to an Expert](/consultation): Book a consultation with a KAIMEC engineer.
+- [Quotations](/quotations): Browse machines available for quotation.
+- [Dealers](/dealers): Dealer and partner information.
+
+## Machines
+
+- [All Machines](/machines): Full catalog of KAIMEC fabrication machines.
+- [CNC Fiber Lasers](/machines/cnc-fiber-lasers): Open and closed-type fiber laser cutting systems.
+- [Open Type Fiber Laser](/machines/laser-cutting/open-type-fiber-laser): FLO 1530 / 2040 / 2060 open-frame fiber lasers.
+- [Closed Type Fiber Laser](/machines/laser-cutting/closed-type-fiber-laser): FLC 1530 / 2040 / 2060 fully enclosed fiber lasers.
+- [Combo Sheet + Pipe Laser](/machines/laser-cutting/covered-pipe-profile-fiber-laser): FLO-P and FLC-P combo sheet and tube/pipe cutting lasers.
+- [Tube & Profile Lasers](/machines/tube-profile-lasers): FLP series dedicated tube and profile cutting lasers.
+- [CNC Press Brakes](/machines/press-brakes): MKT-series CNC press brakes for sheet bending.
+- [Gun Drilling Machines](/gun-drills/gun-drilling-machines): Deep-hole gun drilling systems.
+- [BTA Deep Hole Drilling](/gun-drills/bta-deep-hole-drilling): BTA-style deep-hole drilling machines.

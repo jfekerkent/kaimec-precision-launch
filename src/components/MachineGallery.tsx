@@ -74,6 +74,7 @@ export default function MachineGallery({ images, model, background = "dark", fit
           {images.map((src, i) => (
             <button
               key={i}
+              aria-label={`View ${model} image ${i + 1}`}
               onClick={() => switchImage(i)}
               className={`shrink-0 w-14 h-10 rounded overflow-hidden border-2 transition-colors ${
                 i === activeIndex ? "border-primary" : "border-transparent hover:border-muted-foreground/40"
@@ -92,6 +93,7 @@ export default function MachineGallery({ images, model, background = "dark", fit
           onClick={() => setLightboxOpen(false)}
         >
           <button
+            aria-label="Close gallery"
             className="absolute top-4 right-4 text-foreground/80 hover:text-foreground z-10"
             onClick={(e) => { e.stopPropagation(); setLightboxOpen(false); }}
           >
@@ -101,12 +103,14 @@ export default function MachineGallery({ images, model, background = "dark", fit
           {images.length > 1 && (
             <>
               <button
+                aria-label="Previous image"
                 className="absolute left-4 text-foreground/80 hover:text-foreground z-10"
                 onClick={(e) => { e.stopPropagation(); lightboxPrev(); }}
               >
                 <ChevronLeft className="h-10 w-10" />
               </button>
               <button
+                aria-label="Next image"
                 className="absolute right-4 text-foreground/80 hover:text-foreground z-10"
                 onClick={(e) => { e.stopPropagation(); lightboxNext(); }}
               >

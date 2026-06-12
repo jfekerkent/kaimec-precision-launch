@@ -81,7 +81,7 @@ export default function FiberLasers() {
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <MachineGallery images={m.images} model={m.model} background="light" fit="contain" />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
+                  <h2 className="text-xl font-bold text-foreground mb-2">{m.model}</h2>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
                   <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
@@ -108,7 +108,7 @@ export default function FiberLasers() {
                   <img src={m.image} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{m.model}</h3>
+                  <h2 className="text-xl font-bold text-foreground mb-2">{m.model}</h2>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
                   <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
