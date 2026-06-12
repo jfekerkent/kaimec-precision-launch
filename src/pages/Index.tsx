@@ -28,6 +28,8 @@ import comboFlcp1530_2 from "@/assets/combo-flcp-1530-2.jpg.asset.json";
 import comboFlcp2040_1 from "@/assets/combo-flcp-2040-1.jpg.asset.json";
 import comboFlcp2040_2 from "@/assets/combo-flcp-2040-2.jpg.asset.json";
 import comboOnly1 from "@/assets/combo-only-1.jpg.asset.json";
+import heroVideoAsset from "@/assets/hero-laser-cutting.mp4.asset.json";
+import kaimecActionVideoAsset from "@/assets/kaimec-in-action.mp4.asset.json";
 import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
 import comboFlop1530A from "@/assets/combo-flop-1530-a.png.asset.json";
 import comboFlop1530B from "@/assets/combo-flop-1530-b.png.asset.json";
