@@ -82,14 +82,8 @@ export default function QuoteSummary() {
                       className="w-full h-auto max-h-[280px] object-contain"
                     />
                   </div>
-                  <div className="mt-3 pt-3 border-t border-border">
-                    <h3 className="font-black text-foreground leading-tight">{m.name}</h3>
-                    <p className="text-xs text-primary font-semibold mt-0.5">{m.subtitle}</p>
-                    {m.price != null && (
-                      <p className="text-sm text-foreground mt-2 font-semibold">
-                        ${m.price.toLocaleString()} FOB Tustin, CA
-                      </p>
-                    )}
+                  <div className="mt-3 pt-3 border-t border-border text-center">
+                    <p className="text-sm text-muted-foreground">Indicative pricing</p>
                   </div>
                 </div>
               ))}
