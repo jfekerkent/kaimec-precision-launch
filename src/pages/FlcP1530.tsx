@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
 import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import flcP1530Img from "@/assets/flc-p-1530-1.png";
 
 const FlcP1530 = () => {
   return (
     <Layout>
+      <Seo
+        title="FLC-P 1530 | KAIMEC Covered Pipe & Sheet Fiber Laser"
+        description="The KAIMEC FLC-P 1530 fully-enclosed fiber laser cuts sheet, pipe and profile on a 1.5 × 3 m dual-table platform."
+        path="/machines/cnc-fiber-lasers/flc-p-1530"
+        type="product"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "KAIMEC FLC-P 1530 Fiber Laser",
+          brand: { "@type": "Brand", name: "KAIMEC" },
+          category: "CNC Fiber Laser Cutter",
+          description: "Fully-enclosed combination fiber laser cutter for sheet, pipe and profile on a 1.5 × 3 m platform.",
+        }}
+      />
       <div className="pt-24 min-h-screen bg-white">
         <div className="container py-8">
           <nav className="flex mb-8 text-sm text-muted-foreground bg-gray-900 p-4 rounded-lg">

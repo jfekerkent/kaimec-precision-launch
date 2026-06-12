@@ -1,10 +1,16 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
+import Seo from "@/components/Seo";
 
 export default function Quote() {
   return (
     <Layout>
+      <Seo
+        title="Request a Quote | KAIMEC CNC Fiber Lasers & Press Brakes"
+        description="Get a custom quote on KAIMEC CNC fiber laser cutting machines, press brakes, and deep-hole drilling. Our US engineers reply within 1 business day."
+        path="/quote"
+      />
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="grid gap-16 lg:grid-cols-5">
@@ -21,7 +27,7 @@ export default function Quote() {
 
             <div className="lg:col-span-2">
               <div className="rounded-lg border border-border bg-card p-8">
-                <h3 className="text-lg font-bold text-foreground mb-6">Contact Information</h3>
+                <h2 className="text-lg font-bold text-foreground mb-6">Contact Information</h2>
                 <ul className="space-y-5">
                   <li className="flex gap-3 text-sm text-muted-foreground">
                     <MapPin className="h-5 w-5 text-primary shrink-0" />

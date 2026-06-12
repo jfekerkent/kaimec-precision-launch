@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 
@@ -50,6 +51,12 @@ export default function GunDrillingMachines() {
 
   return (
     <Layout>
+      <Seo
+        title="CNC Gun Drilling Machines | KAIMEC Deep Hole Drills"
+        description="KAIMEC CNC gun drilling machines — single and dual spindle configurations for deep, straight, high-precision holes in aerospace, automotive, oil & gas, and mold making."
+        path="/gun-drills/gun-drilling-machines"
+        type="product"
+      />
       {/* Hero */}
       <section className="bg-[#1a1a1a] py-14 md:py-20">
         <div className="container max-w-5xl">

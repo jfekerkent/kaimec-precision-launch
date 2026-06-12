@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 
@@ -47,6 +48,12 @@ export default function BtaDeepHoleDrilling() {
 
   return (
     <Layout>
+      <Seo
+        title="BTA Deep Hole Drilling Machines | KAIMEC TSK 2150"
+        description="KAIMEC BTA deep hole drilling machines for solid drilling, trepanning, boring and burnishing — including the TSK 2150 × 3000 platform."
+        path="/gun-drills/bta-deep-hole-drilling"
+        type="product"
+      />
       {/* Hero */}
       <section className="bg-[#1a1a1a] py-14 md:py-20">
         <div className="container max-w-5xl">

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import shopFloorImg from "@/assets/about-shop-floor.jpg";
 import machinesImg from "@/assets/about-machines.jpg";
 import supportImg from "@/assets/about-support.jpg";
@@ -10,6 +11,11 @@ import serveImg from "@/assets/about-serve.jpg";
 export default function About() {
   return (
     <Layout>
+      <Seo
+        title="About KAIMEC | European-Built CNC Machines, US Support"
+        description="KAIMEC delivers European-engineered CNC fiber lasers and press brakes with US-based sales, installation, training and 24/7 service from Tustin, CA."
+        path="/about"
+      />
       {/* SECTION 1 — Page Header */}
       <section className="relative overflow-hidden bg-background py-24 md:py-32">
         <div

@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
+import Seo from "@/components/Seo";
 import {
   Combine,
   Zap,
@@ -267,6 +268,12 @@ export default function CoveredPipeProfileFiberLaser() {
   }, [location]);
   return (
     <Layout>
+      <Seo
+        title="Covered Pipe & Profile Fiber Laser | KAIMEC FLC-P"
+        description="KAIMEC FLC-P combination fiber laser cutters with covered enclosure for sheet, pipe and profile — dual-table productivity."
+        path="/machines/laser-cutting/covered-pipe-profile-fiber-laser"
+        type="product"
+      />
       {/* 1. HERO */}
       <section className="relative bg-green-100 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-green-100 to-green-200 pointer-events-none" />
