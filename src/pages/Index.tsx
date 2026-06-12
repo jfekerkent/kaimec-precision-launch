@@ -277,7 +277,7 @@ export default function Index() {
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
               id="kaimec-action-video"
-              src="/videos/mekotek-flc-p-1530.mp4"
+              src={kaimecActionVideoAsset.url}
               autoPlay
               muted
               loop
@@ -333,7 +333,7 @@ export default function Index() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-black">
                     <video
-                      src={`/videos/mekotek-flc-p-1530.mp4#t=${c.time + 0.1}`}
+                      src={`${kaimecActionVideoAsset.url}#t=${c.time + 0.1}`}
                       preload="metadata"
                       muted
                       playsInline
