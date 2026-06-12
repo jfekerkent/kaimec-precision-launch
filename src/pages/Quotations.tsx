@@ -63,7 +63,6 @@ const accessories = [
 export default function Quotations() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
-  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
 
   const toggleMachine = (id: string) => {
