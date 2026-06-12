@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { MapPin, Phone, Smartphone, Globe, User } from "lucide-react";
 import etgiLogo from "@/assets/etgi-logo.png";
 import dhmLogo from "@/assets/dhm-logo.png";
@@ -6,6 +7,11 @@ import dhmLogo from "@/assets/dhm-logo.png";
 export default function Dealers() {
   return (
     <Layout>
+      <Seo
+        title="Authorized KAIMEC Dealers | North America Network"
+        description="Find an authorized KAIMEC dealer for CNC fiber laser cutters and press brakes across the US and Canada."
+        path="/dealers"
+      />
       {/* Header */}
       <section className="relative overflow-hidden bg-background py-24 md:py-32">
         <div

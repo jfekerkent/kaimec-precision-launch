@@ -5,6 +5,7 @@ import { ArrowRight, Shield, Wrench, Users, CheckCircle, Play } from "lucide-rea
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
+import Seo from "@/components/Seo";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
@@ -115,6 +116,11 @@ export default function Index() {
 
   return (
     <Layout>
+      <Seo
+        title="KAIMEC Machines — CNC Fiber Lasers & Press Brakes"
+        description="Precision CNC fiber lasers, press brakes & deep-hole drilling from KAIMEC. Factory-direct with US engineering and parts support from Tustin, CA."
+        path="/"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

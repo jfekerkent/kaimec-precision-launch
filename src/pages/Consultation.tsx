@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import RequestInfoForm from "@/components/RequestInfoForm";
+import Seo from "@/components/Seo";
 import { Calendar, Wrench, DollarSign, Target } from "lucide-react";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
@@ -8,6 +9,11 @@ const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 export default function Consultation() {
   return (
     <Layout>
+      <Seo
+        title="Book a Consultation | KAIMEC CNC Machine Experts"
+        description="Schedule a free 20-minute consult with KAIMEC's CNC fiber laser and press brake experts. Get real answers and a quote built for your shop."
+        path="/consultation"
+      />
       {/* Section A — Hero */}
       <section className="bg-[#1a1a1a] py-20 md:py-28">
         <div className="container max-w-4xl text-center">
