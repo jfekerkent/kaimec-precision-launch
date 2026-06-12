@@ -194,7 +194,7 @@ export default function Navbar() {
               </a>
               <Link
                 to="/consultation"
-                className="inline-flex items-center justify-center px-4 py-2 border border-primary text-sm font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
+                className="inline-flex items-center justify-center px-4 py-2 border border-amber-500 text-sm font-semibold text-amber-600 hover:bg-amber-50 transition-colors rounded-md whitespace-nowrap animate-nav-flash-amber"
               >
                 Talk to an Expert
               </Link>
