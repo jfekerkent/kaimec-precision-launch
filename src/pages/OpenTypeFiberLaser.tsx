@@ -33,7 +33,8 @@ import flo2040New1 from "@/assets/flo2040-new-1.png.asset.json";
 import flo2040New2 from "@/assets/flo2040-new-2.png.asset.json";
 import flo2040New3 from "@/assets/flo2040-new-3.png.asset.json";
 import flo2040New4 from "@/assets/flo2040-new-4.png.asset.json";
-import flo2060Img from "@/assets/machine-flo-2060.avif";
+import flo2060NewAsset from "@/assets/flo2060-new.jpg.asset.json";
+const flo2060Img = flo2060NewAsset.url;
 
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
