@@ -196,7 +196,11 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f5] to-[#e8e8e8]">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash">Laser Cutting Machines</h2>
+            <div className="relative flex items-center justify-center gap-4 overflow-hidden">
+              <span aria-hidden className="hidden sm:block flex-1 h-1 rounded-full animate-laser-left origin-right" />
+              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">Laser Cutting Machines</h2>
+              <span aria-hidden className="hidden sm:block flex-1 h-1 rounded-full animate-laser-right origin-left" />
+            </div>
             <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
               Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
             </p>
