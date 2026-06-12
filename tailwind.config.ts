@@ -103,6 +103,14 @@ export default {
           "50%": { background: "linear-gradient(90deg, transparent, #3b82f6, transparent)", boxShadow: "0 0 12px 2px #3b82f6" },
           "75%": { background: "linear-gradient(90deg, transparent, #eab308, transparent)", boxShadow: "0 0 12px 2px #eab308" },
         },
+        "nav-flash": {
+          "0%, 100%": { color: "#ef4444", opacity: "1" },
+          "20%": { color: "#f59e0b", opacity: "1" },
+          "40%": { color: "#22c55e", opacity: "1" },
+          "50%": { opacity: "0.4" },
+          "60%": { color: "#3b82f6", opacity: "1" },
+          "80%": { color: "#a855f7", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +120,7 @@ export default {
         "laser-left": "laser-left 0.8s ease-in-out infinite, laser-color 1.2s linear infinite",
         "laser-right": "laser-right 0.8s ease-in-out infinite, laser-color 1.2s linear infinite",
         "laser-dot": "laser-color 1.2s linear infinite",
+        "nav-flash": "nav-flash 1s linear infinite",
       },
     },
   },
