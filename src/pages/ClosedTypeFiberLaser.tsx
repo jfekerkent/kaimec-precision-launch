@@ -34,6 +34,12 @@ import remoteControlImg from "@/assets/remote-control.png";
 
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
+import closedFlc1 from "@/assets/closed-flc-1.jpg.asset.json";
+import closedFlc2 from "@/assets/closed-flc-2.png.asset.json";
+import closedFlc3 from "@/assets/closed-flc-3.png.asset.json";
+import closedFlc4 from "@/assets/closed-flc-4.png.asset.json";
+import closedFlc5 from "@/assets/closed-flc-5.png.asset.json";
+import closedFlc6 from "@/assets/closed-flc-6.png.asset.json";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -71,7 +77,7 @@ const features = [
 ];
 
 const models = [
-  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
+  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg, images: [closedFlc1.url, closedFlc2.url, closedFlc3.url, closedFlc4.url, closedFlc5.url, closedFlc6.url] },
   { id: "FLC-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: flc2040Img },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: flc2060Img },
 ];
