@@ -3,6 +3,12 @@ import { useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import flo1530_3kw from "@/assets/machine-kflo-1530.png";
 import flo1530_6kw from "@/assets/flo-1530-6kw.png";
@@ -33,6 +39,8 @@ const accessories = [
     name: "Dust / Smoke Collector",
     subtitle: "Pulse Filter Cartridge",
     image: dustCollectorImg,
+    shortSubtitle: "Pulse Filter Cartridge · Stand-alone Unit",
+    displayPrice: "+$22,000",
     specs: [
       ["Filter Type", "Pulse filter cartridge"],
       ["Air Speed", "236 ft/min"],
@@ -48,6 +56,8 @@ const accessories = [
     name: "Screw Type Air Compressor",
     subtitle: "30HP · With Refrigerated Dryer",
     image: airCompressorImg,
+    shortSubtitle: "30HP · With Refrigerated Dryer",
+    displayPrice: "+$8,500",
     specs: [
       ["Power", "30 HP"],
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
