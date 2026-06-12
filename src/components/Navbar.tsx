@@ -99,8 +99,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash-green"
                 >
                   {pressBrakesLink.label}
                 </Link>
