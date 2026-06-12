@@ -364,7 +364,7 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-8">
             <p className="section-label mb-3">{"\n"}</p>
-            <div className="relative inline-flex flex-col items-center">
+            <div className="relative inline-block">
               {/* Punch bar coming down — centered on heading */}
               <div
                 aria-hidden
@@ -386,7 +386,7 @@ export default function Index() {
               {/* Die base */}
               <div
                 aria-hidden
-                className="mt-1 h-1.5 w-[110%] bg-gradient-to-t from-slate-700 to-slate-400 rounded-sm"
+                className="mt-1 h-1.5 w-[110%] mx-auto bg-gradient-to-t from-slate-700 to-slate-400 rounded-sm"
               />
             </div>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
