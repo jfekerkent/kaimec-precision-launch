@@ -208,46 +208,72 @@ export default function Quotations() {
               {accessories.map((a) => {
                 const isSelected = selectedAccessories.has(a.id);
                 return (
-                  <button
+                  <div
                     key={a.id}
-                    onClick={() => toggleAccessory(a.id)}
-                    className={`relative text-left border rounded-lg overflow-hidden transition-all group flex flex-col ${
+                    className={`bg-[#111111] rounded-lg overflow-hidden flex flex-col transition-all ${
                       isSelected
-                        ? "border-primary ring-2 ring-primary/30 shadow-lg"
-                        : "border-border hover:border-primary/50 hover:shadow-md"
+                        ? "border-2 border-[#F5A623]"
+                        : "border border-[#2a2a2a]"
                     }`}
                   >
-                    <div
-                      className={`absolute top-3 right-3 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
-                        isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      <Check className="h-4 w-4" />
-                    </div>
-                    <div className="aspect-[4/3] bg-white overflow-hidden flex items-center justify-center p-6">
+                    <div className="h-[180px] w-full bg-[#1a1a1a] overflow-hidden flex items-center justify-center">
                       <img
                         src={a.image}
                         alt={a.name}
-                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="p-5 flex-1 flex flex-col bg-card">
-                      <h3 className="text-lg font-black text-foreground leading-tight">
-                        {a.name}
-                      </h3>
-                      <p className="text-xs text-primary font-semibold mt-1 uppercase tracking-wide">
-                        {a.subtitle}
-                      </p>
-                      <dl className="mt-4 space-y-1.5 text-sm">
-                        {a.specs.map(([k, v]) => (
-                          <div key={k} className="flex gap-2">
-                            <dt className="font-semibold text-foreground/80 min-w-[110px]">{k}:</dt>
-                            <dd className="text-muted-foreground">{v}</dd>
-                          </div>
-                        ))}
-                      </dl>
+                    <div className="p-4 flex flex-col gap-3 flex-1">
+                      <div>
+                        <h3 className="text-[18px] font-bold text-white leading-tight">
+                          {a.name}
+                        </h3>
+                        <p className="text-[13px] text-neutral-400 mt-1">
+                          {a.shortSubtitle}
+                        </p>
+                      </div>
+                      <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="specs" className="border-b-0">
+                          <AccordionTrigger className="py-2 text-[13px] text-[#F5A623] hover:no-underline font-semibold">
+                            View Specs
+                          </AccordionTrigger>
+                          <AccordionContent className="pb-0">
+                            <dl>
+                              {a.specs.map(([k, v]) => (
+                                <div
+                                  key={k}
+                                  className="flex justify-between gap-4 py-2 border-b border-[#2a2a2a] last:border-0"
+                                >
+                                  <dt className="text-neutral-400 text-[13px]">{k}</dt>
+                                  <dd className="text-white text-[13px] text-right">{v}</dd>
+                                </div>
+                              ))}
+                            </dl>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
                     </div>
-                  </button>
+                    <div className="mt-auto px-4 py-3 border-t border-[#2a2a2a] flex items-center justify-between">
+                      <span className="text-white font-semibold">{a.displayPrice}</span>
+                      <button
+                        type="button"
+                        onClick={() => toggleAccessory(a.id)}
+                        className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors flex items-center gap-1 ${
+                          isSelected
+                            ? "bg-[#F5A623] text-[#111111] hover:bg-[#F5A623]/90"
+                            : "border border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10"
+                        }`}
+                      >
+                        {isSelected ? (
+                          <>
+                            <Check className="h-4 w-4" /> Added
+                          </>
+                        ) : (
+                          <>+ Add to Quote</>
+                        )}
+                      </button>
+                    </div>
+                  </div>
                 );
               })}
             </div>
