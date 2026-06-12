@@ -364,7 +364,31 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-8">
             <p className="section-label mb-3">{"\n"}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
+            <div className="relative inline-block">
+              {/* Punch bar coming down */}
+              <div
+                aria-hidden
+                className="absolute left-1/2 -translate-x-1/2 -top-2 h-3 w-[110%] bg-gradient-to-b from-slate-500 to-slate-800 rounded-sm shadow-lg animate-press-punch origin-top"
+              />
+              {/* Sparks on impact */}
+              <span
+                aria-hidden
+                className="absolute left-2 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_4px_#fbbf24] animate-press-spark"
+              />
+              <span
+                aria-hidden
+                className="absolute right-2 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_4px_#fbbf24] animate-press-spark"
+                style={{ animationDelay: "0.05s" }}
+              />
+              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-press-stamp origin-top inline-block">
+                CNC Press Brakes
+              </h2>
+              {/* Die base */}
+              <div
+                aria-hidden
+                className="mx-auto mt-1 h-1.5 w-[110%] -translate-x-[5%] bg-gradient-to-t from-slate-700 to-slate-400 rounded-sm"
+              />
+            </div>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
               High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet
               sizes and tonnages.

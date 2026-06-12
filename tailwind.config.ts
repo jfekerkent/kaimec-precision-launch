@@ -111,6 +111,23 @@ export default {
           "60%": { color: "#3b82f6", opacity: "1" },
           "80%": { color: "#a855f7", opacity: "1" },
         },
+        "press-stamp": {
+          "0%, 60%, 100%": { transform: "scaleY(1)", color: "hsl(var(--foreground))", textShadow: "none" },
+          "70%": { transform: "scaleY(0.7)", color: "#dc2626", textShadow: "0 0 18px #fbbf24" },
+          "80%": { transform: "scaleY(1.05)", color: "#f59e0b", textShadow: "0 0 12px #ef4444" },
+          "90%": { transform: "scaleY(1)", color: "hsl(var(--foreground))" },
+        },
+        "press-punch": {
+          "0%, 55%, 100%": { transform: "translateY(-140%)" },
+          "70%": { transform: "translateY(-10%)" },
+          "80%": { transform: "translateY(-10%)" },
+          "95%": { transform: "translateY(-140%)" },
+        },
+        "press-spark": {
+          "0%, 65%, 100%": { opacity: "0", transform: "scale(0.4)" },
+          "72%": { opacity: "1", transform: "scale(1.4)" },
+          "85%": { opacity: "0", transform: "scale(0.8)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -121,6 +138,9 @@ export default {
         "laser-right": "laser-right 0.8s ease-in-out infinite, laser-color 1.2s linear infinite",
         "laser-dot": "laser-color 1.2s linear infinite",
         "nav-flash": "nav-flash 1s linear infinite",
+        "press-stamp": "press-stamp 2.2s ease-in-out infinite",
+        "press-punch": "press-punch 2.2s ease-in-out infinite",
+        "press-spark": "press-spark 2.2s ease-in-out infinite",
       },
     },
   },
