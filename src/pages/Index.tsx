@@ -128,6 +128,7 @@ export default function Index() {
               height: "56.25vw",
               minHeight: "100%",
               objectFit: "cover",
+              objectPosition: "center 30%",
               pointerEvents: "none",
               border: 0,
               zIndex: 0,
