@@ -28,6 +28,8 @@ import comboFlcp1530_2 from "@/assets/combo-flcp-1530-2.jpg.asset.json";
 import comboFlcp2040_1 from "@/assets/combo-flcp-2040-1.jpg.asset.json";
 import comboFlcp2040_2 from "@/assets/combo-flcp-2040-2.jpg.asset.json";
 import comboOnly1 from "@/assets/combo-only-1.jpg.asset.json";
+import heroVideoAsset from "@/assets/hero-laser-cutting.mp4.asset.json";
+import kaimecActionVideoAsset from "@/assets/kaimec-in-action.mp4.asset.json";
 import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
 import comboFlop1530A from "@/assets/combo-flop-1530-a.png.asset.json";
 import comboFlop1530B from "@/assets/combo-flop-1530-b.png.asset.json";
@@ -126,7 +128,7 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden">
           <video
             ref={heroVideoRef}
-            src="/videos/laser-cutting.mp4"
+            src={heroVideoAsset.url}
             autoPlay
             muted
             loop
@@ -145,13 +147,10 @@ export default function Index() {
             }}
             style={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "177.78vh",
-              minWidth: "100%",
-              height: "56.25vw",
-              minHeight: "100%",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
               objectFit: "cover",
               objectPosition: "center 30%",
               pointerEvents: "none",
@@ -278,7 +277,7 @@ export default function Index() {
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
               id="kaimec-action-video"
-              src="/videos/mekotek-flc-p-1530.mp4"
+              src={kaimecActionVideoAsset.url}
               autoPlay
               muted
               loop
@@ -334,7 +333,7 @@ export default function Index() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-black">
                     <video
-                      src={`/videos/mekotek-flc-p-1530.mp4#t=${c.time + 0.1}`}
+                      src={`${kaimecActionVideoAsset.url}#t=${c.time + 0.1}`}
                       preload="metadata"
                       muted
                       playsInline
