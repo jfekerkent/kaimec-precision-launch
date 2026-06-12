@@ -26,6 +26,12 @@ import comboFlcp1530_1 from "@/assets/combo-flcp-1530-1.jpg.asset.json";
 import comboFlcp1530_2 from "@/assets/combo-flcp-1530-2.jpg.asset.json";
 import comboFlcp2040_1 from "@/assets/combo-flcp-2040-1.jpg.asset.json";
 import comboFlcp2040_2 from "@/assets/combo-flcp-2040-2.jpg.asset.json";
+import closedFlc1 from "@/assets/closed-flc-1.jpg.asset.json";
+import closedFlc2 from "@/assets/closed-flc-2.png.asset.json";
+import closedFlc3 from "@/assets/closed-flc-3.png.asset.json";
+import closedFlc4 from "@/assets/closed-flc-4.png.asset.json";
+import closedFlc5 from "@/assets/closed-flc-5.png.asset.json";
+import closedFlc6 from "@/assets/closed-flc-6.png.asset.json";
 import comboFlop1530A from "@/assets/combo-flop-1530-a.png.asset.json";
 import comboFlop1530B from "@/assets/combo-flop-1530-b.png.asset.json";
 import comboFlop2040A from "@/assets/combo-flop-2040-a.png.asset.json";
@@ -56,8 +62,15 @@ const featuredMachines = [
   {
     tag: "Fully Enclosed Lasers",
     name: "FLC-1530, FLC 2040, FLC2060 models",
-    image: kflc1530Img,
-    images: null,
+    image: null,
+    images: [
+      closedFlc1.url,
+      closedFlc2.url,
+      closedFlc3.url,
+      closedFlc4.url,
+      closedFlc5.url,
+      closedFlc6.url,
+    ],
     link: "/machines/laser-cutting/closed-type-fiber-laser",
   },
   {
