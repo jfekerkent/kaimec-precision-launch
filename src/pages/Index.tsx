@@ -63,7 +63,7 @@ const featuredMachines = [
     link: "/machines/laser-cutting/closed-type-fiber-laser",
   },
   {
-    tag: "Combo Lasers",
+    tag: "Combo Lasers (open and enclosed types)",
     name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
     image: null,
     images: [
