@@ -20,8 +20,6 @@ import slideMkt1560 from "@/assets/slide-mkt-1560.jpg.asset.json";
 import slideFlp6020New from "@/assets/slide-flp-6020.png.asset.json";
 import slideFlc15304 from "@/assets/slide-flc-1530-4.png.asset.json";
 import slideFlo2040New from "@/assets/slide-flo-2040.png.asset.json";
-import laserCuttingVideo from "@/assets/laser-cutting.mp4.asset.json";
-import mekotekVideo from "@/assets/mekotek-flc-p-1530.mp4.asset.json";
 
 const facilitySlides = [
   slideFlo1530New.url,
@@ -34,10 +32,34 @@ const facilitySlides = [
 ];
 
 const featuredMachines = [
-  { tag: "CNC FIBER LASERS", name: "FLO-1530, FLO-2040, FLO 2060 models", image: kfloPrimaryImg, images: null, link: "/machines/laser-cutting/open-type-fiber-laser" },
-  { tag: "Fully Enclosed Lasers", name: "FLC-1530, FLC 2040, FLC2060 models", image: kflc1530Img, images: null, link: "/machines/laser-cutting/closed-type-fiber-laser" },
-  { tag: "Combo Lasers", name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)", image: null, images: [kfloSecondaryImg, flcP1530Img], link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
-  { tag: "Tube / Profile Cutting Lasers", name: "FLP 6035", image: flp6035Img, images: null, link: "/machines/tube-profile-lasers" },
+  {
+    tag: "CNC FIBER LASERS",
+    name: "FLO-1530, FLO-2040, FLO 2060 models",
+    image: kfloPrimaryImg,
+    images: null,
+    link: "/machines/laser-cutting/open-type-fiber-laser",
+  },
+  {
+    tag: "Fully Enclosed Lasers",
+    name: "FLC-1530, FLC 2040, FLC2060 models",
+    image: kflc1530Img,
+    images: null,
+    link: "/machines/laser-cutting/closed-type-fiber-laser",
+  },
+  {
+    tag: "Combo Lasers",
+    name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
+    image: null,
+    images: [kfloSecondaryImg, flcP1530Img],
+    link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser",
+  },
+  {
+    tag: "Tube / Profile Cutting Lasers",
+    name: "FLP 6035",
+    image: flp6035Img,
+    images: null,
+    link: "/machines/tube-profile-lasers",
+  },
 ];
 
 const stats = [
@@ -60,7 +82,6 @@ export default function Index() {
   useEffect(() => {
     const video = heroVideoRef.current;
     if (!video) return;
-
     video.controls = false;
     video.muted = true;
     video.play().catch(() => undefined);
@@ -80,7 +101,7 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden">
           <video
             ref={heroVideoRef}
-            src={laserCuttingVideo.url}
+            src="/videos/laser-cutting.mp4"
             autoPlay
             muted
             loop
@@ -119,18 +140,19 @@ export default function Index() {
         </div>
         <div className="container relative z-10 py-28 md:py-40">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}>Precision Fabrication Machines... From Factory-Direct to Your Floor.</p>
+            <p
+              className="section-label mb-4"
+              style={{ fontSize: "13px", letterSpacing: "2.5px", color: "rgba(255,255,255,0.85)" }}
+            >
+              Precision Fabrication Machines... From Factory-Direct to Your Floor.
+            </p>
             <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f6f5ef]">
               European high-speed laser cutting machines and CNC press brakes
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
-              KAIMEC offers CNC fiber lasers, CNC press brakes, and CNC Gun & BTA Drilling Machines — backed by US-based engineers and California inventory.
+              KAIMEC offers CNC fiber lasers, CNC press brakes, and CNC Gun & BTA Drilling Machines — backed by US-based
+              engineers and California inventory.
             </p>
-            {/* <Link to="/machines">
-              <Button size="lg" className="font-bold text-base px-8">
-                Explore Machines <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link> */}
             <HeroLeadForm />
           </div>
         </div>
@@ -150,18 +172,24 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* Featured Machines */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f5] to-[#e8e8e8]">
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-foreground">Laser Cutting Machines</h2>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;</p>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">Laser Powers : 3, 6, 12, 20, 50 kW</p>
+            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+              Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
+            </p>
+            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+              Laser Powers : 3, 6, 12, 20, 50 kW
+            </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMachines.map((m) => (
-              <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors shadow-lg">
+              <div
+                key={m.name}
+                className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors shadow-lg"
+              >
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
                   {m.images ? (
                     <div className="relative w-full h-full">
@@ -191,7 +219,10 @@ export default function Index() {
                 <div className="p-6 text-center">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
                   <h3 className="font-bold text-foreground mt-2 mb-2 text-sm">{m.name}</h3>
-                  <Link to={m.link} className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                  <Link
+                    to={m.link}
+                    className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
+                  >
                     View Details <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
@@ -201,7 +232,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Open Type Fiber Laser Video */}
+      {/* Kaimec Machines in Action Video */}
       <section className="py-16 md:py-20 bg-[#f8f8f8]">
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
@@ -211,7 +242,7 @@ export default function Index() {
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
               id="kaimec-action-video"
-              src={mekotekVideo.url}
+              src="/videos/mekotek-flc-p-1530.mp4"
               autoPlay
               muted
               loop
@@ -267,7 +298,7 @@ export default function Index() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-black">
                     <video
-                      src={`${mekotekVideo.url}#t=${c.time + 0.1}`}
+                      src={`/videos/mekotek-flc-p-1530.mp4#t=${c.time + 0.1}`}
                       preload="metadata"
                       muted
                       playsInline
@@ -304,22 +335,38 @@ export default function Index() {
           <div className="text-center mb-8">
             <p className="section-label mb-3">{"\n"}</p>
             <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
-            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet sizes and tonnages.</p>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet
+              sizes and tonnages.
+            </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
             {[
               { tag: "CNC Press Brake", name: "MKT 1560", desc: "5 ft / 60 ton capacity", image: mkt1560Img },
               { tag: "CNC Press Brake", name: "MKT 32135", desc: "12 ft x 135ton capacity", image: mkt32135Img },
             ].map((m) => (
-              <div key={m.name} className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
+              <div
+                key={m.name}
+                className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors"
+              >
                 <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
-                  <img src={m.image} alt={m.name} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500" />
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-6 text-center">
                   <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
                   <h3 className="text-xl font-bold text-foreground mt-2 mb-1">{m.name}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{m.desc}</p>
-                  <Link to="/machines/press-brakes" className="inline-flex items-center text-sm font-semibold text-primary hover:underline">
+                  <Link
+                    to="/machines/press-brakes"
+                    className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
+                  >
                     View Details <ArrowRight className="ml-1 h-3 w-3" />
                   </Link>
                 </div>
@@ -349,13 +396,24 @@ export default function Index() {
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-4">The machines your shop needs. The support your floor demands.</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-4">
+                The machines your shop needs. The support your floor demands.
+              </h2>
               <div className="space-y-4 text-gray-600 mb-6 leading-relaxed">
-                <p>Kaimec machines are manufactured in Europe using premium-quality international components and supported by USA-based service personnel. Many low-cost machines focus primarily on initial purchase price, while Kaimec focuses on long-term reliability, precision, safety, productivity, and customer support.</p>
-
-                <h3 className="text-xl font-bold text-gray-800 mt-8 mb-4">What advantages does Kaimec offer over low-cost Chinese machines?</h3>
-
-                <p>Kaimec offers free installation, free training, 24/7 online support, premium international components, detailed manuals, spare parts availability, FDA compliance, CE-certified manufacturing, and English-speaking support personnel.</p>
+                <p>
+                  Kaimec machines are manufactured in Europe using premium-quality international components and
+                  supported by USA-based service personnel. Many low-cost machines focus primarily on initial purchase
+                  price, while Kaimec focuses on long-term reliability, precision, safety, productivity, and customer
+                  support.
+                </p>
+                <h3 className="text-xl font-bold text-gray-800 mt-8 mb-4">
+                  What advantages does Kaimec offer over low-cost Chinese machines?
+                </h3>
+                <p>
+                  Kaimec offers free installation, free training, 24/7 online support, premium international components,
+                  detailed manuals, spare parts availability, FDA compliance, CE-certified manufacturing, and
+                  English-speaking support personnel.
+                </p>
               </div>
               <ul className="space-y-4 mb-8">
                 {whyPoints.map((p) => (
@@ -383,10 +441,15 @@ export default function Index() {
               Ready to spec your machine?
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Tell us what you're cutting and we'll find the right configuration. Same-day response from our Tustin, CA team.
+              Tell us what you're cutting and we'll find the right configuration. Same-day response from our Tustin, CA
+              team.
             </p>
             <Link to="/quote">
-              <Button size="lg" variant="secondary" className="font-bold text-base px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="font-bold text-base px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+              >
                 Talk to a Specialist
               </Button>
             </Link>
