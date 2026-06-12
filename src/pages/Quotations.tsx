@@ -275,30 +275,6 @@ export default function Quotations() {
         </div>
       </section>
 
-      {/* Quote Form */}
-      {showForm && (
-        <section id="quote-form" className="py-20 bg-[#f8f8f8]">
-          <div className="container max-w-2xl">
-            <div className="bg-white border border-border rounded-lg p-8 md:p-10">
-              <div className="mb-8">
-                <p className="section-label mb-3 text-primary">Get Pricing</p>
-                <h2 className="text-2xl md:text-3xl font-black text-foreground">
-                  Request Your Quotation
-                </h2>
-                <p className="text-muted-foreground mt-2">
-                  Machines selected: <span className="font-semibold text-foreground">{selectedMachines}</span>
-                </p>
-                {selectedAccessories.size > 0 && (
-                  <p className="text-muted-foreground mt-1">
-                    Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
-                  </p>
-                )}
-              </div>
-              <RequestInfoForm machine={selectedMachines} />
-            </div>
-          </div>
-        </section>
-      )}
     </Layout>
   );
 }
