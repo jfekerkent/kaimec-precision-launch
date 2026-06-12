@@ -26,6 +26,8 @@ import comboFlcp1530_1 from "@/assets/combo-flcp-1530-1.jpg.asset.json";
 import comboFlcp1530_2 from "@/assets/combo-flcp-1530-2.jpg.asset.json";
 import comboFlcp2040_1 from "@/assets/combo-flcp-2040-1.jpg.asset.json";
 import comboFlcp2040_2 from "@/assets/combo-flcp-2040-2.jpg.asset.json";
+import comboOnly1 from "@/assets/combo-only-1.jpg.asset.json";
+import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
 import comboFlop1530A from "@/assets/combo-flop-1530-a.png.asset.json";
 import comboFlop1530B from "@/assets/combo-flop-1530-b.png.asset.json";
 import comboFlop2040A from "@/assets/combo-flop-2040-a.png.asset.json";
@@ -65,16 +67,8 @@ const featuredMachines = [
     name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
     image: null,
     images: [
-      comboFlcp1530_1.url,
-      comboFlcp1530_2.url,
-      comboFlcp2040_1.url,
-      comboFlcp2040_2.url,
-      comboFlop1530A.url,
-      comboFlop1530B.url,
-      comboFlop2040A.url,
-      comboFlop2040B.url,
-      comboFlop2040C.url,
-      comboFlop2040D.url,
+      comboOnly1.url,
+      comboOnly2.url,
     ],
     link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser",
   },
