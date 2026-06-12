@@ -29,9 +29,10 @@ import floTop2040C from "@/assets/flo-top-2040-c.png.asset.json";
 import floTop2040D from "@/assets/flo-top-2040-d.png.asset.json";
 import floTop2060 from "@/assets/flo-top-2060.jpg.asset.json";
 import flo2040Img from "@/assets/machine-flo-2040.png";
-import flo2040Slide1 from "@/assets/flo-2040-1.png";
-import flo2040Slide2 from "@/assets/flo-2040-2.png";
-import flo2040Slide3 from "@/assets/flo-2040-3.png";
+import flo2040New1 from "@/assets/flo2040-new-1.png.asset.json";
+import flo2040New2 from "@/assets/flo2040-new-2.png.asset.json";
+import flo2040New3 from "@/assets/flo2040-new-3.png.asset.json";
+import flo2040New4 from "@/assets/flo2040-new-4.png.asset.json";
 import flo2060Img from "@/assets/machine-flo-2060.avif";
 
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
@@ -56,7 +57,7 @@ const flo1530Slides = [
   floTop2040D.url,
   floTop2060.url,
 ];
-const flo2040Slides = [flo2040Slide1, flo2040Slide2, flo2040Slide3];
+const flo2040Slides = [flo2040New1.url, flo2040New2.url, flo2040New3.url, flo2040New4.url];
 
 function Flo1530Slideshow() {
   const [index, setIndex] = useState(0);
