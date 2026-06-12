@@ -3,10 +3,12 @@ import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import { quoteMachines, type QuoteSlug } from "./QuoteMachine";
+import dustCollectorImg from "@/assets/dust-collector.jpg";
+import airCompressorImg from "@/assets/air-compressor.jpg";
 
-const accessoryPrices: { match: RegExp; label: string; price: number }[] = [
-  { match: /dust|smoke/i, label: "Dust collector", price: 22000 },
-  { match: /air\s*compressor|screw/i, label: "Screw special air compressor", price: 22000 },
+const accessoryPrices: { match: RegExp; label: string; price: number; image: string }[] = [
+  { match: /dust|smoke/i, label: "Dust collector", price: 22000, image: dustCollectorImg },
+  { match: /air\s*compressor|screw/i, label: "Screw special air compressor", price: 22000, image: airCompressorImg },
 ];
 
 const includedBlurb =
@@ -75,12 +77,25 @@ export default function QuoteSummary() {
                   key={m.slug}
                   className="bg-white border border-border rounded-lg p-4 flex flex-col"
                 >
-                  <div className="flex-1 flex items-center justify-center">
+                  <div className="flex-1 flex items-center justify-center gap-4">
                     <img
                       src={m.image}
                       alt={m.name}
-                      className="w-full h-auto max-h-[280px] object-contain"
+                      className="flex-1 h-auto max-h-[280px] object-contain"
                     />
+                    {selectedAccessories.length > 0 && (
+                      <div className="flex flex-col gap-3 w-24 shrink-0">
+                        {selectedAccessories.map((a) => (
+                          <img
+                            key={a.label}
+                            src={a.image}
+                            alt={a.label}
+                            title={a.label}
+                            className="w-full h-auto max-h-[120px] object-contain"
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
