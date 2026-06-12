@@ -59,11 +59,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                    location.pathname === "/"
-                      ? "text-primary"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "0s" }}
                 >
                   Home
                 </Link>
@@ -74,11 +71,8 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-xs font-medium transition-colors whitespace-nowrap ${
-                    location.pathname.startsWith("/machines/laser-cutting/")
-                      ? "text-primary"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "-0.15s" }}
                 >
                   Laser Cutting machines
                   <ChevronDown
@@ -106,11 +100,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                    location.pathname === pressBrakesLink.to
-                      ? "text-primary"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "-0.3s" }}
                 >
                   {pressBrakesLink.label}
                 </Link>
@@ -118,11 +109,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                    location.pathname === "/quotations"
-                      ? "text-primary"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "-0.45s" }}
                 >
                   Quotations
                 </Link>
@@ -133,11 +121,8 @@ export default function Navbar() {
                 onMouseLeave={() => setDrillOpen(false)}
               >
                 <button
-                  className={`flex items-center gap-1 text-xs font-medium transition-colors whitespace-nowrap ${
-                    location.pathname.startsWith("/gun-drills")
-                      ? "text-primary"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "-0.6s" }}
                 >
                   Gun & BTA Drilling Machines
                   <ChevronDown
@@ -162,15 +147,12 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-              {navLinks.filter((l) => l.to !== "/").map((link) => (
+              {navLinks.filter((l) => l.to !== "/").map((link, i) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                      location.pathname === link.to
-                        ? "text-primary"
-                        : "text-slate-600 hover:text-slate-900"
-                    }`}
+                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
+                    style={{ animationDelay: `${-0.75 - i * 0.15}s` }}
                   >
                     {link.label}
                   </Link>
@@ -179,7 +161,8 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors whitespace-nowrap"
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  style={{ animationDelay: "-0.9s" }}
                 >
                   More
                   <ChevronDown
