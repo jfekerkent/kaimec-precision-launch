@@ -120,11 +120,45 @@ export default {
           "72%": { opacity: "1", transform: "scale(1.4)" },
           "85%": { opacity: "0", transform: "scale(0.8)" },
         },
-        "nav-flash": {
+        "nav-flash-red": {
           "0%, 100%": { color: "#ef4444", textShadow: "0 0 8px rgba(239,68,68,0.6)" },
-          "25%": { color: "#eab308", textShadow: "0 0 8px rgba(234,179,8,0.6)" },
-          "50%": { color: "#22c55e", textShadow: "0 0 8px rgba(34,197,94,0.6)" },
-          "75%": { color: "#3b82f6", textShadow: "0 0 8px rgba(59,130,246,0.6)" },
+          "50%": { color: "#fca5a5", textShadow: "0 0 16px rgba(239,68,68,0.9)" },
+        },
+        "nav-flash-blue": {
+          "0%, 100%": { color: "#3b82f6", textShadow: "0 0 8px rgba(59,130,246,0.6)" },
+          "50%": { color: "#93c5fd", textShadow: "0 0 16px rgba(59,130,246,0.9)" },
+        },
+        "nav-flash-green": {
+          "0%, 100%": { color: "#22c55e", textShadow: "0 0 8px rgba(34,197,94,0.6)" },
+          "50%": { color: "#86efac", textShadow: "0 0 16px rgba(34,197,94,0.9)" },
+        },
+        "nav-flash-orange": {
+          "0%, 100%": { color: "#f97316", textShadow: "0 0 8px rgba(249,115,22,0.6)" },
+          "50%": { color: "#fdba74", textShadow: "0 0 16px rgba(249,115,22,0.9)" },
+        },
+        "nav-flash-purple": {
+          "0%, 100%": { color: "#a855f7", textShadow: "0 0 8px rgba(168,85,247,0.6)" },
+          "50%": { color: "#d8b4fe", textShadow: "0 0 16px rgba(168,85,247,0.9)" },
+        },
+        "nav-flash-pink": {
+          "0%, 100%": { color: "#ec4899", textShadow: "0 0 8px rgba(236,72,153,0.6)" },
+          "50%": { color: "#f9a8d4", textShadow: "0 0 16px rgba(236,72,153,0.9)" },
+        },
+        "nav-flash-cyan": {
+          "0%, 100%": { color: "#06b6d4", textShadow: "0 0 8px rgba(6,182,212,0.6)" },
+          "50%": { color: "#67e8f9", textShadow: "0 0 16px rgba(6,182,212,0.9)" },
+        },
+        "nav-flash-teal": {
+          "0%, 100%": { color: "#14b8a6", textShadow: "0 0 8px rgba(20,184,166,0.6)" },
+          "50%": { color: "#5eead4", textShadow: "0 0 16px rgba(20,184,166,0.9)" },
+        },
+        "nav-flash-amber": {
+          "0%, 100%": { color: "#f59e0b", textShadow: "0 0 8px rgba(245,158,11,0.6)" },
+          "50%": { color: "#fcd34d", textShadow: "0 0 16px rgba(245,158,11,0.9)" },
+        },
+        "nav-flash-rose": {
+          "0%, 100%": { color: "#f43f5e", textShadow: "0 0 8px rgba(244,63,94,0.6)" },
+          "50%": { color: "#fda4af", textShadow: "0 0 16px rgba(244,63,94,0.9)" },
         },
       },
       animation: {
@@ -135,11 +169,19 @@ export default {
         "laser-left": "laser-left 0.8s ease-in-out infinite, laser-color 1.2s linear infinite",
         "laser-right": "laser-right 0.8s ease-in-out infinite, laser-color 1.2s linear infinite",
         "laser-dot": "laser-color 1.2s linear infinite",
-        
         "press-stamp": "press-stamp 1s ease-in-out infinite",
         "press-punch": "press-punch 1s ease-in-out infinite",
         "press-spark": "press-spark 1s ease-in-out infinite",
-        "nav-flash": "nav-flash 1s linear infinite",
+        "nav-flash-red": "nav-flash-red 1s ease-in-out infinite",
+        "nav-flash-blue": "nav-flash-blue 1s ease-in-out infinite",
+        "nav-flash-green": "nav-flash-green 1s ease-in-out infinite",
+        "nav-flash-orange": "nav-flash-orange 1s ease-in-out infinite",
+        "nav-flash-purple": "nav-flash-purple 1s ease-in-out infinite",
+        "nav-flash-pink": "nav-flash-pink 1s ease-in-out infinite",
+        "nav-flash-cyan": "nav-flash-cyan 1s ease-in-out infinite",
+        "nav-flash-teal": "nav-flash-teal 1s ease-in-out infinite",
+        "nav-flash-amber": "nav-flash-amber 1s ease-in-out infinite",
+        "nav-flash-rose": "nav-flash-rose 1s ease-in-out infinite",
       },
     },
   },
