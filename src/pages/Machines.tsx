@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
+import Seo from "@/components/Seo";
 import { categories, getMachinesByCategory } from "@/data/machines";
 import kflo1530Img from "@/assets/machine-kflo-primary.png";
 import kfloTertiaryImg from "@/assets/machine-kflo-tertiary.png";
@@ -29,6 +30,11 @@ const machineImages: Record<string, string> = {
 export default function Machines() {
   return (
     <Layout>
+      <Seo
+        title="All Machines | KAIMEC CNC Fiber Lasers, Press Brakes & Drills"
+        description="Browse KAIMEC's full catalog: CNC fiber laser cutters, tube & profile lasers, press brakes, and deep-hole gun-drilling machines."
+        path="/machines"
+      />
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <p className="section-label mb-3">Full Catalog</p>
@@ -44,7 +50,8 @@ export default function Machines() {
             <div className="container">
               <div className="flex items-end justify-between mb-8">
                 <div>
-                  <p className="section-label mb-2">{cat.name}</p>
+                  <p className="section-label mb-2">Category</p>
+                  <h2 className="text-2xl md:text-3xl font-black uppercase text-foreground tracking-tight mb-2">{cat.name}</h2>
                   <p className="text-muted-foreground max-w-xl">{cat.description}</p>
                 </div>
                 <Link to={`/machines/${cat.slug}`} className="hidden md:inline-flex items-center text-sm font-semibold text-primary hover:underline shrink-0">
