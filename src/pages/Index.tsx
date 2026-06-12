@@ -196,10 +196,16 @@ export default function Index() {
       <section className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f5] to-[#e8e8e8]">
         <div className="container">
           <div className="text-center mb-14">
-            <div className="relative flex items-center justify-center gap-4 overflow-hidden">
-              <span aria-hidden className="hidden sm:block flex-1 h-1 rounded-full animate-laser-left origin-right" />
+            <div className="relative flex items-center justify-center gap-3 overflow-hidden">
+              <span aria-hidden className="hidden sm:flex flex-1 items-center justify-end gap-2 animate-laser-left origin-right">
+                <span className="flex-1 h-1 rounded-full animate-laser-dot" />
+                <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
+              </span>
               <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">Laser Cutting Machines</h2>
-              <span aria-hidden className="hidden sm:block flex-1 h-1 rounded-full animate-laser-right origin-left" />
+              <span aria-hidden className="hidden sm:flex flex-1 items-center justify-start gap-2 animate-laser-right origin-left">
+                <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
+                <span className="flex-1 h-1 rounded-full animate-laser-dot" />
+              </span>
             </div>
             <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
               Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
