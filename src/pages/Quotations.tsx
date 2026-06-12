@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AlertTriangle, Check, ChevronRight } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useState } from "react";
+import { Check, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
-import RequestInfoForm from "@/components/RequestInfoForm";
 
 import flo1530_3kw from "@/assets/machine-kflo-1530.png";
 import flo1530_6kw from "@/assets/flo-1530-6kw.png";
@@ -65,7 +63,6 @@ const accessories = [
 export default function Quotations() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [selectedAccessories, setSelectedAccessories] = useState<Set<string>>(new Set());
-  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
 
   const toggleMachine = (id: string) => {
@@ -93,23 +90,16 @@ export default function Quotations() {
   };
 
   const handleRequestQuote = () => {
-    // If exactly one machine is selected, route to its dedicated quote sub-page
-    // (carrying any selected accessories along via query string).
-    if (selected.size === 1) {
-      const onlyId = Array.from(selected)[0];
-      const match = machines.find((m) => m.id === onlyId);
-      if (match) {
-        const acc = Array.from(selectedAccessories);
-        const qs = acc.length ? `?accessories=${encodeURIComponent(acc.join(", "))}` : "";
-        navigate(`/quotations/${match.slug}${qs}`);
-        return;
-      }
-    }
-    setShowForm(true);
-    setTimeout(() => {
-      const el = document.getElementById("quote-form");
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
+    // Route to the summary page with all selected machines + accessories.
+    const slugs = Array.from(selected)
+      .map((id) => machines.find((m) => m.id === id)?.slug)
+      .filter(Boolean) as string[];
+    if (slugs.length === 0) return;
+    const params = new URLSearchParams();
+    params.set("machines", slugs.join(","));
+    const acc = Array.from(selectedAccessories);
+    if (acc.length) params.set("accessories", acc.join(", "));
+    navigate(`/quotations/summary?${params.toString()}`);
   };
 
   const selectedMachines = Array.from(selected).join(", ");
@@ -147,15 +137,6 @@ export default function Quotations() {
               Click on the boxes below to select the model you want quoted.
             </p>
           </div>
-
-          {selected.size > 1 && (
-            <Alert variant="destructive" className="mb-8 max-w-3xl">
-              <AlertTriangle className="h-4 w-4" />
-              <AlertDescription>
-                Please select only one machine
-              </AlertDescription>
-            </Alert>
-          )}
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {machines.map((m) => {
@@ -293,30 +274,6 @@ export default function Quotations() {
         </div>
       </section>
 
-      {/* Quote Form */}
-      {showForm && (
-        <section id="quote-form" className="py-20 bg-[#f8f8f8]">
-          <div className="container max-w-2xl">
-            <div className="bg-white border border-border rounded-lg p-8 md:p-10">
-              <div className="mb-8">
-                <p className="section-label mb-3 text-primary">Get Pricing</p>
-                <h2 className="text-2xl md:text-3xl font-black text-foreground">
-                  Request Your Quotation
-                </h2>
-                <p className="text-muted-foreground mt-2">
-                  Machines selected: <span className="font-semibold text-foreground">{selectedMachines}</span>
-                </p>
-                {selectedAccessories.size > 0 && (
-                  <p className="text-muted-foreground mt-1">
-                    Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
-                  </p>
-                )}
-              </div>
-              <RequestInfoForm machine={selectedMachines} />
-            </div>
-          </div>
-        </section>
-      )}
     </Layout>
   );
 }

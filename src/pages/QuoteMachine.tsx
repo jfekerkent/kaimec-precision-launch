@@ -1,9 +1,7 @@
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
-import { Button } from "@/components/ui/button";
 
 import flo1530_3kw from "@/assets/machine-kflo-1530.png";
 import flo1530_6kw from "@/assets/flo-1530-6kw.png";
@@ -37,11 +35,6 @@ export default function QuoteMachine() {
   const machine = slug ? quoteMachines[slug] : undefined;
   const [searchParams] = useSearchParams();
   const accessories = searchParams.get("accessories") || "";
-  const [showPrice, setShowPrice] = useState(false);
-
-  useEffect(() => {
-    setShowPrice(false);
-  }, [slug]);
 
   if (!machine) {
     return (
@@ -83,14 +76,7 @@ export default function QuoteMachine() {
                 className="w-full h-auto max-h-[480px] object-contain"
               />
             </div>
-            <Button
-              size="lg"
-              className="w-full"
-              onClick={() => setShowPrice((v) => !v)}
-            >
-              Press here to see the price of the machine and accessories
-            </Button>
-            {showPrice && machine && (
+            {machine && (
               (() => {
                 const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
                 const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
