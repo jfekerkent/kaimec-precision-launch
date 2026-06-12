@@ -55,11 +55,8 @@ export default function QuoteSummary() {
           </nav>
           <p className="section-label mb-3 text-primary">Quote Request</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
-            Your Selection
+            The laser cutting machine and accessories selected
           </h1>
-          <p className="text-white/70 text-lg">
-            {selected.length} machine{selected.length > 1 ? "s" : ""} selected
-          </p>
         </div>
       </section>
 
@@ -77,21 +74,21 @@ export default function QuoteSummary() {
                   key={m.slug}
                   className="bg-white border border-border rounded-lg p-4 flex flex-col overflow-hidden"
                 >
-                  <div className="flex items-center justify-center gap-2 min-h-[280px] w-fit mx-auto">
+                  <div className="flex items-center justify-center gap-1 min-h-[280px] w-fit mx-auto">
                     <img
                       src={m.image}
                       alt={m.name}
-                      className="max-w-full max-h-[240px] h-auto object-contain"
+                      className="max-w-full max-h-[200px] h-auto object-contain"
                     />
                     {selectedAccessories.length > 0 && (
-                      <div className="flex flex-col gap-2 w-16 shrink-0">
+                      <div className="flex flex-col gap-1 w-12 shrink-0">
                         {selectedAccessories.map((a) => (
                           <img
                             key={a.label}
                             src={a.image}
                             alt={a.label}
                             title={a.label}
-                            className="max-w-full max-h-[80px] h-auto object-contain"
+                            className="max-w-full max-h-[50px] h-auto object-contain"
                           />
                         ))}
                       </div>
