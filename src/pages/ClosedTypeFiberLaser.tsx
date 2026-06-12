@@ -52,7 +52,7 @@ function RotatingImage({ images, alt }: { images: string[]; alt: string }) {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
     if (!hover) return;
-    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 1000);
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 800);
     return () => clearInterval(t);
   }, [hover, images.length]);
   useEffect(() => {
