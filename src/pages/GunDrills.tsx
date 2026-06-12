@@ -13,6 +13,7 @@ import {
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
 import tskMain from "@/assets/tsk-2150-deep-hole-drilling.jpg";
 import kaimecLogo from "@/assets/kaimec-logo-dark.png";
 import kdhImg from "@/assets/kdh-deep-hole-drilling.jpg";
@@ -259,6 +260,12 @@ export default function GunDrills() {
 
   return (
     <Layout>
+      <Seo
+        title="Gun & BTA Deep Hole Drilling Machines | KAIMEC"
+        description="KAIMEC gun and BTA deep hole drilling machines for aerospace, automotive, oil & gas and mold making — precise, straight, high-aspect-ratio holes."
+        path="/machines/gun-drills"
+        type="product"
+      />
       {/* SECTION 1 — Hero */}
       <section className="bg-[#1a1a1a] py-14 md:py-20">
         <div className="container max-w-5xl">

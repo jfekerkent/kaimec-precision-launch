@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
+import Seo from "@/components/Seo";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
@@ -154,6 +155,18 @@ export default function PressBrakes() {
   }, [location]);
   return (
     <Layout>
+      <Seo
+        title="CNC Press Brakes | KAIMEC MKT Series Hydraulic & Electric"
+        description="KAIMEC MKT-series CNC hydraulic and electric press brakes for precision metal bending — 60 to 320 ton capacities, 1.5 to 13.5 ft."
+        path="/machines/press-brakes"
+        type="product"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "KAIMEC CNC Press Brakes",
+          url: "https://kaimec-industrial-hub.lovable.app/machines/press-brakes",
+        }}
+      />
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />

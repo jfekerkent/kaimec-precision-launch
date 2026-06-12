@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
+import Seo from "@/components/Seo";
 import {
   Crosshair,
   ShieldAlert,
@@ -207,6 +208,12 @@ export default function OpenTypeFiberLaser() {
   }, [location]);
   return (
     <Layout>
+      <Seo
+        title="Open-Type Fiber Laser Cutter | KAIMEC FLO Series"
+        description="KAIMEC FLO open-type fiber laser cutting machines — high cutting speed, dual-table options, 1.5 to 30 kW power."
+        path="/machines/laser-cutting/open-type-fiber-laser"
+        type="product"
+      />
       {/* 1. HERO */}
       <section className="relative bg-[#f5f5f5] overflow-hidden">
         <div className="absolute inset-1 bg-gradient-to-br from-[#f5f5f5] via-[#f5f5f5] to-[#e8e8e8] pointer-events-none" />

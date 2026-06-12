@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import MachineGallery from "@/components/MachineGallery";
+import Seo from "@/components/Seo";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import flp6035_1 from "@/assets/flp-6035-1.png.asset.json";
@@ -124,6 +125,18 @@ export default function TubeProfileLasers() {
   }, [location]);
   return (
     <Layout>
+      <Seo
+        title="Tube & Profile Laser Cutting Machines | KAIMEC FLP"
+        description="KAIMEC FLP tube and profile fiber laser cutters for round, square and structural pipe up to 14 inches diameter."
+        path="/machines/tube-profile-lasers"
+        type="product"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "KAIMEC Tube & Profile Laser Cutters",
+          url: "https://kaimec-industrial-hub.lovable.app/machines/tube-profile-lasers",
+        }}
+      />
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />

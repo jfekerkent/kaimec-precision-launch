@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
+import Seo from "@/components/Seo";
 import {
   ShieldCheck,
   Layers,
@@ -201,6 +202,12 @@ export default function ClosedTypeFiberLaser() {
   }, [location]);
   return (
     <Layout>
+      <Seo
+        title="Closed-Type Fiber Laser Cutter | KAIMEC FLC Series"
+        description="Fully enclosed KAIMEC FLC fiber laser cutters — class-1 safety, high power, dual-table production for sheet metal fabrication."
+        path="/machines/laser-cutting/closed-type-fiber-laser"
+        type="product"
+      />
       {/* 1. HERO */}
       <section className="relative bg-green-100 overflow-hidden">
         <div className="absolute inset-1 bg-gradient-to-br from-green-100 via-green-200 to-green-300 pointer-events-none rounded-lg" />
