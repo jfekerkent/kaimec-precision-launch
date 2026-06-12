@@ -82,19 +82,6 @@ export default function QuoteSummary() {
                       alt={m.name}
                       className="absolute inset-0 w-full h-full object-contain p-3"
                     />
-                    {selectedAccessories.length > 0 && (
-                      <div className="absolute top-2 right-2 flex flex-col gap-1 z-10">
-                        {selectedAccessories.map((a) => (
-                          <img
-                            key={a.label}
-                            src={a.image}
-                            alt={a.label}
-                            title={a.label}
-                            className="w-10 h-10 object-contain bg-white/80 rounded border border-border/40 p-0.5"
-                          />
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
@@ -118,7 +105,10 @@ export default function QuoteSummary() {
                 </li>
                 {selectedAccessories.map((a) => (
                   <li key={a.label} className="flex justify-between gap-4">
-                    <span>+ {a.label}</span>
+                    <span className="flex items-center gap-2">
+                      <img src={a.image} alt={a.label} className="w-8 h-8 object-contain rounded border border-border/40 p-0.5" />
+                      + {a.label}
+                    </span>
                     <span>${a.price.toLocaleString()}</span>
                   </li>
                 ))}
