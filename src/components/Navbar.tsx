@@ -59,8 +59,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "0s" }}
+                  className="text-xs font-bold whitespace-nowrap"
+
                 >
                   Home
                 </Link>
@@ -71,8 +71,8 @@ export default function Navbar() {
                 onMouseLeave={() => setLaserOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "-0.15s" }}
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+
                 >
                   Laser Cutting machines
                   <ChevronDown
@@ -100,8 +100,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to={pressBrakesLink.to}
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "-0.3s" }}
+                  className="text-xs font-bold whitespace-nowrap"
+
                 >
                   {pressBrakesLink.label}
                 </Link>
@@ -109,8 +109,8 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/quotations"
-                  className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "-0.45s" }}
+                  className="text-xs font-bold whitespace-nowrap"
+
                 >
                   Quotations
                 </Link>
@@ -121,8 +121,8 @@ export default function Navbar() {
                 onMouseLeave={() => setDrillOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "-0.6s" }}
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+
                 >
                   Gun & BTA Drilling Machines
                   <ChevronDown
@@ -147,12 +147,11 @@ export default function Navbar() {
                   </div>
                 )}
               </li>
-              {navLinks.filter((l) => l.to !== "/").map((link, i) => (
+              {navLinks.filter((l) => l.to !== "/").map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-xs font-bold whitespace-nowrap animate-nav-flash"
-                    style={{ animationDelay: `${-0.75 - i * 0.15}s` }}
+                    className="text-xs font-bold whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -161,8 +160,8 @@ export default function Navbar() {
               <li className="relative">
                 <button
                   onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  style={{ animationDelay: "-0.9s" }}
+                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap"
+
                 >
                   More
                   <ChevronDown
