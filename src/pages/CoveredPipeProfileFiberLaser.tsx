@@ -25,22 +25,24 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
-import flcP1530Img from "@/assets/flc-p-1530-1.png";
-import flcP2040Img from "@/assets/flc-p-2040-2.png";
-import flcP1530Eu1 from "@/assets/flc-p-1530-eu-1.jpg";
-import flcP1530Eu2 from "@/assets/flc-p-1530-eu-2.jpg";
-import flcP2040Eu1a from "@/assets/flc-p-2040-eu-1a.jpg";
-import flcP2040Eu1b from "@/assets/flc-p-2040-eu-1b.jpg";
-import flo1530_3 from "@/assets/flo-1530-3.png";
-import flo1530_4 from "@/assets/flo-1530-4.png";
-import floP1530_2 from "@/assets/flo-p-1530-2.png";
-import floP1530_4 from "@/assets/flo-p-1530-4.png";
-import floP2040_1 from "@/assets/flo-p-2040-1.png";
-import floP2040_2 from "@/assets/flo-p-2040-2.png";
-import floP1530A from "@/assets/flo-p-1530-a.png";
-import floP1530B from "@/assets/flo-p-1530-b.png";
-import floP1530C from "@/assets/flo-p-1530-c.png";
-import floP1530D from "@/assets/flo-p-1530-d.png";
+import comboFlcp1530NewAsset from "@/assets/combo-flcp-1530-new.jpg.asset.json";
+import comboFlcp2040NewAsset from "@/assets/combo-flcp-2040-new.jpg.asset.json";
+import comboFlcp2040New2Asset from "@/assets/combo-flcp-2040-new2.jpg.asset.json";
+import comboFlop1530AAsset from "@/assets/combo-flop-1530-new-a.png.asset.json";
+import comboFlop1530BAsset from "@/assets/combo-flop-1530-new-b.png.asset.json";
+import comboFlop2040AAsset from "@/assets/combo-flop-2040-new-a.png.asset.json";
+import comboFlop2040BAsset from "@/assets/combo-flop-2040-new-b.png.asset.json";
+import comboFlop2040CAsset from "@/assets/combo-flop-2040-new-c.png.asset.json";
+import comboFlop2040DAsset from "@/assets/combo-flop-2040-new-d.png.asset.json";
+const flcP1530Img = comboFlcp1530NewAsset.url;
+const flcP2040Img = comboFlcp2040NewAsset.url;
+const flcP2040ImgAlt = comboFlcp2040New2Asset.url;
+const floP1530A = comboFlop1530AAsset.url;
+const floP1530B = comboFlop1530BAsset.url;
+const floP2040Front = comboFlop2040BAsset.url;
+const floP2040Persp = comboFlop2040AAsset.url;
+const floP2060Side = comboFlop2040CAsset.url;
+const floP2060Persp = comboFlop2040DAsset.url;
 import flp6035Img from "@/assets/machine-flp-6035-front.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
@@ -53,16 +55,13 @@ const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 const heroSlides = [
   flcP1530Img,
   flcP2040Img,
-  flcP1530Eu1,
-  flcP1530Eu2,
-  flcP2040Eu1a,
-  flcP2040Eu1b,
-  flo1530_3,
-  flo1530_4,
-  floP1530_2,
-  floP1530_4,
-  floP2040_1,
-  floP2040_2,
+  flcP2040ImgAlt,
+  floP1530A,
+  floP1530B,
+  floP2040Persp,
+  floP2040Front,
+  floP2060Side,
+  floP2060Persp,
 ];
 
 const HeroSlideshow = () => {
@@ -379,8 +378,8 @@ export default function CoveredPipeProfileFiberLaser() {
               onClick={() => navigate("/quotations")}
             />
             <RolloverConfigCard
-              img={floP1530C}
-              hoverImg={floP1530D}
+              img={floP2040Front}
+              hoverImg={floP2040Persp}
               title="FLO-P 2040 ( open, single table)"
               subtitle="6.5x10ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 10ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
@@ -388,8 +387,8 @@ export default function CoveredPipeProfileFiberLaser() {
               onClick={() => navigate("/quotations")}
             />
             <RolloverConfigCard
-              img={floP1530D}
-              hoverImg={floP1530A}
+              img={floP2060Side}
+              hoverImg={floP2060Persp}
               title="FLO-P 2060 ( open, single table)"
               subtitle="6.5x20ft Working Area | 2-12 kW"
               body={'The compact combo machine. Sheet metal sizes up to 6.5 x 20ft and pipe/profile up to 13.8" diameter x 20ft in length in a single footprint.'}
