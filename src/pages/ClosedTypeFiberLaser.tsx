@@ -29,6 +29,10 @@ const flc2060Img = flc2060ConfigAsset.url;
 import flc1530_2 from "@/assets/flc-1530-2.png";
 import flc1530_3 from "@/assets/flc-1530-3.png";
 import flc1530_4 from "@/assets/flc-1530-4.png";
+import flcHero1 from "@/assets/flc-1530-hero-1.png.asset.json";
+import flcHero2 from "@/assets/flc-1530-hero-2.png.asset.json";
+import flcHero3 from "@/assets/flc-1530-hero-3.png.asset.json";
+import flcHero4 from "@/assets/flc-1530-hero-4.png.asset.json";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
 
@@ -245,14 +249,11 @@ export default function ClosedTypeFiberLaser() {
               </div>
             </div>
             <div className="relative">
-              <div className="group relative aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-4 rounded-lg border">
-                <img src={flc1530_2} alt="FLC-1530 front view" className="absolute inset-0 w-full h-full object-contain p-4 opacity-100 transition-opacity duration-700 group-hover:opacity-0" />
-                <img src={flc1530_3} alt="FLC-1530 side view" className="absolute inset-0 w-full h-full object-contain p-4 opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-hover:[animation:flcCycle_4s_ease-in-out_infinite]" style={{ animationDelay: "0s" }} />
-                <img src={flc1530_4} alt="FLC-1530 with exchange table" className="absolute inset-0 w-full h-full object-contain p-4 opacity-0 transition-opacity duration-700 group-hover:[animation:flcCycle2_4s_ease-in-out_infinite]" />
-                <style>{`
-                  @keyframes flcCycle { 0%,33%{opacity:1} 50%,100%{opacity:0} }
-                  @keyframes flcCycle2 { 0%,50%{opacity:0} 66%,100%{opacity:1} }
-                `}</style>
+              <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-4 rounded-lg border">
+                <RotatingImage
+                  images={[flcHero1.url, flcHero2.url, flcHero3.url, flcHero4.url]}
+                  alt="FLC-1530 fully enclosed fiber laser"
+                />
               </div>
             </div>
           </div>
