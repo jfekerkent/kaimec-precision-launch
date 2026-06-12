@@ -22,6 +22,8 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import heroImg from "@/assets/flc-hero.png";
 import sideProfileImg from "@/assets/flc-side-profile.png";
 import tableExtendedImg from "@/assets/flc-table-extended.png";
+import flc2040ConfigAsset from "@/assets/flc2040-config.png.asset.json";
+const flc2040Img = flc2040ConfigAsset.url;
 import flc1530_2 from "@/assets/flc-1530-2.png";
 import flc1530_3 from "@/assets/flc-1530-3.png";
 import flc1530_4 from "@/assets/flc-1530-4.png";
@@ -68,7 +70,7 @@ const features = [
 
 const models = [
   { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg },
-  { id: "FLC-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: tableExtendedImg },
+  { id: "FLC-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: flc2040Img },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: sideProfileImg },
 ];
 
