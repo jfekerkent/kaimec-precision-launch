@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Wrench, Users, CheckCircle, Play } from "lucide-react";
+import { ArrowRight, CheckCircle, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
 import Seo from "@/components/Seo";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
-import kfloSecondaryImg from "@/assets/machine-kflo-secondary.png";
-import flcP1530Img from "@/assets/flc-p-1530-1.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
-import facilityImg from "@/assets/flc-p-2040.png";
 import slideFlo1530New from "@/assets/slide-v2-flo-1530.png.asset.json";
 import slideFlc1530New from "@/assets/slide-v2-flc-1530.jpg.asset.json";
 import slideFlo2060New from "@/assets/slide-v2-flo-2060.jpg.asset.json";
@@ -23,20 +20,10 @@ import slideMkt32135 from "@/assets/slide-v2-mkt-32135.jpg.asset.json";
 import slideFloP2040_1 from "@/assets/slide-v2-flo-p-2040-1.png.asset.json";
 import slideFloP2040_2 from "@/assets/slide-v2-flo-p-2040-2.png.asset.json";
 import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png.asset.json";
-import comboFlcp1530_1 from "@/assets/combo-flcp-1530-1.jpg.asset.json";
-import comboFlcp1530_2 from "@/assets/combo-flcp-1530-2.jpg.asset.json";
-import comboFlcp2040_1 from "@/assets/combo-flcp-2040-1.jpg.asset.json";
-import comboFlcp2040_2 from "@/assets/combo-flcp-2040-2.jpg.asset.json";
 import comboOnly1 from "@/assets/combo-only-1.jpg.asset.json";
+import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
 import heroVideoAsset from "@/assets/hero-laser-cutting.mp4.asset.json";
 import kaimecActionVideoAsset from "@/assets/kaimec-in-action.mp4.asset.json";
-import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
-import comboFlop1530A from "@/assets/combo-flop-1530-a.png.asset.json";
-import comboFlop1530B from "@/assets/combo-flop-1530-b.png.asset.json";
-import comboFlop2040A from "@/assets/combo-flop-2040-a.png.asset.json";
-import comboFlop2040B from "@/assets/combo-flop-2040-b.png.asset.json";
-import comboFlop2040C from "@/assets/combo-flop-2040-c.png.asset.json";
-import comboFlop2040D from "@/assets/combo-flop-2040-d.png.asset.json";
 
 const facilitySlides = [
   slideFlo1530New.url,
@@ -69,10 +56,7 @@ const featuredMachines = [
     tag: "Combo Lasers (open and enclosed types)",
     name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
     image: null,
-    images: [
-      comboOnly1.url,
-      comboOnly2.url,
-    ],
+    images: [comboOnly1.url, comboOnly2.url],
     link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser",
   },
   {
@@ -91,7 +75,7 @@ const stats = [
 ];
 
 const whyPoints = [
-  "Precision machines —In stock in CA",
+  "Precision machines — In stock in CA",
   "Factory-direct pricing, no middleman markup",
   "In-house engineering support from our Tustin, CA team",
   "U.S. parts inventory — same-day support when your floor needs it",
@@ -109,10 +93,11 @@ export default function Index() {
     video.play().catch(() => undefined);
   }, []);
 
+  // FIX 3: slowed from 1000ms to 3500ms
   useEffect(() => {
     const id = setInterval(() => {
       setSlideIdx((i) => (i + 1) % facilitySlides.length);
-    }, 1000);
+    }, 3500);
     return () => clearInterval(id);
   }, []);
 
@@ -123,6 +108,7 @@ export default function Index() {
         description="Precision CNC fiber lasers, press brakes & deep-hole drilling from KAIMEC. Factory-direct with US engineering and parts support from Tustin, CA."
         path="/"
       />
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -158,9 +144,21 @@ export default function Index() {
               zIndex: 0,
             }}
           />
+          {/* Left-to-right overlay */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)", zIndex: 1 }}
+            style={{
+              background: "linear-gradient(to right, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.05) 100%)",
+              zIndex: 1,
+            }}
+          />
+          {/* FIX 2: bottom fade so hero blends into the page instead of hard-cutting */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.55) 100%)",
+              zIndex: 1,
+            }}
           />
         </div>
         <div className="container relative z-10 py-28 md:py-40">
@@ -202,12 +200,20 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-14">
             <div className="relative flex items-center justify-center gap-3 overflow-hidden">
-              <span aria-hidden className="hidden sm:flex flex-1 items-center justify-end gap-2 animate-laser-left origin-right">
+              <span
+                aria-hidden
+                className="hidden sm:flex flex-1 items-center justify-end gap-2 animate-laser-left origin-right"
+              >
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
                 <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
               </span>
-              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">Laser Cutting Machines</h2>
-              <span aria-hidden className="hidden sm:flex flex-1 items-center justify-start gap-2 animate-laser-right origin-left">
+              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">
+                Laser Cutting Machines
+              </h2>
+              <span
+                aria-hidden
+                className="hidden sm:flex flex-1 items-center justify-start gap-2 animate-laser-right origin-left"
+              >
                 <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
               </span>
@@ -234,7 +240,7 @@ export default function Index() {
                           src={src}
                           alt={`${m.name} ${i + 1}`}
                           loading="lazy"
-                          style={{ animation: "spin 8s linear infinite" }}
+                          // FIX 1: removed spin animation
                           className={`absolute w-3/5 h-3/5 object-contain p-1 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
                         />
                       ))}
@@ -246,8 +252,8 @@ export default function Index() {
                       loading="lazy"
                       width={800}
                       height={600}
-                      style={{ animation: "spin 8s linear infinite" }}
-                      className="h-3/4 w-3/4 object-contain p-2"
+                      // FIX 1: removed spin animation, replaced with subtle hover scale
+                      className="h-3/4 w-3/4 object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                     />
                   )}
                 </div>
@@ -272,7 +278,6 @@ export default function Index() {
         <div className="container max-w-5xl">
           <div className="text-center mb-10">
             <p className="section-label mb-3 text-3xl">KAIMEC LASER CUTTING MACHINES IN ACTION</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">{"\n"}</h2>
           </div>
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
@@ -368,14 +373,11 @@ export default function Index() {
       <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-[#f8f8f8]">
         <div className="container">
           <div className="text-center mb-8">
-            <p className="section-label mb-3">{"\n"}</p>
             <div className="relative inline-block">
-              {/* Punch bar coming down — centered on heading */}
               <div
                 aria-hidden
                 className="absolute left-1/2 -translate-x-1/2 -top-2 h-3 w-[60%] bg-gradient-to-b from-slate-500 to-slate-800 rounded-sm shadow-lg animate-press-punch origin-top"
               />
-              {/* Sparks on impact */}
               <span
                 aria-hidden
                 className="absolute left-2 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_4px_#fbbf24] animate-press-spark"
@@ -388,7 +390,6 @@ export default function Index() {
               <h2 className="text-3xl md:text-4xl font-black text-foreground animate-press-stamp origin-top inline-block">
                 CNC Press Brakes
               </h2>
-              {/* Die base */}
               <div
                 aria-hidden
                 className="mt-1 h-1.5 w-[110%] mx-auto bg-gradient-to-t from-slate-700 to-slate-400 rounded-sm"
@@ -449,7 +450,9 @@ export default function Index() {
                   src={src}
                   alt={`KAIMEC machine ${i + 1}`}
                   loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${i === slideIdx ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
+                    i === slideIdx ? "opacity-100" : "opacity-0"
+                  }`}
                 />
               ))}
             </div>
