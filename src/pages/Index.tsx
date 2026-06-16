@@ -56,7 +56,7 @@ const featuredMachines = [
     tag: "Combo Lasers (open and enclosed types)",
     name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
     image: null,
-    images: [comboOnly1.url, comboOnly2.url],
+    images: [comboOnly1, comboOnly2],
     link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser",
   },
   {
@@ -114,7 +114,7 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden">
           <video
             ref={heroVideoRef}
-            src={heroVideoAsset.url}
+            src={heroVideoSrc}
             autoPlay
             muted
             loop
@@ -282,7 +282,7 @@ export default function Index() {
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
               id="kaimec-action-video"
-              src={kaimecActionVideoAsset.url}
+              src={kaimecActionVideoSrc}
               autoPlay
               muted
               loop
@@ -338,7 +338,7 @@ export default function Index() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-black">
                     <video
-                      src={`${kaimecActionVideoAsset.url}#t=${c.time + 0.1}`}
+                      src={`${kaimecActionVideoSrc}#t=${c.time + 0.1}`}
                       preload="metadata"
                       muted
                       playsInline
