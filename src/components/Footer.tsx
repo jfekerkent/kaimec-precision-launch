@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, MapPin, Phone, Mail } from "lucide-react";
 import logoImg from "@/assets/kaimec-logo-footer.png";
+import { BUILD_TIME, BUILD_SHA } from "@/buildInfo";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-gray-50">
+      <span className="sr-only" data-build={`${BUILD_TIME} ${BUILD_SHA}`}>
+        Build: {BUILD_TIME} {BUILD_SHA}
+      </span>
       <div className="container py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
