@@ -203,8 +203,8 @@ export default function ClosedTypeFiberLaser() {
   return (
     <Layout>
       <Seo
-        title="Closed-Type Fiber Laser Cutter | KAIMEC FLC Series"
-        description="Fully enclosed KAIMEC FLC fiber laser cutters — class-1 safety, high power, dual-table production for sheet metal fabrication."
+        title="Kaimec FLC Closed-Type Fiber Laser Cutter | Kaimec Fiber Lasers"
+        description="Kaimec FLC fully enclosed fiber laser cutters from Kaimec Fabrication — class-1 safety, high power, dual-table production for sheet metal fabrication."
         path="/machines/laser-cutting/closed-type-fiber-laser"
         type="product"
       />
