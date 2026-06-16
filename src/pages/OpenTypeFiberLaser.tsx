@@ -209,8 +209,8 @@ export default function OpenTypeFiberLaser() {
   return (
     <Layout>
       <Seo
-        title="Open-Type Fiber Laser Cutter | KAIMEC FLO Series"
-        description="KAIMEC FLO open-type fiber laser cutting machines — high cutting speed, dual-table options, 1.5 to 30 kW power."
+        title="Kaimec FLO Open-Type Fiber Laser Cutter | Kaimec Fiber Lasers"
+        description="Kaimec FLO open-type fiber laser cutting machines from Kaimec Fabrication — high cutting speed, dual-table options, 1.5 to 30 kW power."
         path="/machines/laser-cutting/open-type-fiber-laser"
         type="product"
       />

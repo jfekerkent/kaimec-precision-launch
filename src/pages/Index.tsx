@@ -104,8 +104,8 @@ export default function Index() {
   return (
     <Layout>
       <Seo
-        title="KAIMEC Machines — CNC Fiber Lasers & Press Brakes"
-        description="Precision CNC fiber lasers, press brakes & deep-hole drilling from KAIMEC. Factory-direct with US engineering and parts support from Tustin, CA."
+        title="Kaimec Fabrication — Kaimec Fiber Lasers, Press Brakes & CNC Machines"
+        description="Kaimec Fabrication: official site for Kaimec fiber lasers, CNC press brakes and deep-hole drilling machines. Factory-direct from Kaimec with US engineering and parts support from Tustin, CA."
         path="/"
       />
 

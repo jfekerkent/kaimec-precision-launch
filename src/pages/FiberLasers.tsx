@@ -68,8 +68,8 @@ export default function FiberLasers() {
   return (
     <Layout>
       <Seo
-        title="CNC Fiber Laser Cutters | KAIMEC FLO & FLC Series"
-        description="Explore KAIMEC CNC fiber laser cutting machines — open and enclosed FLO and FLC models from 1.5kW to 30kW for sheet and pipe."
+        title="Kaimec Fiber Lasers — CNC Fiber Laser Cutting Machines | FLO & FLC Series"
+        description="Kaimec Fiber Lasers: explore Kaimec CNC fiber laser cutting machines — open (FLO) and enclosed (FLC) models from 1.5kW to 30kW for sheet and pipe fabrication."
         path="/machines/cnc-fiber-lasers"
         type="product"
         jsonLd={{

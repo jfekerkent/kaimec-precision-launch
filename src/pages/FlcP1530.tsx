@@ -8,8 +8,8 @@ const FlcP1530 = () => {
   return (
     <Layout>
       <Seo
-        title="FLC-P 1530 | KAIMEC Covered Pipe & Sheet Fiber Laser"
-        description="The KAIMEC FLC-P 1530 fully-enclosed fiber laser cuts sheet, pipe and profile on a 1.5 × 3 m dual-table platform."
+        title="Kaimec FLC-P 1530 Covered Pipe & Sheet Fiber Laser | Kaimec Fiber Lasers"
+        description="The Kaimec FLC-P 1530 fully-enclosed fiber laser from Kaimec Fabrication cuts sheet, pipe and profile on a 1.5 × 3 m dual-table platform."
         path="/machines/cnc-fiber-lasers/flc-p-1530"
         type="product"
         jsonLd={{
