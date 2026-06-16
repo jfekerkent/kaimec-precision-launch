@@ -26,6 +26,7 @@ export const quoteMachines = {
 const accessoryPrices: { match: RegExp; label: string; price: number }[] = [
   { match: /dust|smoke/i,           label: "Dust collector",                price: 22000 },
   { match: /air\s*compressor|screw/i, label: "Screw special air compressor", price: 22000 },
+  { match: /automatic\s*loader/i,    label: "Automatic loader",             price: 25000 },
 ];
 
 export type QuoteSlug = keyof typeof quoteMachines;

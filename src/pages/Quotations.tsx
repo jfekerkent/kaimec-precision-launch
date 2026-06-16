@@ -58,6 +58,19 @@ const accessories = [
       ["Includes", "Integrated refrigerated dryer"],
     ],
   },
+  {
+    id: "Automatic Loader",
+    name: "Automatic Loader",
+    subtitle: "Gantry Type Sheet Loading System",
+    image: autoLoaderImg.url,
+    specs: [
+      ["Type", "Gantry type automatic sheet loading"],
+      ["Function", "Automatically loads sheets onto laser bed"],
+      ["Compatibility", "Fits FLO / FLC / FLP series"],
+      ["Operation", "Reduces manual handling & cycle time"],
+      ["Control", "Synchronized with laser cutting cycle"],
+    ],
+  },
 ];
 
 export default function Quotations() {
