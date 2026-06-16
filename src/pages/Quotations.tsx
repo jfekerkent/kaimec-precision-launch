@@ -14,6 +14,7 @@ import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
 import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
 import airCompressorImg from "@/assets/air-compressor-v3.png";
+import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
 
 const machines = [
   { id: "FLO-1530 x 3kW",    slug: "flo-1530-3kw",    name: "FLO-1530 x 3kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_3kw },
