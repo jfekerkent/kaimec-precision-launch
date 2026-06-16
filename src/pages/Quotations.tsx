@@ -9,14 +9,11 @@ import flo1530_6kw from "@/assets/flo-1530-6kw.png";
 import floP1530_3kw from "@/assets/machine-kflo-p-1530.jpg";
 import floP1530_6kw from "@/assets/flo-p-1530-2.png";
 import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
-import flc1530_12kwAsset from "@/assets/flc-1530-12kw-quote.png.asset.json";
-const flc1530_12kw = flc1530_12kwAsset.url;
+import flc1530_12kw from "@/assets/flc-1530-12kw-quote.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
-import dustCollectorAsset from "@/assets/dust-collector-v2.jpg.asset.json";
-const dustCollectorImg = dustCollectorAsset.url;
-import airCompressorAsset from "@/assets/air-compressor-v3.png.asset.json";
-const airCompressorImg = airCompressorAsset.url;
+import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
+import airCompressorImg from "@/assets/air-compressor-v3.png";
 
 const machines = [
   { id: "FLO-1530 x 3kW",    slug: "flo-1530-3kw",    name: "FLO-1530 x 3kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_3kw },

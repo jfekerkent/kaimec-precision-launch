@@ -3,10 +3,8 @@ import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import { quoteMachines, type QuoteSlug } from "./QuoteMachine";
-import dustCollectorAsset from "@/assets/dust-collector-v2.jpg.asset.json";
-const dustCollectorImg = dustCollectorAsset.url;
-import airCompressorAsset from "@/assets/air-compressor-v3.png.asset.json";
-const airCompressorImg = airCompressorAsset.url;
+import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
+import airCompressorImg from "@/assets/air-compressor-v3.png";
 
 const accessoryPrices: { match: RegExp; label: string; price: number; image: string }[] = [
   { match: /dust|smoke/i, label: "Dust collector", price: 22000, image: dustCollectorImg },

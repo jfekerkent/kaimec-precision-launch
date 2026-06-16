@@ -11,30 +11,30 @@ import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
-import slideFlo1530New from "@/assets/slide-v2-flo-1530.png.asset.json";
-import slideFlc1530New from "@/assets/slide-v2-flc-1530.jpg.asset.json";
-import slideFlo2060New from "@/assets/slide-v2-flo-2060.jpg.asset.json";
-import slideFlcP1530 from "@/assets/slide-v2-flc-p-1530.jpg.asset.json";
-import slideMkt1560 from "@/assets/slide-v2-mkt-1560.jpg.asset.json";
-import slideMkt32135 from "@/assets/slide-v2-mkt-32135.jpg.asset.json";
-import slideFloP2040_1 from "@/assets/slide-v2-flo-p-2040-1.png.asset.json";
-import slideFloP2040_2 from "@/assets/slide-v2-flo-p-2040-2.png.asset.json";
-import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png.asset.json";
-import comboOnly1 from "@/assets/combo-only-1.jpg.asset.json";
-import comboOnly2 from "@/assets/combo-only-2.png.asset.json";
-import heroVideoAsset from "@/assets/hero-laser-cutting.mp4.asset.json";
-import kaimecActionVideoAsset from "@/assets/kaimec-in-action.mp4.asset.json";
+import slideFlo1530New from "@/assets/slide-v2-flo-1530.png";
+import slideFlc1530New from "@/assets/slide-v2-flc-1530.jpg";
+import slideFlo2060New from "@/assets/slide-v2-flo-2060.jpg";
+import slideFlcP1530 from "@/assets/slide-v2-flc-p-1530.jpg";
+import slideMkt1560 from "@/assets/slide-v2-mkt-1560.jpg";
+import slideMkt32135 from "@/assets/slide-v2-mkt-32135.jpg";
+import slideFloP2040_1 from "@/assets/slide-v2-flo-p-2040-1.png";
+import slideFloP2040_2 from "@/assets/slide-v2-flo-p-2040-2.png";
+import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png";
+import comboOnly1 from "@/assets/combo-only-1.jpg";
+import comboOnly2 from "@/assets/combo-only-2.png";
+import heroVideoSrc from "@/assets/hero-laser-cutting.mp4";
+import kaimecActionVideoSrc from "@/assets/kaimec-in-action.mp4";
 
 const facilitySlides = [
-  slideFlo1530New.url,
-  slideFlc1530New.url,
-  slideFlo2060New.url,
-  slideFlcP1530.url,
-  slideMkt1560.url,
-  slideMkt32135.url,
-  slideFloP2040_1.url,
-  slideFloP2040_2.url,
-  slideFlc15304.url,
+  slideFlo1530New,
+  slideFlc1530New,
+  slideFlo2060New,
+  slideFlcP1530,
+  slideMkt1560,
+  slideMkt32135,
+  slideFloP2040_1,
+  slideFloP2040_2,
+  slideFlc15304,
 ];
 
 const featuredMachines = [
@@ -56,7 +56,7 @@ const featuredMachines = [
     tag: "Combo Lasers (open and enclosed types)",
     name: "FLO-P ( open, single table) / FLC-P (fully enclosed/2 tables)",
     image: null,
-    images: [comboOnly1.url, comboOnly2.url],
+    images: [comboOnly1, comboOnly2],
     link: "/machines/laser-cutting/covered-pipe-profile-fiber-laser",
   },
   {
@@ -114,7 +114,7 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden">
           <video
             ref={heroVideoRef}
-            src={heroVideoAsset.url}
+            src={heroVideoSrc}
             autoPlay
             muted
             loop
@@ -282,7 +282,7 @@ export default function Index() {
           <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
             <video
               id="kaimec-action-video"
-              src={kaimecActionVideoAsset.url}
+              src={kaimecActionVideoSrc}
               autoPlay
               muted
               loop
@@ -338,7 +338,7 @@ export default function Index() {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-black">
                     <video
-                      src={`${kaimecActionVideoAsset.url}#t=${c.time + 0.1}`}
+                      src={`${kaimecActionVideoSrc}#t=${c.time + 0.1}`}
                       preload="metadata"
                       muted
                       playsInline
