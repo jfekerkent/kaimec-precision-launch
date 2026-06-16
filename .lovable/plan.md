@@ -1,41 +1,48 @@
-## Why the site looks unchanged
+## Problem
 
-Your deploy chain has three steps. cPanel only does step 3:
+Four product pages still import images via `.asset.json` pointers, which resolve to `/__l5e/assets-v1/<id>/<file>` URLs. That path is served by Lovable's CDN — it works on `*.lovable.app` but **404s on kaimec.com** because cPanel only serves the static `dist/` folder. Result: blank image boxes (alt text only) on those pages.
 
-```
-1. Lovable edits  →  auto-push to GitHub (source code)
-2. GitHub Action  →  bun install + bun run build  →  commits dist/ back
-3. cPanel         →  pulls repo + copies dist/. into public_html/
-```
+Affected pages (40 broken image refs total):
+- `src/pages/OpenTypeFiberLaser.tsx` — 13 refs
+- `src/pages/ClosedTypeFiberLaser.tsx` — 12 refs
+- `src/pages/CoveredPipeProfileFiberLaser.tsx` — 9 refs
+- `src/pages/TubeProfileLasers.tsx` — 6 refs
 
-If step 2 didn't run or failed, step 3 copies the **old** `dist/` and nothing visibly changes on kaimec.com. That matches what you're seeing.
+## Fix (same pattern as Tier 1/2 migration)
 
-## What to check first (no code changes)
+For each `.asset.json` actually imported by these 4 pages:
 
-1. **GitHub → Actions tab** on the kaimec repo. Look for a run named "Build and Deploy to cPanel" on the latest commit.
-   - **Green check** → build worked, `dist/` was updated, problem is on cPanel side.
-   - **Red X** → build failed, `dist/` is stale. Click in to see the error.
-   - **No run at all** → workflow isn't triggering (branch name mismatch, or Actions disabled on the repo).
-2. **GitHub → Commits**. After the Action runs you should see an auto-commit `chore: update built dist [skip ci]` by `github-actions[bot]`. If that commit doesn't exist for today, step 2 never completed.
-3. **cPanel → Git Version Control**. Check the "Last Deployment SHA" — confirm it matches the *latest* commit in GitHub (specifically the `github-actions[bot]` dist commit, not your source commit).
+1. Read the pointer JSON to get the CDN URL (`https://kaimec-industrial-hub.lovable.app/__l5e/assets-v1/<id>/<filename>`).
+2. `curl` the binary into `src/assets/<filename>` so Vite bundles it locally.
+3. Rewrite the page imports:
+   ```ts
+   // before
+   import floTop2_1530A from "@/assets/flo-top2-1530-a.png.asset.json";
+   ...src={floTop2_1530A.url}
 
-Tell me what you see for each and I'll know exactly which link is broken.
+   // after
+   import floTop2_1530A from "@/assets/flo-top2-1530-a.png";
+   ...src={floTop2_1530A}
+   ```
+4. Delete the now-unused `.asset.json` pointer files for those imports.
+5. Leave the ~28 orphan `.asset.json` files in `src/assets/` that no page imports (they don't affect the build; cleanup can happen later).
 
-## The build-marker fix (small code change)
+## What stays the same
 
-Right now you can't tell yesterday's build from today's. I'll add a tiny invisible HTML comment + a hidden footer span containing the build timestamp, so you can view-source on kaimec.com and immediately see when the live build was generated.
+- No visual / layout changes — same images, same positions.
+- No component edits beyond import path + `.url` removal.
+- No backend, no routing, no SEO changes.
 
-### Changes
+## Verification
 
-1. **`.github/workflows/deploy.yml`** — add a step before the build that writes the current UTC timestamp + short commit SHA into `src/buildInfo.ts`.
-2. **`src/buildInfo.ts`** (new, gitignored) — exports `BUILD_TIME` and `BUILD_SHA` constants. A default placeholder file is checked in so local dev still compiles.
-3. **`src/components/Footer.tsx`** — add a `<span className="sr-only">` and an HTML comment with `Build: {BUILD_TIME} {BUILD_SHA}`. Invisible to users, instantly visible in view-source / DOM inspector.
-4. **`index.html`** — optionally inject the same string as a `<meta name="build" content="...">` tag for super-easy curl-checking: `curl -s https://kaimec.com | grep build`.
+- After Lovable auto-pushes → GitHub Action builds → cPanel pulls, the deep product pages render images on kaimec.com.
+- Bundled images will use Vite's hashed filenames in `dist/assets/`, served directly from cPanel.
+- Build size will grow (these are real binaries now, not pointers). Acceptable cost to keep the site working pre-custom-domain.
 
-After the next push, you can hit `view-source:https://kaimec.com/` and confirm exactly which build is serving.
+## Out of scope
 
-## Scope
+- Migration to custom domain on Lovable (waiting on Cloudflare access).
+- Deleting orphan `.asset.json` files in `src/assets/` that no page references.
+- The build-marker / GitHub Action / cPanel pull issues — separate from this.
 
-Diagnosis only requires you to look at GitHub Actions + cPanel. The build-marker is ~15 lines across 3-4 files, zero visual change to the site, and makes every future deploy verifiable in 2 seconds.
-
-Approve and I'll implement the build marker. The GitHub Actions diagnosis you'll need to do on your side — paste the result and we'll fix the actual root cause.
+Approve and I'll run the download + import-rewrite for all 4 pages in one pass.
