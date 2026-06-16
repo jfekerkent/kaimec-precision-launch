@@ -14,6 +14,7 @@ import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
 import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
 import airCompressorImg from "@/assets/air-compressor-v3.png";
+import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
 
 const machines = [
   { id: "FLO-1530 x 3kW",    slug: "flo-1530-3kw",    name: "FLO-1530 x 3kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_3kw },
@@ -55,6 +56,19 @@ const accessories = [
       ["Tank", "105.7 Gallon air receiver"],
       ["Dimensions", "67.4 × 31.5 × 73.2 in (L×W×H)"],
       ["Includes", "Integrated refrigerated dryer"],
+    ],
+  },
+  {
+    id: "Automatic Loader",
+    name: "Automatic Loader",
+    subtitle: "Gantry Type Sheet Loading System",
+    image: autoLoaderImg.url,
+    specs: [
+      ["Type", "Gantry type automatic sheet loading"],
+      ["Function", "Automatically loads sheets onto laser bed"],
+      ["Compatibility", "Fits FLO / FLC / FLP series"],
+      ["Operation", "Reduces manual handling & cycle time"],
+      ["Control", "Synchronized with laser cutting cycle"],
     ],
   },
 ];
