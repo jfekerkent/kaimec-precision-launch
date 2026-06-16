@@ -274,6 +274,18 @@ export default function Quotations() {
                   Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
                 </p>
               )}
+              {(() => {
+                const hasFLO = Array.from(selected).some((id) => {
+                  const m = machines.find((x) => x.id === id);
+                  return m?.slug.startsWith("flo-");
+                });
+                const hasAutoLoader = selectedAccessories.has("Automatic Loader");
+                return hasFLO && hasAutoLoader ? (
+                  <p className="text-sm text-destructive mt-2">
+                    Automatic loading system is an option of FLC and FLC-P models only
+                  </p>
+                ) : null;
+              })()}
             </div>
             <Button
               size="lg"

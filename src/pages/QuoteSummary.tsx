@@ -27,8 +27,13 @@ export default function QuoteSummary() {
     .filter((m): m is { slug: QuoteSlug } & (typeof quoteMachines)[QuoteSlug] => Boolean(m.name));
 
   const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
+  const hasFLO = slugs.some((s) => s.startsWith("flo-"));
+  const hasAutoLoader = /automatic\s*loader/i.test(accessories);
+  const incompatibleAutoLoader = hasFLO && hasAutoLoader;
   const machinesTotal = selected.reduce((sum, m) => sum + (m.price ?? 0), 0);
-  const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
+  const accessoriesTotal = selectedAccessories
+    .filter((a) => !(incompatibleAutoLoader && a.match.test("automatic loader")))
+    .reduce((sum, a) => sum + a.price, 0);
   const total = machinesTotal + accessoriesTotal;
 
   if (selected.length === 0) {
@@ -113,7 +118,11 @@ export default function QuoteSummary() {
                       />
                       + {a.label}
                     </span>
-                    <span>${a.price.toLocaleString()}</span>
+                    {incompatibleAutoLoader && a.match.test("automatic loader") ? (
+                      <span className="text-sm text-destructive">Automatic loading system is an option of FLC and FLC-P models only</span>
+                    ) : (
+                      <span>${a.price.toLocaleString()}</span>
+                    )}
                   </li>
                 ))}
                 <li className="flex justify-between gap-4 border-t border-border pt-3 mt-2 font-bold">

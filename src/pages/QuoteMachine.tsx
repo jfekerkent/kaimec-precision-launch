@@ -80,7 +80,12 @@ export default function QuoteMachine() {
             {machine && (
               (() => {
                 const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
-                const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
+                const isFLO = slug?.startsWith("flo-");
+                const hasAutoLoader = /automatic\s*loader/i.test(accessories);
+                const incompatibleAutoLoader = isFLO && hasAutoLoader;
+                const accessoriesTotal = selectedAccessories
+                  .filter((a) => !(incompatibleAutoLoader && a.match.test("automatic loader")))
+                  .reduce((sum, a) => sum + a.price, 0);
                 const total = (machine.price ?? 0) + accessoriesTotal;
                 return (
                   <div className="bg-card border border-border rounded-lg p-6">
@@ -99,7 +104,11 @@ export default function QuoteMachine() {
                       {selectedAccessories.map((a) => (
                         <li key={a.label} className="flex justify-between gap-4">
                           <span>+ {a.label}</span>
-                          <span>${a.price.toLocaleString()}</span>
+                          {incompatibleAutoLoader && a.match.test("automatic loader") ? (
+                            <span className="text-sm text-destructive">Automatic loading system is an option of FLC and FLC-P models only</span>
+                          ) : (
+                            <span>${a.price.toLocaleString()}</span>
+                          )}
                         </li>
                       ))}
                       <li className="flex justify-between gap-4 border-t border-border pt-3 mt-2 font-bold">
