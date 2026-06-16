@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Play } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
@@ -274,101 +274,6 @@ export default function Index() {
       </section>
 
       {/* Kaimec Machines in Action Video */}
-      <section className="py-16 md:py-20 bg-[#f8f8f8]">
-        <div className="container max-w-5xl">
-          <div className="text-center mb-10">
-            <p className="section-label mb-3 text-3xl">KAIMEC LASER CUTTING MACHINES IN ACTION</p>
-          </div>
-          <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-2xl ring-1 ring-black/5 bg-black">
-            <video
-              id="kaimec-action-video"
-              src={kaimecActionVideoSrc}
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              aria-label="KAIMEC Laser Cutting Machines in Action"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div aria-hidden="true" className="absolute inset-0 pointer-events-none" />
-          </div>
-          <div className="mt-10">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px flex-1 bg-border" />
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Video Chapters</p>
-              <div className="h-px flex-1 bg-border" />
-            </div>
-            <div className="grid gap-5 md:grid-cols-3">
-              {[
-                {
-                  time: 0,
-                  range: "0:00 – 0:25",
-                  chapter: "Chapter 1",
-                  title: "Fly Cutting",
-                  desc: "High-speed dynamic fly cutting in action.",
-                },
-                {
-                  time: 55,
-                  range: "0:55",
-                  chapter: "Chapter 2",
-                  title: "Finished Result",
-                  desc: "Precision finish on cut components.",
-                },
-                {
-                  time: 70,
-                  range: "1:10",
-                  chapter: "Chapter 3",
-                  title: "Pipe Cutting",
-                  desc: "Using the FLP pipe-cutting attachment.",
-                },
-              ].map((c) => (
-                <button
-                  key={c.time}
-                  type="button"
-                  onClick={() => {
-                    const v = document.getElementById("kaimec-action-video") as HTMLVideoElement | null;
-                    if (v) {
-                      v.currentTime = c.time;
-                      v.play().catch(() => {});
-                      v.scrollIntoView({ behavior: "smooth", block: "center" });
-                    }
-                  }}
-                  className="group relative text-left rounded-xl border border-border bg-white shadow-sm hover:shadow-lg hover:border-primary/40 transition-all overflow-hidden"
-                >
-                  <div className="relative aspect-video w-full overflow-hidden bg-black">
-                    <video
-                      src={`${kaimecActionVideoSrc}#t=${c.time + 0.1}`}
-                      preload="metadata"
-                      muted
-                      playsInline
-                      aria-hidden="true"
-                      tabIndex={-1}
-                      className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="h-14 w-14 rounded-full bg-primary/95 text-primary-foreground flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="h-6 w-6 ml-0.5" fill="currentColor" />
-                      </div>
-                    </div>
-                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-black/70 text-white text-xs font-bold tracking-wider">
-                      {c.range}
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-primary mb-1">{c.chapter}</p>
-                    <h3 className="text-lg font-black text-foreground mb-1">{c.title}</h3>
-                    <p className="text-sm text-muted-foreground">{c.desc}</p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CNC Press Brakes */}
       <section className="pt-8 md:pt-12 pb-20 md:pb-28 bg-[#f8f8f8]">
         <div className="container">
