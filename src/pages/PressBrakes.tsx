@@ -13,7 +13,7 @@ import mkt32135Img from "@/assets/machine-mkt-32135.png";
 
 const machines = [
   { id: "kmkt-1560", model: "MKT-1560", description: "CNC Press Brake 1500mm / 60Metric Ton / CNC control / 4 axis / Cybletec control", images: [mkt1560Img] },
-  { id: "kmkt-32135", model: "MKT-32135", description: "CNC Press Brake 1500mm / 60Metric Ton / CNC control / 4 axis / Cybletec control", images: [mkt32135Img] },
+  { id: "kmkt-32135", model: "MKT-32135", description: "CNC Press Brake 3200mm / 135Metric Ton / CNC control / 5 axis / Cybletec control / European-style punch and die / Laser safety light protection system", images: [mkt32135Img] },
 ];
 
 const technicalParams1560: [string, string][] = [
