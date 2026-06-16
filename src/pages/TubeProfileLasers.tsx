@@ -7,16 +7,16 @@ import MachineGallery from "@/components/MachineGallery";
 import Seo from "@/components/Seo";
 import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
-import flp6035_1 from "@/assets/flp-6035-1.png.asset.json";
-import flp6035_2 from "@/assets/flp-6035-2.png.asset.json";
-import flp6035_3 from "@/assets/flp-6035-3.png.asset.json";
-import flp6020_1 from "@/assets/flp-6020-1.png.asset.json";
-import flp6020_2 from "@/assets/flp-6020-2.png.asset.json";
-import flp6020_3 from "@/assets/flp-6020-3.png.asset.json";
+import flp6035_1 from "@/assets/flp-6035-1.png";
+import flp6035_2 from "@/assets/flp-6035-2.png";
+import flp6035_3 from "@/assets/flp-6035-3.png";
+import flp6020_1 from "@/assets/flp-6020-1.png";
+import flp6020_2 from "@/assets/flp-6020-2.png";
+import flp6020_3 from "@/assets/flp-6020-3.png";
 
 const machines = [
-  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser\nØ8.8\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6020_1.url, flp6020_2.url, flp6020_3.url] },
-  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser\nØ8.8\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6035_1.url, flp6035_2.url, flp6035_3.url] },
+  { id: "kflp-6020", model: "FLP-6020", description: "Tube & Profile Laser\nØ8.8\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6020_1, flp6020_2, flp6020_3] },
+  { id: "kflp-6035", model: "FLP-6035", description: "Tube & Profile Laser\nØ8.8\" Diameter x 20ft length capacity\nTube and profile cutting\n1, 3, 6, 12kW\nManual, semi-automatic, fully-automatic models", images: [flp6035_1, flp6035_2, flp6035_3] },
 ];
 
 const productDescription: string[] = [

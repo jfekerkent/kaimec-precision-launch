@@ -23,28 +23,28 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import heroImg from "@/assets/flc-hero.png";
 import sideProfileImg from "@/assets/flc-side-profile.png";
 import tableExtendedImg from "@/assets/flc-table-extended.png";
-import flc2040ConfigAsset from "@/assets/flc2040-config.png.asset.json";
-const flc2040Img = flc2040ConfigAsset.url;
-import flc2060ConfigAsset from "@/assets/flc2060-config.png.asset.json";
-const flc2060Img = flc2060ConfigAsset.url;
+import flc2040ConfigAsset from "@/assets/flc2040-config.png";
+const flc2040Img = flc2040ConfigAsset;
+import flc2060ConfigAsset from "@/assets/flc2060-config.png";
+const flc2060Img = flc2060ConfigAsset;
 import flc1530_2 from "@/assets/flc-1530-2.png";
 import flc1530_3 from "@/assets/flc-1530-3.png";
 import flc1530_4 from "@/assets/flc-1530-4.png";
-import flcHero1 from "@/assets/flc-1530-hero-1.png.asset.json";
-import flcHero2 from "@/assets/flc-1530-hero-2.png.asset.json";
-import flcHero3 from "@/assets/flc-1530-hero-3.png.asset.json";
-import flcHero4 from "@/assets/flc-1530-hero-4.png.asset.json";
+import flcHero1 from "@/assets/flc-1530-hero-1.png";
+import flcHero2 from "@/assets/flc-1530-hero-2.png";
+import flcHero3 from "@/assets/flc-1530-hero-3.png";
+import flcHero4 from "@/assets/flc-1530-hero-4.png";
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
 
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
-import closedFlc1 from "@/assets/closed-flc-1.jpg.asset.json";
-import closedFlc2 from "@/assets/closed-flc-2.png.asset.json";
-import closedFlc3 from "@/assets/closed-flc-3.png.asset.json";
-import closedFlc4 from "@/assets/closed-flc-4.png.asset.json";
-import closedFlc5 from "@/assets/closed-flc-5.png.asset.json";
-import closedFlc6 from "@/assets/closed-flc-6.png.asset.json";
+import closedFlc1 from "@/assets/closed-flc-1.jpg";
+import closedFlc2 from "@/assets/closed-flc-2.png";
+import closedFlc3 from "@/assets/closed-flc-3.png";
+import closedFlc4 from "@/assets/closed-flc-4.png";
+import closedFlc5 from "@/assets/closed-flc-5.png";
+import closedFlc6 from "@/assets/closed-flc-6.png";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -104,7 +104,7 @@ const features = [
 ];
 
 const models = [
-  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg, images: [closedFlc1.url, closedFlc2.url, closedFlc3.url, closedFlc4.url, closedFlc5.url, closedFlc6.url] },
+  { id: "FLC-1530, FLC 2040, FLC2060 models", area: "1524 x 3048 mm (5 x 10 ft)", detail: "2 tables + 6.5x20ft capacity + 6,12, 20kW laser powers ", image: heroImg, images: [closedFlc1, closedFlc2, closedFlc3, closedFlc4, closedFlc5, closedFlc6] },
   { id: "FLC-2040", area: "2000 x 4000 mm (6.5 x 13 ft)", detail: "Mid-format workhorse for high-volume sheet work.", image: flc2040Img },
   { id: "FLC-2060", area: "2000 × 6000 mm (6.5 × 20 ft)", detail: "Long-bed format for large plates and structural parts.", image: flc2060Img },
 ];
@@ -258,7 +258,7 @@ export default function ClosedTypeFiberLaser() {
             <div className="relative">
               <div className="aspect-[4/3] bg-white/5 border-white/10 overflow-hidden flex items-center justify-center p-4 rounded-lg border">
                 <RotatingImage
-                  images={[flcHero1.url, flcHero2.url, flcHero3.url, flcHero4.url]}
+                  images={[flcHero1, flcHero2, flcHero3, flcHero4]}
                   alt="FLC-1530 fully enclosed fiber laser"
                 />
               </div>
