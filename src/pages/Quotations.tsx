@@ -65,7 +65,7 @@ const accessories = [
     image: autoLoaderImg.url,
     specs: [
       ["Type", "Gantry type automatic sheet loading"],
-      ["Function", "Automatically loads sheets onto laser bed"],
+      ["Function", "Loads new sheets onto the second pallet (table) automatically"],
       ["Compatibility", "Fits FLO / FLC / FLP series"],
       ["Operation", "Reduces manual handling & cycle time"],
       ["Control", "Synchronized with laser cutting cycle"],
