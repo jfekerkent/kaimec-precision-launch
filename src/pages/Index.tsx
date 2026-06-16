@@ -195,6 +195,24 @@ export default function Index() {
         </div>
       </section>
 
+      {/* About Kaimec — branded SEO block */}
+      <section className="bg-white py-12 md:py-16 border-b border-border">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4">
+            About Kaimec Fabrication
+          </h2>
+          <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+            <strong>Kaimec</strong> (also known as <strong>Kaimec Fabrication</strong> and
+            <strong> Kaimec Machines</strong>) is a factory-direct supplier of
+            <strong> Kaimec fiber lasers</strong>, CNC press brakes and deep-hole drilling
+            machines. From our Tustin, California headquarters, Kaimec engineers support
+            sheet-metal fabricators across the United States with European-grade laser
+            cutting machines, FLO open-type and FLC closed-type fiber lasers, and
+            full parts and service coverage.
+          </p>
+        </div>
+      </section>
+
       {/* Featured Machines */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f5] to-[#e8e8e8]">
         <div className="container">
