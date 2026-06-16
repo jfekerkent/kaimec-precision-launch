@@ -21,21 +21,21 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import RequestInfoForm from "@/components/RequestInfoForm";
 import flo1530Img from "@/assets/machine-kflo-1530.png";
-import floTop2_1530A from "@/assets/flo-top2-1530-a.png.asset.json";
-import floTop2_1530B from "@/assets/flo-top2-1530-b.png.asset.json";
-import floTop2_1530C from "@/assets/flo-top2-1530-c.png.asset.json";
-import floTop2_1530D from "@/assets/flo-top2-1530-d.png.asset.json";
-import floTop2_1530E from "@/assets/flo-top2-1530-e.png.asset.json";
-import floTop2_2060A from "@/assets/flo-top2-2060-a.jpg.asset.json";
-import floTop2_2060B from "@/assets/flo-top2-2060-b.jpg.asset.json";
-import flo2040ConfigAsset from "@/assets/flo2040-config.png.asset.json";
-const flo2040Img = flo2040ConfigAsset.url;
-import flo2040New1 from "@/assets/flo2040-new-1.png.asset.json";
-import flo2040New2 from "@/assets/flo2040-new-2.png.asset.json";
-import flo2040New3 from "@/assets/flo2040-new-3.png.asset.json";
-import flo2040New4 from "@/assets/flo2040-new-4.png.asset.json";
-import flo2060NewAsset from "@/assets/flo2060-new.jpg.asset.json";
-const flo2060Img = flo2060NewAsset.url;
+import floTop2_1530A from "@/assets/flo-top2-1530-a.png";
+import floTop2_1530B from "@/assets/flo-top2-1530-b.png";
+import floTop2_1530C from "@/assets/flo-top2-1530-c.png";
+import floTop2_1530D from "@/assets/flo-top2-1530-d.png";
+import floTop2_1530E from "@/assets/flo-top2-1530-e.png";
+import floTop2_2060A from "@/assets/flo-top2-2060-a.jpg";
+import floTop2_2060B from "@/assets/flo-top2-2060-b.jpg";
+import flo2040ConfigAsset from "@/assets/flo2040-config.png";
+const flo2040Img = flo2040ConfigAsset;
+import flo2040New1 from "@/assets/flo2040-new-1.png";
+import flo2040New2 from "@/assets/flo2040-new-2.png";
+import flo2040New3 from "@/assets/flo2040-new-3.png";
+import flo2040New4 from "@/assets/flo2040-new-4.png";
+import flo2060NewAsset from "@/assets/flo2060-new.jpg";
+const flo2060Img = flo2060NewAsset;
 
 import cuttingHeadImg from "@/assets/raytools-cutting-head.png";
 import remoteControlImg from "@/assets/remote-control.png";
@@ -50,15 +50,15 @@ import industryElevator from "@/assets/industry-elevator.avif";
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
 const flo1530Slides = [
-  floTop2_1530A.url,
-  floTop2_1530B.url,
-  floTop2_1530C.url,
-  floTop2_1530D.url,
-  floTop2_1530E.url,
-  floTop2_2060A.url,
-  floTop2_2060B.url,
+  floTop2_1530A,
+  floTop2_1530B,
+  floTop2_1530C,
+  floTop2_1530D,
+  floTop2_1530E,
+  floTop2_2060A,
+  floTop2_2060B,
 ];
-const flo2040Slides = [flo2040New1.url, flo2040New2.url, flo2040New3.url, flo2040New4.url];
+const flo2040Slides = [flo2040New1, flo2040New2, flo2040New3, flo2040New4];
 
 function Flo1530Slideshow() {
   const [index, setIndex] = useState(0);
