@@ -51,7 +51,7 @@ const accessories = [
     specs: [
       
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
-      ["Pressure", "232 PSI"],
+      ["Pressure", "200 PSI"],
       ["Noise Level", "70 ± 2 dB(A)"],
       ["Tank", "Integrated air receiver"],
       ["Dimensions", "67.4 × 31.5 × 73.2 in (L×W×H)"],
