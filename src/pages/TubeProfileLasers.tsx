@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import OptionalAccessoriesSection from "@/components/OptionalAccessoriesSection";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
