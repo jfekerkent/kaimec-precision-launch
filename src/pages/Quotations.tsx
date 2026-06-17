@@ -274,6 +274,21 @@ export default function Quotations() {
                   Accessories: <span className="font-semibold text-foreground">{selectedAccessoriesText}</span>
                 </p>
               )}
+              {(() => {
+                const hasFLO = Array.from(selected).some((id) => {
+                  const slug = machines.find((m) => m.id === id)?.slug || "";
+                  return slug.startsWith("flo-");
+                });
+                const hasAutoLoader = selectedAccessories.has("Automatic Loader");
+                if (hasFLO && hasAutoLoader) {
+                  return (
+                    <p className="text-xs text-destructive mt-2 max-w-md">
+                      AUTOMATIC LOADER SYSTEM IS NOT AVAILABLE WITH THIS MODEL. AUTOMATIC LOADER IS AVAILABLE WITH FLC MODELS ONLY
+                    </p>
+                  );
+                }
+                return null;
+              })()}
             </div>
             <Button
               size="lg"
