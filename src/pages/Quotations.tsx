@@ -37,7 +37,7 @@ const accessories = [
       ["Filter Type", "Pulse filter cartridge"],
       ["Air Speed", "236 ft/min"],
       ["Cleaning", "Automatic pulse cleaning"],
-      ["Size", '48" × 48" × 48"'],
+      ["Size", '48" × 48" × 78"'],
       ["Design", "Stand-alone integrated unit"],
       ["Sections", "Fan (top) · Cartridge (mid) · Drawer (base)"],
       ["Compliance", "GB16297-1996 emission standards"],
