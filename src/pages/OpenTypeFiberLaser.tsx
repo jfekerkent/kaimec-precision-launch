@@ -490,6 +490,8 @@ export default function OpenTypeFiberLaser() {
         </div>
       </section>
 
+      <OptionalAccessoriesSection background="bg-background" />
+
       {/* 7b. INDUSTRIES */}
       <section className="py-20 bg-background">
         <div className="container">
