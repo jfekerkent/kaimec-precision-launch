@@ -172,6 +172,8 @@ export default function TubeProfileLasers() {
         </div>
       </section>
 
+      <OptionalAccessoriesSection background="bg-[#f8f8f8]" excludeIds={["Automatic Loader"]} />
+
       <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-8">
