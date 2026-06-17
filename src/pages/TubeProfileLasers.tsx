@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import OptionalAccessoriesSection from "@/components/OptionalAccessoriesSection";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -170,6 +171,8 @@ export default function TubeProfileLasers() {
           </div>
         </div>
       </section>
+
+      <OptionalAccessoriesSection background="bg-[#f8f8f8]" excludeIds={["Automatic Loader"]} />
 
       <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
