@@ -45,6 +45,7 @@ import closedFlc3 from "@/assets/closed-flc-3.png";
 import closedFlc4 from "@/assets/closed-flc-4.png";
 import closedFlc5 from "@/assets/closed-flc-5.png";
 import closedFlc6 from "@/assets/closed-flc-6.png";
+import OptionalAccessoriesSection from "@/components/OptionalAccessoriesSection";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -510,6 +511,8 @@ export default function ClosedTypeFiberLaser() {
           </div>
         </div>
       </section>
+
+      <OptionalAccessoriesSection background="bg-[#f8f8f8]" />
 
       {/* 9. FINAL CTA BAND */}
       <section className="py-16 bg-primary">
