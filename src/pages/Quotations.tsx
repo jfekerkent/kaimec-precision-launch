@@ -46,7 +46,7 @@ const accessories = [
   {
     id: "Screw Type Air Compressor",
     name: "Screw Type Air Compressor",
-    subtitle: "30HP · With Refrigerated Dryer",
+    subtitle: "20HP · With Refrigerated Dryer",
     image: airCompressorImg,
     specs: [
       
