@@ -66,7 +66,7 @@ const accessories = [
     specs: [
       ["Type", "Gantry type automatic sheet loading"],
       ["Function", "Loads new sheets onto the second pallet (table) automatically"],
-      ["Compatibility", "Fits FLO / FLC / FLP series"],
+      ["Compatibility", "Fits FLO w/2 tables / FLC / FLP models"],
       ["Operation", "Reduces manual handling & cycle time"],
       ["Control", "Synchronized with laser cutting cycle"],
     ],
