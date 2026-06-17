@@ -27,8 +27,13 @@ export default function QuoteSummary() {
     .filter((m): m is { slug: QuoteSlug } & (typeof quoteMachines)[QuoteSlug] => Boolean(m.name));
 
   const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
+  const hasFLO = slugs.some((s) => s.startsWith("flo-"));
+  const autoLoaderExcluded = (label: string) => hasFLO && /automatic\s*loader/i.test(label);
   const machinesTotal = selected.reduce((sum, m) => sum + (m.price ?? 0), 0);
-  const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
+  const accessoriesTotal = selectedAccessories.reduce(
+    (sum, a) => sum + (autoLoaderExcluded(a.label) ? 0 : a.price),
+    0
+  );
   const total = machinesTotal + accessoriesTotal;
 
   if (selected.length === 0) {
@@ -103,19 +108,29 @@ export default function QuoteSummary() {
                   <span className="font-semibold text-foreground">Included: </span>
                   {includedBlurb}
                 </li>
-                {selectedAccessories.map((a) => (
-                  <li key={a.label} className="flex justify-between gap-4 items-center">
-                    <span className="flex items-center gap-2">
-                      <img
-                        src={a.image}
-                        alt={a.label}
-                        className="w-8 h-8 object-contain rounded border border-border/40 bg-white p-0.5"
-                      />
-                      + {a.label}
-                    </span>
-                    <span>${a.price.toLocaleString()}</span>
-                  </li>
-                ))}
+                {selectedAccessories.map((a) => {
+                  const excluded = autoLoaderExcluded(a.label);
+                  return (
+                    <li key={a.label} className="flex flex-col gap-1">
+                      <div className="flex justify-between gap-4 items-center">
+                        <span className="flex items-center gap-2">
+                          <img
+                            src={a.image}
+                            alt={a.label}
+                            className="w-8 h-8 object-contain rounded border border-border/40 bg-white p-0.5"
+                          />
+                          + {a.label}
+                        </span>
+                        <span>{excluded ? "N/a" : `$${a.price.toLocaleString()}`}</span>
+                      </div>
+                      {excluded && (
+                        <span className="text-xs text-destructive">
+                          AUTOMATIC LOADER SYSTEM IS NOT AVAILABLE WITH THIS MODEL. AUTOMATIC LOADER IS AVAILABLE WITH FLC MODELS ONLY
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
                 <li className="flex justify-between gap-4 border-t border-border pt-3 mt-2 font-bold">
                   <span>Total</span>
                   <span>${total.toLocaleString()} FOB Tustin, CA</span>

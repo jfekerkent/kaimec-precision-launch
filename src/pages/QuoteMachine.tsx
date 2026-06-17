@@ -36,6 +36,7 @@ export default function QuoteMachine() {
   const machine = slug ? quoteMachines[slug] : undefined;
   const [searchParams] = useSearchParams();
   const accessories = searchParams.get("accessories") || "";
+  const isFLO = !!slug && slug.startsWith("flo-");
 
   if (!machine) {
     return (
@@ -80,7 +81,10 @@ export default function QuoteMachine() {
             {machine && (
               (() => {
                 const selectedAccessories = accessoryPrices.filter((a) => a.match.test(accessories));
-                const accessoriesTotal = selectedAccessories.reduce((sum, a) => sum + a.price, 0);
+                const accessoriesTotal = selectedAccessories.reduce(
+                  (sum, a) => sum + (isFLO && /automatic\s*loader/i.test(a.label) ? 0 : a.price),
+                  0
+                );
                 const total = (machine.price ?? 0) + accessoriesTotal;
                 return (
                   <div className="bg-card border border-border rounded-lg p-6">
@@ -96,12 +100,28 @@ export default function QuoteMachine() {
                         <span className="font-semibold text-foreground">Included: </span>
                         5x10ft travels, Auto nesting, Auto collision protection, Edge finding, Fly cutting, Yaskawa servo motors, 24/7 online USA support, Installation and training, heater/chiller, 220 or 480 volt regulating transformer
                       </li>
-                      {selectedAccessories.map((a) => (
-                        <li key={a.label} className="flex justify-between gap-4">
-                          <span>+ {a.label}</span>
-                          <span>${a.price.toLocaleString()}</span>
-                        </li>
-                      ))}
+                      {selectedAccessories.map((a) => {
+                        const isAutoLoader = /automatic\s*loader/i.test(a.label);
+                        if (isFLO && isAutoLoader) {
+                          return (
+                            <li key={a.label} className="flex flex-col gap-1">
+                              <div className="flex justify-between gap-4">
+                                <span>+ {a.label}</span>
+                                <span>N/a</span>
+                              </div>
+                              <span className="text-xs text-destructive">
+                                AUTOMATIC LOADER SYSTEM IS NOT AVAILABLE WITH THIS MODEL. AUTOMATIC LOADER IS AVAILABLE WITH FLC MODELS ONLY
+                              </span>
+                            </li>
+                          );
+                        }
+                        return (
+                          <li key={a.label} className="flex justify-between gap-4">
+                            <span>+ {a.label}</span>
+                            <span>${a.price.toLocaleString()}</span>
+                          </li>
+                        );
+                      })}
                       <li className="flex justify-between gap-4 border-t border-border pt-3 mt-2 font-bold">
                         <span>Total</span>
                         <span>${total.toLocaleString()} FOB Tustin, CA</span>
