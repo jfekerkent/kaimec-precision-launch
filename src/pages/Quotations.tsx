@@ -12,7 +12,7 @@ import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
 import flc1530_12kw from "@/assets/flc-1530-12kw-quote.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
-import dustCollectorImgAsset from "@/assets/dust-collector-todc-4l.jpg.asset.json";
+import dustCollectorImgAsset from "@/assets/dust-collector-todc-4l.png.asset.json";
 const dustCollectorImg = dustCollectorImgAsset.url;
 import airCompressorImg from "@/assets/screw-air-compressor.png.asset.json";
 import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
@@ -35,15 +35,14 @@ const accessories = [
     subtitle: "Pulse Filter Cartridge",
     image: dustCollectorImg,
     specs: [
-      ["Filter Type", "Pulse filter cartridge"],
-      ["Air Speed", "236 ft/min"],
-      ["Cleaning", "Automatic pulse cleaning"],
+      ["Filtration Efficiency", "99.99% efficiency, capturing particles down to 0.3–0.5 μm"],
+      ["Filter Cartridges", "High-quality imported (Toray, AHLSTROM) with long service life"],
+      ["Pulse Jet Cleaning", "Automatic ash/dust cleaning extends filter life, no manual maintenance"],
+      ["Build Quality", "Heavy-duty reinforced steel shell handles high negative pressure safely"],
+      ["Smart Controls", "LCD control screen, maintenance reminders, overload alarms, EtherCAT support"],
       ["Size", '65" × 60" × 92"'],
       ["Weight", "1,870 lb"],
-      ["Design", "Stand-alone integrated unit"],
-      ["Sections", "Fan (top) · Cartridge (mid) · Drawer (base)"],
       ["Certifications", "UL 508, CSA 22.2"],
-      ["Compliance", "GB16297-1996 emission standards"],
     ],
   },
   {
