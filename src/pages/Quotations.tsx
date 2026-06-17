@@ -207,7 +207,7 @@ export default function Quotations() {
                 Add optional accessories to complete your configuration.
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 max-w-4xl">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
               {accessories.map((a) => {
                 const isSelected = selectedAccessories.has(a.id);
                 return (
