@@ -46,6 +46,7 @@ import industryKitchenware from "@/assets/industry-kitchenware.avif";
 import industryAppliances from "@/assets/industry-appliances.avif";
 import industryFurniture from "@/assets/industry-furniture.avif";
 import industryElevator from "@/assets/industry-elevator.avif";
+import OptionalAccessoriesSection from "@/components/OptionalAccessoriesSection";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
