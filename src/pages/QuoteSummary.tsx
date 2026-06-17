@@ -121,7 +121,7 @@ export default function QuoteSummary() {
                           />
                           + {a.label}
                         </span>
-                        <span>{excluded ? "N/a" : `$${a.price.toLocaleString()}`}</span>
+                        <span>{excluded ? "N/A" : `$${a.price.toLocaleString()}`}</span>
                       </div>
                       {excluded && (
                         <span className="text-xs text-destructive">
