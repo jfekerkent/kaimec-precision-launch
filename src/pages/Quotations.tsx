@@ -13,7 +13,7 @@ import flc1530_12kw from "@/assets/flc-1530-12kw-quote.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
 import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
-import airCompressorImg from "@/assets/air-compressor-v3.png";
+import airCompressorImg from "@/assets/screw-air-compressor.png.asset.json";
 import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
 
 const machines = [
