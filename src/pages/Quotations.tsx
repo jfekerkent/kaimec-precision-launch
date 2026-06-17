@@ -53,9 +53,10 @@ const accessories = [
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
       ["Pressure", "232 PSI"],
       ["Noise Level", "70 ± 2 dB(A)"],
-      ["Tank", "Integrated air receiver"],
+      ["Tank", "Integrated air receiver (ASME)"],
       ["Dimensions", "70 × 38 × 62 in (L×W×H)"],
       ["Includes", "Integrated refrigerated dryer"],
+      ["Certifications", "UL 508, CSA 22.2"],
     ],
   },
   {
