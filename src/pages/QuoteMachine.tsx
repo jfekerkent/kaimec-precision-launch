@@ -107,7 +107,7 @@ export default function QuoteMachine() {
                             <li key={a.label} className="flex flex-col gap-1">
                               <div className="flex justify-between gap-4">
                                 <span>+ {a.label}</span>
-                                <span>N/a</span>
+                                <span>N/A</span>
                               </div>
                               <span className="text-xs text-destructive">
                                 AUTOMATIC LOADER SYSTEM IS NOT AVAILABLE WITH THIS MODEL. AUTOMATIC LOADER IS AVAILABLE WITH FLC MODELS ONLY
