@@ -50,6 +50,7 @@ import remoteControlImg from "@/assets/remote-control.png";
 
 import chillerHeaterImg from "@/assets/chiller-heater-unit.png";
 import regulatingTransformerImg from "@/assets/regulating-transformer.png";
+import OptionalAccessoriesSection from "@/components/OptionalAccessoriesSection";
 
 const brochurePdf = "/Kaimec-Fiber-Laser-Brochure.pdf";
 
@@ -622,6 +623,8 @@ export default function CoveredPipeProfileFiberLaser() {
           </div>
         </div>
       </section>
+
+      <OptionalAccessoriesSection background="bg-background" />
 
       {/* 10. QUOTE FORM */}
       <section id="quote-form" className="py-20 bg-background scroll-mt-24">
