@@ -49,12 +49,12 @@ const accessories = [
     subtitle: "20HP · With Refrigerated Dryer",
     image: airCompressorImg,
     specs: [
-      
+      ["Power Input", "480V 60Hz 3Ph"],
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
-      ["Pressure", "200 PSI"],
+      ["Pressure", "232 PSI"],
       ["Noise Level", "70 ± 2 dB(A)"],
       ["Tank", "Integrated air receiver"],
-      ["Dimensions", "67.4 × 31.5 × 73.2 in (L×W×H)"],
+      ["Dimensions", "70 × 38 × 62 in (L×W×H)"],
       ["Includes", "Integrated refrigerated dryer"],
     ],
   },
