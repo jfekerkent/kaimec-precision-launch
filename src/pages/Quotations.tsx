@@ -12,7 +12,7 @@ import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
 import flc1530_12kw from "@/assets/flc-1530-12kw-quote.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
-import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
+import dustCollectorImg from "@/assets/dust-collector-todc-4l.jpg.asset.json";
 import airCompressorImg from "@/assets/screw-air-compressor.png.asset.json";
 import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
 
@@ -37,9 +37,11 @@ const accessories = [
       ["Filter Type", "Pulse filter cartridge"],
       ["Air Speed", "236 ft/min"],
       ["Cleaning", "Automatic pulse cleaning"],
-      ["Size", '48" × 48" × 78"'],
+      ["Size", '65" × 60" × 92"'],
+      ["Weight", "1,870 lb"],
       ["Design", "Stand-alone integrated unit"],
       ["Sections", "Fan (top) · Cartridge (mid) · Drawer (base)"],
+      ["Certifications", "UL 508, CSA 22.2"],
       ["Compliance", "GB16297-1996 emission standards"],
     ],
   },
