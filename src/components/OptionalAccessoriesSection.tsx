@@ -52,9 +52,11 @@ const accessories = [
 
 interface Props {
   background?: string;
+  excludeIds?: string[];
 }
 
-export default function OptionalAccessoriesSection({ background = "bg-background" }: Props) {
+export default function OptionalAccessoriesSection({ background = "bg-background", excludeIds = [] }: Props) {
+  const visible = accessories.filter((a) => !excludeIds.includes(a.id));
   return (
     <section className={`py-20 ${background}`}>
       <div className="container">
@@ -65,8 +67,8 @@ export default function OptionalAccessoriesSection({ background = "bg-background
             Add optional accessories to complete your configuration.
           </p>
         </div>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-3">
-          {accessories.map((a) => (
+        <div className={`grid gap-6 grid-cols-1 ${visible.length === 2 ? "sm:grid-cols-2 max-w-4xl mx-auto" : visible.length === 1 ? "sm:grid-cols-1 max-w-xl mx-auto" : "sm:grid-cols-3"}`}>
+          {visible.map((a) => (
             <div
               key={a.id}
               className="border border-border rounded-lg overflow-hidden flex flex-col bg-card"
