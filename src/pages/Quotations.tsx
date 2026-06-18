@@ -12,10 +12,9 @@ import flc1530_6kw from "@/assets/flc-1530-6kw.jpg";
 import flc1530_12kw from "@/assets/flc-1530-12kw-quote.png";
 import flcP1530_6kw from "@/assets/flc-p-1530-1.png";
 import flcP1530_12kw from "@/assets/flc-p-1530-eu-1.jpg";
-import dustCollectorImgAsset from "@/assets/dust-collector-todc-4l.png.asset.json";
-const dustCollectorImg = dustCollectorImgAsset.url;
-import airCompressorImg from "@/assets/screw-air-compressor.png.asset.json";
-import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
+import dustCollectorImg from "@/assets/dust-collector-todc-4l.png";
+import airCompressorImg from "@/assets/screw-air-compressor.png";
+import autoLoaderImg from "@/assets/auto-loader.png";
 
 const machines = [
   { id: "FLO-1530 x 3kW",    slug: "flo-1530-3kw",    name: "FLO-1530 x 3kW",    subtitle: "Open Type Fiber Laser",       image: flo1530_3kw },
@@ -49,7 +48,7 @@ const accessories = [
     id: "Screw Type Air Compressor",
     name: "Screw Type Air Compressor",
     subtitle: "20HP · With Refrigerated Dryer",
-    image: airCompressorImg.url,
+    image: airCompressorImg,
     specs: [
       ["Power Input", "480V 60Hz 3Ph"],
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
@@ -65,7 +64,7 @@ const accessories = [
     id: "Automatic Loader",
     name: "Automatic Loader",
     subtitle: "Gantry Type Sheet Loading System",
-    image: autoLoaderImg.url,
+    image: autoLoaderImg,
     specs: [
       ["Type", "Gantry type automatic sheet loading"],
       ["Function", "Loads new sheets onto the second pallet (table) automatically"],
