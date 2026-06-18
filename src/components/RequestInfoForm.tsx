@@ -36,6 +36,7 @@ const machineOptions = [
 const accessoryOptions = [
   "Dust / Smoke Collector",
   "Screw Type Air Compressor (30HP with Refrigerated Dryer)",
+  "Automatic Loader",
 ] as const;
 
 function detectMachineFromPath(pathname: string): string {
