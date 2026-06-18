@@ -1,11 +1,12 @@
-Add "Automatic Loader" to the Accessories of Interest checkbox list on the quote request form.
+## Problem
+`src/pages/QuoteSummary.tsx` still imports old accessory images:
+- `dust-collector-v2.jpg` → should be `dust-collector-todc-4l.png`
+- `air-compressor-v3.png` → should be `screw-air-compressor.png`
 
-## What to change
-In `src/components/RequestInfoForm.tsx`, the `accessoryOptions` array currently has two items:
-- "Dust / Smoke Collector"
-- "Screw Type Air Compressor (30HP with Refrigerated Dryer)"
+This causes the old dust collector photo to appear in the pricing breakdown thumbnail on the quote summary page.
 
-Add a third option:
-- "Automatic Loader"
+## Fix
+Update the two `import` statements at the top of `src/pages/QuoteSummary.tsx` to point to the new image files. No other logic or labels change — only the image sources.
 
-This will make the checkbox appear in the "Accessories of Interest (optional)" section on the quote summary page and any other page using `RequestInfoForm`.
+## Verification
+After the edit, the dust collector thumbnail on the quote summary page should display the new `dust-collector-todc-4l.png` image instead of the old one.
