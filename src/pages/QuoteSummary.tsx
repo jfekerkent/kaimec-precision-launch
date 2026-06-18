@@ -5,12 +5,12 @@ import RequestInfoForm from "@/components/RequestInfoForm";
 import { quoteMachines, type QuoteSlug } from "./QuoteMachine";
 import dustCollectorImg from "@/assets/dust-collector-v2.jpg";
 import airCompressorImg from "@/assets/air-compressor-v3.png";
-import autoLoaderImg from "@/assets/auto-loader.png.asset.json";
+import autoLoaderImg from "@/assets/auto-loader.png";
 
 const accessoryPrices: { match: RegExp; label: string; price: number; image: string }[] = [
   { match: /dust|smoke/i, label: "Dust collector", price: 22000, image: dustCollectorImg },
   { match: /air\s*compressor|screw/i, label: "Screw special air compressor", price: 22000, image: airCompressorImg },
-  { match: /automatic\s*loader/i, label: "Automatic loader", price: 25000, image: autoLoaderImg.url },
+  { match: /automatic\s*loader/i, label: "Automatic loader", price: 25000, image: autoLoaderImg },
 ];
 
 const includedBlurb =
