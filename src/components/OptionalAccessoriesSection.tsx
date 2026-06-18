@@ -1,13 +1,13 @@
-import dustCollectorImgAsset from "@/assets/dust-collector-todc-4l.png.asset.json";
-import airCompressorImgAsset from "@/assets/screw-air-compressor.png.asset.json";
-import autoLoaderImgAsset from "@/assets/auto-loader.png.asset.json";
+import dustCollectorImg from "@/assets/dust-collector-todc-4l.png";
+import airCompressorImg from "@/assets/screw-air-compressor.png";
+import autoLoaderImg from "@/assets/auto-loader.png";
 
 const accessories = [
   {
     id: "Dust / Smoke Collector",
     name: "Dust / Smoke Collector",
     subtitle: "Pulse Filter Cartridge",
-    image: dustCollectorImgAsset.url,
+    image: dustCollectorImg,
     specs: [
       ["Filtration Efficiency", "99.99% efficiency, capturing particles down to 0.3–0.5 μm"],
       ["Filter Cartridges", "High-quality imported (Toray, AHLSTROM) with long service life"],
@@ -23,7 +23,7 @@ const accessories = [
     id: "Screw Type Air Compressor",
     name: "Screw Type Air Compressor",
     subtitle: "20HP · With Refrigerated Dryer",
-    image: airCompressorImgAsset.url,
+    image: airCompressorImg,
     specs: [
       ["Power Input", "480V 60Hz 3Ph"],
       ["Air Capacity", "81 CFM (with refrigerated dryer)"],
@@ -39,7 +39,7 @@ const accessories = [
     id: "Automatic Loader",
     name: "Automatic Loader",
     subtitle: "Gantry Type Sheet Loading System",
-    image: autoLoaderImgAsset.url,
+    image: autoLoaderImg,
     specs: [
       ["Type", "Gantry type automatic sheet loading"],
       ["Function", "Loads new sheets onto the second pallet (table) automatically"],
