@@ -225,7 +225,7 @@ export default function ClosedTypeFiberLaser() {
               <p className="font-bold tracking-[0.2em] text-blue-900 mb-4 uppercase text-3xl">
                 
               </p>
-              <h1 className="text-5xl md:text-6xl font-black text-blue-900 mb-4 tracking-tight lg:text-5xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-900 mb-4 tracking-tight break-words leading-tight">
                 Fully Enclosed Laser Machines
               </h1>
               <p className="text-base font-bold tracking-wide text-blue-800 mb-6 uppercase">

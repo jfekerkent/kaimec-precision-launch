@@ -141,7 +141,7 @@ export default function TubeProfileLasers() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4 whitespace-pre-line">Tube & Profile{"\n"}Laser Cutting Machines</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 break-words leading-tight">Tube &amp; Profile Laser Cutting Machines</h1>
           <p className="text-lg text-white/80 whitespace-pre-line">
             Ø9" or 14" Diameter{"\n"}
             20ft length capacity (30ft optional){"\n"}

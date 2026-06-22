@@ -231,7 +231,7 @@ export default function OpenTypeFiberLaser() {
               <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl">
 
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-6 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-foreground mb-6 tracking-tight break-words leading-tight">
                 Open Type Fiber Lasers
               </h1>
               <ul className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">

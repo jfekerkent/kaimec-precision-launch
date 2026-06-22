@@ -83,7 +83,7 @@ export default function FiberLasers() {
       <section className="py-20 bg-secondary">
         <div className="container max-w-3xl text-center">
           <br />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Laser Machines</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 break-words leading-tight">Laser Machines</h1>
           <p className="text-lg text-white/80">High-speed precision laser systems for sheet metal fabrication.</p>
         </div>
       </section>

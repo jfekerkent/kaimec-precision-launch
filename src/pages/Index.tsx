@@ -23,9 +23,6 @@ import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png";
 import comboOnly1 from "@/assets/combo-only-1.jpg";
 import comboOnly2 from "@/assets/combo-only-2.png";
 import heroVideoSrc from "@/assets/hero-laser-cutting.mp4";
-import heroMobile1x from "@/assets/hero-laser-cutting-mobile-1x.jpg.asset.json";
-import heroMobile2x from "@/assets/hero-laser-cutting-mobile-2x.jpg.asset.json";
-import heroMobile3x from "@/assets/hero-laser-cutting-mobile-3x.jpg.asset.json";
 
 
 const facilitySlides = [
@@ -113,22 +110,8 @@ export default function Index() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[80vh] md:min-h-0">
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Mobile: static image (avoids over-zoomed 16:9 video on portrait screens) */}
-          <img
-            src={heroMobile2x.url}
-            srcSet={`${heroMobile1x.url} 540w, ${heroMobile2x.url} 810w, ${heroMobile3x.url} 1080w`}
-            sizes="(max-width: 767px) 100vw, 0px"
-            width={810}
-            height={1080}
-            decoding="async"
-            fetchPriority="high"
-            alt=""
-            aria-hidden="true"
-            className="md:hidden absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: "center 35%", aspectRatio: "3 / 4", zIndex: 0 }}
-          />
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0c] via-[#141416] to-[#1c1c1f] md:bg-none">
+        <div className="absolute inset-0 overflow-hidden hidden md:block">
           {/* Tablet/Desktop: autoplay video */}
           <video
             ref={heroVideoRef}
@@ -143,7 +126,7 @@ export default function Index() {
             aria-hidden="true"
             tabIndex={-1}
             preload="auto"
-            className="hero-background-video hidden md:block"
+            className="hero-background-video"
             onContextMenu={(event) => event.preventDefault()}
             onLoadedMetadata={(event) => {
               event.currentTarget.controls = false;
@@ -179,7 +162,7 @@ export default function Index() {
             }}
           />
         </div>
-        <div className="container relative z-10 py-28 md:py-40">
+        <div className="container relative z-10 py-16 md:py-40">
           <div className="max-w-2xl">
             <p
               className="section-label mb-4"
@@ -187,7 +170,7 @@ export default function Index() {
             >
               Precision Fabrication Machines... From Factory-Direct to Your Floor.
             </p>
-            <h1 className="text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f6f5ef]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl leading-[1.1] mb-6 text-balance lg:text-5xl font-bold text-[#f6f5ef] break-words">
               European high-speed laser cutting machines and CNC press brakes
             </h1>
             <p className="leading-relaxed mb-8 max-w-xl" style={{ fontSize: "17px", color: "rgba(255,255,255,0.80)" }}>
@@ -195,6 +178,20 @@ export default function Index() {
               engineers and California inventory.
             </p>
             <HeroLeadForm />
+            {/* Mobile-only framed Vimeo card */}
+            <div className="md:hidden mt-8">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden ring-1 ring-primary/30 shadow-2xl bg-black">
+                <iframe
+                  src="https://player.vimeo.com/video/1201845096?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder={0}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Kaimec laser cutting"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -243,7 +240,7 @@ export default function Index() {
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
                 <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
               </span>
-              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground animate-flash text-center">
                 Laser Cutting Machines
               </h2>
               <span
@@ -254,10 +251,10 @@ export default function Index() {
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
               </span>
             </div>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
               Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
             </p>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
               Laser Powers : 3, 6, 12, 20, 50 kW
             </p>
           </div>
