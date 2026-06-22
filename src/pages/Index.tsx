@@ -23,7 +23,9 @@ import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png";
 import comboOnly1 from "@/assets/combo-only-1.jpg";
 import comboOnly2 from "@/assets/combo-only-2.png";
 import heroVideoSrc from "@/assets/hero-laser-cutting.mp4";
-import heroMobileAsset from "@/assets/hero-laser-cutting-mobile.jpg.asset.json";
+import heroMobile1x from "@/assets/hero-laser-cutting-mobile-1x.jpg.asset.json";
+import heroMobile2x from "@/assets/hero-laser-cutting-mobile-2x.jpg.asset.json";
+import heroMobile3x from "@/assets/hero-laser-cutting-mobile-3x.jpg.asset.json";
 
 
 const facilitySlides = [
@@ -115,11 +117,17 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden">
           {/* Mobile: static image (avoids over-zoomed 16:9 video on portrait screens) */}
           <img
-            src={heroMobileAsset.url}
+            src={heroMobile2x.url}
+            srcSet={`${heroMobile1x.url} 540w, ${heroMobile2x.url} 810w, ${heroMobile3x.url} 1080w`}
+            sizes="(max-width: 767px) 100vw, 0px"
+            width={810}
+            height={1080}
+            decoding="async"
+            fetchPriority="high"
             alt=""
             aria-hidden="true"
             className="md:hidden absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: "center 35%", zIndex: 0 }}
+            style={{ objectPosition: "center 35%", aspectRatio: "3 / 4", zIndex: 0 }}
           />
           {/* Tablet/Desktop: autoplay video */}
           <video
