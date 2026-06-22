@@ -316,26 +316,21 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-8">
             <div className="relative inline-block">
-              <div
-                aria-hidden
-                className="absolute left-1/2 -translate-x-1/2 -top-2 h-3 w-[60%] bg-gradient-to-b from-slate-500 to-slate-800 rounded-sm shadow-lg animate-press-punch origin-top"
-              />
-              <span
-                aria-hidden
-                className="absolute left-2 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_4px_#fbbf24] animate-press-spark"
-              />
-              <span
-                aria-hidden
-                className="absolute right-2 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_12px_4px_#fbbf24] animate-press-spark"
-                style={{ animationDelay: "0.05s" }}
-              />
-              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-press-stamp origin-top inline-block">
+              <h2 className="text-3xl md:text-4xl font-black text-foreground inline-block">
                 CNC Press Brakes
               </h2>
               <div
                 aria-hidden
-                className="mt-1 h-1.5 w-[110%] mx-auto bg-gradient-to-t from-slate-700 to-slate-400 rounded-sm"
-              />
+                className="relative mt-2 mx-auto w-[110%] h-2 flex items-stretch"
+              >
+                <div className="w-1/2 h-full bg-gradient-to-r from-slate-400 via-slate-200 to-slate-100 rounded-l-sm shadow-sm" />
+                <div className="w-1/2 h-full bg-gradient-to-r from-slate-100 via-slate-200 to-slate-400 rounded-r-sm shadow-sm origin-left animate-sheet-bend motion-reduce:animate-none" />
+                <span className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-slate-700" />
+                <span
+                  aria-hidden
+                  className="absolute left-1/2 -translate-x-1/2 -top-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_10px_3px_#fbbf24] animate-bend-spark motion-reduce:hidden"
+                />
+              </div>
             </div>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
               High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet
