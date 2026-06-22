@@ -240,7 +240,7 @@ export default function Index() {
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
                 <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
               </span>
-              <h2 className="text-3xl md:text-4xl font-black text-foreground animate-flash whitespace-nowrap">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground animate-flash text-center">
                 Laser Cutting Machines
               </h2>
               <span
@@ -251,10 +251,10 @@ export default function Index() {
                 <span className="flex-1 h-1 rounded-full animate-laser-dot" />
               </span>
             </div>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
               Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
             </p>
-            <p className="mt-3 text-sm text-black font-bold border-4 rounded-lg shadow-lg font-sans md:text-3xl text-center">
+            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
               Laser Powers : 3, 6, 12, 20, 50 kW
             </p>
           </div>
