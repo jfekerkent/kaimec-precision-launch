@@ -291,8 +291,8 @@ export default function CoveredPipeProfileFiberLaser() {
               <p className="font-bold tracking-[0.2em] text-[#080515] mb-4 uppercase text-3xl text-blue-900/80">
                 
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-blue-900 mb-6 tracking-tight">
-                Combo lasers<br />(sheet + pipe cutting)
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-900 mb-6 tracking-tight break-words leading-tight">
+                Combo lasers (sheet + pipe cutting)
               </h1>
               <ul className="text-lg md:text-xl text-blue-900/80 mb-8 leading-relaxed max-w-xl list-disc list-inside space-y-1">
                 <li>Cost effective</li>

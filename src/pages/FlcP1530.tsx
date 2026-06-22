@@ -33,7 +33,7 @@ const FlcP1530 = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">FLC-P 1530 (fully enclosed/2 tables)</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4 break-words leading-tight">FLC-P 1530 (fully enclosed/2 tables)</h1>
               <p className="text-xl text-gray-600 mb-6">Closed Type Pipe & Profile Fiber Laser Cutting Machine</p>
               <img src={flcP1530Img} alt="FLC-P 1530 (fully enclosed/2 tables)" className="w-full rounded-xl border border-gray-200 shadow-sm" />
             </div>
