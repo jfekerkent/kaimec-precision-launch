@@ -5,7 +5,7 @@ import heroImg from "@/assets/hero-laser-mobile.jpg.asset.json";
 import kfloImg from "@/assets/machine-kflo-primary.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
-import gunDrillImg from "@/assets/machine-gun-drill.jpg";
+import gunDrillAsset from "@/assets/machine-gun-bta-drilling.png.asset.json";
 import quoteImg from "@/assets/flc-1530-12kw-quote.png";
 
 type Service = {
@@ -42,12 +42,12 @@ const services: Service[] = [
     imageAlt: "KAIMEC FLP 6035 tube and profile fiber laser",
   },
   {
-    label: "Gun Drills",
+    label: "Gun & BTA Drilling",
     to: "/gun-drills/gun-drilling-machines",
     blurb:
       "CNC gun drilling and BTA deep-hole drilling machines for precise, deep, straight holes in tough materials.",
-    image: gunDrillImg,
-    imageAlt: "KAIMEC CNC gun drilling machine",
+    image: gunDrillAsset.url,
+    imageAlt: "KAIMEC CNC gun and BTA deep-hole drilling machine",
   },
   {
     label: "Quotations",
