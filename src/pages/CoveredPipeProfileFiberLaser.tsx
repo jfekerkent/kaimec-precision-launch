@@ -212,7 +212,7 @@ function ConfigCard({ img, title, subtitle, body, model, onClick }: { img: strin
         <h3 className="text-xl font-black text-foreground">{title}</h3>
         <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
-        <Button asChild className="font-bold w-full sm:w-auto">
+        <Button asChild className="font-bold w-full sm:w-auto whitespace-normal h-auto py-3 text-center">
           <a href="#quote-form" onClick={(e) => {
             if (onClick) {
               e.preventDefault();
@@ -240,7 +240,7 @@ function RolloverConfigCard({ img, hoverImg, title, subtitle, body, model, onCli
         <h3 className="text-xl font-black text-foreground">{title}</h3>
         <p className="text-sm text-primary font-bold mt-1 mb-3">{subtitle}</p>
         <p className="text-muted-foreground leading-relaxed mb-5 flex-1">{body}</p>
-        <Button asChild className="font-bold w-full sm:w-auto">
+        <Button asChild className="font-bold w-full sm:w-auto whitespace-normal h-auto py-3 text-center">
           <a href="#quote-form" onClick={(e) => {
             if (onClick) {
               e.preventDefault();
