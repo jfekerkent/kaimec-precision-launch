@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/kaimec-logo-nav-v4.png";
+import logoLight from "@/assets/kaimec-logo-light.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -40,17 +41,39 @@ export default function Navbar() {
   const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
   const location = useLocation();
 
+  // On the homepage mobile hero, the navbar floats transparently over the
+  // full-bleed laser photo with a white logo + white hamburger. Once the
+  // mobile menu opens, switch back to the solid white chrome so the menu
+  // panel is readable.
+  const transparentMobile = location.pathname === "/" && !mobileOpen;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors ${
+        transparentMobile
+          ? "bg-transparent lg:bg-white lg:border-b lg:border-gray-200 lg:shadow-sm"
+          : "bg-white border-b border-gray-200 shadow-sm"
+      }`}
+    >
       <div className="w-full">
         <div className="px-4 md:px-6 py-2 flex items-center justify-between gap-3">
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
             <img
-              src={logoImg}
+              src={transparentMobile ? logoLight : logoImg}
               alt="KAIMEC Machines"
-              className="h-12 md:h-14 w-auto object-contain"
+              className={`h-12 md:h-14 w-auto object-contain ${
+                transparentMobile ? "lg:hidden" : ""
+              }`}
             />
+            {transparentMobile && (
+              <img
+                src={logoImg}
+                alt=""
+                aria-hidden="true"
+                className="hidden lg:block h-14 w-auto object-contain"
+              />
+            )}
           </Link>
 
           {/* All nav + actions in one line */}
@@ -211,7 +234,11 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md ml-auto"
+            className={`lg:hidden p-2 rounded-md ml-auto ${
+              transparentMobile
+                ? "text-white hover:bg-white/10"
+                : "text-slate-600 hover:bg-slate-100"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

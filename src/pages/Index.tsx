@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
 import Seo from "@/components/Seo";
+import MobileHero from "@/components/MobileHero";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
@@ -109,8 +110,11 @@ export default function Index() {
         path="/"
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0c] via-[#141416] to-[#1c1c1f] md:bg-none">
+      {/* Mobile hero — full-bleed photo + accordion, < md only */}
+      <MobileHero />
+
+      {/* Hero (tablet/desktop only) */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0c] via-[#141416] to-[#1c1c1f] md:bg-none hidden md:block">
         <div className="absolute inset-0 overflow-hidden hidden md:block">
           {/* Tablet/Desktop: autoplay video */}
           <video
