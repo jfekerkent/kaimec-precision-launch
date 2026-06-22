@@ -1,32 +1,45 @@
-## Recommended approach
+## Goal
 
-The professional standard used by sites like Apple and Stripe: **serve a hero image on mobile and the video on tablet/desktop**, combined with a slightly shorter hero on small screens. This avoids the "over-zoomed" look (a 16:9 video forced into a tall portrait viewport must crop ~60% of its width), improves load time on cellular, and gives a perfectly framed, intentional composition on phones.
+Make the mobile hero image crisp on every phone (1x → 3x DPR) and lock its aspect ratio so it never appears stretched or "zoomed" when the hero box changes height.
 
-## What I'll change
+## What I'll do
 
-1. **Mobile (< 768px): static hero image instead of the video**
-   - Use a still frame from the current laser-cutting video (extracted at a strong moment with sparks visible) as the mobile hero background.
-   - `object-fit: cover` with `object-position` tuned so the machine head + sparks stay in frame.
-   - No autoplay video on mobile → faster LCP, no data hit, no playback quirks on iOS Low Power Mode.
+1. **Generate three resolutions of the mobile hero** from the source frame already extracted from the laser-cutting video, all at the same 3:4 portrait crop centered on the cutting head + sparks:
+   - `hero-laser-cutting-mobile@1x.jpg` — 540 × 720
+   - `hero-laser-cutting-mobile@2x.jpg` — 810 × 1080 (current asset, kept)
+   - `hero-laser-cutting-mobile@3x.jpg` — 1080 × 1440
+   - Encode JPEGs at quality ~85 with `mozjpeg`-style settings via ffmpeg/PIL. Upload each via `lovable-assets` and commit only the `.asset.json` pointers.
 
-2. **Tablet/Desktop (≥ 768px): keep the existing video**
-   - Same `hero-background-video` element as today, just hidden on mobile via `hidden md:block`.
-   - The mobile image gets `md:hidden`.
+2. **Wire srcset + sizes on the `<img>`** in `src/pages/Index.tsx` (mobile-only hero image added in the previous turn):
+   ```tsx
+   <img
+     src={hero2x.url}
+     srcSet={`${hero1x.url} 540w, ${hero2x.url} 810w, ${hero3x.url} 1080w`}
+     sizes="(max-width: 767px) 100vw, 0px"
+     width={810}
+     height={1080}
+     decoding="async"
+     fetchPriority="high"
+     alt=""
+     aria-hidden="true"
+     className="md:hidden absolute inset-0 h-full w-full object-cover"
+     style={{ objectPosition: "center 35%", aspectRatio: "3 / 4", zIndex: 0 }}
+   />
+   ```
+   - `sizes` returns `0px` above the mobile breakpoint so desktop browsers don't preload the mobile image (the video covers ≥ md).
+   - `width`/`height` + `aspect-ratio: 3 / 4` reserve space and prevent CLS; `object-cover` still fills the hero box without distorting the image.
+   - `fetchPriority="high"` keeps it as the mobile LCP element.
 
-3. **Tighten hero height on mobile**
-   - Current hero stretches to the full content height which exaggerates the zoom. Cap the mobile hero around `min-h-[80vh]` (vs. current behavior) and let it grow normally from `md:` up. Headline, sub-copy, and CTAs stay exactly where they are.
-
-4. **Preserve all overlays**
-   - The left-to-right dark gradient and bottom fade stay unchanged, applied over both the image and the video so the text remains readable in both modes.
+3. **No layout changes** — hero section still has `min-h-[80vh] md:min-h-0`, overlays unchanged, video block unchanged.
 
 ## Technical notes
 
-- File touched: `src/pages/Index.tsx` (hero section only) and one new asset import.
-- New asset: `src/assets/hero-laser-cutting-mobile.jpg` — extracted from `src/assets/hero-laser-cutting.mp4` at a frame where the cutting head and sparks are centered, then cropped to a portrait-friendly framing (roughly 3:4) so `object-cover` on a phone shows the machine, not a zoomed slice of metal.
-- No changes to Layout, Navbar, Footer, copy, CTAs, or any other section.
-- No new dependencies.
+- Files touched: `src/pages/Index.tsx` (hero `<img>` only), plus three new `.asset.json` pointer files in `src/assets/`.
+- The existing `hero-laser-cutting-mobile.jpg.asset.json` will be replaced by the 2x variant pointer (same image, renamed for clarity) or kept as-is and reused — whichever avoids deleting a live CDN ref. Decision at build time: keep the current pointer as the 2x slot, add only `@1x` and `@3x` new pointers.
+- No new dependencies. ffmpeg + PIL already available in sandbox.
 
 ## Out of scope
 
-- Re-encoding a second mobile-tall MP4 (heavier, more bandwidth, marginal visual gain over a still).
-- Changing hero copy, buttons, or any section below the hero.
+- WebP/AVIF `<picture>` source switching (can add later if you want even smaller payloads).
+- Desktop/tablet video changes.
+- Any copy, CTA, or other section changes.
