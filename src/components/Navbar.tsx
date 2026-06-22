@@ -3,7 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/kaimec-logo-nav-v4.png";
-import logoLight from "@/assets/kaimec-logo-light.png";
+import logoOvalAsset from "@/assets/kaimec-logo-oval.png.asset.json";
+
+// Standard KAIMEC logo (oval chrome badge). Used on tablet + mobile across
+// the whole app so the brand mark matches desktop. Do not swap this out.
+const logoOval = logoOvalAsset.url;
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -59,21 +63,22 @@ export default function Navbar() {
         <div className="px-4 md:px-6 py-2 flex items-center justify-between gap-3">
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
+            {/* Tablet + mobile: standard oval KAIMEC logo */}
             <img
-              src={transparentMobile ? logoLight : logoImg}
+              src={logoOval}
               alt="KAIMEC Machines"
-              className={`h-12 md:h-14 w-auto object-contain ${
-                transparentMobile ? "lg:hidden" : ""
+              className={`lg:hidden w-auto object-contain ${
+                transparentMobile
+                  ? "h-12 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+                  : "h-12"
               }`}
             />
-            {transparentMobile && (
-              <img
-                src={logoImg}
-                alt=""
-                aria-hidden="true"
-                className="hidden lg:block h-14 w-auto object-contain"
-              />
-            )}
+            {/* Desktop: existing wordmark */}
+            <img
+              src={logoImg}
+              alt="KAIMEC Machines"
+              className="hidden lg:block h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* All nav + actions in one line */}
