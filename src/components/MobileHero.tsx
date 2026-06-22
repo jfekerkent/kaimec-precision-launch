@@ -2,11 +2,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-laser-mobile.jpg.asset.json";
+import kfloImg from "@/assets/machine-kflo-primary.png";
+import mkt1560Img from "@/assets/machine-mkt-1560.png";
+import flp6035Img from "@/assets/machine-flp-6035-home.png";
+import gunDrillImg from "@/assets/machine-gun-drill.jpg";
+import quoteImg from "@/assets/flc-1530-12kw-quote.png";
 
 type Service = {
   label: string;
   to: string;
   blurb: string;
+  image: string;
+  imageAlt: string;
 };
 
 const services: Service[] = [
@@ -15,30 +22,40 @@ const services: Service[] = [
     to: "/machines/laser-cutting/open-type-fiber-laser",
     blurb:
       "European-built CNC fiber lasers from 3 kW to 50 kW, with table sizes from 5x10 ft to 6.5x20 ft.",
+    image: kfloImg,
+    imageAlt: "KAIMEC FLO open-type CNC fiber laser cutting machine",
   },
   {
     label: "Press Brakes",
     to: "/machines/press-brakes",
     blurb:
       "High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of tonnages.",
+    image: mkt1560Img,
+    imageAlt: "KAIMEC MKT 1560 CNC press brake",
   },
   {
     label: "Tube Laser Cutting",
     to: "/machines/tube-profile-lasers",
     blurb:
       "Dedicated FLP tube & profile cutting lasers — fast, clean cuts on round, square and structural profiles.",
+    image: flp6035Img,
+    imageAlt: "KAIMEC FLP 6035 tube and profile fiber laser",
   },
   {
     label: "Gun Drills",
     to: "/gun-drills/gun-drilling-machines",
     blurb:
       "CNC gun drilling and BTA deep-hole drilling machines for precise, deep, straight holes in tough materials.",
+    image: gunDrillImg,
+    imageAlt: "KAIMEC CNC gun drilling machine",
   },
   {
     label: "Quotations",
     to: "/quotations",
     blurb:
       "Get a fast, factory-direct quote from our Tustin, CA team — no middleman markup.",
+    image: quoteImg,
+    imageAlt: "KAIMEC factory-direct quotation",
   },
 ];
 
@@ -103,9 +120,17 @@ export default function MobileHero() {
                     <p className="text-sm text-slate-600 leading-relaxed">
                       {s.blurb}
                     </p>
+                    <div className="mt-4 rounded-lg overflow-hidden bg-white border border-[#e6dedf] aspect-[4/3] flex items-center justify-center">
+                      <img
+                        src={s.image}
+                        alt={s.imageAlt}
+                        loading="lazy"
+                        className="w-full h-full object-contain p-3"
+                      />
+                    </div>
                     <Link
                       to={s.to}
-                      className="mt-3 inline-flex items-center text-sm font-bold text-[#1a3a8a] hover:underline"
+                      className="mt-4 inline-flex items-center text-sm font-bold text-[#1a3a8a] hover:underline"
                     >
                       Learn more →
                     </Link>
