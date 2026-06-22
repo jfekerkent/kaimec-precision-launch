@@ -111,8 +111,17 @@ export default function Index() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[80vh] md:min-h-0">
         <div className="absolute inset-0 overflow-hidden">
+          {/* Mobile: static image (avoids over-zoomed 16:9 video on portrait screens) */}
+          <img
+            src={heroMobileAsset.url}
+            alt=""
+            aria-hidden="true"
+            className="md:hidden absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 35%", zIndex: 0 }}
+          />
+          {/* Tablet/Desktop: autoplay video */}
           <video
             ref={heroVideoRef}
             src={heroVideoSrc}
@@ -126,7 +135,7 @@ export default function Index() {
             aria-hidden="true"
             tabIndex={-1}
             preload="auto"
-            className="hero-background-video"
+            className="hero-background-video hidden md:block"
             onContextMenu={(event) => event.preventDefault()}
             onLoadedMetadata={(event) => {
               event.currentTarget.controls = false;
