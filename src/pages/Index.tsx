@@ -23,6 +23,7 @@ import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png";
 import comboOnly1 from "@/assets/combo-only-1.jpg";
 import comboOnly2 from "@/assets/combo-only-2.png";
 import heroVideoSrc from "@/assets/hero-laser-cutting.mp4";
+import heroMobileAsset from "@/assets/hero-laser-cutting-mobile.jpg.asset.json";
 
 
 const facilitySlides = [
