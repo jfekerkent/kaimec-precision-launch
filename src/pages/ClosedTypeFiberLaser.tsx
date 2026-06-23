@@ -237,7 +237,21 @@ export default function ClosedTypeFiberLaser() {
                 <li>Made in Europe</li>
                 <li>2 Year Full Warranty</li>
                 <li>5x10ft / 6.5x13ft / 6.5x20ft models</li>
-                <li>6 , 12, 20, 30, 50 kW laser powers<br />. &nbsp; &nbsp;2 (two) exchange tables</li>
+                <li>6 , 12, 20, 30, 50 kW laser powers</li>
+                <li>
+                  2 (two) exchange tables
+                  <ul className="list-disc list-inside space-y-1 mt-2 ml-6 text-base md:text-lg">
+                    <li>High-speed autofocus sensor head</li>
+                    <li>Programmable assist gas ports (air, oxygen, nitrogen)</li>
+                    <li>Dual automatic shuttle tables</li>
+                    <li>Windows-based laser controller w/ large touchscreen</li>
+                    <li>CypCut laser programming software with nesting capability</li>
+                    <li>Internal and external cameras for process/safety monitoring</li>
+                    <li>Remote pendant</li>
+                    <li>Full enclosure for safety and protection</li>
+                    <li>Heat-isolated machine bed for stability</li>
+                  </ul>
+                </li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-bold px-8" onClick={() => navigate("/quotations")}>
