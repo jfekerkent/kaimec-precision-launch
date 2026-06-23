@@ -10,6 +10,7 @@ import {
   Crosshair,
   Cpu,
   Wifi,
+  Camera,
   ChevronRight,
   Download,
   Award,
@@ -101,6 +102,11 @@ const features = [
     icon: Wifi,
     title: "Wireless Remote + Smart Nesting",
     body: "Standard nesting software, flycut, and wireless remote for blowing, pause, and calibration.",
+  },
+  {
+    icon: Camera,
+    title: "Visual Monitoring System for Safety",
+    body: "Internal and external HD cameras provide live process and safety monitoring. The internal camera tracks the cutting head and nest in real time, while the external camera oversees the work area — letting operators supervise jobs remotely and respond instantly to any issue.",
   },
 ];
 
