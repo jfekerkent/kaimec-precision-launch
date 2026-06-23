@@ -218,7 +218,7 @@ export default function Index() {
       <section className="bg-white py-12 md:py-16 border-b border-border">
         <div className="container max-w-4xl text-center">
           <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4">
-            About Kaimec Fabrication
+            About KAIMEC
           </h2>
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
             <strong>Kaimec</strong> (also known as <strong>Kaimec Fabrication</strong> and
