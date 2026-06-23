@@ -3,11 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImg from "@/assets/kaimec-logo-nav-v4.png";
-import logoOvalAsset from "@/assets/kaimec-logo-oval.png.asset.json";
 
-// Standard KAIMEC logo (oval chrome badge). Used on tablet + mobile across
-// the whole app so the brand mark matches desktop. Do not swap this out.
-const logoOval = logoOvalAsset.url;
+// Use the bundled wordmark on mobile/tablet too so the logo always renders
+// on the published site, even if the CDN asset route is slow or blocked.
+const logoOval = logoImg;
 
 const navLinks = [
   { label: "Home", to: "/" },
