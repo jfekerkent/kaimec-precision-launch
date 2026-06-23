@@ -81,7 +81,7 @@ const features = [
   {
     icon: Layers,
     title: "Dual Exchange Tables",
-    body: "10-second table change time keeps the laser cutting while the next sheet loads.",
+    body: "Dual shuttle tables that exchange automatically, allowing raw material and finished parts to be loaded and unloaded on one table while the other table is in the machine — providing near-continuous operation with a 10-second table change time.",
   },
   {
     icon: Zap,
