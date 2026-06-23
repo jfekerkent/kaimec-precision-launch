@@ -220,14 +220,32 @@ export default function Index() {
           <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4">
             About KAIMEC
           </h2>
-          <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-            <strong>Kaimec</strong> is a factory-direct supplier of
-            <strong> CNC fiber laser cutting machines</strong>, CNC press brakes and deep-hole drilling
-            machines. From our Tustin, California headquarters, Kaimec engineers support
-            sheet-metal fabricators across the United States with European-grade laser
-            cutting machines, FLO open-type and FLC closed-type fiber lasers, and
-            full parts and service coverage.
-          </p>
+          <ul className="text-base md:text-lg text-foreground/80 leading-relaxed text-left space-y-3 list-disc pl-6">
+            <li>
+              <strong>Factory-Direct CNC Solutions:</strong> CNC fiber laser cutting
+              machines, CNC press brakes, and deep-hole drilling systems.
+            </li>
+            <li>
+              <strong>U.S. Headquarters &amp; Support:</strong> Based in Tustin,
+              California, providing sales, service, parts, and engineering support.
+            </li>
+            <li>
+              <strong>Advanced Fiber Laser Technology:</strong> High-performance FLO
+              open-type and FLC enclosed fiber laser cutting systems.
+            </li>
+            <li>
+              <strong>European-Quality Performance:</strong> Precision-engineered for
+              reliability, productivity, and accuracy.
+            </li>
+            <li>
+              <strong>Complete Customer Support:</strong> Applications assistance,
+              installation, training, technical support, and spare parts coverage.
+            </li>
+            <li>
+              <strong>Serving North America:</strong> Supporting manufacturers across
+              the United States, Canada, and Mexico.
+            </li>
+          </ul>
         </div>
       </section>
 
