@@ -221,9 +221,8 @@ export default function Index() {
             About KAIMEC
           </h2>
           <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-            <strong>Kaimec</strong> (also known as <strong>Kaimec Fabrication</strong> and
-            <strong> Kaimec Machines</strong>) is a factory-direct supplier of
-            <strong> Kaimec fiber lasers</strong>, CNC press brakes and deep-hole drilling
+            <strong>Kaimec</strong> is a factory-direct supplier of
+            <strong> CNC fiber laser cutting machines</strong>, CNC press brakes and deep-hole drilling
             machines. From our Tustin, California headquarters, Kaimec engineers support
             sheet-metal fabricators across the United States with European-grade laser
             cutting machines, FLO open-type and FLC closed-type fiber lasers, and
