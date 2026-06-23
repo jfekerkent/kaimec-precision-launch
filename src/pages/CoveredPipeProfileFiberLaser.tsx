@@ -167,12 +167,12 @@ const flopSpecRows: { label: string; values: string[] }[] = [
   { label: "Warranty", values: ["2 Years", "2 Years", "2 Years"] },
 ];
 
-const powerCols = ["2 kW", "3 kW", "4 kW", "6 kW", "8 kW", "12 kW", "20 kW"];
+const powerCols = ["3 kW", "6 kW", "12 kW", "20 kW"];
 const cuttingChart: { material: string; values: string[] }[] = [
-  { material: "Carbon Steel", values: ['14 mm (9/16")', '16 mm (5/8")', '20 mm (3/4")', '22 mm (7/8")', '25 mm (1")', '30 mm (1-3/16")', '45 mm (1-3/4")'] },
-  { material: "Stainless Steel", values: ['5 mm (3/16")', '6 mm (1/4")', '10 mm (3/8")', '20 mm (3/4")', '25 mm (1")', '25 mm (1")', '40 mm (1-9/16")'] },
-  { material: "Aluminum", values: ['4 mm (1/8")', '5 mm (3/16")', '8 mm (5/16")', '10 mm (3/8")', '20 mm (3/4")', '25 mm (1")', '30 mm (1-3/16")'] },
-  { material: "Brass", values: ['4 mm (1/8")', '5 mm (3/16")', '8 mm (5/16")', '8 mm (5/16")', '12 mm (1/2")', '12 mm (1/2")', '18 mm (11/16")'] },
+  { material: "Carbon Steel", values: ['16 mm (5/8")', '22 mm (7/8")', '30 mm (1-3/16")', '45 mm (1-3/4")'] },
+  { material: "Stainless Steel", values: ['6 mm (1/4")', '20 mm (3/4")', '25 mm (1")', '40 mm (1-9/16")'] },
+  { material: "Aluminum", values: ['5 mm (3/16")', '10 mm (3/8")', '25 mm (1")', '30 mm (1-3/16")'] },
+  { material: "Brass", values: ['5 mm (3/16")', '8 mm (5/16")', '12 mm (1/2")', '18 mm (11/16")'] },
 ];
 
 const trustBand = [
