@@ -86,7 +86,7 @@ const features = [
   {
     icon: Zap,
     title: "Up to 20 kW Laser Power",
-    body: "Optional outputs from 2 kW to 20 kW for plate up to 45 mm carbon steel.",
+    body: "Optional outputs from 3 kW to 20 kW for plates up to 2\" carbon steel.",
   },
   {
     icon: Cpu,
