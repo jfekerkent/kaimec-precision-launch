@@ -10,6 +10,8 @@ import { convertValue, type Unit } from "@/lib/unitConvert";
 import UnitToggle from "@/components/UnitToggle";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
+import factory1 from "@/assets/press-brake-factory-1.jpg";
+import factory2 from "@/assets/press-brake-factory-2.jpg";
 
 const machines = [
   { id: "kmkt-1560", model: "MKT-1560", description: "CNC Press Brake 5ft (1500mm) / 60Ton / CNC control / 4 axis / Cybletec control / bending capacity of 11gauge steel up to 5ft x 0.118\" (3 mm) thickness / European-style punch and die / Laser safety light protection system", images: [mkt1560Img] },
@@ -168,10 +170,19 @@ export default function PressBrakes() {
         }}
       />
       <section className="py-20 bg-secondary">
-        <div className="container max-w-3xl text-center">
-          <br />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">CNC Press Brakes</h1>
-          <p className="text-lg text-white/80">CNC hydraulic and electric press brakes for precision metal bending.</p>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div className="aspect-[4/5] overflow-hidden rounded-lg">
+              <img src={factory1} alt="KAIMEC CNC press brakes lined up in the European factory" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="text-center px-2">
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-4">CNC Press Brakes</h1>
+              <p className="text-lg text-white/80">CNC hydraulic and electric press brakes for precision metal bending.</p>
+            </div>
+            <div className="aspect-[4/5] overflow-hidden rounded-lg">
+              <img src={factory2} alt="MKT-1560 CNC press brake on the factory floor" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
