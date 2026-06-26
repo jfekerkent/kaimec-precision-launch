@@ -81,27 +81,29 @@ Deno.serve(async (req) => {
     const sourceProp = "lead_source_kaimec";
     if (body.source) properties[sourceProp] = body.source;
 
-    async function postCreate(props: Record<string, string>) {
-      return await fetch(`${GATEWAY_URL}/crm/v3/objects/contacts`, {
-        method: "POST",
+    async function callHubSpot(method: "POST" | "PATCH", url: string): Promise<Response> {
+      let res = await fetch(url, {
+        method,
         headers: gatewayHeaders(),
-        body: JSON.stringify({ properties: props }),
+        body: JSON.stringify({ properties }),
       });
+      // Strip unknown source property and retry once
+      if (res.status === 400 && properties[sourceProp]) {
+        const errText = await res.clone().text();
+        if (errText.includes("PROPERTY_DOESNT_EXIST") && errText.includes(sourceProp)) {
+          delete properties[sourceProp];
+          res = await fetch(url, {
+            method,
+            headers: gatewayHeaders(),
+            body: JSON.stringify({ properties }),
+          });
+        }
+      }
+      return res;
     }
 
     // Try create
-    let res = await postCreate(properties);
-
-    // If the source property doesn't exist in this portal, retry without it.
-    if (res.status === 400 && body.source) {
-      const errText = await res.clone().text();
-      if (errText.includes("PROPERTY_DOESNT_EXIST") && errText.includes(sourceProp)) {
-        const { [sourceProp]: _drop, ...rest } = properties;
-        res = await postCreate(rest);
-        // Also remove from properties so PATCH on conflict doesn't re-add it
-        delete properties[sourceProp];
-      }
-    }
+    let res = await callHubSpot("POST", `${GATEWAY_URL}/crm/v3/objects/contacts`);
 
     if (res.status === 409) {
       const id = await findContactIdByEmail(email);
@@ -112,11 +114,7 @@ Deno.serve(async (req) => {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
-      res = await fetch(`${GATEWAY_URL}/crm/v3/objects/contacts/${id}`, {
-        method: "PATCH",
-        headers: gatewayHeaders(),
-        body: JSON.stringify({ properties }),
-      });
+      res = await callHubSpot("PATCH", `${GATEWAY_URL}/crm/v3/objects/contacts/${id}`);
     }
 
     const text = await res.text();
