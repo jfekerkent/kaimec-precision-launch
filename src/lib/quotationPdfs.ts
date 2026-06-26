@@ -5,8 +5,14 @@
 
 export const QUOTATION_PDFS: Record<string, string> = {
   "FLO-1530 Open Type Fiber Laser": "/quotations/flo-1530.pdf",
+  "FLO-2040 Open Type Fiber Laser": "/quotations/flo-1530.pdf",
+  "FLO-2060 Open Type Fiber Laser": "/quotations/flo-1530.pdf",
   "FLC-1530 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
+  "FLC-2040 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
+  "FLC-2060 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
   "FLO-P 1530 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
+  "FLO-P 2040 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
+  "FLO-P 2060 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
   "Tube & Profile Laser": "/quotations/tube-profile.pdf",
   "Press Brake": "/quotations/press-brake.pdf",
   "Gun Drill": "/quotations/gun-drill.pdf",
