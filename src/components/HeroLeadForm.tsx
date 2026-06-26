@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ChevronDown } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const EMAILJS_SERVICE_ID = "service_oiwu4ak";
 const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
@@ -51,15 +52,17 @@ export default function HeroLeadForm() {
       .send(EMAILJS_SERVICE_ID, EMAILJS_REPLY_TEMPLATE, { to_email: email, to_name: name }, EMAILJS_PUBLIC_KEY)
       .catch((err) => console.error("EmailJS reply error:", err));
 
-    try {
-      const hsq = (window as unknown as { _hsq?: unknown[] })._hsq;
-      if (hsq) {
-        hsq.push(["identify", { email, firstname: name, machine_of_interest: machineVal }]);
-        hsq.push(["trackPageView"]);
-      }
-    } catch (err) {
-      console.error("HubSpot error:", err);
-    }
+    supabase.functions
+      .invoke("hubspot-upsert-contact", {
+        body: {
+          name,
+          email,
+          phone: phone || undefined,
+          machine_of_interest: machine || undefined,
+          source: "Hero",
+        },
+      })
+      .catch((err) => console.error("HubSpot upsert error:", err));
 
     setSubmitted(true);
     setLoading(false);
