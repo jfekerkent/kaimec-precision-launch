@@ -46,16 +46,30 @@ const machineCategories = [
     ],
   },
   {
-    label: "Pallet Changer Fiber Laser",
+    label: "Combo Lasers (Sheet + Pipe Cutting)",
     models: [
-      "FLO-P 1530 Pallet Changer Laser",
-      "FLO-P 2040 Pallet Changer Laser",
-      "FLO-P 2060 Pallet Changer Laser",
+      "FLC-P 1530 Combo Laser",
+      "FLC-P 2040 Combo Laser",
+      "FLO-P 1530 Combo Laser",
+      "FLO-P 2040 Combo Laser",
+      "FLO-P 2060 Combo Laser",
     ],
   },
-  { label: "Tube & Profile Laser", models: ["Tube & Profile Laser"] },
-  { label: "Press Brake", models: ["Press Brake"] },
-  { label: "Gun Drill", models: ["Gun Drill"] },
+  {
+    label: "Tube & Profile Laser",
+    models: [
+      "FLP-6020 Tube & Profile Laser",
+      "FLP-6035 Tube & Profile Laser",
+    ],
+  },
+  {
+    label: "CNC Press Brakes",
+    models: [
+      "MKT-1560 CNC Press Brake",
+      "MKT-32135 CNC Press Brake",
+    ],
+  },
+  { label: "Gun Drills", models: ["Gun & BTA Drilling Machine"] },
   { label: "Multiple / Not sure yet", models: ["Multiple / Not sure yet"] },
 ] as const;
 
@@ -74,12 +88,13 @@ const accessoryOptions = [
 
 function detectMachineFromPath(pathname: string): string {
   const p = pathname.toLowerCase();
-  if (p.includes("flc-p") || p.includes("flo-p") || p.includes("pallet")) return "FLO-P 1530 Pallet Changer Laser";
+  if (p.includes("flc-p")) return "FLC-P 1530 Combo Laser";
+  if (p.includes("flo-p") || p.includes("pallet") || p.includes("combo")) return "FLO-P 1530 Combo Laser";
   if (p.includes("open-type") || p.includes("flo-1530")) return "FLO-1530 Open Type Fiber Laser";
   if (p.includes("closed-type") || p.includes("flc-1530")) return "FLC-1530 Closed Type Fiber Laser";
-  if (p.includes("tube") || p.includes("profile") || p.includes("covered-pipe")) return "Tube & Profile Laser";
-  if (p.includes("press-brake")) return "Press Brake";
-  if (p.includes("gun-drill") || p.includes("bta-deep")) return "Gun Drill";
+  if (p.includes("tube") || p.includes("profile") || p.includes("covered-pipe")) return "FLP-6020 Tube & Profile Laser";
+  if (p.includes("press-brake")) return "MKT-1560 CNC Press Brake";
+  if (p.includes("gun-drill") || p.includes("bta")) return "Gun & BTA Drilling Machine";
   return "";
 }
 
