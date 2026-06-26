@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { getQuotationLink } from "@/lib/quotationPdfs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
