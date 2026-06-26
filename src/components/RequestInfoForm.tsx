@@ -103,9 +103,18 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 interface Props {
   machine?: string;
   source?: string;
+  hideMachineSelector?: boolean;
 }
 
-export default function RequestInfoForm({ machine: machineProp, source = "Request Info" }: Props) {
+const LASER_CATEGORIES = new Set<string>([
+  "Open Type Fiber Laser",
+  "Closed Type Fiber Laser",
+  "Combo Lasers (Sheet + Pipe Cutting)",
+  "Tube & Profile Laser",
+]);
+const KW_OPTIONS = ["3 kW", "6 kW", "12 kW"] as const;
+
+export default function RequestInfoForm({ machine: machineProp, source = "Request Info", hideMachineSelector = false }: Props) {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const queryMachine = searchParams.get("machine") || "";
@@ -137,6 +146,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
   const [machineCategory, setMachineCategory] = useState<string>(() =>
     findCategoryForModel(resolveMachineOfInterest()),
   );
+  const [powerKw, setPowerKw] = useState<string>("");
   const [accessories, setAccessories] = useState<string[]>([]);
   const [machineError, setMachineError] = useState("");
 
@@ -155,7 +165,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
     setFormData({ ...formData, [name]: value });
   };
 
-  const submitToHubspot = async () => {
+  const submitToHubspot = async (finalMachineOfInterest: string) => {
     const fullName = formData.name.trim();
     let firstName = fullName;
     let lastName = "";
@@ -183,7 +193,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
       ["phone", formData.phone],
       ["company", formData.companyName],
       ["address", formData.address],
-      ["machine_of_interest", machineOfInterest],
+      ["machine_of_interest", finalMachineOfInterest],
       ["accessories_selected", accessoriesSelected],
       ["accessories_of_interest", accessories.join(", ")],
       ["priority_of_interest", formData.priority],
@@ -220,13 +230,25 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!machineOfInterest) {
-      setMachineError("Please select a machine of interest.");
-      return;
+    if (!hideMachineSelector) {
+      if (!machineOfInterest) {
+        setMachineError("Please select a machine of interest.");
+        return;
+      }
+      if (LASER_CATEGORIES.has(machineCategory) && !powerKw) {
+        setMachineError("Please select a power (kW).");
+        return;
+      }
     }
     setMachineError("");
     setIsLoading(true);
     setError("");
+
+    const finalMachineOfInterest = hideMachineSelector
+      ? (machineProp || machineOfInterest || resolveMachine())
+      : (powerKw && LASER_CATEGORIES.has(machineCategory)
+          ? `${machineOfInterest} — ${powerKw}`
+          : machineOfInterest);
 
     const emailVars = {
       name: formData.name,
@@ -237,7 +259,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
       machine: formData.machine,
       priority: formData.priority,
       message: formData.message,
-      machine_of_interest: machineOfInterest,
+      machine_of_interest: finalMachineOfInterest,
       accessories_of_interest: accessories.join(", "),
     };
 
@@ -250,15 +272,15 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           name: formData.name,
           email: formData.email,
           machine: formData.machine,
-          machine_of_interest: machineOfInterest,
+          machine_of_interest: finalMachineOfInterest,
           accessories_of_interest: accessories.join(", "),
-          quotation_link: getQuotationLink(machineOfInterest),
+          quotation_link: getQuotationLink(finalMachineOfInterest),
         },
         EMAILJS_PUBLIC_KEY,
       );
     })();
 
-    const hubspotPromise = submitToHubspot();
+    const hubspotPromise = submitToHubspot(finalMachineOfInterest);
 
     // Upsert into HubSpot CRM via Lovable connector gateway
     supabase.functions
@@ -268,7 +290,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           email: formData.email,
           phone: formData.phone || undefined,
           company: formData.companyName || undefined,
-          machine_of_interest: machineOfInterest || undefined,
+          machine_of_interest: finalMachineOfInterest || undefined,
           source,
         },
       })
@@ -300,7 +322,13 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
   }
 
   const emailValid = EMAIL_REGEX.test(formData.email.trim());
-  const submitDisabled = isLoading || !formData.name.trim() || !emailValid || !machineOfInterest;
+  const needsKw = !hideMachineSelector && LASER_CATEGORIES.has(machineCategory) && !powerKw;
+  const submitDisabled =
+    isLoading ||
+    !formData.name.trim() ||
+    !emailValid ||
+    (!hideMachineSelector && !machineOfInterest) ||
+    needsKw;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -342,6 +370,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
       </div>
 
       {/* Machine of Interest — two-step: category, then specific model */}
+      {!hideMachineSelector && (
       <div>
         <Label className="text-sm font-medium text-foreground mb-1.5 block">
           Machine of Interest <span className="text-red-500">*</span>
@@ -359,6 +388,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
             } else {
               setMachineOfInterest("");
             }
+            setPowerKw("");
           }}
         >
           <SelectTrigger className="bg-card border-border">
@@ -399,10 +429,36 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           );
         })()}
 
+        {LASER_CATEGORIES.has(machineCategory) && (
+          <div className="mt-3">
+            <Label className="text-sm font-medium text-foreground mb-1.5 block">
+              Power (kW) <span className="text-red-500">*</span>
+            </Label>
+            <Select
+              value={powerKw}
+              onValueChange={(v) => {
+                setPowerKw(v);
+                if (v) setMachineError("");
+              }}
+            >
+              <SelectTrigger className="bg-card border-border">
+                <SelectValue placeholder="Select laser power" />
+              </SelectTrigger>
+              <SelectContent>
+                {KW_OPTIONS.map((k) => (
+                  <SelectItem key={k} value={k}>{k}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+
         {machineError && <p className="text-red-500 text-sm mt-1">{machineError}</p>}
       </div>
+      )}
 
       {/* Accessories of Interest */}
+      {!hideMachineSelector && (
       <div>
         <Label className="text-sm font-medium text-foreground mb-1.5 block">
           Accessories of Interest (optional)
@@ -426,6 +482,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           })}
         </div>
       </div>
+      )}
 
       {/* Priority of Interest */}
       <div>
