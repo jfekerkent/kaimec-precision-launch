@@ -1,43 +1,26 @@
-# HubSpot Contact Sync — Implementation Plan
+## Goal
+Update the AI chat agent so it collects **name** and **company** as two separate questions, and pass `company` into the HubSpot upsert so it maps to the HubSpot `company` property.
 
-## 1. Link HubSpot connection to project
-Link "Joseph's Hubspot" so `HUBSPOT_API_KEY` is injected into edge functions.
+## Changes
 
-## 2. New edge function: `hubspot-upsert-contact`
-Public endpoint (no JWT). Validates input with Zod, calls HubSpot via the Lovable connector gateway:
+### 1. `supabase/functions/chat/system-prompt.ts` (and mirror `src/agent/system-prompt.md`)
+Update the email-capture flow instructions:
+- After receiving the email, ask for name and company on **separate lines** as two distinct questions:
+  - "What's your name?"
+  - "What company are you with?"
+- Remove the current combined "And your name / company?" phrasing.
+- Reinforce: only fire `capture_lead` once name AND company AND email are all collected.
 
-- `POST /crm/v3/objects/contacts` to create
-- On `409 CONFLICT` → search by email, then `PATCH /crm/v3/objects/contacts/{id}` to update
-- Returns `{ ok, contactId }`; non-blocking from form perspective
+### 2. `supabase/functions/chat/index.ts` — `capture_lead` tool schema
+- Add `company` as an accepted (optional) input property on the tool.
+- When invoking `hubspot-upsert-contact`, pass `company: input.company` through.
 
-**Property mapping** (per your spec):
-| Input | HubSpot property |
-|---|---|
-| email | `email` |
-| first name (split from name) | `firstname` |
-| last name (split from name) | `lastname` |
-| phone | `phone` |
-| company | `company` |
-| machine of interest | `machine_of_interest` (your existing custom property) |
-| source | `lead_source` set to `"Hero"`, `"Request Info"`, `"Quotation"`, or `"AI Chat"` |
+### 3. `src/agent/types.ts` (if `ToolCall` input is typed) and `src/hooks/useChat.ts`
+- `fireLeadEmail` already reads loosely from input — add `company` so the EmailJS team template gets the real company instead of the hardcoded "(captured via AI Chat Agent)" string. (Fallback to that string if company is missing.)
 
-Other custom props (Machine Requested, Interest Notes, Priority, Dust Collector, Air Compressor checkboxes) — **not mapped now**, leave for later.
+### 4. Verify
+- Hit the `chat` edge function with a simulated multi-turn conversation and confirm `capture_lead` receives `company` and the HubSpot upsert payload includes it.
 
-## 3. Wire 4 forms (fire-and-forget after existing email send)
-
-- **`src/components/HeroLeadForm.tsx`** → source: `"Hero"`. Remove the dead `window._hsq` stub.
-- **`src/components/RequestInfoForm.tsx`** → source: `"Request Info"`.
-- **`src/pages/QuoteSummary.tsx`** (quotation submit) → source: `"Quotation"`, include selected machine.
-- **`supabase/functions/chat/index.ts`** `capture_lead` tool → source: `"AI Chat"`, server-side fetch to the new function.
-
-Failures are logged only — forms keep working if HubSpot is down.
-
-## 4. Test
-Submit one entry per form, verify each appears as a contact in HubSpot with correct `lead_source` and `machine_of_interest`.
-
----
-
-### Out of scope (we can add later)
-- Mapping Machine Requested, Interest Notes, Priority, accessory checkboxes
-- Creating HubSpot Deals
-- Backfilling existing `chat_leads` rows
+## Notes
+- HubSpot mapping in `hubspot-upsert-contact` already handles `company` and splits `name` into firstname/lastname — no changes needed there.
+- No DB schema changes; `chat_leads` already has no company column and we won't add one unless you want it persisted there too (let me know).
