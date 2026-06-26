@@ -1,37 +1,31 @@
-## Changes
+# Per-kW Quotation PDF Mapping
 
-### 1. Add kW dropdown for laser categories (RequestInfoForm)
-After the "Specific Model" step, add a third dropdown labeled **Power (kW)** with options **3 kW / 6 kW / 12 kW**. Only show it when the selected category is one of:
-- Open Type Fiber Laser
-- Closed Type Fiber Laser
-- Combo Lasers (Sheet + Pipe Cutting)
-- Tube & Profile Laser
+## Scope
+Today the auto-reply PDF link is chosen by **machine model only**. Extend it so it picks the PDF by **machine model + kW**. Start with FLO-1530 (3 kW and 6 kW). Everything else continues to behave as it does today.
 
-(Not shown for CNC Press Brakes, Gun / BTA Drilling, or Multiple / Not sure yet.)
+## Behavior
 
-Behavior:
-- Required when visible — submit blocks until a kW is picked.
-- Selected kW is appended to the final model string sent everywhere (EmailJS team + reply, HubSpot Forms, `hubspot-upsert-contact` edge function), e.g. `FLO-1530 Open Type Fiber Laser — 6 kW`. That way it lands in HubSpot's `machine_of_interest` field with no schema change, and the quotation-PDF mapping continues to work (matching is on the model prefix).
-- Pre-fill from URL/path stays unchanged; kW starts empty and the user picks it.
+When a customer submits a Request Info form:
+- Picks **Open Type Fiber Laser → FLO-1530 → 3 kW** → auto-reply links `flo-1530-3kw.pdf`
+- Picks **Open Type Fiber Laser → FLO-1530 → 6 kW** → auto-reply links `flo-1530-6kw.pdf`
+- Picks **FLO-1530** with any other kW (none expected today, but safe) → no download link in the auto-reply (current fallback behavior).
+- Picks any other model (FLO-2040, FLC-anything, combos, tube, press brakes, gun drill) → no download link in the auto-reply (per your "no link" fallback). I'll **remove the current stub mappings** that point those models at a non-existent generic PDF so customers don't get a broken download button.
 
-### 2. Quotations page form (QuoteSummary) — hide Machine of Interest from customer
-On `/quotations/summary` the customer already picked machines + accessories on cards, so the form shouldn't re-ask. Changes scoped to this page only — all other forms (Hero, Request Info on machine pages) keep the dropdowns:
+HubSpot / EmailJS team notification / `machine_of_interest` field are unchanged. Only the customer-facing reply link changes.
 
-- Add a new prop `hideMachineSelector?: boolean` to `RequestInfoForm`.
-- When true:
-  - Do NOT render the Machine of Interest category/model dropdowns, the kW dropdown, or the Accessories checkboxes.
-  - Invisibly carry the machines + accessories already chosen on the Quotations page (passed in via the existing `machine` prop, which already contains `"<machines> + <accessories>"`).
-  - These hidden values still flow to:
-    - EmailJS team template (seller sees full machine + accessories list)
-    - HubSpot Forms submission (`machine_of_interest` + `accessories_selected`)
-    - `hubspot-upsert-contact` edge function
-  - Customer-facing auto-reply continues to send the right quotation PDF link based on the hidden machine value.
-- In `QuoteSummary.tsx`:
-  - Pass `hideMachineSelector` to the form.
-  - Remove the visible "Pricing for: …" and "Accessories: …" lines above the form (or keep — confirm if you want them removed too; the request was specifically about the form fields, so I'll keep the summary text above the form since that's the whole point of the page).
+## Files
 
-### Files touched
-- `src/components/RequestInfoForm.tsx` — add kW dropdown + `hideMachineSelector` prop logic.
-- `src/pages/QuoteSummary.tsx` — pass `hideMachineSelector` to the form.
+- `src/lib/quotationPdfs.ts` — change the lookup key from `machine` to `machine + kW`. New signature: `getQuotationLink(machine: string, powerKw?: string)`. Internal map keyed by composite string like `"FLO-1530 Open Type Fiber Laser|3 kW"`. Seed it with the two FLO-1530 entries. Drop the stub entries for all other models.
+- `src/components/RequestInfoForm.tsx` — pass `powerKw` into `getQuotationLink(...)` when building the auto-reply payload. No UI changes (the kW dropdown already exists for laser categories).
+- `public/quotations/` — you'll need to drop in `flo-1530-3kw.pdf` and `flo-1530-6kw.pdf`. I'll add a placeholder note in the file, but the actual PDFs need to be uploaded by you.
 
-No backend/schema changes. HubSpot continues to receive the model + kW as a single free-text string in `machine_of_interest`.
+## What you need to provide
+1. `flo-1530-3kw.pdf`
+2. `flo-1530-6kw.pdf`
+
+Drop them in chat and I'll place them at `public/quotations/flo-1530-3kw.pdf` and `public/quotations/flo-1530-6kw.pdf`. Once committed + deployed, the EmailJS reply template's existing `{{quotation_link}}` block will render the download button for those two combos.
+
+## Not in scope
+- No template change in EmailJS (the conditional `{{#quotation_link}}` block already handles the empty case).
+- No changes to HubSpot upsert, team notification, or chat agent capture_lead.
+- No new PDFs for other machines until you say so.
