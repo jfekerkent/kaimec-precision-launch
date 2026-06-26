@@ -27,8 +27,14 @@ const priorityOptions = [
 
 const machineOptions = [
   "FLO-1530 Open Type Fiber Laser",
+  "FLO-2040 Open Type Fiber Laser",
+  "FLO-2060 Open Type Fiber Laser",
   "FLC-1530 Closed Type Fiber Laser",
+  "FLC-2040 Closed Type Fiber Laser",
+  "FLC-2060 Closed Type Fiber Laser",
   "FLO-P 1530 Pallet Changer Laser",
+  "FLO-P 2040 Pallet Changer Laser",
+  "FLO-P 2060 Pallet Changer Laser",
   "Tube & Profile Laser",
   "Press Brake",
   "Gun Drill",
