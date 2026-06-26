@@ -322,7 +322,13 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
   }
 
   const emailValid = EMAIL_REGEX.test(formData.email.trim());
-  const submitDisabled = isLoading || !formData.name.trim() || !emailValid || !machineOfInterest;
+  const needsKw = !hideMachineSelector && LASER_CATEGORIES.has(machineCategory) && !powerKw;
+  const submitDisabled =
+    isLoading ||
+    !formData.name.trim() ||
+    !emailValid ||
+    (!hideMachineSelector && !machineOfInterest) ||
+    needsKw;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
