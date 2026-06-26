@@ -69,7 +69,7 @@ const machineCategories = [
       "MKT-32135 CNC Press Brake",
     ],
   },
-  { label: "Gun Drills", models: ["Gun & BTA Drilling Machine"] },
+  { label: "Gun / BTA Drilling", models: ["Gun & BTA Drilling Machine"] },
   { label: "Multiple / Not sure yet", models: ["Multiple / Not sure yet"] },
 ] as const;
 
@@ -445,7 +445,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
       {/* Message */}
       <div>
         <Label htmlFor="message" className="text-sm font-medium text-foreground mb-1.5 block">Additional details or specifications</Label>
-        <Textarea id="message" name="message" placeholder="Material, thickness, volume, application, timeline…" rows={5} value={formData.message} onChange={handleChange} className="bg-card border-border" />
+        <Textarea id="message" name="message" placeholder="Material, thickness, volume, application, timeline, kW preference…" rows={5} value={formData.message} onChange={handleChange} className="bg-card border-border" />
       </div>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
