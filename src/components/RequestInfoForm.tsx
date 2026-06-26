@@ -25,21 +25,46 @@ const priorityOptions = [
   "Budgeting / Information Request",
 ];
 
-const machineOptions = [
-  "FLO-1530 Open Type Fiber Laser",
-  "FLO-2040 Open Type Fiber Laser",
-  "FLO-2060 Open Type Fiber Laser",
-  "FLC-1530 Closed Type Fiber Laser",
-  "FLC-2040 Closed Type Fiber Laser",
-  "FLC-2060 Closed Type Fiber Laser",
-  "FLO-P 1530 Pallet Changer Laser",
-  "FLO-P 2040 Pallet Changer Laser",
-  "FLO-P 2060 Pallet Changer Laser",
-  "Tube & Profile Laser",
-  "Press Brake",
-  "Gun Drill",
-  "Multiple / Not sure yet",
+// Two-step flow: pick a category, then pick a specific model (when applicable).
+// `machineOfInterest` is always set to the final model string so HubSpot
+// receives the exact value (e.g. "FLO-2040 Open Type Fiber Laser").
+const machineCategories = [
+  {
+    label: "Open Type Fiber Laser",
+    models: [
+      "FLO-1530 Open Type Fiber Laser",
+      "FLO-2040 Open Type Fiber Laser",
+      "FLO-2060 Open Type Fiber Laser",
+    ],
+  },
+  {
+    label: "Closed Type Fiber Laser",
+    models: [
+      "FLC-1530 Closed Type Fiber Laser",
+      "FLC-2040 Closed Type Fiber Laser",
+      "FLC-2060 Closed Type Fiber Laser",
+    ],
+  },
+  {
+    label: "Pallet Changer Fiber Laser",
+    models: [
+      "FLO-P 1530 Pallet Changer Laser",
+      "FLO-P 2040 Pallet Changer Laser",
+      "FLO-P 2060 Pallet Changer Laser",
+    ],
+  },
+  { label: "Tube & Profile Laser", models: ["Tube & Profile Laser"] },
+  { label: "Press Brake", models: ["Press Brake"] },
+  { label: "Gun Drill", models: ["Gun Drill"] },
+  { label: "Multiple / Not sure yet", models: ["Multiple / Not sure yet"] },
 ] as const;
+
+const machineOptions = machineCategories.flatMap((c) => c.models) as readonly string[];
+
+function findCategoryForModel(model: string): string {
+  const found = machineCategories.find((c) => (c.models as readonly string[]).includes(model));
+  return found ? found.label : "";
+}
 
 const accessoryOptions = [
   "Dust / Smoke Collector",
@@ -73,10 +98,10 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
 
   const resolveMachineOfInterest = (): string => {
     const fromQuery = (searchParams.get("machine") || "").trim();
-    if (fromQuery && (machineOptions as readonly string[]).includes(fromQuery)) return fromQuery;
+    if (fromQuery && machineOptions.includes(fromQuery)) return fromQuery;
     const fromRoute = detectMachineFromPath(location.pathname);
     if (fromRoute) return fromRoute;
-    if (machineProp && (machineOptions as readonly string[]).includes(machineProp)) return machineProp;
+    if (machineProp && machineOptions.includes(machineProp)) return machineProp;
     return "";
   };
 
@@ -94,12 +119,19 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
     message: "",
   });
   const [machineOfInterest, setMachineOfInterest] = useState<string>(resolveMachineOfInterest());
+  const [machineCategory, setMachineCategory] = useState<string>(() =>
+    findCategoryForModel(resolveMachineOfInterest()),
+  );
   const [accessories, setAccessories] = useState<string[]>([]);
   const [machineError, setMachineError] = useState("");
 
   useEffect(() => {
     setFormData((p) => ({ ...p, machine: resolveMachine() }));
-    setMachineOfInterest((prev) => prev || resolveMachineOfInterest());
+    setMachineOfInterest((prev) => {
+      const next = prev || resolveMachineOfInterest();
+      setMachineCategory((c) => c || findCategoryForModel(next));
+      return next;
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [machineProp, queryMachine, location.pathname]);
 
@@ -294,27 +326,64 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
         <Input id="address" name="address" placeholder="Street, City, State, Country" value={formData.address} onChange={handleChange} className="bg-card border-border" />
       </div>
 
-      {/* Machine of Interest */}
+      {/* Machine of Interest — two-step: category, then specific model */}
       <div>
         <Label className="text-sm font-medium text-foreground mb-1.5 block">
           Machine of Interest <span className="text-red-500">*</span>
         </Label>
         <Select
-          value={machineOfInterest}
+          value={machineCategory}
           onValueChange={(v) => {
-            setMachineOfInterest(v);
-            if (v) setMachineError("");
+            setMachineCategory(v);
+            const cat = machineCategories.find((c) => c.label === v);
+            // Auto-select when the category has a single model; otherwise clear
+            // so the user picks a specific model in the second dropdown.
+            if (cat && cat.models.length === 1) {
+              setMachineOfInterest(cat.models[0]);
+              setMachineError("");
+            } else {
+              setMachineOfInterest("");
+            }
           }}
         >
           <SelectTrigger className="bg-card border-border">
-            <SelectValue placeholder="Select a machine" />
+            <SelectValue placeholder="Select a machine type" />
           </SelectTrigger>
           <SelectContent>
-            {machineOptions.map((o) => (
-              <SelectItem key={o} value={o}>{o}</SelectItem>
+            {machineCategories.map((c) => (
+              <SelectItem key={c.label} value={c.label}>{c.label}</SelectItem>
             ))}
           </SelectContent>
         </Select>
+
+        {(() => {
+          const cat = machineCategories.find((c) => c.label === machineCategory);
+          if (!cat || cat.models.length <= 1) return null;
+          return (
+            <div className="mt-3">
+              <Label className="text-sm font-medium text-foreground mb-1.5 block">
+                Specific Model <span className="text-red-500">*</span>
+              </Label>
+              <Select
+                value={machineOfInterest}
+                onValueChange={(v) => {
+                  setMachineOfInterest(v);
+                  if (v) setMachineError("");
+                }}
+              >
+                <SelectTrigger className="bg-card border-border">
+                  <SelectValue placeholder="Select a model" />
+                </SelectTrigger>
+                <SelectContent>
+                  {cat.models.map((m) => (
+                    <SelectItem key={m} value={m}>{m}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          );
+        })()}
+
         {machineError && <p className="text-red-500 text-sm mt-1">{machineError}</p>}
       </div>
 
