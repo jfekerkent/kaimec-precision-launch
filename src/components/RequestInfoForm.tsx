@@ -364,6 +364,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
       </div>
 
       {/* Machine of Interest — two-step: category, then specific model */}
+      {!hideMachineSelector && (
       <div>
         <Label className="text-sm font-medium text-foreground mb-1.5 block">
           Machine of Interest <span className="text-red-500">*</span>
@@ -381,6 +382,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
             } else {
               setMachineOfInterest("");
             }
+            setPowerKw("");
           }}
         >
           <SelectTrigger className="bg-card border-border">
@@ -421,10 +423,36 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           );
         })()}
 
+        {LASER_CATEGORIES.has(machineCategory) && (
+          <div className="mt-3">
+            <Label className="text-sm font-medium text-foreground mb-1.5 block">
+              Power (kW) <span className="text-red-500">*</span>
+            </Label>
+            <Select
+              value={powerKw}
+              onValueChange={(v) => {
+                setPowerKw(v);
+                if (v) setMachineError("");
+              }}
+            >
+              <SelectTrigger className="bg-card border-border">
+                <SelectValue placeholder="Select laser power" />
+              </SelectTrigger>
+              <SelectContent>
+                {KW_OPTIONS.map((k) => (
+                  <SelectItem key={k} value={k}>{k}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
+
         {machineError && <p className="text-red-500 text-sm mt-1">{machineError}</p>}
       </div>
+      )}
 
       {/* Accessories of Interest */}
+      {!hideMachineSelector && (
       <div>
         <Label className="text-sm font-medium text-foreground mb-1.5 block">
           Accessories of Interest (optional)
@@ -448,6 +476,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           })}
         </div>
       </div>
+      )}
 
       {/* Priority of Interest */}
       <div>
