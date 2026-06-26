@@ -158,6 +158,7 @@ export default function QuoteSummary() {
             <RequestInfoForm
               machine={accessories ? `${machineNames} + ${accessories}` : machineNames}
               source="Quotation"
+              hideMachineSelector
             />
           </div>
         </div>
