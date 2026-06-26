@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
     if (body.phone) properties.phone = body.phone;
     if (body.company) properties.company = body.company;
     if (body.machine_of_interest) properties.machine_of_interest = body.machine_of_interest;
-    if (body.source) properties.lead_source = body.source;
+    if (body.source) properties.hs_lead_source = body.source;
 
     // Try create
     let res = await fetch(`${GATEWAY_URL}/crm/v3/objects/contacts`, {
