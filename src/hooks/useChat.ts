@@ -51,6 +51,7 @@ function loadHistory(): ChatMessage[] {
 function fireLeadEmail(input: Record<string, unknown>) {
   const name = String(input.name ?? "");
   const email = String(input.email ?? "");
+  const company = String(input.company ?? "") || "(captured via AI Chat Agent)";
   const machine = String(input.machine_of_interest ?? "") || "(not specified)";
   const priority = String(input.timeline ?? "") || "(not specified)";
   const application = String(input.application ?? "");
@@ -59,7 +60,7 @@ function fireLeadEmail(input: Record<string, unknown>) {
   const teamParams = {
     name,
     email,
-    company: "(captured via AI Chat Agent)",
+    company,
     address: "",
     machine,
     priority,
