@@ -41,12 +41,13 @@ const tools: Anthropic.Tool[] = [
       properties: {
         name: { type: "string" },
         email: { type: "string" },
+        company: { type: "string" },
         machine_of_interest: { type: "string" },
         application: { type: "string" },
         timeline: { type: "string" },
         notes: { type: "string" },
       },
-      required: ["name", "email"],
+      required: ["name", "email", "company"],
     },
   },
   {
@@ -169,7 +170,7 @@ Deno.serve(async (req) => {
             machine_of_interest: input.machine_of_interest as string | null ?? null,
             application: input.application as string | null ?? null,
             timeline: input.timeline as string | null ?? null,
-            notes: input.notes as string | null ?? null,
+            notes: (input.company ? `Company: ${input.company}\n` : "") + (input.notes as string | null ?? ""),
           }).select("id").single();
           if (error) console.error("lead insert error", error);
           output = { ok: !error, lead_id: data?.id ?? null };
@@ -180,6 +181,7 @@ Deno.serve(async (req) => {
               body: {
                 name: String(input.name ?? ""),
                 email: String(input.email ?? ""),
+                company: (input.company as string | undefined) || undefined,
                 machine_of_interest: (input.machine_of_interest as string | undefined) || undefined,
                 source: "AI Chat",
               },
