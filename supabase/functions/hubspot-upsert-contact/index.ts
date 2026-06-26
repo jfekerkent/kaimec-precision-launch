@@ -76,14 +76,32 @@ Deno.serve(async (req) => {
     if (body.phone) properties.phone = body.phone;
     if (body.company) properties.company = body.company;
     if (body.machine_of_interest) properties.machine_of_interest = body.machine_of_interest;
-    if (body.source) properties.hs_lead_source = body.source;
+    // Source tag: many portals don't have a writable lead-source property.
+    // We attempt the common custom one first and retry without it on failure.
+    const sourceProp = "lead_source_kaimec";
+    if (body.source) properties[sourceProp] = body.source;
+
+    async function postCreate(props: Record<string, string>) {
+      return await fetch(`${GATEWAY_URL}/crm/v3/objects/contacts`, {
+        method: "POST",
+        headers: gatewayHeaders(),
+        body: JSON.stringify({ properties: props }),
+      });
+    }
 
     // Try create
-    let res = await fetch(`${GATEWAY_URL}/crm/v3/objects/contacts`, {
-      method: "POST",
-      headers: gatewayHeaders(),
-      body: JSON.stringify({ properties }),
-    });
+    let res = await postCreate(properties);
+
+    // If the source property doesn't exist in this portal, retry without it.
+    if (res.status === 400 && body.source) {
+      const errText = await res.clone().text();
+      if (errText.includes("PROPERTY_DOESNT_EXIST") && errText.includes(sourceProp)) {
+        const { [sourceProp]: _drop, ...rest } = properties;
+        res = await postCreate(rest);
+        // Also remove from properties so PATCH on conflict doesn't re-add it
+        delete properties[sourceProp];
+      }
+    }
 
     if (res.status === 409) {
       const id = await findContactIdByEmail(email);
