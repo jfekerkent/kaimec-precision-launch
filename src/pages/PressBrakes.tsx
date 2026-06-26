@@ -173,14 +173,14 @@ export default function PressBrakes() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img src={factory1} alt="KAIMEC CNC press brakes lined up in the European factory" className="w-full h-full object-cover" loading="lazy" />
+              <img src={factory2} alt="MKT-1560 CNC press brake on the factory floor" className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="text-center px-2">
               <h1 className="text-4xl md:text-5xl font-black text-white mb-4">CNC Press Brakes</h1>
               <p className="text-lg text-white/80">CNC hydraulic and electric press brakes for precision metal bending.</p>
             </div>
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img src={factory2} alt="MKT-1560 CNC press brake on the factory floor" className="w-full h-full object-cover" loading="lazy" />
+              <img src={factory1} alt="KAIMEC CNC press brakes lined up in the European factory" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>
