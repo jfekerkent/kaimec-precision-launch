@@ -10,12 +10,16 @@ export const QUOTATION_PDFS: Record<string, string> = {
   "FLC-1530 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
   "FLC-2040 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
   "FLC-2060 Closed Type Fiber Laser": "/quotations/flc-1530.pdf",
-  "FLO-P 1530 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
-  "FLO-P 2040 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
-  "FLO-P 2060 Pallet Changer Laser": "/quotations/flo-p-1530.pdf",
-  "Tube & Profile Laser": "/quotations/tube-profile.pdf",
-  "Press Brake": "/quotations/press-brake.pdf",
-  "Gun Drill": "/quotations/gun-drill.pdf",
+  "FLC-P 1530 Combo Laser": "/quotations/flo-p-1530.pdf",
+  "FLC-P 2040 Combo Laser": "/quotations/flo-p-1530.pdf",
+  "FLO-P 1530 Combo Laser": "/quotations/flo-p-1530.pdf",
+  "FLO-P 2040 Combo Laser": "/quotations/flo-p-1530.pdf",
+  "FLO-P 2060 Combo Laser": "/quotations/flo-p-1530.pdf",
+  "FLP-6020 Tube & Profile Laser": "/quotations/tube-profile.pdf",
+  "FLP-6035 Tube & Profile Laser": "/quotations/tube-profile.pdf",
+  "MKT-1560 CNC Press Brake": "/quotations/press-brake.pdf",
+  "MKT-32135 CNC Press Brake": "/quotations/press-brake.pdf",
+  "Gun & BTA Drilling Machine": "/quotations/gun-drill.pdf",
 };
 
 /**
