@@ -199,6 +199,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           machine: formData.machine,
           machine_of_interest: machineOfInterest,
           accessories_of_interest: accessories.join(", "),
+          quotation_link: getQuotationLink(machineOfInterest),
         },
         EMAILJS_PUBLIC_KEY,
       );
