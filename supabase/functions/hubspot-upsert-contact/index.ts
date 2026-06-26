@@ -76,6 +76,8 @@ Deno.serve(async (req) => {
     if (body.phone) properties.phone = body.phone;
     if (body.company) properties.company = body.company;
     if (body.machine_of_interest) properties.machine_of_interest = body.machine_of_interest;
+    // Auto-assign all contacts to Joseph Feker
+    properties.hubspot_owner_id = "90848789";
     // Source tag: many portals don't have a writable lead-source property.
     // We attempt the common custom one first and retry without it on failure.
     const sourceProp = "lead_source_kaimec";
