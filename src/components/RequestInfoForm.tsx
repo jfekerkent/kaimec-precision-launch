@@ -274,7 +274,9 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           machine: formData.machine,
           machine_of_interest: finalMachineOfInterest,
           accessories_of_interest: accessories.join(", "),
-          quotation_link: getQuotationLink(finalMachineOfInterest),
+          quotation_link: hideMachineSelector
+            ? getQuotationLink(machineProp || machineOfInterest, powerKw)
+            : getQuotationLink(machineOfInterest, powerKw),
         },
         EMAILJS_PUBLIC_KEY,
       );
