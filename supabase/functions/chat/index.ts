@@ -173,6 +173,20 @@ Deno.serve(async (req) => {
           }).select("id").single();
           if (error) console.error("lead insert error", error);
           output = { ok: !error, lead_id: data?.id ?? null };
+
+          // Fire-and-forget HubSpot upsert
+          try {
+            await sb.functions.invoke("hubspot-upsert-contact", {
+              body: {
+                name: String(input.name ?? ""),
+                email: String(input.email ?? ""),
+                machine_of_interest: (input.machine_of_interest as string | undefined) || undefined,
+                source: "AI Chat",
+              },
+            });
+          } catch (e) {
+            console.error("hubspot upsert (chat) failed", e);
+          }
         } else if (tu.name === "escalate_to_human") {
           const sb = createClient(SUPABASE_URL, SERVICE_ROLE);
           const { error } = await sb.from("chat_escalations").insert({

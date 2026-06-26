@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const EMAILJS_SERVICE_ID    = "service_oiwu4ak";
 const EMAILJS_TEAM_TEMPLATE = "template_dsbjz8n";
@@ -54,9 +55,10 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Props {
   machine?: string;
+  source?: string;
 }
 
-export default function RequestInfoForm({ machine: machineProp }: Props) {
+export default function RequestInfoForm({ machine: machineProp, source = "Request Info" }: Props) {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const queryMachine = searchParams.get("machine") || "";
@@ -202,6 +204,20 @@ export default function RequestInfoForm({ machine: machineProp }: Props) {
     })();
 
     const hubspotPromise = submitToHubspot();
+
+    // Upsert into HubSpot CRM via Lovable connector gateway
+    supabase.functions
+      .invoke("hubspot-upsert-contact", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          company: formData.companyName || undefined,
+          machine_of_interest: machineOfInterest || undefined,
+          source,
+        },
+      })
+      .catch((err) => console.error("HubSpot upsert error:", err));
 
     try {
       const results = await Promise.allSettled([emailjsPromise, hubspotPromise]);
