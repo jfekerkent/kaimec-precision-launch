@@ -1,47 +1,20 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import logoImg from "@/assets/kaimec-logo-nav-v4.png";
 
-// Use the bundled wordmark on mobile/tablet too so the logo always renders
-// on the published site, even if the CDN asset route is slow or blocked.
 const logoOval = logoImg;
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "FAQ", to: "/faq" },
+  { label: "Products", to: "/products" },
+  { label: "Get Quote", to: "/quotations" },
+  { label: "Consultation", to: "/consultation" },
+  { label: "Contact", to: "/contact" },
 ];
-
-const pressBrakesLink = { label: "CNC Press Brakes", to: "/machines/press-brakes" };
-
-const laserCuttingLinks = [
-  { label: "Open Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
-  { label: "Closed Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
-  { label: "Combo lasers (sheet + pipe cutting)", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
-  { label: "Tube/Profile Cutters", to: "/machines/tube-profile-lasers" },
-];
-
-const gunDrillLinks = [
-  { label: "Gun Drilling Machines", to: "/gun-drills/gun-drilling-machines" },
-  { label: "BTA Deep Hole Drilling Machines", to: "/gun-drills/bta-deep-hole-drilling" },
-];
-
-const moreLinks = [
-  { label: "About Us", to: "/about" },
-  { label: "Request for Info", to: "/quote" },
-  { label: "eblast 1", to: "/eblast-1" },
-  { label: "Dealers", to: "/dealers" },
-];
-
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
-  const [laserOpen, setLaserOpen] = useState(false);
-  const [mobileLaserOpen, setMobileLaserOpen] = useState(false);
-  const [drillOpen, setDrillOpen] = useState(false);
-  const [mobileDrillOpen, setMobileDrillOpen] = useState(false);
   const location = useLocation();
 
   // On the homepage mobile hero, the navbar floats transparently over the
@@ -49,6 +22,8 @@ export default function Navbar() {
   // mobile menu opens, switch back to the solid white chrome so the menu
   // panel is readable.
   const transparentMobile = location.pathname === "/" && !mobileOpen;
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header
@@ -58,324 +33,98 @@ export default function Navbar() {
           : "bg-white border-b border-gray-200 shadow-sm"
       }`}
     >
-      <div className="w-full">
-        <div className="px-4 md:px-6 py-2 flex items-center justify-between gap-3">
-          {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0">
-            {/* Tablet + mobile: standard oval KAIMEC logo */}
-            <img
-              src={logoOval}
-              alt="KAIMEC Machines"
-              className={`lg:hidden w-auto object-contain ${
-                transparentMobile
-                  ? "h-12 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
-                  : "h-12"
-              }`}
-            />
-            {/* Desktop: existing wordmark */}
-            <img
-              src={logoImg}
-              alt="KAIMEC Machines"
-              className="hidden lg:block h-14 w-auto object-contain"
-            />
-          </Link>
+      <div className="flex justify-center px-0">
+        <div className="w-full max-w-6xl px-4 md:px-6">
+          <div className="flex items-center justify-between h-20 gap-4">
+            {/* Logo */}
+            <Link to="/" className="flex items-center shrink-0">
+              <img
+                src={logoOval}
+                alt="KAIMEC Machines"
+                className={`lg:hidden w-auto object-contain h-12 ${
+                  transparentMobile ? "drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]" : ""
+                }`}
+              />
+              <img
+                src={logoImg}
+                alt="KAIMEC Machines"
+                className="hidden lg:block h-14 w-auto object-contain"
+              />
+            </Link>
 
-          {/* All nav + actions in one line */}
-          <div className="hidden lg:flex items-center justify-end flex-1 gap-4 xl:gap-6">
-            <ul className="flex items-center gap-3 xl:gap-5">
-              <li>
+            {/* Desktop menu */}
+            <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
+              {navLinks.map((link) => (
                 <Link
-                  to="/"
-                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
+                  key={link.to}
+                  to={link.to}
+                  className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                    isActive(link.to)
+                      ? "text-blue-600"
+                      : transparentMobile
+                        ? "text-white hover:text-white/80"
+                        : "text-slate-700 hover:text-blue-600"
+                  }`}
                 >
-                  Home
+                  {link.label}
                 </Link>
-              </li>
-              <li
-                className="group relative"
-                onMouseEnter={() => setLaserOpen(true)}
-                onMouseLeave={() => setLaserOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
-                >
-                  Laser Cutting machines
-                  <ChevronDown
-                    className={`h-4 w-4 text-slate-400 transition-transform ${
-                      laserOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {laserOpen && (
-                  <div className="absolute top-full left-0 pt-2 w-72 z-50">
-                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
-                      {laserCuttingLinks.map((sub) => (
-                        <Link
-                          key={sub.to}
-                          to={sub.to}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </li>
-              <li>
-                <Link
-                  to={pressBrakesLink.to}
-                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
-                >
-                  {pressBrakesLink.label}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/quotations"
-                  className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
-                >
-                  Quotations
-                </Link>
-              </li>
-              <li
-                className="group relative"
-                onMouseEnter={() => setDrillOpen(true)}
-                onMouseLeave={() => setDrillOpen(false)}
-              >
-                <button
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
-
-                >
-                  Gun & BTA Drilling Machines
-                  <ChevronDown
-                    className={`h-4 w-4 text-slate-400 transition-transform ${
-                      drillOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {drillOpen && (
-                  <div className="absolute top-full left-0 pt-2 w-72 z-50">
-                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
-                      {gunDrillLinks.map((sub) => (
-                        <Link
-                          key={sub.to}
-                          to={sub.to}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </li>
-              {navLinks.filter((l) => l.to !== "/").map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className="inline-flex items-center text-xs font-bold whitespace-nowrap animate-nav-flash"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
               ))}
-              <li className="relative">
-                <button
-                  onClick={() => setMoreOpen(!moreOpen)}
-                  className="flex items-center gap-1 text-xs font-bold whitespace-nowrap animate-nav-flash"
+            </nav>
 
-                >
-                  More
-                  <ChevronDown
-                    className={`h-4 w-4 text-slate-400 transition-transform ${
-                      moreOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {moreOpen && (
-                  <div className="absolute top-full right-0 pt-2 w-56 z-50">
-                    <div className="rounded-md border border-border bg-card shadow-lg py-1">
-                      {moreLinks.map((link) => (
-                        <Link
-                          key={link.to}
-                          to={link.to}
-                          onClick={() => setMoreOpen(false)}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </li>
-            </ul>
-
-            <div className="flex items-center gap-2 xl:gap-3 shrink-0">
-              <a
-                href="tel:+19495431508"
-                className="hidden xl:flex items-center gap-2 text-slate-700 hover:text-primary transition-colors whitespace-nowrap"
-              >
-                <Phone className="h-4 w-4" />
-                <span className="text-xs font-medium">(949) 543-1508</span>
-              </a>
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center shrink-0">
               <Link
-                to="/consultation"
-                className="inline-flex items-center justify-center px-3 py-1.5 border border-primary text-xs font-semibold text-primary hover:bg-primary/5 transition-colors rounded-md whitespace-nowrap"
+                to="/quotations"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Talk to an Expert
-              </Link>
-              <Link
-                to="/quote"
-                className="inline-flex items-center justify-center px-3 py-1.5 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-bold tracking-wide rounded-md shadow-lg shadow-primary/10 transition-all hover:-translate-y-0.5 whitespace-nowrap"
-              >
-                Request Info
+                Get Quote
               </Link>
             </div>
-          </div>
 
-          {/* Mobile menu button */}
-          <button
-            className={`lg:hidden p-2 rounded-md ml-auto ${
-              transparentMobile
-                ? "text-white hover:bg-white/10"
-                : "text-slate-600 hover:bg-slate-100"
-            }`}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            {/* Mobile menu button */}
+            <button
+              className={`lg:hidden p-2 rounded-md ${
+                transparentMobile
+                  ? "text-white hover:bg-white/10"
+                  : "text-slate-600 hover:bg-slate-100"
+              }`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-white">
-          <nav className="container py-4 flex flex-col gap-1">
-            <Link
-              to="/"
-              onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2 text-xs font-medium rounded-md ${
-                location.pathname === "/"
-                  ? "text-primary bg-muted"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              Home
-            </Link>
-            <div>
-              <button
-                onClick={() => setMobileLaserOpen(!mobileLaserOpen)}
-                className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
+        <div className="lg:hidden border-t border-gray-200 bg-white">
+          <nav className="w-full max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setMobileOpen(false)}
+                className={`block px-3 py-3 text-sm font-medium rounded-md transition-colors ${
+                  isActive(link.to)
+                    ? "text-blue-600 bg-slate-50"
+                    : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                }`}
               >
-                Laser Cutting machines
-                <ChevronDown
-                  className={`h-3 w-3 transition-transform ${mobileLaserOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {mobileLaserOpen && (
-                <div className="pl-4">
-                  {laserCuttingLinks.map((sub) => (
-                    <Link
-                      key={sub.to}
-                      to={sub.to}
-                      onClick={() => setMobileOpen(false)}
-                      className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            <Link
-              to={pressBrakesLink.to}
-              onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2 text-xs font-medium rounded-md ${
-                location.pathname === pressBrakesLink.to
-                  ? "text-primary bg-muted"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
-            >
-              {pressBrakesLink.label}
-            </Link>
+                {link.label}
+              </Link>
+            ))}
             <Link
               to="/quotations"
               onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2 text-xs font-medium rounded-md ${
-                location.pathname === "/quotations"
-                  ? "text-primary bg-muted"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              }`}
+              className="mt-3 w-full text-center px-4 py-3 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Quotations
-            </Link>
-            <div>
-              <button
-                onClick={() => setMobileDrillOpen(!mobileDrillOpen)}
-                className="w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
-              >
-                Gun & BTA Drilling Machines
-                <ChevronDown
-                  className={`h-3 w-3 transition-transform ${mobileDrillOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {mobileDrillOpen && (
-                <div className="pl-4">
-                  {gunDrillLinks.map((sub) => (
-                    <Link
-                      key={sub.to}
-                      to={sub.to}
-                      onClick={() => setMobileOpen(false)}
-                      className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-md"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            {navLinks.filter((l) => l.to !== "/").map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-3 py-2 text-xs font-medium rounded-md ${
-                  location.pathname === link.to
-                    ? "text-primary bg-muted"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            {moreLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className={`px-3 py-2 text-xs font-medium rounded-md ${
-                  location.pathname === link.to
-                    ? "text-primary bg-muted"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/consultation"
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 px-3 py-2 text-xs font-bold border-2 border-primary text-primary text-center"
-            >
-              Talk to an Expert
+              Get Quote
             </Link>
           </nav>
         </div>
       )}
-      </div>
     </header>
   );
 }
