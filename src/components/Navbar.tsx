@@ -61,9 +61,7 @@ export default function Navbar() {
                   className={`text-sm font-medium transition-colors whitespace-nowrap ${
                     isActive(link.to)
                       ? "text-blue-600"
-                      : transparentMobile
-                        ? "text-white hover:text-white/80"
-                        : "text-slate-700 hover:text-blue-600"
+                      : "text-slate-700 hover:text-blue-600"
                   }`}
                 >
                   {link.label}
