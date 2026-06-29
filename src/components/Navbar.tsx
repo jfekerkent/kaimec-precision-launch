@@ -9,7 +9,7 @@ const fiberLaserItems = [
   { label: "Cutting / Closed-Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
   { label: "Cutting / Open-Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
   { label: "Tube Profile Laser", to: "/machines/tube-profile-lasers" },
-  { label: "Pipe Cutting Combo Laser", to: "/machines/cnc-fiber-lasers/flc-p-1530" },
+  { label: "Pipe Cutting Combo Laser", to: "/machines/laser-cutting/covered-pipe-profile-fiber-laser" },
 ];
 
 const machinesItems = [
