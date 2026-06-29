@@ -250,79 +250,81 @@ export default function Index() {
       </section>
 
       {/* Featured Machines */}
-      <section className="py-20 md:py-28 bg-gradient-to-b from-[#f5f5f5] to-[#e8e8e8]">
-        <div className="container">
-          <div className="text-center mb-14">
-            <div className="relative flex items-center justify-center gap-3 overflow-hidden">
-              <span
-                aria-hidden
-                className="hidden sm:flex flex-1 items-center justify-end gap-2 animate-laser-left origin-right"
-              >
-                <span className="flex-1 h-1 rounded-full animate-laser-dot" />
-                <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground animate-flash text-center">
-                Laser Cutting Machines
-              </h2>
-              <span
-                aria-hidden
-                className="hidden sm:flex flex-1 items-center justify-start gap-2 animate-laser-right origin-left"
-              >
-                <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
-                <span className="flex-1 h-1 rounded-full animate-laser-dot" />
-              </span>
-            </div>
-            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
-              Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
-            </p>
-            <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
-              Laser Powers : 3, 6, 12, 20, 50 kW
-            </p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredMachines.map((m) => (
-              <div
-                key={m.name}
-                className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors shadow-lg"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
-                  {m.images ? (
-                    <div className="relative w-full h-full">
-                      {m.images.map((src, i) => (
-                        <img
-                          key={i}
-                          src={src}
-                          alt={`${m.name} ${i + 1}`}
-                          loading="lazy"
-                          // FIX 1: removed spin animation
-                          className={`absolute w-3/5 h-3/5 object-contain p-1 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <img
-                      src={m.image!}
-                      alt={m.name}
-                      loading="lazy"
-                      width={800}
-                      height={600}
-                      // FIX 1: removed spin animation, replaced with subtle hover scale
-                      className="h-3/4 w-3/4 object-contain p-2 group-hover:scale-105 transition-transform duration-500"
-                    />
-                  )}
-                </div>
-                <div className="p-6 text-center">
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
-                  <h3 className="font-bold text-foreground mt-2 mb-2 text-sm">{m.name}</h3>
-                  <Link
-                    to={m.link}
-                    className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
-                  >
-                    View Details <ArrowRight className="ml-1 h-3 w-3" />
-                  </Link>
-                </div>
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="flex justify-center px-0">
+          <div className="w-full max-w-6xl px-4 md:px-6">
+            <div className="text-center mb-14">
+              <div className="relative flex items-center justify-center gap-3 overflow-hidden">
+                <span
+                  aria-hidden
+                  className="hidden sm:flex flex-1 items-center justify-end gap-2 animate-laser-left origin-right"
+                >
+                  <span className="flex-1 h-1 rounded-full animate-laser-dot" />
+                  <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground animate-flash text-center">
+                  Laser Cutting Machines
+                </h2>
+                <span
+                  aria-hidden
+                  className="hidden sm:flex flex-1 items-center justify-start gap-2 animate-laser-right origin-left"
+                >
+                  <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
+                  <span className="flex-1 h-1 rounded-full animate-laser-dot" />
+                </span>
               </div>
-            ))}
+              <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
+                Available Table sizes : 5x10ft / 6.5x13ft / 6.5x20ft&nbsp;
+              </p>
+              <p className="mt-3 text-sm sm:text-base md:text-3xl text-black font-bold border-2 md:border-4 rounded-lg shadow-lg font-sans text-center px-2 py-1">
+                Laser Powers : 3, 6, 12, 20, 50 kW
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {featuredMachines.map((m) => (
+                <div
+                  key={m.name}
+                  className="group rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors shadow-lg"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                    {m.images ? (
+                      <div className="relative w-full h-full">
+                        {m.images.map((src, i) => (
+                          <img
+                            key={i}
+                            src={src}
+                            alt={`${m.name} ${i + 1}`}
+                            loading="lazy"
+                            // FIX 1: removed spin animation
+                            className={`absolute w-3/5 h-3/5 object-contain p-1 ${i === 0 ? "top-0 left-0" : "bottom-0 right-0"}`}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <img
+                        src={m.image!}
+                        alt={m.name}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        // FIX 1: removed spin animation, replaced with subtle hover scale
+                        className="h-3/4 w-3/4 object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
+                  </div>
+                  <div className="p-6 text-center">
+                    <span className="text-xs font-bold uppercase tracking-wider text-primary text-center">{m.tag}</span>
+                    <h3 className="font-bold text-foreground mt-2 mb-2 text-sm">{m.name}</h3>
+                    <Link
+                      to={m.link}
+                      className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
+                    >
+                      View Details <ArrowRight className="ml-1 h-3 w-3" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
