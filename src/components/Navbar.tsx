@@ -5,12 +5,17 @@ import logoImg from "@/assets/kaimec-logo-nav-v4.png";
 
 const logoOval = logoImg;
 
-const navLinks = [
+const desktopLinks = [
   { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
+  { label: "About", to: "/about" },
+  { label: "Machines", to: "/machines" },
   { label: "Get Quote", to: "/quotations" },
   { label: "Consultation", to: "/consultation" },
-  { label: "Contact", to: "/contact" },
+];
+
+const mobileLinks = [
+  ...desktopLinks,
+  { label: "FAQ", to: "/faq" },
 ];
 
 export default function Navbar() {
