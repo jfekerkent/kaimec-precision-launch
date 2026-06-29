@@ -452,25 +452,23 @@ export default function Index() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <div className="rounded-xl gradient-gold p-10 md:p-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-primary-foreground mb-4">
-              Ready to spec your machine?
+      <section className="w-full py-16 md:py-24 bg-gray-900">
+        <div className="flex justify-center px-0">
+          <div className="w-full max-w-6xl px-4 md:px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Get Started?
             </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Tell us what you're cutting and we'll find the right configuration. Same-day response from our Tustin, CA
-              team.
+            <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+              Contact us for a quote or consultation
             </p>
-            <Link to="/quote">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="font-bold text-base px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-              >
-                Talk to a Specialist
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/quotations" className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">
+                Get Quote
+              </a>
+              <a href="/contact" className="px-8 py-3 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600">
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
       </section>
