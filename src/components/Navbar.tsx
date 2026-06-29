@@ -104,7 +104,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <nav className="w-full max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {mobileLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
