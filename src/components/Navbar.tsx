@@ -5,12 +5,17 @@ import logoImg from "@/assets/kaimec-logo-nav-v4.png";
 
 const logoOval = logoImg;
 
-const navLinks = [
+const desktopLinks = [
   { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
+  { label: "About", to: "/about" },
+  { label: "Machines", to: "/machines" },
   { label: "Get Quote", to: "/quotations" },
   { label: "Consultation", to: "/consultation" },
-  { label: "Contact", to: "/contact" },
+];
+
+const mobileLinks = [
+  ...desktopLinks,
+  { label: "FAQ", to: "/faq" },
 ];
 
 export default function Navbar() {
@@ -54,7 +59,7 @@ export default function Navbar() {
 
             {/* Desktop menu */}
             <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
-              {navLinks.map((link) => (
+              {desktopLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -99,7 +104,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <nav className="w-full max-w-6xl mx-auto px-4 md:px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {mobileLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
