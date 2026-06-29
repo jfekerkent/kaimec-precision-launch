@@ -59,7 +59,7 @@ export default function Navbar() {
 
             {/* Desktop menu */}
             <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
-              {navLinks.map((link) => (
+              {desktopLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
