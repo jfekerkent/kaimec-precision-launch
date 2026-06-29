@@ -1,21 +1,43 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logoImg from "@/assets/kaimec-logo-nav-v4.png";
 
 const logoOval = logoImg;
 
-const desktopLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Machines", to: "/machines" },
-  { label: "Get Quote", to: "/quotations" },
-  { label: "Consultation", to: "/consultation" },
+const fiberLaserItems = [
+  { label: "Cutting / Closed-Type Fiber Laser", to: "/machines/laser-cutting/closed-type-fiber-laser" },
+  { label: "Cutting / Open-Type Fiber Laser", to: "/machines/laser-cutting/open-type-fiber-laser" },
+  { label: "Tube Profile Laser", to: "/machines/tube-profile-lasers" },
+  { label: "Pipe Cutting Combo Laser", to: "/machines/cnc-fiber-lasers/flc-p-1530" },
+];
+
+const machinesItems = [
+  { label: "All Machines", to: "/machines" },
+  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
+  { label: "Gun Drilling", to: "/gun-drills/gun-drilling-machines" },
+  { label: "BTA Deep Hole Drilling", to: "/gun-drills/bta-deep-hole-drilling" },
+];
+
+const moreItems = [
+  { label: "Dealers", to: "/dealers" },
+  { label: "Contact", to: "/request-info" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Eblast 1", to: "/eblast-1" },
+  { label: "Request Info", to: "/request-info" },
 ];
 
 const mobileLinks = [
-  ...desktopLinks,
-  { label: "FAQ", to: "/faq" },
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "All Machines", to: "/machines" },
+  ...fiberLaserItems,
+  { label: "CNC Press Brakes", to: "/machines/press-brakes" },
+  { label: "Gun Drilling", to: "/gun-drills/gun-drilling-machines" },
+  { label: "BTA Deep Hole Drilling", to: "/gun-drills/bta-deep-hole-drilling" },
+  { label: "Quotations", to: "/quotations" },
+  { label: "Consultation", to: "/consultation" },
+  ...moreItems,
 ];
 
 export default function Navbar() {
@@ -29,6 +51,10 @@ export default function Navbar() {
   const transparentMobile = location.pathname === "/" && !mobileOpen;
 
   const isActive = (path: string) => location.pathname === path;
+  const linkCls = (active: boolean) =>
+    `text-sm font-medium transition-colors whitespace-nowrap ${
+      active ? "text-blue-600" : "text-slate-700 hover:text-blue-600"
+    }`;
 
   return (
     <header
@@ -58,20 +84,66 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop menu */}
-            <nav className="hidden lg:flex items-center justify-center flex-1 gap-8">
-              {desktopLinks.map((link) => (
+            <nav className="hidden lg:flex items-center justify-center flex-1 gap-7">
+              <Link to="/" className={linkCls(isActive("/"))}>Home</Link>
+              <Link to="/about" className={linkCls(isActive("/about"))}>About</Link>
+
+              {/* Machines dropdown */}
+              <div className="relative group">
                 <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`text-sm font-medium transition-colors whitespace-nowrap ${
-                    isActive(link.to)
-                      ? "text-blue-600"
-                      : "text-slate-700 hover:text-blue-600"
-                  }`}
+                  to="/machines"
+                  className={`${linkCls(location.pathname.startsWith("/machines") || location.pathname.startsWith("/gun-drills"))} inline-flex items-center gap-1`}
                 >
-                  {link.label}
+                  Machines <ChevronDown className="h-3.5 w-3.5" />
                 </Link>
-              ))}
+                <div className="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+                  <div className="w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                    <Link to="/machines" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">All Machines</Link>
+
+                    {/* CNC Fiber Lasers submenu */}
+                    <div className="relative group/sub">
+                      <button className="w-full flex items-center justify-between px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">
+                        CNC Fiber Lasers
+                        <ChevronDown className="h-3.5 w-3.5 -rotate-90" />
+                      </button>
+                      <div className="absolute left-full top-0 pl-1 hidden group-hover/sub:block">
+                        <div className="w-72 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                          {fiberLaserItems.map((it) => (
+                            <Link key={it.to + it.label} to={it.to} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">
+                              {it.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {machinesItems.slice(1).map((it) => (
+                      <Link key={it.to} to={it.to} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">
+                        {it.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link to="/quotations" className={linkCls(isActive("/quotations"))}>Quotations</Link>
+              <Link to="/consultation" className={linkCls(isActive("/consultation"))}>Consultation</Link>
+
+              {/* More dropdown */}
+              <div className="relative group">
+                <button className={`${linkCls(false)} inline-flex items-center gap-1`}>
+                  More <ChevronDown className="h-3.5 w-3.5" />
+                </button>
+                <div className="absolute right-0 top-full pt-2 hidden group-hover:block z-50">
+                  <div className="w-52 bg-white border border-gray-200 rounded-md shadow-lg py-2">
+                    {moreItems.map((it) => (
+                      <Link key={it.label} to={it.to} className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">
+                        {it.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </nav>
 
             {/* Desktop CTA */}
