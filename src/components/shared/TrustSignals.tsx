@@ -34,7 +34,7 @@ export default function TrustSignals({ bg = "white" }: { bg?: "white" | "light" 
           <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
             Why Kaimec
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Built to Last. Backed by Real Support.
           </h2>
         </div>

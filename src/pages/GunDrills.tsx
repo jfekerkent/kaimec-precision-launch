@@ -153,7 +153,7 @@ function ProductSection({
             <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
               {kicker}
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold leading-tight text-gray-900 mb-4">
               {title}
             </h2>
             {subtitle && (
@@ -210,7 +210,7 @@ function HelpMeChooseBanner({
   return (
     <section className="bg-[#F5A623] py-10 md:py-12">
       <div className="container max-w-5xl text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           {headline}
         </h2>
         <p className="text-base md:text-lg text-[#1a1a1a]/90 max-w-2xl mx-auto mb-6 leading-relaxed">
@@ -410,7 +410,7 @@ export default function GunDrills() {
       {/* SECTION 10 — Closing CTA */}
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Not sure which fits your shop?
           </h2>
           <p className="text-[#1a1a1a]/90 text-base md:text-lg mb-8 leading-relaxed">

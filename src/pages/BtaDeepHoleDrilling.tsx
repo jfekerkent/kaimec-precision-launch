@@ -78,7 +78,7 @@ export default function BtaDeepHoleDrilling() {
               <img src={heroMachineImg} alt="BTA deep hole drilling machine" className="max-h-[380px] w-auto object-contain" loading="lazy" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 One Machine, Every Deep-Hole Method
               </h2>
               <p className="text-neutral-700 leading-relaxed">
@@ -96,7 +96,7 @@ export default function BtaDeepHoleDrilling() {
         <div className="container max-w-7xl">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">BTA Drill Heads &amp; Tooling</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">BTA Drill Heads &amp; Tooling</h2>
               <ul className="space-y-3 text-neutral-700 leading-relaxed">
                 <li>
                   <strong>BTA drill heads</strong> — high-efficiency deep hole drilling with internal coolant
@@ -140,7 +140,7 @@ export default function BtaDeepHoleDrilling() {
           <p className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-[#F5A623] mb-3">
             Featured Machine
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Model: TSK 2150 × 3000
           </h2>
           <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -189,7 +189,7 @@ export default function BtaDeepHoleDrilling() {
 
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Need a BTA solution for your shop?
           </h2>
           <p className="text-[#1a1a1a]/90 mb-8 text-lg">

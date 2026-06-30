@@ -44,7 +44,7 @@ export default function Consultation() {
         <div className="container max-w-[1100px]">
           <div className="text-center">
             <p className="section-label mb-3" style={{ color: "#F5A623", fontSize: "13px", letterSpacing: "2.5px" }}>OUR COMMITMENT</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold leading-tight text-gray-900 mb-4">
               Built for Real Shops. Not Showrooms.
             </h2>
             <p className="text-[#1a1a1a]/80 max-w-[760px] mx-auto leading-relaxed" style={{ fontSize: "1.1rem" }}>
@@ -71,7 +71,7 @@ export default function Consultation() {
       {/* Section C — Form */}
       <section id="contact-form" className="bg-white py-20">
         <div className="container max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center text-gray-900 mb-4">Send a Message</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">Send a Message</h2>
           <p className="text-muted-foreground text-center mb-10">Only name and email are required. The more you share, the better we can help.</p>
 
           <RequestInfoForm />
