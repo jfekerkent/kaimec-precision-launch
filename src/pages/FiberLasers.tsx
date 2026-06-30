@@ -95,7 +95,7 @@ export default function FiberLasers() {
               <div key={m.id} className="rounded-lg border border-border bg-card overflow-hidden hover:border-primary/50 transition-colors">
                 <MachineGallery images={m.images} model={m.model} background="light" fit="contain" />
                 <div className="p-6">
-                  <h2 className="text-xl font-bold text-foreground mb-2">{m.model}</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{m.model}</h2>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
                   <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
@@ -112,7 +112,7 @@ export default function FiberLasers() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="section-label mb-3">Press Brakes</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">CNC Press Brakes</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">CNC Press Brakes</h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">High-precision CNC press brakes engineered for accurate, repeatable bending across a wide range of sheet sizes and tonnages.</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
@@ -122,7 +122,7 @@ export default function FiberLasers() {
                   <img src={m.image} alt={m.model} loading="lazy" width={800} height={600} className="h-full w-full object-contain p-4" />
                 </div>
                 <div className="p-6">
-                  <h2 className="text-xl font-bold text-foreground mb-2">{m.model}</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{m.model}</h2>
                   <p className="text-sm text-muted-foreground mb-4">{m.description}</p>
                   <Link to={`/quote?machine=${encodeURIComponent(m.model)}`}>
                     <Button className="w-full font-bold">Request Quote</Button>
@@ -136,7 +136,7 @@ export default function FiberLasers() {
 
       <section className="py-16 bg-secondary">
         <div className="container max-w-5xl">
-          <h2 className="text-3xl font-black text-foreground mb-10 text-center">Product Highlights</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">Product Highlights</h2>
           <div className="space-y-8">
             <div className="rounded-lg border border-border bg-card p-8">
               <h3 className="text-xl font-bold text-primary mb-3">Open Type — FLO-1530, FLO-2040, FLO 2060 models & FLO-P 2040 ( open, single table)</h3>
@@ -162,7 +162,7 @@ export default function FiberLasers() {
 
       <section className="py-20">
         <div className="container">
-          <h2 className="text-3xl font-black text-foreground mb-10 text-center">Specification Comparison</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">Specification Comparison</h2>
           <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           {/* Desktop: comparison table */}
           <div className="hidden md:block rounded-lg border border-border bg-card overflow-x-auto">
@@ -212,7 +212,7 @@ export default function FiberLasers() {
 
       <section className="py-16 bg-secondary">
         <div className="container max-w-3xl">
-          <h2 className="text-3xl font-black text-foreground mb-4 text-center">Cutting Thickness — KFLO Open Type</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-4">Cutting Thickness — KFLO Open Type</h2>
           <p className="text-muted-foreground text-center mb-10">Maximum cutting thickness by material and laser power.</p>
           <div className="flex justify-center mb-6"><UnitToggle unit={unit} onChange={setUnit} variant="light" className="mb-0" /></div>
           <div className="rounded-lg border border-border bg-card overflow-x-auto">

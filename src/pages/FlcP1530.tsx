@@ -39,7 +39,7 @@ const FlcP1530 = () => {
             </div>
 
             <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-              <h2 className="text-2xl font-bold mb-6">Machine Overview</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Machine Overview</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 The FLC-P 1530 (fully enclosed/2 tables) is a high-performance closed-type fiber laser system designed for both sheet metal and pipe/profile cutting. 
                 It offers exceptional precision, safety, and versatility for modern fabrication shops.

@@ -47,7 +47,7 @@ export default function About() {
         <div className="absolute inset-0 bg-secondary/85" />
         <div className="container relative py-24 md:py-32">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase text-white tracking-tight mb-4">
               Why Choose KAIMEC?
             </h2>
             <p className="text-lg text-white/80 leading-relaxed">
@@ -65,7 +65,7 @@ export default function About() {
           </div>
           <div>
             <p className="section-label mb-3">Our Machines</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">Our Machines</h2>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-4">Our Machines</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               We carry fiber lasers, press brakes, tube and profile lasers, and deep hole drilling machines — purpose-selected for production environments that demand precision and uptime. These are not catalog machines. Each model is vetted by our team and sold with full U.S. support behind it.
             </p>
@@ -83,7 +83,7 @@ export default function About() {
         <div className="container grid gap-12 lg:grid-cols-2 items-center">
           <div className="lg:order-1 order-2">
             <p className="section-label mb-3">24/7 U.S.-Based Support</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">24/7 U.S.-Based Support</h2>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-4">24/7 U.S.-Based Support</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Every KAIMEC machine comes backed by our Tustin, CA team. We stock parts domestically, provide in-house engineering support, and show up when your floor needs us. Same-day support, no overseas tickets, no runaround — just direct access to people who know the machine.
             </p>
@@ -107,7 +107,7 @@ export default function About() {
           </div>
           <div>
             <p className="section-label mb-3">Who We Serve</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-6 tracking-tight">Who We Serve</h2>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-4">Who We Serve</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               From job shops running single shifts to high-volume production facilities, KAIMEC serves manufacturers across the U.S. who need reliable machines and a support team that treats their floor like our own. If precision and uptime matter to your operation, we're the right partner.
             </p>

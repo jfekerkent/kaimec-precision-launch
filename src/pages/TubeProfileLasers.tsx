@@ -177,7 +177,7 @@ export default function TubeProfileLasers() {
       <section id="specifications" className="py-20 bg-secondary scroll-mt-24">
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-8">
-            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Technical Specifications</h2>
             <p className="text-white/70 text-lg mt-3">Compare FLP-6020 and FLP-6035 side by side.</p>
           </div>
           <div className="grid gap-10 md:grid-cols-2">

@@ -51,7 +51,7 @@ export default function Machines() {
               <div className="flex items-end justify-between mb-8">
                 <div>
                   <p className="section-label mb-2">Category</p>
-                  <h2 className="text-2xl md:text-3xl font-black uppercase text-foreground tracking-tight mb-2">{cat.name}</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-4">{cat.name}</h2>
                   <p className="text-muted-foreground max-w-xl">{cat.description}</p>
                 </div>
                 <Link to={`/machines/${cat.slug}`} className="hidden md:inline-flex items-center text-sm font-semibold text-primary hover:underline shrink-0">

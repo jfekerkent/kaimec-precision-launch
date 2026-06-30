@@ -145,7 +145,7 @@ export default function Quotations() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Select Machines</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Choose Your Configuration
             </h2>
             <p className="text-muted-foreground text-lg mt-3">
@@ -202,7 +202,7 @@ export default function Quotations() {
           <div className="mt-16">
             <div className="max-w-3xl mb-8">
               <p className="section-label mb-3 text-primary">Recommended Optional Accessories</p>
-              <h2 className="text-2xl md:text-3xl font-black text-foreground">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 Enhance Your Setup
               </h2>
               <p className="text-muted-foreground text-lg mt-3">

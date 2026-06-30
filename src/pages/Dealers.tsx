@@ -34,7 +34,7 @@ export default function Dealers() {
       <section className="py-20 md:py-28 bg-card">
         <div className="container">
           <p className="section-label mb-3">Our Network</p>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-foreground mb-10 tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-4">
             Authorized Dealers
           </h2>
 

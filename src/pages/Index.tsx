@@ -217,7 +217,7 @@ export default function Index() {
       {/* About Kaimec — branded SEO block */}
       <section className="bg-white py-12 md:py-16 border-b border-border">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-2xl md:text-3xl font-black text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             About KAIMEC
           </h2>
           <ul className="text-base md:text-lg text-foreground/80 leading-relaxed text-left space-y-3 list-disc pl-6">
@@ -262,7 +262,7 @@ export default function Index() {
                   <span className="flex-1 h-1 rounded-full animate-laser-dot" />
                   <span className="block h-4 w-4 rounded-full animate-laser-dot shadow-[0_0_20px_6px_currentColor]" />
                 </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground animate-flash text-center">
+                <h2 className="text-2xl md:text-3xl font-bold animate-flash text-center text-gray-900 mb-4">
                   Laser Cutting Machines
                 </h2>
                 <span
@@ -335,7 +335,7 @@ export default function Index() {
         <div className="container">
           <div className="text-center mb-8">
             <div className="relative inline-block">
-              <h2 className="text-3xl md:text-4xl font-black text-foreground inline-block">
+              <h2 className="text-2xl md:text-3xl font-bold inline-block text-gray-900 mb-4">
                 CNC Press Brakes
               </h2>
               <div
@@ -414,7 +414,7 @@ export default function Index() {
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 The machines your shop needs. The support your floor demands.
               </h2>
               <div className="space-y-4 text-gray-600 mb-6 leading-relaxed">
@@ -455,7 +455,7 @@ export default function Index() {
       <section className="w-full py-16 md:py-24 bg-gray-900">
         <div className="flex justify-center px-0">
           <div className="w-full max-w-6xl px-4 md:px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">

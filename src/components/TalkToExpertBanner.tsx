@@ -10,7 +10,7 @@ export default function TalkToExpertBanner() {
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div>
             <p className="section-label mb-3" style={{ color: "#F5A623", fontSize: "13px", letterSpacing: "2.5px" }}>{"\n"}</p>
-            <h2 className="text-3xl font-black text-white mb-4 leading-[1.05] md:text-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-white leading-[1.05] mb-4">
               TALK TO AN&nbsp; EXPERT
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-lg leading-relaxed">

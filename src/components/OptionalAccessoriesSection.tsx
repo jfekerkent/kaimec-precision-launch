@@ -62,7 +62,7 @@ export default function OptionalAccessoriesSection({ background = "bg-background
       <div className="container">
         <div className="max-w-3xl mb-12">
           <p className="section-label mb-3 text-primary">Recommended Optional Accessories</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">Enhance Your Setup</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Enhance Your Setup</h2>
           <p className="text-muted-foreground text-lg mt-3">
             Add optional accessories to complete your configuration.
           </p>

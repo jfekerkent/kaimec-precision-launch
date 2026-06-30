@@ -44,7 +44,7 @@ export default function Consultation() {
         <div className="container max-w-[1100px]">
           <div className="text-center">
             <p className="section-label mb-3" style={{ color: "#F5A623", fontSize: "13px", letterSpacing: "2.5px" }}>OUR COMMITMENT</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight text-gray-900 mb-4">
               Built for Real Shops. Not Showrooms.
             </h2>
             <p className="text-[#1a1a1a]/80 max-w-[760px] mx-auto leading-relaxed" style={{ fontSize: "1.1rem" }}>
@@ -71,7 +71,7 @@ export default function Consultation() {
       {/* Section C — Form */}
       <section id="contact-form" className="bg-white py-20">
         <div className="container max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-3 text-center">Send a Message</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center text-gray-900 mb-4">Send a Message</h2>
           <p className="text-muted-foreground text-center mb-10">Only name and email are required. The more you share, the better we can help.</p>
 
           <RequestInfoForm />
@@ -81,7 +81,7 @@ export default function Consultation() {
       {/* Section D — Closing CTA */}
       <section className="bg-[#1a1a1a] py-20">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Prefer to Just Call?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Prefer to Just Call?</h2>
           <p className="text-white/80 text-lg mb-2">
             Phone: <a href="tel:5623502071" className="text-primary font-semibold">562-350-2071</a> — Mon–Fri 9am–5pm Pacific
           </p>

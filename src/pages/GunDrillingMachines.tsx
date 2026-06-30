@@ -105,7 +105,7 @@ export default function GunDrillingMachines() {
       {/* Single spindle section */}
       <section className="bg-[#f5f5f5] py-14 md:py-20">
         <div className="container max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-10 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center text-gray-900 mb-4">
             Single Spindle Gun Drilling Machine
           </h2>
           <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -143,7 +143,7 @@ export default function GunDrillingMachines() {
 
       <section className="py-16 md:py-20 bg-[#F5A623]">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-[#1a1a1a] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-gray-900 mb-4">
             Ready to spec your gun drilling solution?
           </h2>
           <p className="text-[#1a1a1a]/90 mb-8 text-lg">
