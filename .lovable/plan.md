@@ -1,31 +1,57 @@
-# Per-kW Quotation PDF Mapping
+## Typography Standardization Plan
 
-## Scope
-Today the auto-reply PDF link is chosen by **machine model only**. Extend it so it picks the PDF by **machine model + kW**. Start with FLO-1530 (3 kW and 6 kW). Everything else continues to behave as it does today.
+Standardize all section headings, descriptions, and body text across every page to the exact spec you provided.
 
-## Behavior
+### Target Specs
 
-When a customer submits a Request Info form:
-- Picks **Open Type Fiber Laser → FLO-1530 → 3 kW** → auto-reply links `flo-1530-3kw.pdf`
-- Picks **Open Type Fiber Laser → FLO-1530 → 6 kW** → auto-reply links `flo-1530-6kw.pdf`
-- Picks **FLO-1530** with any other kW (none expected today, but safe) → no download link in the auto-reply (current fallback behavior).
-- Picks any other model (FLO-2040, FLC-anything, combos, tube, press brakes, gun drill) → no download link in the auto-reply (per your "no link" fallback). I'll **remove the current stub mappings** that point those models at a non-existent generic PDF so customers don't get a broken download button.
+| Element | Classes |
+|---|---|
+| Section heading (h2) | `text-2xl md:text-3xl font-bold text-gray-900 mb-4` |
+| Section description (lead p) | `text-base md:text-lg text-gray-600 mb-8` |
+| Body paragraph | `text-base text-gray-700 leading-relaxed` |
 
-HubSpot / EmailJS team notification / `machine_of_interest` field are unchanged. Only the customer-facing reply link changes.
+### Pages to Update
 
-## Files
+1. `src/pages/Index.tsx` (Home)
+2. `src/pages/About.tsx`
+3. `src/pages/Machines.tsx`
+4. `src/pages/MachineCategory.tsx`
+5. `src/pages/FiberLasers.tsx`
+6. `src/pages/OpenTypeFiberLaser.tsx`
+7. `src/pages/ClosedTypeFiberLaser.tsx`
+8. `src/pages/CoveredPipeProfileFiberLaser.tsx`
+9. `src/pages/TubeProfileLasers.tsx`
+10. `src/pages/PressBrakes.tsx`
+11. `src/pages/GunDrills.tsx`
+12. `src/pages/GunDrillingMachines.tsx`
+13. `src/pages/BtaDeepHoleDrilling.tsx`
+14. `src/pages/FlcP1530.tsx`
+15. `src/pages/Quotations.tsx`
+16. `src/pages/QuoteMachine.tsx`
+17. `src/pages/QuoteSummary.tsx`
+18. `src/pages/Quote.tsx` (Request Info)
+19. `src/pages/Consultation.tsx`
+20. `src/pages/Faq.tsx`
+21. `src/pages/Dealers.tsx`
+22. Shared components used across pages: `OptionalAccessoriesSection.tsx`, `TalkToExpertBanner.tsx`, `TrustSignals.tsx`, `Footer.tsx` (body text only)
 
-- `src/lib/quotationPdfs.ts` — change the lookup key from `machine` to `machine + kW`. New signature: `getQuotationLink(machine: string, powerKw?: string)`. Internal map keyed by composite string like `"FLO-1530 Open Type Fiber Laser|3 kW"`. Seed it with the two FLO-1530 entries. Drop the stub entries for all other models.
-- `src/components/RequestInfoForm.tsx` — pass `powerKw` into `getQuotationLink(...)` when building the auto-reply payload. No UI changes (the kW dropdown already exists for laser categories).
-- `public/quotations/` — you'll need to drop in `flo-1530-3kw.pdf` and `flo-1530-6kw.pdf`. I'll add a placeholder note in the file, but the actual PDFs need to be uploaded by you.
+### What I Will Change
 
-## What you need to provide
-1. `flo-1530-3kw.pdf`
-2. `flo-1530-6kw.pdf`
+- Every `<h2>` that functions as a section heading → replace existing size/weight/color/margin classes with the standardized set.
+- Every lead `<p>` directly under a section `<h2>` → replace with the description spec.
+- Every regular body `<p>` → ensure `text-base text-gray-700 leading-relaxed`.
 
-Drop them in chat and I'll place them at `public/quotations/flo-1530-3kw.pdf` and `public/quotations/flo-1530-6kw.pdf`. Once committed + deployed, the EmailJS reply template's existing `{{quotation_link}}` block will render the download button for those two combos.
+### What I Will NOT Change
 
-## Not in scope
-- No template change in EmailJS (the conditional `{{#quotation_link}}` block already handles the empty case).
-- No changes to HubSpot upsert, team notification, or chat agent capture_lead.
-- No new PDFs for other machines until you say so.
+- H1 hero headings (these stay their current oversized display sizes — the spec is for section h2s).
+- H3/H4 subheadings inside cards/spec lists.
+- Layout, grid, padding, section spacing, backgrounds, images, buttons, or any content/copy.
+- Dark-background sections: I will keep existing white/light text colors there instead of forcing `text-gray-900` / `text-gray-700`, since those would become invisible. The size/weight/margin rules still apply; only color is preserved for contrast.
+- Form labels, badges, nav, breadcrumbs, footer link lists.
+
+### Two Open Questions
+
+1. **Dark sections** (hero blocks, CTA banners with `bg-gray-900` / `bg-[#1a1a1a]`) — confirm OK to keep white text on those rather than `text-gray-900` which would be unreadable.
+2. **H1 hero titles** (e.g. giant "DEALERS", "Talk to a Real Expert") — your spec only lists h2. Confirm leaving h1s alone is correct.
+
+Once you confirm those two, I'll execute the sweep in a single pass.
