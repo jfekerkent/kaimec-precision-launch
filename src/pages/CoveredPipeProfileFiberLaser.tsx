@@ -332,7 +332,7 @@ export default function CoveredPipeProfileFiberLaser() {
       <section className="py-20 bg-background">
         <div className="container max-w-4xl">
           <p className="section-label mb-3 text-primary">Overview</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">Product Highlights</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Product Highlights</h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
               The FLO-P and FLC-P series represent a fusion of speed, sensitivity, reliability, and cost-effectiveness in fiber laser cutting — purpose-built for shops that need to cut both sheet metal and pipe/profile in a single fully enclosed machine. Laser power scales up to 20,000 watts, making it capable for thick plate work alongside everyday production cutting.
@@ -352,7 +352,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Configurations</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Configurations</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Available Configurations</h2>
             <p className="text-muted-foreground text-lg mt-3">
               Different sizes. Proven FLC-P and FLO-P platforms. Built around the cutting capacity your shop actually needs.
             </p>
@@ -412,7 +412,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specs of&nbsp; FLC-P models</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Technical Specs of&nbsp; FLC-P models</h2>
             <p className="text-white/70 text-lg mt-3">{" "}</p>
           </div>
           <UnitToggle unit={unit} onChange={setUnit} variant="dark" />
@@ -472,7 +472,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Engineering</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Key Features</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, body }) => (
@@ -493,7 +493,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Applications</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Built for These Industries</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Built for These Industries</h2>
           </div>
           <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
             {industries.map(({ icon: Icon, label }) => (
@@ -511,7 +511,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-10">
             <p className="section-label mb-3 text-primary">Capability</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">Material Cutting Capability</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Material Cutting Capability</h2>
             <p className="text-muted-foreground text-lg">Maximum cuttable thickness by material and laser power.</p>
           </div>
           <UnitToggle unit={unit} onChange={setUnit} variant="light" />
@@ -564,7 +564,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-5xl">
           <div className="max-w-3xl mb-10">
             <p className="section-label mb-3 text-primary">Pipe-Only Alternative</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Need Pipe / profile  Cutting Only? Consider the FLP-6020 or FLP-6035
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -604,7 +604,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Gallery</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Standard Accessories included</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Standard Accessories included</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((g) => (
@@ -631,7 +631,7 @@ export default function CoveredPipeProfileFiberLaser() {
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-label mb-3 text-primary">Get In Touch</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Get a Quote on the Covered Type & Pipe Profile Series
             </h2>
             <p className="text-lg text-muted-foreground">

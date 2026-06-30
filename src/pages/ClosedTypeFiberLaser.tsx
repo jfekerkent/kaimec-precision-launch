@@ -287,7 +287,7 @@ export default function ClosedTypeFiberLaser() {
       <section className="py-20 bg-background">
         <div className="container max-w-4xl">
           <p className="section-label mb-3 text-primary">Overview</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Built for Precision and cost effectiveness
           </h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -319,7 +319,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Model Lineup</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Sizes and Models</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Available Sizes and Models</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {models.map((m) => (
@@ -357,7 +357,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Engineering</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Why the FLC Series</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why the FLC Series</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, body }) => (
@@ -378,7 +378,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Specifications</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Specifications</h2>
             <p className="text-white/70 text-lg mt-3">
               Side-by-side comparison across all three FLC configurations.
             </p>
@@ -414,7 +414,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-10">
             <p className="section-label mb-3 text-primary">Capability</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">Cutting Capacity by Laser Power</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Cutting Capacity by Laser Power</h2>
             <p className="text-muted-foreground text-lg">
               Maximum cutting thickness for each FLC configuration.
             </p>
@@ -472,7 +472,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Configurations</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Standard & Optional Configurations</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Standard & Optional Configurations</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="bg-white border border-border p-8">
@@ -506,7 +506,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Gallery</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Standard Accessories included</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Standard Accessories included</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g, i) => (
@@ -534,7 +534,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-secondary">
             <div className="text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-black mb-2">Ready to spec your FLC?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ready to spec your FLC?</h2>
               <p className="text-lg opacity-90">
                 Get a quote tailored to your shop's material mix, throughput targets, and budget.
               </p>
@@ -568,7 +568,7 @@ export default function ClosedTypeFiberLaser() {
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-label mb-3 text-primary">Get In Touch</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Get a Quote on the Closed Type Fiber Laser
             </h2>
             <p className="text-lg text-muted-foreground">

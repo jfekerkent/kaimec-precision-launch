@@ -144,7 +144,7 @@ export default function QuoteSummary() {
 
           <div id="quote-form" className="bg-card border border-border rounded-lg p-6 md:p-8 scroll-mt-24 self-start">
             <p className="section-label mb-3 text-primary">Get Pricing</p>
-            <h2 className="text-2xl md:text-3xl font-black text-foreground mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Request Quote
             </h2>
             <p className="text-muted-foreground mb-2">

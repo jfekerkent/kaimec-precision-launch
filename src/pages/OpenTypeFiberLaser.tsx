@@ -296,7 +296,7 @@ export default function OpenTypeFiberLaser() {
         </div>
         <div className="container max-w-4xl">
           <p className="section-label mb-3 text-primary">Overview</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">Product Highlights</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Product Highlights</h2>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
               The Open Type Fiber Laser series is built for shops that want serious cutting capability without
@@ -323,7 +323,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Model Lineup</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Available Sizes and Models</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Available Sizes and Models</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {[
@@ -353,7 +353,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container max-w-6xl">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">{" "}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-white">Technical Specifications</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Technical Specifications</h2>
             <p className="text-white/70 text-lg mt-3">
               {" "}
             </p>
@@ -389,7 +389,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container max-w-5xl">
           <div className="max-w-3xl mb-10">
             <p className="section-label mb-3 text-primary">Capability</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-3">Material Cutting Capability</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Material Cutting Capability</h2>
             <p className="text-muted-foreground text-lg">
               Maximum cuttable thickness by material and laser power.
             </p>
@@ -425,7 +425,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Engineering</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Key Features</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, body }) => (
@@ -465,7 +465,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">Gallery</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">Standard Accessories included</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Standard Accessories included</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {gallery.map((g) => (
@@ -498,7 +498,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container">
           <div className="max-w-3xl mb-12">
             <p className="section-label mb-3 text-primary">APPLICATIONS </p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Aerospace, Automotive & Household Product Manufacturing
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -536,7 +536,7 @@ export default function OpenTypeFiberLaser() {
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-label mb-3 text-primary">Get In Touch</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Get a Quote on the Open Type Fiber Laser
             </h2>
             <p className="text-lg text-muted-foreground">

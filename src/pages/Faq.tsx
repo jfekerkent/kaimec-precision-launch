@@ -185,7 +185,7 @@ export default function Faq() {
                 id={slugify(c)}
                 ref={(el) => (sectionRefs.current[c] = el)}
               >
-                <h2 className="mb-6 inline-block border-b-4 border-[#F5A623] pb-1 text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
+                <h2 className="text-2xl md:text-3xl font-bold inline-block border-b-4 border-[#F5A623] pb-1 uppercase tracking-tight text-gray-900 mb-4">
                   {c}
                 </h2>
                 <Accordion
@@ -240,7 +240,7 @@ export default function Faq() {
       {/* CTA */}
       <section className="bg-[#222] py-16">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white">
+          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-4">
             Still have questions?
           </h2>
           <p className="mt-3 text-white/70">

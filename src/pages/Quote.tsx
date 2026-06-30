@@ -27,7 +27,7 @@ export default function Quote() {
 
             <div className="lg:col-span-2">
               <div className="rounded-lg border border-border bg-card p-8">
-                <h2 className="text-lg font-bold text-foreground mb-6">Contact Information</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
                 <ul className="space-y-5">
                   <li className="flex gap-3 text-sm text-muted-foreground">
                     <MapPin className="h-5 w-5 text-primary shrink-0" />
