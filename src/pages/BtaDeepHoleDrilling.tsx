@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import TrustSignals from "@/components/shared/TrustSignals";
 import { Button } from "@/components/ui/button";
 import Seo from "@/components/Seo";
+import btaHeroMachine from "@/assets/bta-hero-machine.png.asset.json";
 
 const CALENDLY_URL = "https://calendly.com/jfeker-kentusa/kaimec-consultation";
 
@@ -20,8 +21,7 @@ function usePageMeta(title: string, description: string) {
   }, [title, description]);
 }
 
-const heroMachineImg =
-  "https://img1.wsimg.com/isteam/ip/6f3ce8ef-345e-43cc-8fb2-64ddd3bab953/3%20bta%20deep-hole-drilling-and-boringe4577.webp/:/cr=t:19.12%25,l:9.36%25,w:74.19%25,h:74.19%25/rs=w:800,cg:true,m";
+const heroMachineImg = btaHeroMachine.url;
 const btaHeadsImg =
   "https://img1.wsimg.com/isteam/ip/6f3ce8ef-345e-43cc-8fb2-64ddd3bab953/BTA%20HEADS.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true";
 const btaSchematicImg =
