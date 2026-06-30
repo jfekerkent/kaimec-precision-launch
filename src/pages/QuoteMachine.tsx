@@ -2,6 +2,7 @@ import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
+import { getQuotationLinkBySlug } from "@/lib/quotationPdfs";
 
 import flo1530_3kw from "@/assets/machine-kflo-1530.png";
 import flo1530_6kw from "@/assets/flo-1530-6kw.png";
@@ -151,6 +152,8 @@ export default function QuoteMachine() {
             )}
             <RequestInfoForm
               machine={accessories ? `${machine.name} + ${accessories}` : machine.name}
+              source="Quotation"
+              quotationLink={slug ? getQuotationLinkBySlug(slug) : ""}
             />
           </div>
         </div>

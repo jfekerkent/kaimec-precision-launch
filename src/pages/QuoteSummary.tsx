@@ -2,6 +2,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import RequestInfoForm from "@/components/RequestInfoForm";
+import { getQuotationLinkBySlug } from "@/lib/quotationPdfs";
 import { quoteMachines, type QuoteSlug } from "./QuoteMachine";
 import dustCollectorImg from "@/assets/dust-collector-todc-4l.png";
 import airCompressorImg from "@/assets/screw-air-compressor.png";
@@ -159,6 +160,7 @@ export default function QuoteSummary() {
               machine={accessories ? `${machineNames} + ${accessories}` : machineNames}
               source="Quotation"
               hideMachineSelector
+              quotationLink={getQuotationLinkBySlug(slugs.join(","))}
             />
           </div>
         </div>
