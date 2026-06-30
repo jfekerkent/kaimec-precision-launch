@@ -1,57 +1,36 @@
-## Typography Standardization Plan
+# Typography Standardization Sweep
 
-Standardize all section headings, descriptions, and body text across every page to the exact spec you provided.
+Apply consistent H2 and body text sizing across all pages and shared components, preserving H1s, dark-background text colors, layout, and content.
 
-### Target Specs
+## Rules
 
-| Element | Classes |
-|---|---|
-| Section heading (h2) | `text-2xl md:text-3xl font-bold text-gray-900 mb-4` |
-| Section description (lead p) | `text-base md:text-lg text-gray-600 mb-8` |
-| Body paragraph | `text-base text-gray-700 leading-relaxed` |
+- **H2 (section heading, light bg):** `text-2xl md:text-3xl font-bold text-gray-900 mb-4`
+- **H2 (section heading, dark bg):** `text-2xl md:text-3xl font-bold mb-4` — keep existing white / light-gray color class
+- **Lead paragraph (description right after H2):** `text-base md:text-lg text-gray-600 mb-8` (keep light color on dark bg)
+- **Body paragraph:** `text-base text-gray-700 leading-relaxed` (keep light color on dark bg)
+- Only swap typography utilities (size, weight, margin, neutral text color on light bg). Leave everything else untouched.
 
-### Pages to Update
+## Out of scope (do not touch)
 
-1. `src/pages/Index.tsx` (Home)
-2. `src/pages/About.tsx`
-3. `src/pages/Machines.tsx`
-4. `src/pages/MachineCategory.tsx`
-5. `src/pages/FiberLasers.tsx`
-6. `src/pages/OpenTypeFiberLaser.tsx`
-7. `src/pages/ClosedTypeFiberLaser.tsx`
-8. `src/pages/CoveredPipeProfileFiberLaser.tsx`
-9. `src/pages/TubeProfileLasers.tsx`
-10. `src/pages/PressBrakes.tsx`
-11. `src/pages/GunDrills.tsx`
-12. `src/pages/GunDrillingMachines.tsx`
-13. `src/pages/BtaDeepHoleDrilling.tsx`
-14. `src/pages/FlcP1530.tsx`
-15. `src/pages/Quotations.tsx`
-16. `src/pages/QuoteMachine.tsx`
-17. `src/pages/QuoteSummary.tsx`
-18. `src/pages/Quote.tsx` (Request Info)
-19. `src/pages/Consultation.tsx`
-20. `src/pages/Faq.tsx`
-21. `src/pages/Dealers.tsx`
-22. Shared components used across pages: `OptionalAccessoriesSection.tsx`, `TalkToExpertBanner.tsx`, `TrustSignals.tsx`, `Footer.tsx` (body text only)
+- H1 hero headings, H3/H4 subheadings
+- Layout, grid, padding, section spacing, backgrounds, images, buttons
+- Copy/content
+- Dark-bg text colors (preserve white/light gray for contrast)
+- Form labels, badges, nav, breadcrumbs, footer link lists
 
-### What I Will Change
+## Files
 
-- Every `<h2>` that functions as a section heading → replace existing size/weight/color/margin classes with the standardized set.
-- Every lead `<p>` directly under a section `<h2>` → replace with the description spec.
-- Every regular body `<p>` → ensure `text-base text-gray-700 leading-relaxed`.
+Pages (21):
+Index, About, Machines, MachineCategory, FiberLasers, OpenTypeFiberLaser, ClosedTypeFiberLaser, CoveredPipeProfileFiberLaser, TubeProfileLasers, PressBrakes, GunDrills, GunDrillingMachines, BtaDeepHoleDrilling, FlcP1530, Quotations, QuoteMachine, QuoteSummary, Quote, Consultation, Faq, Dealers.
 
-### What I Will NOT Change
+Shared components (4):
+OptionalAccessoriesSection, TalkToExpertBanner, TrustSignals, Footer (body text only).
 
-- H1 hero headings (these stay their current oversized display sizes — the spec is for section h2s).
-- H3/H4 subheadings inside cards/spec lists.
-- Layout, grid, padding, section spacing, backgrounds, images, buttons, or any content/copy.
-- Dark-background sections: I will keep existing white/light text colors there instead of forcing `text-gray-900` / `text-gray-700`, since those would become invisible. The size/weight/margin rules still apply; only color is preserved for contrast.
-- Form labels, badges, nav, breadcrumbs, footer link lists.
+## Execution
 
-### Two Open Questions
-
-1. **Dark sections** (hero blocks, CTA banners with `bg-gray-900` / `bg-[#1a1a1a]`) — confirm OK to keep white text on those rather than `text-gray-900` which would be unreadable.
-2. **H1 hero titles** (e.g. giant "DEALERS", "Talk to a Real Expert") — your spec only lists h2. Confirm leaving h1s alone is correct.
-
-Once you confirm those two, I'll execute the sweep in a single pass.
+1. Read each file, identify every `<h2>` and following description/body `<p>`.
+2. For each match, classify background (light vs dark) by inspecting the wrapping `section`/container classes.
+3. Replace only the typography utility classes per the rules above.
+4. Leave H1s, H3+, labels, badges, nav, breadcrumbs, and footer link lists unchanged.
+5. After edits, run a TypeScript typecheck to confirm no regressions.
+6. Spot-check the home page and one machine page in the preview to confirm visual consistency.
