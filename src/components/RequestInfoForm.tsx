@@ -355,8 +355,8 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
 
       {/* Phone */}
       <div>
-        <Label htmlFor="phone" className="text-sm font-medium text-foreground mb-1.5 block">Phone</Label>
-        <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+1 (555) 555-5555" value={formData.phone} onChange={handleChange} className="bg-card border-border" />
+        <Label htmlFor="phone" className="text-sm font-medium text-foreground mb-1.5 block">Phone <span className="text-red-500">*</span></Label>
+        <Input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+1 (555) 555-5555" required value={formData.phone} onChange={handleChange} className="bg-card border-border" />
       </div>
 
       {/* Company */}
