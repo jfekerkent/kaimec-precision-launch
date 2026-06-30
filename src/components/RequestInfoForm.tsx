@@ -104,6 +104,12 @@ interface Props {
   machine?: string;
   source?: string;
   hideMachineSelector?: boolean;
+  /**
+   * Pre-resolved quotation PDF URL. When provided, used as the
+   * `quotation_link` variable on the auto-reply email instead of looking up
+   * by machine + kW. Used on /quotations where we know the exact selection.
+   */
+  quotationLink?: string;
 }
 
 const LASER_CATEGORIES = new Set<string>([
@@ -114,7 +120,7 @@ const LASER_CATEGORIES = new Set<string>([
 ]);
 const KW_OPTIONS = ["3 kW", "6 kW", "12 kW"] as const;
 
-export default function RequestInfoForm({ machine: machineProp, source = "Request Info", hideMachineSelector = false }: Props) {
+export default function RequestInfoForm({ machine: machineProp, source = "Request Info", hideMachineSelector = false, quotationLink }: Props) {
   const [searchParams] = useSearchParams();
   const location = useLocation();
   const queryMachine = searchParams.get("machine") || "";
@@ -274,9 +280,11 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
           machine: formData.machine,
           machine_of_interest: finalMachineOfInterest,
           accessories_of_interest: accessories.join(", "),
-          quotation_link: hideMachineSelector
-            ? getQuotationLink(machineProp || machineOfInterest, powerKw)
-            : getQuotationLink(machineOfInterest, powerKw),
+          quotation_link: quotationLink
+            ? quotationLink
+            : hideMachineSelector
+              ? getQuotationLink(machineProp || machineOfInterest, powerKw)
+              : getQuotationLink(machineOfInterest, powerKw),
         },
         EMAILJS_PUBLIC_KEY,
       );
