@@ -329,6 +329,7 @@ export default function RequestInfoForm({ machine: machineProp, source = "Reques
     isLoading ||
     !formData.name.trim() ||
     !emailValid ||
+    !formData.phone.trim() ||
     (!hideMachineSelector && !machineOfInterest) ||
     needsKw;
 
