@@ -114,7 +114,7 @@ export default function KaimecChatAgent() {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               placeholder="Type your message…"
-              className="flex-1 rounded-md border border-white/10 bg-[#1a1a1a] px-3 py-2 text-sm text-white placeholder:text-white/40 focus:border-[#F5A623] focus:outline-none"
+              className="flex-1 rounded-md border border-white/10 bg-[#1a1a1a] px-3 py-2 text-sm text-white placeholder:text-white/70 focus:border-[#F5A623] focus:outline-none"
             />
             <button
               type="submit"
