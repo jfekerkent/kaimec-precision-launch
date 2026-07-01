@@ -71,6 +71,9 @@ export default function MobileHero() {
           alt="Kaimec fiber laser cutting head precision cutting steel"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
+          decoding="async"
+          width={1280}
+          height={720}
           fetchPriority="high"
         />
         {/* Subtle top gradient so the white logo stays legible */}
