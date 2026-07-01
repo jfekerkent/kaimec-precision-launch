@@ -147,7 +147,7 @@ export default function Faq() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search questions..."
-              className="w-full rounded-md border border-white/10 bg-[#1a1a1a] py-2 pl-9 pr-3 text-sm text-white placeholder:text-white/40 focus:border-[#F5A623] focus:outline-none"
+              className="w-full rounded-md border border-white/10 bg-[#1a1a1a] py-2 pl-9 pr-3 text-sm text-white placeholder:text-white/70 focus:border-[#F5A623] focus:outline-none"
             />
           </div>
           <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
