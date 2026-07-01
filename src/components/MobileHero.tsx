@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
-import heroImg from "@/assets/hero-cnc.jpg";
 import kfloImg from "@/assets/machine-kflo-primary.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
@@ -67,7 +66,7 @@ export default function MobileHero() {
       {/* Full-bleed hero image. Navbar (transparent on mobile home) sits on top. */}
       <div className="relative w-full h-[58vh] min-h-[420px] overflow-hidden bg-[#1a1a1a]">
         <img
-          src={heroImg}
+          src="/hero-laser-mobile.jpg"
           alt="Kaimec fiber laser cutting head precision cutting steel"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"

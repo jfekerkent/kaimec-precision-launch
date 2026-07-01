@@ -7,35 +7,28 @@ import TalkToExpertBanner from "@/components/TalkToExpertBanner";
 import HeroLeadForm from "@/components/HeroLeadForm";
 import Seo from "@/components/Seo";
 import MobileHero from "@/components/MobileHero";
+import { useIsMobile } from "@/hooks/use-mobile";
 import kflc1530Img from "@/assets/machine-kflc-1530.png";
 import kfloPrimaryImg from "@/assets/machine-kflo-primary.png";
 import flp6035Img from "@/assets/machine-flp-6035-home.png";
 import mkt1560Img from "@/assets/machine-mkt-1560.png";
 import mkt32135Img from "@/assets/machine-mkt-32135.png";
-import slideFlo1530New from "@/assets/slide-v2-flo-1530.png";
-import slideFlc1530New from "@/assets/slide-v2-flc-1530.jpg";
-import slideFlo2060New from "@/assets/slide-v2-flo-2060.jpg";
-import slideFlcP1530 from "@/assets/slide-v2-flc-p-1530.jpg";
-import slideMkt1560 from "@/assets/slide-v2-mkt-1560.jpg";
-import slideMkt32135 from "@/assets/slide-v2-mkt-32135.jpg";
-import slideFloP2040_1 from "@/assets/slide-v2-flo-p-2040-1.png";
-import slideFloP2040_2 from "@/assets/slide-v2-flo-p-2040-2.png";
-import slideFlc15304 from "@/assets/slide-v2-flc-1530-4.png";
 import comboOnly1 from "@/assets/combo-only-1.jpg";
 import comboOnly2 from "@/assets/combo-only-2.png";
 import heroVideoSrc from "@/assets/hero-laser-cutting.mp4";
+import heroVideoWebm from "@/assets/hero-laser-cutting.webm";
 
 
 const facilitySlides = [
-  slideFlo1530New,
-  slideFlc1530New,
-  slideFlo2060New,
-  slideFlcP1530,
-  slideMkt1560,
-  slideMkt32135,
-  slideFloP2040_1,
-  slideFloP2040_2,
-  slideFlc15304,
+  new URL("../assets/slide-v2-flo-1530.png", import.meta.url).href,
+  new URL("../assets/slide-v2-flc-1530.jpg", import.meta.url).href,
+  new URL("../assets/slide-v2-flo-2060.jpg", import.meta.url).href,
+  new URL("../assets/slide-v2-flc-p-1530.jpg", import.meta.url).href,
+  new URL("../assets/slide-v2-mkt-1560.jpg", import.meta.url).href,
+  new URL("../assets/slide-v2-mkt-32135.jpg", import.meta.url).href,
+  new URL("../assets/slide-v2-flo-p-2040-1.png", import.meta.url).href,
+  new URL("../assets/slide-v2-flo-p-2040-2.png", import.meta.url).href,
+  new URL("../assets/slide-v2-flc-1530-4.png", import.meta.url).href,
 ];
 
 const featuredMachines = [
@@ -85,6 +78,7 @@ const whyPoints = [
 export default function Index() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [slideIdx, setSlideIdx] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -92,7 +86,7 @@ export default function Index() {
     video.controls = false;
     video.muted = true;
     video.play().catch(() => undefined);
-  }, []);
+  }, [isMobile]);
 
   // FIX 3: slowed from 1000ms to 3500ms
   useEffect(() => {
@@ -105,21 +99,19 @@ export default function Index() {
   return (
     <Layout>
       <Seo
-        title="Kaimec Fabrication — Kaimec Fiber Lasers, Press Brakes & CNC Machines"
-        description="Kaimec Fabrication: official site for Kaimec fiber lasers, CNC press brakes and deep-hole drilling machines. Factory-direct from Kaimec with US engineering and parts support from Tustin, CA."
+        title="Kaimec Fabrication — Fiber Lasers & CNC Machines"
+        description="Kaimec Fabrication: fiber lasers, CNC press brakes & deep-hole drilling machines. Factory-direct with US engineering and parts support from Tustin, CA."
         path="/"
       />
 
-      {/* Mobile hero — full-bleed photo + accordion, < md only */}
-      <MobileHero />
-
-      {/* Hero (tablet/desktop only) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0c] via-[#141416] to-[#1c1c1f] md:bg-none hidden md:block">
-        <div className="absolute inset-0 overflow-hidden hidden md:block">
+      {isMobile ? (
+        <MobileHero />
+      ) : (
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0b0c] via-[#141416] to-[#1c1c1f] md:bg-none">
+        <div className="absolute inset-0 overflow-hidden">
           {/* Tablet/Desktop: autoplay video */}
           <video
             ref={heroVideoRef}
-            src={heroVideoSrc}
             autoPlay
             muted
             loop
@@ -129,7 +121,8 @@ export default function Index() {
             disableRemotePlayback
             aria-hidden="true"
             tabIndex={-1}
-            preload="auto"
+            preload="metadata"
+            poster="/hero-laser-cutting-poster.jpg"
             className="hero-background-video"
             onContextMenu={(event) => event.preventDefault()}
             onLoadedMetadata={(event) => {
@@ -148,7 +141,10 @@ export default function Index() {
               border: 0,
               zIndex: 0,
             }}
-          />
+          >
+            <source src={heroVideoWebm} type="video/webm" />
+            <source src={heroVideoSrc} type="video/mp4" />
+          </video>
           {/* Left-to-right overlay */}
           <div
             className="absolute inset-0"
@@ -182,23 +178,10 @@ export default function Index() {
               engineers and California inventory.
             </p>
             <HeroLeadForm />
-            {/* Mobile-only framed Vimeo card */}
-            <div className="md:hidden mt-8">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden ring-1 ring-primary/30 shadow-2xl bg-black">
-                <iframe
-                  src="https://player.vimeo.com/video/1201845096?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0&dnt=1"
-                  className="absolute inset-0 w-full h-full"
-                  frameBorder={0}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Kaimec laser cutting"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* Stats Bar */}
       <section className="gradient-gold">
@@ -400,17 +383,22 @@ export default function Index() {
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div className="rounded-lg overflow-hidden relative aspect-[4/3] bg-white">
-              {facilitySlides.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt={`KAIMEC machine ${i + 1}`}
-                  loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
-                    i === slideIdx ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
+              {facilitySlides.map((src, i) => {
+                const nextIdx = (slideIdx + 1) % facilitySlides.length;
+                if (i !== slideIdx && i !== nextIdx) return null;
+                return (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`KAIMEC machine ${i + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
+                      i === slideIdx ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                );
+              })}
             </div>
             <div>
               <p className="section-label mb-3">Why KAIMEC</p>
